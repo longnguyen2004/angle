@@ -208,6 +208,7 @@ bool ValidateConfigAttribute(const ValidationContext *val,
         case EGL_MAX_PBUFFER_WIDTH:
         case EGL_MAX_PBUFFER_HEIGHT:
         case EGL_MAX_PBUFFER_PIXELS:
+        case EGL_FULLSCREEN_ANGLE:
             break;
 
         case EGL_OPTIMAL_SURFACE_ORIENTATION_ANGLE:
@@ -455,6 +456,18 @@ bool ValidateConfigAttributeValue(const ValidationContext *val,
             }
             break;
         }
+
+        case EGL_FULLSCREEN_ANGLE:
+            switch (value)
+            {
+                case EGL_TRUE:
+                case EGL_FALSE:
+                    break;
+                default:
+                    val->setError(EGL_BAD_ATTRIBUTE, "EGL_FULLSCREEN_ANGLE invalid attribute: 0x%X",
+                                  static_cast<uint32_t>(value));
+            }
+            break;
 
         default:
             break;
