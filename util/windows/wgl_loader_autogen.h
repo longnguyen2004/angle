@@ -11,8 +11,9 @@
 #ifndef UTIL_WINDOWS_WGL_LOADER_AUTOGEN_H_
 #define UTIL_WINDOWS_WGL_LOADER_AUTOGEN_H_
 
-#include <GLES2/gl2.h>
+
 #include <WGL/wgl.h>
+#include <GLES2/gl2.h>
 
 // We add an underscore before each function name to ensure common names like "ChoosePixelFormat"
 // and "SwapBuffers" don't conflict with our function pointers. We can't use a namespace because
@@ -90,11 +91,11 @@ extern PFNWGLGETSWAPINTERVALEXTPROC l__wglGetSwapIntervalEXT;
 extern PFNWGLSWAPINTERVALEXTPROC l__wglSwapIntervalEXT;
 
 typedef void (*GenericProc)(void);
-typedef GenericProc(KHRONOS_APIENTRY *LoadProc)(const char *);
+typedef GenericProc (KHRONOS_APIENTRY *LoadProc)(const char *);
 void LoadWGL(LoadProc loadProc);
 
 #if defined(__cplusplus)
-}       // extern "C"
+}  // extern "C"
 #endif  // defined(__cplusplus)
 
 #endif  // UTIL_WINDOWS_WGL_LOADER_AUTOGEN_H_

@@ -464,6 +464,8 @@ const char *GetEntryPointName(EntryPoint ep)
             return "eglSwapInterval";
         case EntryPoint::EGLTerminate:
             return "eglTerminate";
+        case EntryPoint::EGLToggleWindowed:
+            return "eglToggleWindowed";
         case EntryPoint::EGLUnlockSurfaceKHR:
             return "eglUnlockSurfaceKHR";
         case EntryPoint::EGLWaitClient:

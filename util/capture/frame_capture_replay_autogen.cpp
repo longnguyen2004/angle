@@ -17,23 +17,19 @@ namespace angle
 {
 void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &customFunctions)
 {
-    const ParamBuffer &params                 = call.params;
+    const ParamBuffer &params = call.params;
     const std::vector<ParamCapture> &captures = params.getParamCaptures();
 
     switch (call.entryPoint)
     {
         case angle::EntryPoint::GLAcquireTexturesANGLE:
-            glAcquireTexturesANGLE(captures[0].value.GLuintVal,
-                                   captures[1].value.GLuintConstPointerVal,
-                                   captures[2].value.GLenumConstPointerVal);
+            glAcquireTexturesANGLE(captures[0].value.GLuintVal, captures[1].value.GLuintConstPointerVal, captures[2].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLActiveShaderProgram:
-            glActiveShaderProgram(gProgramPipelineMap[captures[0].value.GLuintVal],
-                                  gShaderProgramMap[captures[1].value.GLuintVal]);
+            glActiveShaderProgram(gProgramPipelineMap[captures[0].value.GLuintVal], gShaderProgramMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLActiveShaderProgramEXT:
-            glActiveShaderProgramEXT(gProgramPipelineMap[captures[0].value.GLuintVal],
-                                     gShaderProgramMap[captures[1].value.GLuintVal]);
+            glActiveShaderProgramEXT(gProgramPipelineMap[captures[0].value.GLuintVal], gShaderProgramMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLActiveTexture:
             glActiveTexture(captures[0].value.GLenumVal);
@@ -45,15 +41,13 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glAlphaFuncx(captures[0].value.GLenumVal, captures[1].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLAttachShader:
-            glAttachShader(gShaderProgramMap[captures[0].value.GLuintVal],
-                           gShaderProgramMap[captures[1].value.GLuintVal]);
+            glAttachShader(gShaderProgramMap[captures[0].value.GLuintVal], gShaderProgramMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBeginPerfMonitorAMD:
             glBeginPerfMonitorAMD(captures[0].value.GLuintVal);
             break;
         case angle::EntryPoint::GLBeginPixelLocalStorageANGLE:
-            glBeginPixelLocalStorageANGLE(captures[0].value.GLsizeiVal,
-                                          captures[1].value.GLenumConstPointerVal);
+            glBeginPixelLocalStorageANGLE(captures[0].value.GLsizeiVal, captures[1].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLBeginQuery:
             glBeginQuery(captures[0].value.GLenumVal, gQueryMap[captures[1].value.GLuintVal]);
@@ -65,45 +59,31 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBeginTransformFeedback(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBindAttribLocation:
-            glBindAttribLocation(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLuintVal,
-                                 captures[2].value.GLcharConstPointerVal);
+            glBindAttribLocation(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLBindBuffer:
             glBindBuffer(captures[0].value.GLenumVal, gBufferMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindBufferBase:
-            glBindBufferBase(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                             gBufferMap[captures[2].value.GLuintVal]);
+            glBindBufferBase(captures[0].value.GLenumVal, captures[1].value.GLuintVal, gBufferMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindBufferRange:
-            glBindBufferRange(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                              gBufferMap[captures[2].value.GLuintVal],
-                              captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
+            glBindBufferRange(captures[0].value.GLenumVal, captures[1].value.GLuintVal, gBufferMap[captures[2].value.GLuintVal], captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLBindFragDataLocationEXT:
-            glBindFragDataLocationEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLuintVal,
-                                      captures[2].value.GLcharConstPointerVal);
+            glBindFragDataLocationEXT(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLBindFragDataLocationIndexedEXT:
-            glBindFragDataLocationIndexedEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLcharConstPointerVal);
+            glBindFragDataLocationIndexedEXT(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLBindFramebuffer:
-            glBindFramebuffer(captures[0].value.GLenumVal,
-                              gFramebufferMap[captures[1].value.GLuintVal]);
+            glBindFramebuffer(captures[0].value.GLenumVal, gFramebufferMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindFramebufferOES:
-            glBindFramebufferOES(captures[0].value.GLenumVal,
-                                 gFramebufferMap[captures[1].value.GLuintVal]);
+            glBindFramebufferOES(captures[0].value.GLenumVal, gFramebufferMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindImageTexture:
-            glBindImageTexture(captures[0].value.GLuintVal,
-                               gTextureMap[captures[1].value.GLuintVal], captures[2].value.GLintVal,
-                               captures[3].value.GLbooleanVal, captures[4].value.GLintVal,
-                               captures[5].value.GLenumVal, captures[6].value.GLenumVal);
+            glBindImageTexture(captures[0].value.GLuintVal, gTextureMap[captures[1].value.GLuintVal], captures[2].value.GLintVal, captures[3].value.GLbooleanVal, captures[4].value.GLintVal, captures[5].value.GLenumVal, captures[6].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBindProgramPipeline:
             glBindProgramPipeline(gProgramPipelineMap[captures[0].value.GLuintVal]);
@@ -112,12 +92,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBindProgramPipelineEXT(gProgramPipelineMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindRenderbuffer:
-            glBindRenderbuffer(captures[0].value.GLenumVal,
-                               gRenderbufferMap[captures[1].value.GLuintVal]);
+            glBindRenderbuffer(captures[0].value.GLenumVal, gRenderbufferMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindRenderbufferOES:
-            glBindRenderbufferOES(captures[0].value.GLenumVal,
-                                  gRenderbufferMap[captures[1].value.GLuintVal]);
+            glBindRenderbufferOES(captures[0].value.GLenumVal, gRenderbufferMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindSampler:
             glBindSampler(captures[0].value.GLuintVal, gSamplerMap[captures[1].value.GLuintVal]);
@@ -126,14 +104,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBindTexture(captures[0].value.GLenumVal, gTextureMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindTransformFeedback:
-            glBindTransformFeedback(captures[0].value.GLenumVal,
-                                    gTransformFeedbackMap[captures[1].value.GLuintVal]);
+            glBindTransformFeedback(captures[0].value.GLenumVal, gTransformFeedbackMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindUniformLocationCHROMIUM:
-            glBindUniformLocationCHROMIUM(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLcharConstPointerVal);
+            glBindUniformLocationCHROMIUM(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLBindVertexArray:
             glBindVertexArray(gVertexArrayMap[captures[0].value.GLuintVal]);
@@ -142,8 +116,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBindVertexArrayOES(gVertexArrayMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLBindVertexBuffer:
-            glBindVertexBuffer(captures[0].value.GLuintVal, gBufferMap[captures[1].value.GLuintVal],
-                               captures[2].value.GLintptrVal, captures[3].value.GLsizeiVal);
+            glBindVertexBuffer(captures[0].value.GLuintVal, gBufferMap[captures[1].value.GLuintVal], captures[2].value.GLintptrVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLBlendBarrier:
             glBlendBarrier();
@@ -152,8 +125,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBlendBarrierKHR();
             break;
         case angle::EntryPoint::GLBlendColor:
-            glBlendColor(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                         captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glBlendColor(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLBlendEquation:
             glBlendEquation(captures[0].value.GLenumVal);
@@ -165,16 +137,13 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBlendEquationSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendEquationSeparatei:
-            glBlendEquationSeparatei(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLenumVal);
+            glBlendEquationSeparatei(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendEquationSeparateiEXT:
-            glBlendEquationSeparateiEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLenumVal);
+            glBlendEquationSeparateiEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendEquationSeparateiOES:
-            glBlendEquationSeparateiOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLenumVal);
+            glBlendEquationSeparateiOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendEquationi:
             glBlendEquationi(captures[0].value.GLuintVal, captures[1].value.GLenumVal);
@@ -189,85 +158,52 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glBlendFunc(captures[0].value.GLenumVal, captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFuncSeparate:
-            glBlendFuncSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLenumVal, captures[3].value.GLenumVal);
+            glBlendFuncSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFuncSeparatei:
-            glBlendFuncSeparatei(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLenumVal, captures[3].value.GLenumVal,
-                                 captures[4].value.GLenumVal);
+            glBlendFuncSeparatei(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal, captures[4].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFuncSeparateiEXT:
-            glBlendFuncSeparateiEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLenumVal, captures[3].value.GLenumVal,
-                                    captures[4].value.GLenumVal);
+            glBlendFuncSeparateiEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal, captures[4].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFuncSeparateiOES:
-            glBlendFuncSeparateiOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLenumVal, captures[3].value.GLenumVal,
-                                    captures[4].value.GLenumVal);
+            glBlendFuncSeparateiOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal, captures[4].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFunci:
-            glBlendFunci(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLenumVal);
+            glBlendFunci(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFunciEXT:
-            glBlendFunciEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLenumVal);
+            glBlendFunciEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlendFunciOES:
-            glBlendFunciOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLenumVal);
+            glBlendFunciOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlitFramebuffer:
-            glBlitFramebuffer(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                              captures[2].value.GLintVal, captures[3].value.GLintVal,
-                              captures[4].value.GLintVal, captures[5].value.GLintVal,
-                              captures[6].value.GLintVal, captures[7].value.GLintVal,
-                              captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
+            glBlitFramebuffer(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLintVal, captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlitFramebufferANGLE:
-            glBlitFramebufferANGLE(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                                   captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                   captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                   captures[6].value.GLintVal, captures[7].value.GLintVal,
-                                   captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
+            glBlitFramebufferANGLE(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLintVal, captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlitFramebufferNV:
-            glBlitFramebufferNV(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                                captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                captures[6].value.GLintVal, captures[7].value.GLintVal,
-                                captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
+            glBlitFramebufferNV(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLintVal, captures[8].value.GLbitfieldVal, captures[9].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBlobCacheCallbacksANGLE:
-            glBlobCacheCallbacksANGLE(captures[0].value.GLSETBLOBPROCANGLEVal,
-                                      captures[1].value.GLGETBLOBPROCANGLEVal,
-                                      captures[2].value.voidConstPointerVal);
+            glBlobCacheCallbacksANGLE(captures[0].value.GLSETBLOBPROCANGLEVal, captures[1].value.GLGETBLOBPROCANGLEVal, captures[2].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLBufferData:
-            glBufferData(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal,
-                         captures[2].value.voidConstPointerVal, captures[3].value.GLenumVal);
+            glBufferData(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal, captures[2].value.voidConstPointerVal, captures[3].value.GLenumVal);
             break;
         case angle::EntryPoint::GLBufferStorageEXT:
-            glBufferStorageEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal,
-                               captures[2].value.voidConstPointerVal,
-                               captures[3].value.GLbitfieldVal);
+            glBufferStorageEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal, captures[2].value.voidConstPointerVal, captures[3].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLBufferStorageExternalEXT:
-            glBufferStorageExternalEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                                       captures[2].value.GLsizeiptrVal,
-                                       captures[3].value.GLeglClientBufferEXTVal,
-                                       captures[4].value.GLbitfieldVal);
+            glBufferStorageExternalEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal, captures[3].value.GLeglClientBufferEXTVal, captures[4].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLBufferStorageMemEXT:
-            glBufferStorageMemEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal,
-                                  gMemoryObjectMap[captures[2].value.GLuintVal],
-                                  captures[3].value.GLuint64Val);
+            glBufferStorageMemEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiptrVal, gMemoryObjectMap[captures[2].value.GLuintVal], captures[3].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLBufferSubData:
-            glBufferSubData(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                            captures[2].value.GLsizeiptrVal, captures[3].value.voidConstPointerVal);
+            glBufferSubData(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCheckFramebufferStatus:
             glCheckFramebufferStatus(captures[0].value.GLenumVal);
@@ -279,28 +215,22 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glClear(captures[0].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLClearBufferfi:
-            glClearBufferfi(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLfloatVal, captures[3].value.GLintVal);
+            glClearBufferfi(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLfloatVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLClearBufferfv:
-            glClearBufferfv(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLfloatConstPointerVal);
+            glClearBufferfv(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLClearBufferiv:
-            glClearBufferiv(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLintConstPointerVal);
+            glClearBufferiv(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLClearBufferuiv:
-            glClearBufferuiv(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                             captures[2].value.GLuintConstPointerVal);
+            glClearBufferuiv(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLClearColor:
-            glClearColor(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                         captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glClearColor(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLClearColorx:
-            glClearColorx(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                          captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
+            glClearColorx(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLClearDepthf:
             glClearDepthf(captures[0].value.GLfloatVal);
@@ -312,24 +242,16 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glClearStencil(captures[0].value.GLintVal);
             break;
         case angle::EntryPoint::GLClearTexImageEXT:
-            glClearTexImageEXT(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal,
-                               captures[2].value.GLenumVal, captures[3].value.GLenumVal,
-                               captures[4].value.voidConstPointerVal);
+            glClearTexImageEXT(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal, captures[4].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLClearTexSubImageEXT:
-            glClearTexSubImageEXT(
-                gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal,
-                captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal,
-                captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal,
-                captures[7].value.GLsizeiVal, captures[8].value.GLenumVal,
-                captures[9].value.GLenumVal, captures[10].value.voidConstPointerVal);
+            glClearTexSubImageEXT(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLenumVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLClientActiveTexture:
             glClientActiveTexture(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLClientWaitSync:
-            glClientWaitSync(gSyncMap2[captures[0].value.GLuintVal],
-                             captures[1].value.GLbitfieldVal, captures[2].value.GLuint64Val);
+            glClientWaitSync(gSyncMap2[captures[0].value.GLuintVal], captures[1].value.GLbitfieldVal, captures[2].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLClipControlEXT:
             glClipControlEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal);
@@ -341,227 +263,106 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glClipPlanex(captures[0].value.GLenumVal, captures[1].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLColor4f:
-            glColor4f(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                      captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glColor4f(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLColor4ub:
-            glColor4ub(captures[0].value.GLubyteVal, captures[1].value.GLubyteVal,
-                       captures[2].value.GLubyteVal, captures[3].value.GLubyteVal);
+            glColor4ub(captures[0].value.GLubyteVal, captures[1].value.GLubyteVal, captures[2].value.GLubyteVal, captures[3].value.GLubyteVal);
             break;
         case angle::EntryPoint::GLColor4x:
-            glColor4x(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                      captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
+            glColor4x(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLColorMask:
-            glColorMask(captures[0].value.GLbooleanVal, captures[1].value.GLbooleanVal,
-                        captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal);
+            glColorMask(captures[0].value.GLbooleanVal, captures[1].value.GLbooleanVal, captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLColorMaski:
-            glColorMaski(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal,
-                         captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal,
-                         captures[4].value.GLbooleanVal);
+            glColorMaski(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal, captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal, captures[4].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLColorMaskiEXT:
-            glColorMaskiEXT(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal,
-                            captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal,
-                            captures[4].value.GLbooleanVal);
+            glColorMaskiEXT(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal, captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal, captures[4].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLColorMaskiOES:
-            glColorMaskiOES(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal,
-                            captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal,
-                            captures[4].value.GLbooleanVal);
+            glColorMaskiOES(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal, captures[2].value.GLbooleanVal, captures[3].value.GLbooleanVal, captures[4].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLColorPointer:
-            glColorPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                           captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
+            glColorPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompileShader:
             glCompileShader(gShaderProgramMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLCompressedCopyTextureCHROMIUM:
-            glCompressedCopyTextureCHROMIUM(gTextureMap[captures[0].value.GLuintVal],
-                                            gTextureMap[captures[1].value.GLuintVal]);
+            glCompressedCopyTextureCHROMIUM(gTextureMap[captures[0].value.GLuintVal], gTextureMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLCompressedTexImage2D:
-            glCompressedTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                   captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                   captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                                   captures[6].value.GLsizeiVal,
-                                   captures[7].value.voidConstPointerVal);
+            glCompressedTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLsizeiVal, captures[7].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexImage2DRobustANGLE:
-            glCompressedTexImage2DRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                captures[8].value.voidConstPointerVal);
+            glCompressedTexImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexImage3D:
-            glCompressedTexImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                   captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                   captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                   captures[6].value.GLintVal, captures[7].value.GLsizeiVal,
-                                   captures[8].value.voidConstPointerVal);
+            glCompressedTexImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLsizeiVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexImage3DOES:
-            glCompressedTexImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                      captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                      captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                      captures[6].value.GLintVal, captures[7].value.GLsizeiVal,
-                                      captures[8].value.voidConstPointerVal);
+            glCompressedTexImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLsizeiVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexImage3DRobustANGLE:
-            glCompressedTexImage3DRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                captures[6].value.GLintVal, captures[7].value.GLsizeiVal,
-                captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
+            glCompressedTexImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLsizeiVal, captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexSubImage2D:
-            glCompressedTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                      captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                      captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                      captures[6].value.GLenumVal, captures[7].value.GLsizeiVal,
-                                      captures[8].value.voidConstPointerVal);
+            glCompressedTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLenumVal, captures[7].value.GLsizeiVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexSubImage2DRobustANGLE:
-            glCompressedTexSubImage2DRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                captures[6].value.GLenumVal, captures[7].value.GLsizeiVal,
-                captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
+            glCompressedTexSubImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLenumVal, captures[7].value.GLsizeiVal, captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexSubImage3D:
-            glCompressedTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                      captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                      captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                                      captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                                      captures[8].value.GLenumVal, captures[9].value.GLsizeiVal,
-                                      captures[10].value.voidConstPointerVal);
+            glCompressedTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLsizeiVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexSubImage3DOES:
-            glCompressedTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                         captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                         captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                                         captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                                         captures[8].value.GLenumVal, captures[9].value.GLsizeiVal,
-                                         captures[10].value.voidConstPointerVal);
+            glCompressedTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLsizeiVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCompressedTexSubImage3DRobustANGLE:
-            glCompressedTexSubImage3DRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal,
-                captures[3].value.GLintVal, captures[4].value.GLintVal,
-                captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal,
-                captures[7].value.GLsizeiVal, captures[8].value.GLenumVal,
-                captures[9].value.GLsizeiVal, captures[10].value.GLsizeiVal,
-                captures[11].value.voidConstPointerVal);
+            glCompressedTexSubImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLsizeiVal, captures[10].value.GLsizeiVal, captures[11].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLCopyBufferSubData:
-            glCopyBufferSubData(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLintptrVal, captures[3].value.GLintptrVal,
-                                captures[4].value.GLsizeiptrVal);
+            glCopyBufferSubData(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintptrVal, captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLCopyImageSubData:
-            glCopyImageSubData(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                               captures[2].value.GLintVal, captures[3].value.GLintVal,
-                               captures[4].value.GLintVal, captures[5].value.GLintVal,
-                               captures[6].value.GLuintVal, captures[7].value.GLenumVal,
-                               captures[8].value.GLintVal, captures[9].value.GLintVal,
-                               captures[10].value.GLintVal, captures[11].value.GLintVal,
-                               captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal,
-                               captures[14].value.GLsizeiVal);
+            glCopyImageSubData(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLuintVal, captures[7].value.GLenumVal, captures[8].value.GLintVal, captures[9].value.GLintVal, captures[10].value.GLintVal, captures[11].value.GLintVal, captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal, captures[14].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopyImageSubDataEXT:
-            glCopyImageSubDataEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                  captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                  captures[6].value.GLuintVal, captures[7].value.GLenumVal,
-                                  captures[8].value.GLintVal, captures[9].value.GLintVal,
-                                  captures[10].value.GLintVal, captures[11].value.GLintVal,
-                                  captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal,
-                                  captures[14].value.GLsizeiVal);
+            glCopyImageSubDataEXT(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLuintVal, captures[7].value.GLenumVal, captures[8].value.GLintVal, captures[9].value.GLintVal, captures[10].value.GLintVal, captures[11].value.GLintVal, captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal, captures[14].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopyImageSubDataOES:
-            glCopyImageSubDataOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                  captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                  captures[6].value.GLuintVal, captures[7].value.GLenumVal,
-                                  captures[8].value.GLintVal, captures[9].value.GLintVal,
-                                  captures[10].value.GLintVal, captures[11].value.GLintVal,
-                                  captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal,
-                                  captures[14].value.GLsizeiVal);
+            glCopyImageSubDataOES(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLuintVal, captures[7].value.GLenumVal, captures[8].value.GLintVal, captures[9].value.GLintVal, captures[10].value.GLintVal, captures[11].value.GLintVal, captures[12].value.GLsizeiVal, captures[13].value.GLsizeiVal, captures[14].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopySubTexture3DANGLE:
-            glCopySubTexture3DANGLE(
-                gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal],
-                captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal,
-                captures[7].value.GLintVal, captures[8].value.GLintVal, captures[9].value.GLintVal,
-                captures[10].value.GLintVal, captures[11].value.GLintVal,
-                captures[12].value.GLintVal, captures[13].value.GLintVal,
-                captures[14].value.GLbooleanVal, captures[15].value.GLbooleanVal,
-                captures[16].value.GLbooleanVal);
+            glCopySubTexture3DANGLE(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLintVal, captures[8].value.GLintVal, captures[9].value.GLintVal, captures[10].value.GLintVal, captures[11].value.GLintVal, captures[12].value.GLintVal, captures[13].value.GLintVal, captures[14].value.GLbooleanVal, captures[15].value.GLbooleanVal, captures[16].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLCopySubTextureCHROMIUM:
-            glCopySubTextureCHROMIUM(
-                gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal],
-                captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal,
-                captures[7].value.GLintVal, captures[8].value.GLintVal, captures[9].value.GLintVal,
-                captures[10].value.GLintVal, captures[11].value.GLbooleanVal,
-                captures[12].value.GLbooleanVal, captures[13].value.GLbooleanVal);
+            glCopySubTextureCHROMIUM(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLintVal, captures[8].value.GLintVal, captures[9].value.GLintVal, captures[10].value.GLintVal, captures[11].value.GLbooleanVal, captures[12].value.GLbooleanVal, captures[13].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLCopyTexImage2D:
-            glCopyTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                             captures[2].value.GLenumVal, captures[3].value.GLintVal,
-                             captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                             captures[6].value.GLsizeiVal, captures[7].value.GLintVal);
+            glCopyTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLintVal);
             break;
         case angle::EntryPoint::GLCopyTexSubImage2D:
-            glCopyTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal);
+            glCopyTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopyTexSubImage3D:
-            glCopyTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                captures[6].value.GLintVal, captures[7].value.GLsizeiVal,
-                                captures[8].value.GLsizeiVal);
+            glCopyTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLsizeiVal, captures[8].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopyTexSubImage3DOES:
-            glCopyTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                   captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                   captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                   captures[6].value.GLintVal, captures[7].value.GLsizeiVal,
-                                   captures[8].value.GLsizeiVal);
+            glCopyTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLintVal, captures[7].value.GLsizeiVal, captures[8].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLCopyTexture3DANGLE:
-            glCopyTexture3DANGLE(gTextureMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLintVal, captures[2].value.GLenumVal,
-                                 gTextureMap[captures[3].value.GLuintVal],
-                                 captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                 captures[6].value.GLenumVal, captures[7].value.GLbooleanVal,
-                                 captures[8].value.GLbooleanVal, captures[9].value.GLbooleanVal);
+            glCopyTexture3DANGLE(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLenumVal, captures[7].value.GLbooleanVal, captures[8].value.GLbooleanVal, captures[9].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLCopyTextureCHROMIUM:
-            glCopyTextureCHROMIUM(gTextureMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLintVal, captures[2].value.GLenumVal,
-                                  gTextureMap[captures[3].value.GLuintVal],
-                                  captures[4].value.GLintVal, captures[5].value.GLintVal,
-                                  captures[6].value.GLenumVal, captures[7].value.GLbooleanVal,
-                                  captures[8].value.GLbooleanVal, captures[9].value.GLbooleanVal);
+            glCopyTextureCHROMIUM(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLintVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLintVal, captures[6].value.GLenumVal, captures[7].value.GLbooleanVal, captures[8].value.GLbooleanVal, captures[9].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLCoverageModulationCHROMIUM:
             glCoverageModulationCHROMIUM(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLCreateMemoryObjectsEXT:
-            glCreateMemoryObjectsEXT(captures[0].value.GLsizeiVal,
-                                     captures[1].value.GLuintPointerVal);
+            glCreateMemoryObjectsEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLCreateProgram:
             glCreateProgram();
@@ -570,13 +371,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glCreateShader(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLCreateShaderProgramv:
-            glCreateShaderProgramv(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                   captures[2].value.GLcharConstPointerPointerVal);
+            glCreateShaderProgramv(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerPointerVal);
             break;
         case angle::EntryPoint::GLCreateShaderProgramvEXT:
-            glCreateShaderProgramvEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                const_cast<const char **>(captures[2].value.GLcharConstPointerPointerVal));
+            glCreateShaderProgramvEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, const_cast<const char **>(captures[2].value.GLcharConstPointerPointerVal));
             break;
         case angle::EntryPoint::GLCullFace:
             glCullFace(captures[0].value.GLenumVal);
@@ -585,36 +383,22 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glCurrentPaletteMatrixOES(captures[0].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDebugMessageCallback:
-            glDebugMessageCallback(captures[0].value.GLDEBUGPROCVal,
-                                   captures[1].value.voidConstPointerVal);
+            glDebugMessageCallback(captures[0].value.GLDEBUGPROCVal, captures[1].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDebugMessageCallbackKHR:
-            glDebugMessageCallbackKHR(captures[0].value.GLDEBUGPROCKHRVal,
-                                      captures[1].value.voidConstPointerVal);
+            glDebugMessageCallbackKHR(captures[0].value.GLDEBUGPROCKHRVal, captures[1].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDebugMessageControl:
-            glDebugMessageControl(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                  captures[4].value.GLuintConstPointerVal,
-                                  captures[5].value.GLbooleanVal);
+            glDebugMessageControl(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLuintConstPointerVal, captures[5].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLDebugMessageControlKHR:
-            glDebugMessageControlKHR(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                     captures[4].value.GLuintConstPointerVal,
-                                     captures[5].value.GLbooleanVal);
+            glDebugMessageControlKHR(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLuintConstPointerVal, captures[5].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLDebugMessageInsert:
-            glDebugMessageInsert(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLuintVal, captures[3].value.GLenumVal,
-                                 captures[4].value.GLsizeiVal,
-                                 captures[5].value.GLcharConstPointerVal);
+            glDebugMessageInsert(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintVal, captures[3].value.GLenumVal, captures[4].value.GLsizeiVal, captures[5].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLDebugMessageInsertKHR:
-            glDebugMessageInsertKHR(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLuintVal, captures[3].value.GLenumVal,
-                                    captures[4].value.GLsizeiVal,
-                                    captures[5].value.GLcharConstPointerVal);
+            glDebugMessageInsertKHR(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintVal, captures[3].value.GLenumVal, captures[4].value.GLsizeiVal, captures[5].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteBuffers:
             glDeleteBuffers(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
@@ -623,53 +407,43 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glDeleteFencesNV(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteFramebuffers:
-            glDeleteFramebuffers(captures[0].value.GLsizeiVal,
-                                 captures[1].value.GLuintConstPointerVal);
+            glDeleteFramebuffers(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteFramebuffersOES:
-            glDeleteFramebuffersOES(captures[0].value.GLsizeiVal,
-                                    captures[1].value.GLuintConstPointerVal);
+            glDeleteFramebuffersOES(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteMemoryObjectsEXT:
-            glDeleteMemoryObjectsEXT(captures[0].value.GLsizeiVal,
-                                     captures[1].value.GLuintConstPointerVal);
+            glDeleteMemoryObjectsEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeletePerfMonitorsAMD:
-            glDeletePerfMonitorsAMD(captures[0].value.GLsizeiVal,
-                                    captures[1].value.GLuintPointerVal);
+            glDeletePerfMonitorsAMD(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLDeleteProgram:
             glDeleteProgram(gShaderProgramMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLDeleteProgramPipelines:
-            glDeleteProgramPipelines(captures[0].value.GLsizeiVal,
-                                     captures[1].value.GLuintConstPointerVal);
+            glDeleteProgramPipelines(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteProgramPipelinesEXT:
-            glDeleteProgramPipelinesEXT(captures[0].value.GLsizeiVal,
-                                        captures[1].value.GLuintConstPointerVal);
+            glDeleteProgramPipelinesEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteQueries:
             glDeleteQueries(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteQueriesEXT:
-            glDeleteQueriesEXT(captures[0].value.GLsizeiVal,
-                               captures[1].value.GLuintConstPointerVal);
+            glDeleteQueriesEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteRenderbuffers:
-            glDeleteRenderbuffers(captures[0].value.GLsizeiVal,
-                                  captures[1].value.GLuintConstPointerVal);
+            glDeleteRenderbuffers(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteRenderbuffersOES:
-            glDeleteRenderbuffersOES(captures[0].value.GLsizeiVal,
-                                     captures[1].value.GLuintConstPointerVal);
+            glDeleteRenderbuffersOES(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteSamplers:
             glDeleteSamplers(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteSemaphoresEXT:
-            glDeleteSemaphoresEXT(captures[0].value.GLsizeiVal,
-                                  captures[1].value.GLuintConstPointerVal);
+            glDeleteSemaphoresEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteShader:
             glDeleteShader(gShaderProgramMap[captures[0].value.GLuintVal]);
@@ -681,16 +455,13 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glDeleteTextures(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteTransformFeedbacks:
-            glDeleteTransformFeedbacks(captures[0].value.GLsizeiVal,
-                                       captures[1].value.GLuintConstPointerVal);
+            glDeleteTransformFeedbacks(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteVertexArrays:
-            glDeleteVertexArrays(captures[0].value.GLsizeiVal,
-                                 captures[1].value.GLuintConstPointerVal);
+            glDeleteVertexArrays(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDeleteVertexArraysOES:
-            glDeleteVertexArraysOES(captures[0].value.GLsizeiVal,
-                                    captures[1].value.GLuintConstPointerVal);
+            glDeleteVertexArraysOES(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLDepthFunc:
             glDepthFunc(captures[0].value.GLenumVal);
@@ -705,8 +476,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glDepthRangex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLDetachShader:
-            glDetachShader(gShaderProgramMap[captures[0].value.GLuintVal],
-                           gShaderProgramMap[captures[1].value.GLuintVal]);
+            glDetachShader(gShaderProgramMap[captures[0].value.GLuintVal], gShaderProgramMap[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLDisable:
             glDisable(captures[0].value.GLenumVal);
@@ -730,47 +500,34 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glDisableiOES(captures[0].value.GLenumVal, captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDiscardFramebufferEXT:
-            glDiscardFramebufferEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                    captures[2].value.GLenumConstPointerVal);
+            glDiscardFramebufferEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLDispatchCompute:
-            glDispatchCompute(captures[0].value.GLuintVal, captures[1].value.GLuintVal,
-                              captures[2].value.GLuintVal);
+            glDispatchCompute(captures[0].value.GLuintVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDispatchComputeIndirect:
             glDispatchComputeIndirect(captures[0].value.GLintptrVal);
             break;
         case angle::EntryPoint::GLDrawArrays:
-            glDrawArrays(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                         captures[2].value.GLsizeiVal);
+            glDrawArrays(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawArraysIndirect:
-            glDrawArraysIndirect(captures[0].value.GLenumVal,
-                                 captures[1].value.voidConstPointerVal);
+            glDrawArraysIndirect(captures[0].value.GLenumVal, captures[1].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawArraysInstanced:
-            glDrawArraysInstanced(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                  captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glDrawArraysInstanced(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawArraysInstancedANGLE:
-            glDrawArraysInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                       captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glDrawArraysInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawArraysInstancedBaseInstanceANGLE:
-            glDrawArraysInstancedBaseInstanceANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLuintVal);
+            glDrawArraysInstancedBaseInstanceANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDrawArraysInstancedBaseInstanceEXT:
-            glDrawArraysInstancedBaseInstanceEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLuintVal);
+            glDrawArraysInstancedBaseInstanceEXT(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDrawArraysInstancedEXT:
-            glDrawArraysInstancedEXT(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                     captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glDrawArraysInstancedEXT(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawBuffers:
             glDrawBuffers(captures[0].value.GLsizeiVal, captures[1].value.GLenumConstPointerVal);
@@ -779,162 +536,94 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glDrawBuffersEXT(captures[0].value.GLsizeiVal, captures[1].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawElements:
-            glDrawElements(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                           captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal);
+            glDrawElements(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawElementsBaseVertex:
-            glDrawElementsBaseVertex(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                     captures[2].value.GLenumVal,
-                                     captures[3].value.voidConstPointerVal,
-                                     captures[4].value.GLintVal);
+            glDrawElementsBaseVertex(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsBaseVertexEXT:
-            glDrawElementsBaseVertexEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                        captures[2].value.GLenumVal,
-                                        captures[3].value.voidConstPointerVal,
-                                        captures[4].value.GLintVal);
+            glDrawElementsBaseVertexEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsBaseVertexOES:
-            glDrawElementsBaseVertexOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                        captures[2].value.GLenumVal,
-                                        captures[3].value.voidConstPointerVal,
-                                        captures[4].value.GLintVal);
+            glDrawElementsBaseVertexOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsIndirect:
-            glDrawElementsIndirect(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                   captures[2].value.voidConstPointerVal);
+            glDrawElementsIndirect(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstanced:
-            glDrawElementsInstanced(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                    captures[2].value.GLenumVal,
-                                    captures[3].value.voidConstPointerVal,
-                                    captures[4].value.GLsizeiVal);
+            glDrawElementsInstanced(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedANGLE:
-            glDrawElementsInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                         captures[2].value.GLenumVal,
-                                         captures[3].value.voidConstPointerVal,
-                                         captures[4].value.GLsizeiVal);
+            glDrawElementsInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseInstanceEXT:
-            glDrawElementsInstancedBaseInstanceEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLuintVal);
+            glDrawElementsInstancedBaseInstanceEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseVertex:
-            glDrawElementsInstancedBaseVertex(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
+            glDrawElementsInstancedBaseVertex(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseVertexBaseInstanceANGLE:
-            glDrawElementsInstancedBaseVertexBaseInstanceANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                captures[6].value.GLuintVal);
+            glDrawElementsInstancedBaseVertexBaseInstanceANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseVertexBaseInstanceEXT:
-            glDrawElementsInstancedBaseVertexBaseInstanceEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                captures[6].value.GLuintVal);
+            glDrawElementsInstancedBaseVertexBaseInstanceEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLuintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseVertexEXT:
-            glDrawElementsInstancedBaseVertexEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
+            glDrawElementsInstancedBaseVertexEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedBaseVertexOES:
-            glDrawElementsInstancedBaseVertexOES(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
+            glDrawElementsInstancedBaseVertexOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawElementsInstancedEXT:
-            glDrawElementsInstancedEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                       captures[2].value.GLenumVal,
-                                       captures[3].value.voidConstPointerVal,
-                                       captures[4].value.GLsizeiVal);
+            glDrawElementsInstancedEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLDrawRangeElements:
-            glDrawRangeElements(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                                captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal);
+            glDrawRangeElements(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawRangeElementsBaseVertex:
-            glDrawRangeElementsBaseVertex(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                          captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                                          captures[4].value.GLenumVal,
-                                          captures[5].value.voidConstPointerVal,
-                                          captures[6].value.GLintVal);
+            glDrawRangeElementsBaseVertex(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal, captures[6].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawRangeElementsBaseVertexEXT:
-            glDrawRangeElementsBaseVertexEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal,
-                captures[6].value.GLintVal);
+            glDrawRangeElementsBaseVertexEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal, captures[6].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawRangeElementsBaseVertexOES:
-            glDrawRangeElementsBaseVertexOES(
-                captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal,
-                captures[6].value.GLintVal);
+            glDrawRangeElementsBaseVertexOES(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.voidConstPointerVal, captures[6].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawTexfOES:
-            glDrawTexfOES(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                          captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                          captures[4].value.GLfloatVal);
+            glDrawTexfOES(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLDrawTexfvOES:
             glDrawTexfvOES(captures[0].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawTexiOES:
-            glDrawTexiOES(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                          captures[2].value.GLintVal, captures[3].value.GLintVal,
-                          captures[4].value.GLintVal);
+            glDrawTexiOES(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLDrawTexivOES:
             glDrawTexivOES(captures[0].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawTexsOES:
-            glDrawTexsOES(captures[0].value.GLshortVal, captures[1].value.GLshortVal,
-                          captures[2].value.GLshortVal, captures[3].value.GLshortVal,
-                          captures[4].value.GLshortVal);
+            glDrawTexsOES(captures[0].value.GLshortVal, captures[1].value.GLshortVal, captures[2].value.GLshortVal, captures[3].value.GLshortVal, captures[4].value.GLshortVal);
             break;
         case angle::EntryPoint::GLDrawTexsvOES:
             glDrawTexsvOES(captures[0].value.GLshortConstPointerVal);
             break;
         case angle::EntryPoint::GLDrawTexxOES:
-            glDrawTexxOES(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                          captures[2].value.GLfixedVal, captures[3].value.GLfixedVal,
-                          captures[4].value.GLfixedVal);
+            glDrawTexxOES(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal, captures[4].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLDrawTexxvOES:
             glDrawTexxvOES(captures[0].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLEGLImageTargetRenderbufferStorageOES:
-            glEGLImageTargetRenderbufferStorageOES(captures[0].value.GLenumVal,
-                                                   gEGLImageMap2[captures[1].value.GLuintVal]);
+            glEGLImageTargetRenderbufferStorageOES(captures[0].value.GLenumVal, gEGLImageMap2[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLEGLImageTargetTexStorageEXT:
-            glEGLImageTargetTexStorageEXT(captures[0].value.GLenumVal,
-                                          gEGLImageMap2[captures[1].value.GLuintVal],
-                                          captures[2].value.GLintConstPointerVal);
+            glEGLImageTargetTexStorageEXT(captures[0].value.GLenumVal, gEGLImageMap2[captures[1].value.GLuintVal], captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLEGLImageTargetTexture2DOES:
-            glEGLImageTargetTexture2DOES(captures[0].value.GLenumVal,
-                                         gEGLImageMap2[captures[1].value.GLuintVal]);
+            glEGLImageTargetTexture2DOES(captures[0].value.GLenumVal, gEGLImageMap2[captures[1].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLEGLImageTargetTextureStorageEXT:
-            glEGLImageTargetTextureStorageEXT(captures[0].value.GLuintVal,
-                                              gEGLImageMap2[captures[1].value.GLuintVal],
-                                              captures[2].value.GLintConstPointerVal);
+            glEGLImageTargetTextureStorageEXT(captures[0].value.GLuintVal, gEGLImageMap2[captures[1].value.GLuintVal], captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLEnable:
             glEnable(captures[0].value.GLenumVal);
@@ -958,8 +647,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glEndPerfMonitorAMD(captures[0].value.GLuintVal);
             break;
         case angle::EntryPoint::GLEndPixelLocalStorageANGLE:
-            glEndPixelLocalStorageANGLE(captures[0].value.GLsizeiVal,
-                                        captures[1].value.GLenumConstPointerVal);
+            glEndPixelLocalStorageANGLE(captures[0].value.GLsizeiVal, captures[1].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLEndQuery:
             glEndQuery(captures[0].value.GLenumVal);
@@ -986,12 +674,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glFlush();
             break;
         case angle::EntryPoint::GLFlushMappedBufferRange:
-            glFlushMappedBufferRange(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                                     captures[2].value.GLsizeiptrVal);
+            glFlushMappedBufferRange(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLFlushMappedBufferRangeEXT:
-            glFlushMappedBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                                        captures[2].value.GLsizeiptrVal);
+            glFlushMappedBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLFogf:
             glFogf(captures[0].value.GLenumVal, captures[1].value.GLfloatVal);
@@ -1009,41 +695,28 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glFramebufferFetchBarrierEXT();
             break;
         case angle::EntryPoint::GLFramebufferFoveationConfigQCOM:
-            glFramebufferFoveationConfigQCOM(
-                gFramebufferMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                captures[4].value.GLuintPointerVal);
+            glFramebufferFoveationConfigQCOM(gFramebufferMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLFramebufferFoveationParametersQCOM:
-            glFramebufferFoveationParametersQCOM(
-                gFramebufferMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLfloatVal,
-                captures[4].value.GLfloatVal, captures[5].value.GLfloatVal,
-                captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
+            glFramebufferFoveationParametersQCOM(gFramebufferMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal, captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLFramebufferMemorylessPixelLocalStorageANGLE:
-            glFramebufferMemorylessPixelLocalStorageANGLE(captures[0].value.GLintVal,
-                                                          captures[1].value.GLenumVal);
+            glFramebufferMemorylessPixelLocalStorageANGLE(captures[0].value.GLintVal, captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLFramebufferParameteri:
-            glFramebufferParameteri(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLintVal);
+            glFramebufferParameteri(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferParameteriMESA:
-            glFramebufferParameteriMESA(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLintVal);
+            glFramebufferParameteriMESA(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferPixelLocalClearValuefvANGLE:
-            glFramebufferPixelLocalClearValuefvANGLE(captures[0].value.GLintVal,
-                                                     captures[1].value.GLfloatConstPointerVal);
+            glFramebufferPixelLocalClearValuefvANGLE(captures[0].value.GLintVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLFramebufferPixelLocalClearValueivANGLE:
-            glFramebufferPixelLocalClearValueivANGLE(captures[0].value.GLintVal,
-                                                     captures[1].value.GLintConstPointerVal);
+            glFramebufferPixelLocalClearValueivANGLE(captures[0].value.GLintVal, captures[1].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLFramebufferPixelLocalClearValueuivANGLE:
-            glFramebufferPixelLocalClearValueuivANGLE(captures[0].value.GLintVal,
-                                                      captures[1].value.GLuintConstPointerVal);
+            glFramebufferPixelLocalClearValueuivANGLE(captures[0].value.GLintVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLFramebufferPixelLocalStorageInterruptANGLE:
             glFramebufferPixelLocalStorageInterruptANGLE();
@@ -1052,82 +725,49 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glFramebufferPixelLocalStorageRestoreANGLE();
             break;
         case angle::EntryPoint::GLFramebufferRenderbuffer:
-            glFramebufferRenderbuffer(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                      captures[2].value.GLenumVal,
-                                      gRenderbufferMap[captures[3].value.GLuintVal]);
+            glFramebufferRenderbuffer(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gRenderbufferMap[captures[3].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLFramebufferRenderbufferOES:
-            glFramebufferRenderbufferOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                         captures[2].value.GLenumVal,
-                                         gRenderbufferMap[captures[3].value.GLuintVal]);
+            glFramebufferRenderbufferOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gRenderbufferMap[captures[3].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLFramebufferTexture:
-            glFramebufferTexture(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                 gTextureMap[captures[2].value.GLuintVal],
-                                 captures[3].value.GLintVal);
+            glFramebufferTexture(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTexture2D:
-            glFramebufferTexture2D(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                   captures[2].value.GLenumVal,
-                                   gTextureMap[captures[3].value.GLuintVal],
-                                   captures[4].value.GLintVal);
+            glFramebufferTexture2D(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTexture2DMultisampleEXT:
-            glFramebufferTexture2DMultisampleEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal],
-                captures[4].value.GLintVal, captures[5].value.GLsizeiVal);
+            glFramebufferTexture2DMultisampleEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLFramebufferTexture2DOES:
-            glFramebufferTexture2DOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                      captures[2].value.GLenumVal,
-                                      gTextureMap[captures[3].value.GLuintVal],
-                                      captures[4].value.GLintVal);
+            glFramebufferTexture2DOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTexture3DOES:
-            glFramebufferTexture3DOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                      captures[2].value.GLenumVal,
-                                      gTextureMap[captures[3].value.GLuintVal],
-                                      captures[4].value.GLintVal, captures[5].value.GLintVal);
+            glFramebufferTexture3DOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, gTextureMap[captures[3].value.GLuintVal], captures[4].value.GLintVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTextureEXT:
-            glFramebufferTextureEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    gTextureMap[captures[2].value.GLuintVal],
-                                    captures[3].value.GLintVal);
+            glFramebufferTextureEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTextureLayer:
-            glFramebufferTextureLayer(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                      gTextureMap[captures[2].value.GLuintVal],
-                                      captures[3].value.GLintVal, captures[4].value.GLintVal);
+            glFramebufferTextureLayer(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTextureMultiviewOVR:
-            glFramebufferTextureMultiviewOVR(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal,
-                captures[4].value.GLintVal, captures[5].value.GLsizeiVal);
+            glFramebufferTextureMultiviewOVR(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLFramebufferTextureOES:
-            glFramebufferTextureOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    gTextureMap[captures[2].value.GLuintVal],
-                                    captures[3].value.GLintVal);
+            glFramebufferTextureOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gTextureMap[captures[2].value.GLuintVal], captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLFramebufferTexturePixelLocalStorageANGLE:
-            glFramebufferTexturePixelLocalStorageANGLE(
-                captures[0].value.GLintVal, gTextureMap[captures[1].value.GLuintVal],
-                captures[2].value.GLintVal, captures[3].value.GLintVal);
+            glFramebufferTexturePixelLocalStorageANGLE(captures[0].value.GLintVal, gTextureMap[captures[1].value.GLuintVal], captures[2].value.GLintVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLFrontFace:
             glFrontFace(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLFrustumf:
-            glFrustumf(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                       captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                       captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
+            glFrustumf(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLFrustumx:
-            glFrustumx(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                       captures[2].value.GLfixedVal, captures[3].value.GLfixedVal,
-                       captures[4].value.GLfixedVal, captures[5].value.GLfixedVal);
+            glFrustumx(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal, captures[4].value.GLfixedVal, captures[5].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLGenBuffers:
             glGenBuffers(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
@@ -1148,8 +788,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGenProgramPipelines(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGenProgramPipelinesEXT:
-            glGenProgramPipelinesEXT(captures[0].value.GLsizeiVal,
-                                     captures[1].value.GLuintPointerVal);
+            glGenProgramPipelinesEXT(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGenQueries:
             glGenQueries(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
@@ -1173,8 +812,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGenTextures(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGenTransformFeedbacks:
-            glGenTransformFeedbacks(captures[0].value.GLsizeiVal,
-                                    captures[1].value.GLuintPointerVal);
+            glGenTransformFeedbacks(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGenVertexArrays:
             glGenVertexArrays(captures[0].value.GLsizeiVal, captures[1].value.GLuintPointerVal);
@@ -1189,102 +827,61 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGenerateMipmapOES(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLGetActiveAttrib:
-            glGetActiveAttrib(gShaderProgramMap[captures[0].value.GLuintVal],
-                              captures[1].value.GLuintVal, captures[2].value.GLsizeiVal,
-                              captures[3].value.GLsizeiPointerVal,
-                              captures[4].value.GLintPointerVal, captures[5].value.GLenumPointerVal,
-                              captures[6].value.GLcharPointerVal);
+            glGetActiveAttrib(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal, captures[5].value.GLenumPointerVal, captures[6].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetActiveUniform:
-            glGetActiveUniform(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal, captures[5].value.GLenumPointerVal,
-                captures[6].value.GLcharPointerVal);
+            glGetActiveUniform(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal, captures[5].value.GLenumPointerVal, captures[6].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetActiveUniformBlockName:
-            glGetActiveUniformBlockName(gShaderProgramMap[captures[0].value.GLuintVal],
-                                        captures[1].value.GLuintVal, captures[2].value.GLsizeiVal,
-                                        captures[3].value.GLsizeiPointerVal,
-                                        captures[4].value.GLcharPointerVal);
+            glGetActiveUniformBlockName(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetActiveUniformBlockiv:
-            glGetActiveUniformBlockiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLuintVal, captures[2].value.GLenumVal,
-                                      captures[3].value.GLintPointerVal);
+            glGetActiveUniformBlockiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetActiveUniformBlockivRobustANGLE:
-            glGetActiveUniformBlockivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
+            glGetActiveUniformBlockivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetActiveUniformsiv:
-            glGetActiveUniformsiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLsizeiVal,
-                                  captures[2].value.GLuintConstPointerVal,
-                                  captures[3].value.GLenumVal, captures[4].value.GLintPointerVal);
+            glGetActiveUniformsiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal, captures[3].value.GLenumVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetAttachedShaders:
-            glGetAttachedShaders(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                                 captures[3].value.GLuintPointerVal);
+            glGetAttachedShaders(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetAttribLocation:
-            glGetAttribLocation(gShaderProgramMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLcharConstPointerVal);
+            glGetAttribLocation(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetBooleani_v:
-            glGetBooleani_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                            captures[2].value.GLbooleanPointerVal);
+            glGetBooleani_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLbooleanPointerVal);
             break;
         case angle::EntryPoint::GLGetBooleani_vRobustANGLE:
-            glGetBooleani_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                       captures[2].value.GLsizeiVal,
-                                       captures[3].value.GLsizeiPointerVal,
-                                       captures[4].value.GLbooleanPointerVal);
+            glGetBooleani_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLbooleanPointerVal);
             break;
         case angle::EntryPoint::GLGetBooleanv:
             glGetBooleanv(captures[0].value.GLenumVal, captures[1].value.GLbooleanPointerVal);
             break;
         case angle::EntryPoint::GLGetBooleanvRobustANGLE:
-            glGetBooleanvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                     captures[2].value.GLsizeiPointerVal,
-                                     captures[3].value.GLbooleanPointerVal);
+            glGetBooleanvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLbooleanPointerVal);
             break;
         case angle::EntryPoint::GLGetBufferParameteri64v:
-            glGetBufferParameteri64v(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLint64PointerVal);
+            glGetBufferParameteri64v(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetBufferParameteri64vRobustANGLE:
-            glGetBufferParameteri64vRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLint64PointerVal);
+            glGetBufferParameteri64vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetBufferParameteriv:
-            glGetBufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                   captures[2].value.GLintPointerVal);
+            glGetBufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetBufferParameterivRobustANGLE:
-            glGetBufferParameterivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetBufferParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetBufferPointerv:
-            glGetBufferPointerv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.voidPointerPointerVal);
+            glGetBufferPointerv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetBufferPointervOES:
-            glGetBufferPointervOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                   captures[2].value.voidPointerPointerVal);
+            glGetBufferPointervOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetBufferPointervRobustANGLE:
-            glGetBufferPointervRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLsizeiPointerVal,
-                                           captures[4].value.voidPointerPointerVal);
+            glGetBufferPointervRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetClipPlanef:
             glGetClipPlanef(captures[0].value.GLenumVal, captures[1].value.GLfloatPointerVal);
@@ -1293,29 +890,19 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGetClipPlanex(captures[0].value.GLenumVal, captures[1].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetCompressedTexImageANGLE:
-            glGetCompressedTexImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                         captures[2].value.voidPointerVal);
+            glGetCompressedTexImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetDebugMessageLog:
-            glGetDebugMessageLog(
-                captures[0].value.GLuintVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumPointerVal, captures[3].value.GLenumPointerVal,
-                captures[4].value.GLuintPointerVal, captures[5].value.GLenumPointerVal,
-                captures[6].value.GLsizeiPointerVal, captures[7].value.GLcharPointerVal);
+            glGetDebugMessageLog(captures[0].value.GLuintVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumPointerVal, captures[3].value.GLenumPointerVal, captures[4].value.GLuintPointerVal, captures[5].value.GLenumPointerVal, captures[6].value.GLsizeiPointerVal, captures[7].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetDebugMessageLogKHR:
-            glGetDebugMessageLogKHR(
-                captures[0].value.GLuintVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumPointerVal, captures[3].value.GLenumPointerVal,
-                captures[4].value.GLuintPointerVal, captures[5].value.GLenumPointerVal,
-                captures[6].value.GLsizeiPointerVal, captures[7].value.GLcharPointerVal);
+            glGetDebugMessageLogKHR(captures[0].value.GLuintVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumPointerVal, captures[3].value.GLenumPointerVal, captures[4].value.GLuintPointerVal, captures[5].value.GLenumPointerVal, captures[6].value.GLsizeiPointerVal, captures[7].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetError:
             glGetError();
             break;
         case angle::EntryPoint::GLGetFenceivNV:
-            glGetFenceivNV(gFenceNVMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                           captures[2].value.GLintPointerVal);
+            glGetFenceivNV(gFenceNVMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFixedv:
             glGetFixedv(captures[0].value.GLenumVal, captures[1].value.GLfixedPointerVal);
@@ -1324,70 +911,43 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGetFloatv(captures[0].value.GLenumVal, captures[1].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetFloatvRobustANGLE:
-            glGetFloatvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                   captures[2].value.GLsizeiPointerVal,
-                                   captures[3].value.GLfloatPointerVal);
+            glGetFloatvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetFragDataIndexEXT:
-            glGetFragDataIndexEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLcharConstPointerVal);
+            glGetFragDataIndexEXT(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetFragDataLocation:
-            glGetFragDataLocation(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLcharConstPointerVal);
+            glGetFragDataLocation(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferAttachmentParameteriv:
-            glGetFramebufferAttachmentParameteriv(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
+            glGetFramebufferAttachmentParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferAttachmentParameterivOES:
-            glGetFramebufferAttachmentParameterivOES(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
+            glGetFramebufferAttachmentParameterivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferAttachmentParameterivRobustANGLE:
-            glGetFramebufferAttachmentParameterivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
+            glGetFramebufferAttachmentParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferParameteriv:
-            glGetFramebufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLintPointerVal);
+            glGetFramebufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferParameterivMESA:
-            glGetFramebufferParameterivMESA(captures[0].value.GLenumVal,
-                                            captures[1].value.GLenumVal,
-                                            captures[2].value.GLintPointerVal);
+            glGetFramebufferParameterivMESA(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferParameterivRobustANGLE:
-            glGetFramebufferParameterivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetFramebufferParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferPixelLocalStorageParameterfvANGLE:
-            glGetFramebufferPixelLocalStorageParameterfvANGLE(captures[0].value.GLintVal,
-                                                              captures[1].value.GLenumVal,
-                                                              captures[2].value.GLfloatPointerVal);
+            glGetFramebufferPixelLocalStorageParameterfvANGLE(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferPixelLocalStorageParameterfvRobustANGLE:
-            glGetFramebufferPixelLocalStorageParameterfvRobustANGLE(
-                captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLfloatPointerVal);
+            glGetFramebufferPixelLocalStorageParameterfvRobustANGLE(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferPixelLocalStorageParameterivANGLE:
-            glGetFramebufferPixelLocalStorageParameterivANGLE(captures[0].value.GLintVal,
-                                                              captures[1].value.GLenumVal,
-                                                              captures[2].value.GLintPointerVal);
+            glGetFramebufferPixelLocalStorageParameterivANGLE(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetFramebufferPixelLocalStorageParameterivRobustANGLE:
-            glGetFramebufferPixelLocalStorageParameterivRobustANGLE(
-                captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetFramebufferPixelLocalStorageParameterivRobustANGLE(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetGraphicsResetStatus:
             glGetGraphicsResetStatus();
@@ -1399,14 +959,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGetGraphicsResetStatusKHR();
             break;
         case angle::EntryPoint::GLGetInteger64i_v:
-            glGetInteger64i_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                              captures[2].value.GLint64PointerVal);
+            glGetInteger64i_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetInteger64i_vRobustANGLE:
-            glGetInteger64i_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                         captures[2].value.GLsizeiVal,
-                                         captures[3].value.GLsizeiPointerVal,
-                                         captures[4].value.GLint64PointerVal);
+            glGetInteger64i_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetInteger64v:
             glGetInteger64v(captures[0].value.GLenumVal, captures[1].value.GLint64PointerVal);
@@ -1415,404 +971,244 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGetInteger64vEXT(captures[0].value.GLenumVal, captures[1].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetInteger64vRobustANGLE:
-            glGetInteger64vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                       captures[2].value.GLsizeiPointerVal,
-                                       captures[3].value.GLint64PointerVal);
+            glGetInteger64vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetIntegeri_v:
-            glGetIntegeri_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                            captures[2].value.GLintPointerVal);
+            glGetIntegeri_v(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetIntegeri_vRobustANGLE:
-            glGetIntegeri_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                       captures[2].value.GLsizeiVal,
-                                       captures[3].value.GLsizeiPointerVal,
-                                       captures[4].value.GLintPointerVal);
+            glGetIntegeri_vRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetIntegerv:
             glGetIntegerv(captures[0].value.GLenumVal, captures[1].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetIntegervRobustANGLE:
-            glGetIntegervRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                     captures[2].value.GLsizeiPointerVal,
-                                     captures[3].value.GLintPointerVal);
+            glGetIntegervRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetInternalformativ:
-            glGetInternalformativ(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                  captures[4].value.GLintPointerVal);
+            glGetInternalformativ(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetInternalformativRobustANGLE:
-            glGetInternalformativRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
+            glGetInternalformativRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetLightfv:
-            glGetLightfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfloatPointerVal);
+            glGetLightfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetLightxv:
-            glGetLightxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfixedPointerVal);
+            glGetLightxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetMaterialfv:
-            glGetMaterialfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLfloatPointerVal);
+            glGetMaterialfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetMaterialxv:
-            glGetMaterialxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLfixedPointerVal);
+            glGetMaterialxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetMemoryObjectParameterivEXT:
-            glGetMemoryObjectParameterivEXT(gMemoryObjectMap[captures[0].value.GLuintVal],
-                                            captures[1].value.GLenumVal,
-                                            captures[2].value.GLintPointerVal);
+            glGetMemoryObjectParameterivEXT(gMemoryObjectMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetMultisamplefv:
-            glGetMultisamplefv(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                               captures[2].value.GLfloatPointerVal);
+            glGetMultisamplefv(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetMultisamplefvANGLE:
-            glGetMultisamplefvANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                    captures[2].value.GLfloatPointerVal);
+            glGetMultisamplefvANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetMultisamplefvRobustANGLE:
-            glGetMultisamplefvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                          captures[2].value.GLsizeiVal,
-                                          captures[3].value.GLsizeiPointerVal,
-                                          captures[4].value.GLfloatPointerVal);
+            glGetMultisamplefvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetObjectLabel:
-            glGetObjectLabel(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                             captures[4].value.GLcharPointerVal);
+            glGetObjectLabel(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetObjectLabelEXT:
-            glGetObjectLabelEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                                captures[4].value.GLcharPointerVal);
+            glGetObjectLabelEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetObjectLabelKHR:
-            glGetObjectLabelKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                                captures[4].value.GLcharPointerVal);
+            glGetObjectLabelKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetObjectPtrLabel:
-            glGetObjectPtrLabel(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal,
-                                captures[2].value.GLsizeiPointerVal,
-                                captures[3].value.GLcharPointerVal);
+            glGetObjectPtrLabel(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetObjectPtrLabelKHR:
-            glGetObjectPtrLabelKHR(
-                captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
+            glGetObjectPtrLabelKHR(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorCounterDataAMD:
-            glGetPerfMonitorCounterDataAMD(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLuintPointerVal,
-                                           captures[4].value.GLintPointerVal);
+            glGetPerfMonitorCounterDataAMD(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLuintPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorCounterInfoAMD:
-            glGetPerfMonitorCounterInfoAMD(captures[0].value.GLuintVal, captures[1].value.GLuintVal,
-                                           captures[2].value.GLenumVal,
-                                           captures[3].value.voidPointerVal);
+            glGetPerfMonitorCounterInfoAMD(captures[0].value.GLuintVal, captures[1].value.GLuintVal, captures[2].value.GLenumVal, captures[3].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorCounterStringAMD:
-            glGetPerfMonitorCounterStringAMD(
-                captures[0].value.GLuintVal, captures[1].value.GLuintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLcharPointerVal);
+            glGetPerfMonitorCounterStringAMD(captures[0].value.GLuintVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorCountersAMD:
-            glGetPerfMonitorCountersAMD(
-                captures[0].value.GLuintVal, captures[1].value.GLintPointerVal,
-                captures[2].value.GLintPointerVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLuintPointerVal);
+            glGetPerfMonitorCountersAMD(captures[0].value.GLuintVal, captures[1].value.GLintPointerVal, captures[2].value.GLintPointerVal, captures[3].value.GLsizeiVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorGroupStringAMD:
-            glGetPerfMonitorGroupStringAMD(
-                captures[0].value.GLuintVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
+            glGetPerfMonitorGroupStringAMD(captures[0].value.GLuintVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetPerfMonitorGroupsAMD:
-            glGetPerfMonitorGroupsAMD(captures[0].value.GLintPointerVal,
-                                      captures[1].value.GLsizeiVal,
-                                      captures[2].value.GLuintPointerVal);
+            glGetPerfMonitorGroupsAMD(captures[0].value.GLintPointerVal, captures[1].value.GLsizeiVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetPointerv:
             glGetPointerv(captures[0].value.GLenumVal, captures[1].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetPointervANGLE:
-            glGetPointervANGLE(captures[0].value.GLenumVal,
-                               captures[1].value.voidPointerPointerVal);
+            glGetPointervANGLE(captures[0].value.GLenumVal, captures[1].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetPointervKHR:
             glGetPointervKHR(captures[0].value.GLenumVal, captures[1].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetPointervRobustANGLERobustANGLE:
-            glGetPointervRobustANGLERobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.voidPointerPointerVal);
+            glGetPointervRobustANGLERobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramBinary:
-            glGetProgramBinary(gShaderProgramMap[captures[0].value.GLuintVal],
-                               captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                               captures[3].value.GLenumPointerVal,
-                               captures[4].value.voidPointerVal);
+            glGetProgramBinary(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLenumPointerVal, captures[4].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramBinaryOES:
-            glGetProgramBinaryOES(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                                  captures[3].value.GLenumPointerVal,
-                                  captures[4].value.voidPointerVal);
+            glGetProgramBinaryOES(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLenumPointerVal, captures[4].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramInfoLog:
-            glGetProgramInfoLog(gShaderProgramMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                                captures[3].value.GLcharPointerVal);
+            glGetProgramInfoLog(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramInterfaceiv:
-            glGetProgramInterfaceiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                    captures[1].value.GLenumVal, captures[2].value.GLenumVal,
-                                    captures[3].value.GLintPointerVal);
+            glGetProgramInterfaceiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramInterfaceivRobustANGLE:
-            glGetProgramInterfaceivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
+            glGetProgramInterfaceivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramPipelineInfoLog:
-            glGetProgramPipelineInfoLog(
-                gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
+            glGetProgramPipelineInfoLog(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramPipelineInfoLogEXT:
-            glGetProgramPipelineInfoLogEXT(
-                gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
+            glGetProgramPipelineInfoLogEXT(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramPipelineiv:
-            glGetProgramPipelineiv(gProgramPipelineMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
+            glGetProgramPipelineiv(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramPipelineivEXT:
-            glGetProgramPipelineivEXT(gProgramPipelineMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal,
-                                      captures[2].value.GLintPointerVal);
+            glGetProgramPipelineivEXT(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramResourceIndex:
-            glGetProgramResourceIndex(gShaderProgramMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal,
-                                      captures[2].value.GLcharConstPointerVal);
+            glGetProgramResourceIndex(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramResourceLocation:
-            glGetProgramResourceLocation(gShaderProgramMap[captures[0].value.GLuintVal],
-                                         captures[1].value.GLenumVal,
-                                         captures[2].value.GLcharConstPointerVal);
+            glGetProgramResourceLocation(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramResourceLocationIndexEXT:
-            glGetProgramResourceLocationIndexEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                                 captures[1].value.GLenumVal,
-                                                 captures[2].value.GLcharConstPointerVal);
+            glGetProgramResourceLocationIndexEXT(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramResourceName:
-            glGetProgramResourceName(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLcharPointerVal);
+            glGetProgramResourceName(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramResourceiv:
-            glGetProgramResourceiv(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLuintVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLenumConstPointerVal, captures[5].value.GLsizeiVal,
-                captures[6].value.GLsizeiPointerVal, captures[7].value.GLintPointerVal);
+            glGetProgramResourceiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumConstPointerVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiPointerVal, captures[7].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramiv:
-            glGetProgramiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                           captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
+            glGetProgramiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetProgramivRobustANGLE:
-            glGetProgramivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal, captures[2].value.GLsizeiVal,
-                                      captures[3].value.GLsizeiPointerVal,
-                                      captures[4].value.GLintPointerVal);
+            glGetProgramivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjecti64vEXT:
-            glGetQueryObjecti64vEXT(gQueryMap[captures[0].value.GLuintVal],
-                                    captures[1].value.GLenumVal,
-                                    captures[2].value.GLint64PointerVal);
+            glGetQueryObjecti64vEXT(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjecti64vRobustANGLE:
-            glGetQueryObjecti64vRobustANGLE(
-                gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLint64PointerVal);
+            glGetQueryObjecti64vRobustANGLE(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLint64PointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectivEXT:
-            glGetQueryObjectivEXT(gQueryMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
+            glGetQueryObjectivEXT(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectivRobustANGLE:
-            glGetQueryObjectivRobustANGLE(gQueryMap[captures[0].value.GLuintVal],
-                                          captures[1].value.GLenumVal, captures[2].value.GLsizeiVal,
-                                          captures[3].value.GLsizeiPointerVal,
-                                          captures[4].value.GLintPointerVal);
+            glGetQueryObjectivRobustANGLE(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectui64vEXT:
-            glGetQueryObjectui64vEXT(gQueryMap[captures[0].value.GLuintVal],
-                                     captures[1].value.GLenumVal,
-                                     captures[2].value.GLuint64PointerVal);
+            glGetQueryObjectui64vEXT(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuint64PointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectui64vRobustANGLE:
-            glGetQueryObjectui64vRobustANGLE(
-                gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuint64PointerVal);
+            glGetQueryObjectui64vRobustANGLE(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuint64PointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectuiv:
-            glGetQueryObjectuiv(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                                captures[2].value.GLuintPointerVal);
+            glGetQueryObjectuiv(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectuivEXT:
-            glGetQueryObjectuivEXT(gQueryMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
+            glGetQueryObjectuivEXT(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryObjectuivRobustANGLE:
-            glGetQueryObjectuivRobustANGLE(
-                gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetQueryObjectuivRobustANGLE(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryiv:
-            glGetQueryiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLintPointerVal);
+            glGetQueryiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryivEXT:
-            glGetQueryivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLintPointerVal);
+            glGetQueryivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetQueryivRobustANGLE:
-            glGetQueryivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.GLsizeiPointerVal,
-                                    captures[4].value.GLintPointerVal);
+            glGetQueryivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetRenderbufferImageANGLE:
-            glGetRenderbufferImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLenumVal,
-                                        captures[3].value.voidPointerVal);
+            glGetRenderbufferImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetRenderbufferParameteriv:
-            glGetRenderbufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                         captures[2].value.GLintPointerVal);
+            glGetRenderbufferParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetRenderbufferParameterivOES:
-            glGetRenderbufferParameterivOES(captures[0].value.GLenumVal,
-                                            captures[1].value.GLenumVal,
-                                            captures[2].value.GLintPointerVal);
+            glGetRenderbufferParameterivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetRenderbufferParameterivRobustANGLE:
-            glGetRenderbufferParameterivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetRenderbufferParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIiv:
-            glGetSamplerParameterIiv(gSamplerMap[captures[0].value.GLuintVal],
-                                     captures[1].value.GLenumVal,
-                                     captures[2].value.GLintPointerVal);
+            glGetSamplerParameterIiv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIivEXT:
-            glGetSamplerParameterIivEXT(gSamplerMap[captures[0].value.GLuintVal],
-                                        captures[1].value.GLenumVal,
-                                        captures[2].value.GLintPointerVal);
+            glGetSamplerParameterIivEXT(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIivOES:
-            glGetSamplerParameterIivOES(gSamplerMap[captures[0].value.GLuintVal],
-                                        captures[1].value.GLenumVal,
-                                        captures[2].value.GLintPointerVal);
+            glGetSamplerParameterIivOES(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIivRobustANGLE:
-            glGetSamplerParameterIivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetSamplerParameterIivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIuiv:
-            glGetSamplerParameterIuiv(gSamplerMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal,
-                                      captures[2].value.GLuintPointerVal);
+            glGetSamplerParameterIuiv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIuivEXT:
-            glGetSamplerParameterIuivEXT(gSamplerMap[captures[0].value.GLuintVal],
-                                         captures[1].value.GLenumVal,
-                                         captures[2].value.GLuintPointerVal);
+            glGetSamplerParameterIuivEXT(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIuivOES:
-            glGetSamplerParameterIuivOES(gSamplerMap[captures[0].value.GLuintVal],
-                                         captures[1].value.GLenumVal,
-                                         captures[2].value.GLuintPointerVal);
+            glGetSamplerParameterIuivOES(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterIuivRobustANGLE:
-            glGetSamplerParameterIuivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetSamplerParameterIuivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterfv:
-            glGetSamplerParameterfv(gSamplerMap[captures[0].value.GLuintVal],
-                                    captures[1].value.GLenumVal,
-                                    captures[2].value.GLfloatPointerVal);
+            glGetSamplerParameterfv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterfvRobustANGLE:
-            glGetSamplerParameterfvRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLfloatPointerVal);
+            glGetSamplerParameterfvRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameteriv:
-            glGetSamplerParameteriv(gSamplerMap[captures[0].value.GLuintVal],
-                                    captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
+            glGetSamplerParameteriv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSamplerParameterivRobustANGLE:
-            glGetSamplerParameterivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetSamplerParameterivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetSemaphoreParameterui64vEXT:
-            glGetSemaphoreParameterui64vEXT(gSemaphoreMap[captures[0].value.GLuintVal],
-                                            captures[1].value.GLenumVal,
-                                            captures[2].value.GLuint64PointerVal);
+            glGetSemaphoreParameterui64vEXT(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuint64PointerVal);
             break;
         case angle::EntryPoint::GLGetShaderInfoLog:
-            glGetShaderInfoLog(gShaderProgramMap[captures[0].value.GLuintVal],
-                               captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                               captures[3].value.GLcharPointerVal);
+            glGetShaderInfoLog(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetShaderPrecisionFormat:
-            glGetShaderPrecisionFormat(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                       captures[2].value.GLintPointerVal,
-                                       captures[3].value.GLintPointerVal);
+            glGetShaderPrecisionFormat(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetShaderSource:
-            glGetShaderSource(gShaderProgramMap[captures[0].value.GLuintVal],
-                              captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal,
-                              captures[3].value.GLcharPointerVal);
+            glGetShaderSource(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetShaderiv:
-            glGetShaderiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                          captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
+            glGetShaderiv(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetShaderivRobustANGLE:
-            glGetShaderivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal],
-                                     captures[1].value.GLenumVal, captures[2].value.GLsizeiVal,
-                                     captures[3].value.GLsizeiPointerVal,
-                                     captures[4].value.GLintPointerVal);
+            glGetShaderivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetString:
             glGetString(captures[0].value.GLenumVal);
@@ -1821,345 +1217,211 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glGetStringi(captures[0].value.GLenumVal, captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLGetSynciv:
-            glGetSynciv(gSyncMap2[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                        captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                        captures[4].value.GLintPointerVal);
+            glGetSynciv(gSyncMap2[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexEnvfv:
-            glGetTexEnvfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLfloatPointerVal);
+            glGetTexEnvfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexEnviv:
-            glGetTexEnviv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLintPointerVal);
+            glGetTexEnviv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexEnvxv:
-            glGetTexEnvxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLfixedPointerVal);
+            glGetTexEnvxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetTexGenfvOES:
-            glGetTexGenfvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLfloatPointerVal);
+            glGetTexGenfvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexGenivOES:
-            glGetTexGenivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLintPointerVal);
+            glGetTexGenivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexGenxvOES:
-            glGetTexGenxvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLfixedPointerVal);
+            glGetTexGenxvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetTexImageANGLE:
-            glGetTexImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                               captures[2].value.GLenumVal, captures[3].value.GLenumVal,
-                               captures[4].value.voidPointerVal);
+            glGetTexImageANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal, captures[4].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameterfv:
-            glGetTexLevelParameterfv(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                     captures[2].value.GLenumVal,
-                                     captures[3].value.GLfloatPointerVal);
+            glGetTexLevelParameterfv(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameterfvANGLE:
-            glGetTexLevelParameterfvANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                          captures[2].value.GLenumVal,
-                                          captures[3].value.GLfloatPointerVal);
+            glGetTexLevelParameterfvANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameterfvRobustANGLE:
-            glGetTexLevelParameterfvRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLfloatPointerVal);
+            glGetTexLevelParameterfvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameteriv:
-            glGetTexLevelParameteriv(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                     captures[2].value.GLenumVal,
-                                     captures[3].value.GLintPointerVal);
+            glGetTexLevelParameteriv(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameterivANGLE:
-            glGetTexLevelParameterivANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                          captures[2].value.GLenumVal,
-                                          captures[3].value.GLintPointerVal);
+            glGetTexLevelParameterivANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexLevelParameterivRobustANGLE:
-            glGetTexLevelParameterivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
+            glGetTexLevelParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIiv:
-            glGetTexParameterIiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLintPointerVal);
+            glGetTexParameterIiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIivEXT:
-            glGetTexParameterIivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLintPointerVal);
+            glGetTexParameterIivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIivOES:
-            glGetTexParameterIivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLintPointerVal);
+            glGetTexParameterIivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIivRobustANGLE:
-            glGetTexParameterIivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetTexParameterIivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIuiv:
-            glGetTexParameterIuiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLuintPointerVal);
+            glGetTexParameterIuiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIuivEXT:
-            glGetTexParameterIuivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLuintPointerVal);
+            glGetTexParameterIuivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIuivOES:
-            glGetTexParameterIuivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLuintPointerVal);
+            glGetTexParameterIuivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterIuivRobustANGLE:
-            glGetTexParameterIuivRobustANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetTexParameterIuivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterfv:
-            glGetTexParameterfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLfloatPointerVal);
+            glGetTexParameterfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterfvRobustANGLE:
-            glGetTexParameterfvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLsizeiPointerVal,
-                                           captures[4].value.GLfloatPointerVal);
+            glGetTexParameterfvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameteriv:
-            glGetTexParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLintPointerVal);
+            glGetTexParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterivRobustANGLE:
-            glGetTexParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLsizeiPointerVal,
-                                           captures[4].value.GLintPointerVal);
+            glGetTexParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetTexParameterxv:
-            glGetTexParameterxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLfixedPointerVal);
+            glGetTexParameterxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedPointerVal);
             break;
         case angle::EntryPoint::GLGetTransformFeedbackVarying:
-            glGetTransformFeedbackVarying(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLsizeiPointerVal, captures[5].value.GLenumPointerVal,
-                captures[6].value.GLcharPointerVal);
+            glGetTransformFeedbackVarying(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLsizeiPointerVal, captures[5].value.GLenumPointerVal, captures[6].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetTranslatedShaderSourceANGLE:
-            glGetTranslatedShaderSourceANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal,
-                captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
+            glGetTranslatedShaderSourceANGLE(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLsizeiPointerVal, captures[3].value.GLcharPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformBlockIndex:
-            glGetUniformBlockIndex(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLcharConstPointerVal);
+            glGetUniformBlockIndex(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformIndices:
-            glGetUniformIndices(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal,
-                captures[2].value.GLcharConstPointerPointerVal, captures[3].value.GLuintPointerVal);
+            glGetUniformIndices(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerPointerVal, captures[3].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformLocation:
-            glGetUniformLocation(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLcharConstPointerVal);
+            glGetUniformLocation(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformfv:
-            glGetUniformfv(gShaderProgramMap[captures[0].value.GLuintVal],
-                           gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                           captures[2].value.GLfloatPointerVal);
+            glGetUniformfv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformfvRobustANGLE:
-            glGetUniformfvRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLfloatPointerVal);
+            glGetUniformfvRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformiv:
-            glGetUniformiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                           gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                           captures[2].value.GLintPointerVal);
+            glGetUniformiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformivRobustANGLE:
-            glGetUniformivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetUniformivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformuiv:
-            glGetUniformuiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                            gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                            captures[2].value.GLuintPointerVal);
+            glGetUniformuiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetUniformuivRobustANGLE:
-            glGetUniformuivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetUniformuivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetUnsignedBytei_vEXT:
-            glGetUnsignedBytei_vEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                    captures[2].value.GLubytePointerVal);
+            glGetUnsignedBytei_vEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLubytePointerVal);
             break;
         case angle::EntryPoint::GLGetUnsignedBytevEXT:
             glGetUnsignedBytevEXT(captures[0].value.GLenumVal, captures[1].value.GLubytePointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribIiv:
-            glGetVertexAttribIiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLintPointerVal);
+            glGetVertexAttribIiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribIivRobustANGLE:
-            glGetVertexAttribIivRobustANGLE(
-                captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetVertexAttribIivRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribIuiv:
-            glGetVertexAttribIuiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLuintPointerVal);
+            glGetVertexAttribIuiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribIuivRobustANGLE:
-            glGetVertexAttribIuivRobustANGLE(
-                captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetVertexAttribIuivRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribPointerv:
-            glGetVertexAttribPointerv(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                      captures[2].value.voidPointerPointerVal);
+            glGetVertexAttribPointerv(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribPointervRobustANGLE:
-            glGetVertexAttribPointervRobustANGLE(
-                captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.voidPointerPointerVal);
+            glGetVertexAttribPointervRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.voidPointerPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribfv:
-            glGetVertexAttribfv(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLfloatPointerVal);
+            glGetVertexAttribfv(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribfvRobustANGLE:
-            glGetVertexAttribfvRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLsizeiPointerVal,
-                                           captures[4].value.GLfloatPointerVal);
+            glGetVertexAttribfvRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribiv:
-            glGetVertexAttribiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLintPointerVal);
+            glGetVertexAttribiv(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetVertexAttribivRobustANGLE:
-            glGetVertexAttribivRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal,
-                                           captures[2].value.GLsizeiVal,
-                                           captures[3].value.GLsizeiPointerVal,
-                                           captures[4].value.GLintPointerVal);
+            glGetVertexAttribivRobustANGLE(captures[0].value.GLuintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformfv:
-            glGetnUniformfv(gShaderProgramMap[captures[0].value.GLuintVal],
-                            gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                            captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
+            glGetnUniformfv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformfvEXT:
-            glGetnUniformfvEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
+            glGetnUniformfvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformfvKHR:
-            glGetnUniformfvKHR(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
+            glGetnUniformfvKHR(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformfvRobustANGLE:
-            glGetnUniformfvRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLfloatPointerVal);
+            glGetnUniformfvRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLfloatPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformiv:
-            glGetnUniformiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                            gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                            captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
+            glGetnUniformiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformivEXT:
-            glGetnUniformivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
+            glGetnUniformivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformivKHR:
-            glGetnUniformivKHR(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
+            glGetnUniformivKHR(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformivRobustANGLE:
-            glGetnUniformivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLintPointerVal);
+            glGetnUniformivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformuiv:
-            glGetnUniformuiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                             gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                             captures[2].value.GLsizeiVal, captures[3].value.GLuintPointerVal);
+            glGetnUniformuiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformuivKHR:
-            glGetnUniformuivKHR(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal, captures[3].value.GLuintPointerVal);
+            glGetnUniformuivKHR(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLGetnUniformuivRobustANGLE:
-            glGetnUniformuivRobustANGLE(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal,
-                captures[4].value.GLuintPointerVal);
+            glGetnUniformuivRobustANGLE(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLsizeiPointerVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLHint:
             glHint(captures[0].value.GLenumVal, captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLImportMemoryFdEXT:
-            glImportMemoryFdEXT(gMemoryObjectMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLuint64Val, captures[2].value.GLenumVal,
-                                captures[3].value.GLintVal);
+            glImportMemoryFdEXT(gMemoryObjectMap[captures[0].value.GLuintVal], captures[1].value.GLuint64Val, captures[2].value.GLenumVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLImportMemoryZirconHandleANGLE:
-            glImportMemoryZirconHandleANGLE(
-                gMemoryObjectMap[captures[0].value.GLuintVal], captures[1].value.GLuint64Val,
-                captures[2].value.GLenumVal, captures[3].value.GLuintVal);
+            glImportMemoryZirconHandleANGLE(gMemoryObjectMap[captures[0].value.GLuintVal], captures[1].value.GLuint64Val, captures[2].value.GLenumVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLImportSemaphoreFdEXT:
-            glImportSemaphoreFdEXT(gSemaphoreMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLenumVal, captures[2].value.GLintVal);
+            glImportSemaphoreFdEXT(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLImportSemaphoreZirconHandleANGLE:
-            glImportSemaphoreZirconHandleANGLE(gSemaphoreMap[captures[0].value.GLuintVal],
-                                               captures[1].value.GLenumVal,
-                                               captures[2].value.GLuintVal);
+            glImportSemaphoreZirconHandleANGLE(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLInsertEventMarkerEXT:
-            glInsertEventMarkerEXT(captures[0].value.GLsizeiVal,
-                                   captures[1].value.GLcharConstPointerVal);
+            glInsertEventMarkerEXT(captures[0].value.GLsizeiVal, captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLInvalidateFramebuffer:
-            glInvalidateFramebuffer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                    captures[2].value.GLenumConstPointerVal);
+            glInvalidateFramebuffer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLInvalidateSubFramebuffer:
-            glInvalidateSubFramebuffer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                       captures[2].value.GLenumConstPointerVal,
-                                       captures[3].value.GLintVal, captures[4].value.GLintVal,
-                                       captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal);
+            glInvalidateSubFramebuffer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumConstPointerVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLInvalidateTextureANGLE:
             glInvalidateTextureANGLE(captures[0].value.GLenumVal);
@@ -2237,8 +1499,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glIsVertexArrayOES(gVertexArrayMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLLabelObjectEXT:
-            glLabelObjectEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
+            glLabelObjectEXT(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLLightModelf:
             glLightModelf(captures[0].value.GLenumVal, captures[1].value.GLfloatVal);
@@ -2253,20 +1514,16 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glLightModelxv(captures[0].value.GLenumVal, captures[1].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLLightf:
-            glLightf(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                     captures[2].value.GLfloatVal);
+            glLightf(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLLightfv:
-            glLightfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                      captures[2].value.GLfloatConstPointerVal);
+            glLightfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLLightx:
-            glLightx(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                     captures[2].value.GLfixedVal);
+            glLightx(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLLightxv:
-            glLightxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                      captures[2].value.GLfixedConstPointerVal);
+            glLightxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLLineWidth:
             glLineWidth(captures[0].value.GLfloatVal);
@@ -2302,33 +1559,25 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glMapBufferOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLMapBufferRange:
-            glMapBufferRange(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                             captures[2].value.GLsizeiptrVal, captures[3].value.GLbitfieldVal);
+            glMapBufferRange(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal, captures[3].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLMapBufferRangeEXT:
-            glMapBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal,
-                                captures[2].value.GLsizeiptrVal, captures[3].value.GLbitfieldVal);
+            glMapBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal, captures[3].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLMaterialf:
-            glMaterialf(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                        captures[2].value.GLfloatVal);
+            glMaterialf(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLMaterialfv:
-            glMaterialfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfloatConstPointerVal);
+            glMaterialfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLMaterialx:
-            glMaterialx(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                        captures[2].value.GLfixedVal);
+            glMaterialx(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLMaterialxv:
-            glMaterialxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfixedConstPointerVal);
+            glMaterialxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLMatrixIndexPointerOES:
-            glMatrixIndexPointerOES(captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.voidConstPointerVal);
+            glMatrixIndexPointerOES(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLMatrixMode:
             glMatrixMode(captures[0].value.GLenumVal);
@@ -2343,9 +1592,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glMemoryBarrierByRegion(captures[0].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLMemoryObjectParameterivEXT:
-            glMemoryObjectParameterivEXT(gMemoryObjectMap[captures[0].value.GLuintVal],
-                                         captures[1].value.GLenumVal,
-                                         captures[2].value.GLintConstPointerVal);
+            glMemoryObjectParameterivEXT(gMemoryObjectMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLMinSampleShading:
             glMinSampleShading(captures[0].value.GLfloatVal);
@@ -2360,111 +1607,67 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glMultMatrixx(captures[0].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLMultiDrawArraysANGLE:
-            glMultiDrawArraysANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal,
-                captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiVal);
+            glMultiDrawArraysANGLE(captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal, captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawArraysIndirectEXT:
-            glMultiDrawArraysIndirectEXT(
-                captures[0].value.GLenumVal, captures[1].value.voidConstPointerVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glMultiDrawArraysIndirectEXT(captures[0].value.GLenumVal, captures[1].value.voidConstPointerVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawArraysInstancedANGLE:
-            glMultiDrawArraysInstancedANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal,
-                captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiConstPointerVal,
-                captures[4].value.GLsizeiVal);
+            glMultiDrawArraysInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal, captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiConstPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawArraysInstancedBaseInstanceANGLE:
-            glMultiDrawArraysInstancedBaseInstanceANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal,
-                captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiConstPointerVal,
-                captures[4].value.GLuintConstPointerVal, captures[5].value.GLsizeiVal);
+            glMultiDrawArraysInstancedBaseInstanceANGLE(captures[0].value.GLenumVal, captures[1].value.GLintConstPointerVal, captures[2].value.GLsizeiConstPointerVal, captures[3].value.GLsizeiConstPointerVal, captures[4].value.GLuintConstPointerVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawElementsANGLE:
-            glMultiDrawElementsANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal,
-                captures[4].value.GLsizeiVal);
+            glMultiDrawElementsANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawElementsBaseVertexEXT:
-            glMultiDrawElementsBaseVertexEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLintConstPointerVal);
+            glMultiDrawElementsBaseVertexEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal, captures[4].value.GLsizeiVal, captures[5].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLMultiDrawElementsIndirectEXT:
-            glMultiDrawElementsIndirectEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                           captures[2].value.voidConstPointerVal,
-                                           captures[3].value.GLsizeiVal,
-                                           captures[4].value.GLsizeiVal);
+            glMultiDrawElementsIndirectEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawElementsInstancedANGLE:
-            glMultiDrawElementsInstancedANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal,
-                captures[4].value.GLsizeiConstPointerVal, captures[5].value.GLsizeiVal);
+            glMultiDrawElementsInstancedANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal, captures[4].value.GLsizeiConstPointerVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE:
-            glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal,
-                captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal,
-                captures[4].value.GLsizeiConstPointerVal, captures[5].value.GLintConstPointerVal,
-                captures[6].value.GLuintConstPointerVal, captures[7].value.GLsizeiVal);
+            glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiConstPointerVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerPointerVal, captures[4].value.GLsizeiConstPointerVal, captures[5].value.GLintConstPointerVal, captures[6].value.GLuintConstPointerVal, captures[7].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLMultiTexCoord4f:
-            glMultiTexCoord4f(captures[0].value.GLenumVal, captures[1].value.GLfloatVal,
-                              captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                              captures[4].value.GLfloatVal);
+            glMultiTexCoord4f(captures[0].value.GLenumVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLMultiTexCoord4x:
-            glMultiTexCoord4x(captures[0].value.GLenumVal, captures[1].value.GLfixedVal,
-                              captures[2].value.GLfixedVal, captures[3].value.GLfixedVal,
-                              captures[4].value.GLfixedVal);
+            glMultiTexCoord4x(captures[0].value.GLenumVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal, captures[4].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLNamedBufferStorageExternalEXT:
-            glNamedBufferStorageExternalEXT(
-                captures[0].value.GLuintVal, captures[1].value.GLintptrVal,
-                captures[2].value.GLsizeiptrVal, captures[3].value.GLeglClientBufferEXTVal,
-                captures[4].value.GLbitfieldVal);
+            glNamedBufferStorageExternalEXT(captures[0].value.GLuintVal, captures[1].value.GLintptrVal, captures[2].value.GLsizeiptrVal, captures[3].value.GLeglClientBufferEXTVal, captures[4].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLNormal3f:
-            glNormal3f(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                       captures[2].value.GLfloatVal);
+            glNormal3f(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLNormal3x:
-            glNormal3x(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                       captures[2].value.GLfixedVal);
+            glNormal3x(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLNormalPointer:
-            glNormalPointer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                            captures[2].value.voidConstPointerVal);
+            glNormalPointer(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLObjectLabel:
-            glObjectLabel(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                          captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
+            glObjectLabel(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLObjectLabelKHR:
-            glObjectLabelKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
+            glObjectLabelKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLObjectPtrLabel:
-            glObjectPtrLabel(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal,
-                             captures[2].value.GLcharConstPointerVal);
+            glObjectPtrLabel(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLObjectPtrLabelKHR:
-            glObjectPtrLabelKHR(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal,
-                                captures[2].value.GLcharConstPointerVal);
+            glObjectPtrLabelKHR(captures[0].value.voidConstPointerVal, captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLOrthof:
-            glOrthof(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                     captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                     captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
+            glOrthof(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLOrthox:
-            glOrthox(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                     captures[2].value.GLfixedVal, captures[3].value.GLfixedVal,
-                     captures[4].value.GLfixedVal, captures[5].value.GLfixedVal);
+            glOrthox(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal, captures[4].value.GLfixedVal, captures[5].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLPatchParameteri:
             glPatchParameteri(captures[0].value.GLenumVal, captures[1].value.GLintVal);
@@ -2488,22 +1691,19 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glPointParameterf(captures[0].value.GLenumVal, captures[1].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPointParameterfv:
-            glPointParameterfv(captures[0].value.GLenumVal,
-                               captures[1].value.GLfloatConstPointerVal);
+            glPointParameterfv(captures[0].value.GLenumVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLPointParameterx:
             glPointParameterx(captures[0].value.GLenumVal, captures[1].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLPointParameterxv:
-            glPointParameterxv(captures[0].value.GLenumVal,
-                               captures[1].value.GLfixedConstPointerVal);
+            glPointParameterxv(captures[0].value.GLenumVal, captures[1].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLPointSize:
             glPointSize(captures[0].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPointSizePointerOES:
-            glPointSizePointerOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                  captures[2].value.voidConstPointerVal);
+            glPointSizePointerOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLPointSizex:
             glPointSizex(captures[0].value.GLfixedVal);
@@ -2518,8 +1718,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glPolygonOffset(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPolygonOffsetClampEXT:
-            glPolygonOffsetClampEXT(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                                    captures[2].value.GLfloatVal);
+            glPolygonOffsetClampEXT(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPolygonOffsetx:
             glPolygonOffsetx(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal);
@@ -2537,458 +1736,235 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glPopMatrix();
             break;
         case angle::EntryPoint::GLPrimitiveBoundingBox:
-            glPrimitiveBoundingBox(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                                   captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                                   captures[4].value.GLfloatVal, captures[5].value.GLfloatVal,
-                                   captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
+            glPrimitiveBoundingBox(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal, captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPrimitiveBoundingBoxEXT:
-            glPrimitiveBoundingBoxEXT(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                                      captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                                      captures[4].value.GLfloatVal, captures[5].value.GLfloatVal,
-                                      captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
+            glPrimitiveBoundingBoxEXT(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal, captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLPrimitiveBoundingBoxOES:
-            glPrimitiveBoundingBoxOES(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                                      captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                                      captures[4].value.GLfloatVal, captures[5].value.GLfloatVal,
-                                      captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
+            glPrimitiveBoundingBoxOES(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal, captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramBinary:
-            glProgramBinary(gShaderProgramMap[captures[0].value.GLuintVal],
-                            captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal,
-                            captures[3].value.GLsizeiVal);
+            glProgramBinary(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLProgramBinaryOES:
-            glProgramBinaryOES(gShaderProgramMap[captures[0].value.GLuintVal],
-                               captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal,
-                               captures[3].value.GLintVal);
+            glProgramBinaryOES(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.voidConstPointerVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramParameteri:
-            glProgramParameteri(gShaderProgramMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLenumVal, captures[2].value.GLintVal);
+            glProgramParameteri(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramParameteriEXT:
-            glProgramParameteriEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLenumVal, captures[2].value.GLintVal);
+            glProgramParameteriEXT(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform1f:
-            glProgramUniform1f(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLfloatVal);
+            glProgramUniform1f(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform1fEXT:
-            glProgramUniform1fEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLfloatVal);
+            glProgramUniform1fEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform1fv:
-            glProgramUniform1fv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform1fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform1fvEXT:
-            glProgramUniform1fvEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform1fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform1i:
-            glProgramUniform1i(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLintVal);
+            glProgramUniform1i(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform1iEXT:
-            glProgramUniform1iEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLintVal);
+            glProgramUniform1iEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform1iv:
-            glProgramUniform1iv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLintConstPointerVal);
+            glProgramUniform1iv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform1ivEXT:
-            glProgramUniform1ivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLintConstPointerVal);
+            glProgramUniform1ivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform1ui:
-            glProgramUniform1ui(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLuintVal);
+            glProgramUniform1ui(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform1uiEXT:
-            glProgramUniform1uiEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLuintVal);
+            glProgramUniform1uiEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform1uiv:
-            glProgramUniform1uiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                 captures[2].value.GLsizeiVal,
-                                 captures[3].value.GLuintConstPointerVal);
+            glProgramUniform1uiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform1uivEXT:
-            glProgramUniform1uivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                    gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.GLuintConstPointerVal);
+            glProgramUniform1uivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2f:
-            glProgramUniform2f(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glProgramUniform2f(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform2fEXT:
-            glProgramUniform2fEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glProgramUniform2fEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform2fv:
-            glProgramUniform2fv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform2fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2fvEXT:
-            glProgramUniform2fvEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform2fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2i:
-            glProgramUniform2i(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLintVal, captures[3].value.GLintVal);
+            glProgramUniform2i(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform2iEXT:
-            glProgramUniform2iEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLintVal, captures[3].value.GLintVal);
+            glProgramUniform2iEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform2iv:
-            glProgramUniform2iv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLintConstPointerVal);
+            glProgramUniform2iv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2ivEXT:
-            glProgramUniform2ivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLintConstPointerVal);
+            glProgramUniform2ivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2ui:
-            glProgramUniform2ui(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLuintVal, captures[3].value.GLuintVal);
+            glProgramUniform2ui(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform2uiEXT:
-            glProgramUniform2uiEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLuintVal, captures[3].value.GLuintVal);
+            glProgramUniform2uiEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform2uiv:
-            glProgramUniform2uiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                 captures[2].value.GLsizeiVal,
-                                 captures[3].value.GLuintConstPointerVal);
+            glProgramUniform2uiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform2uivEXT:
-            glProgramUniform2uivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                    gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.GLuintConstPointerVal);
+            glProgramUniform2uivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3f:
-            glProgramUniform3f(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                               captures[4].value.GLfloatVal);
+            glProgramUniform3f(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform3fEXT:
-            glProgramUniform3fEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                                  captures[4].value.GLfloatVal);
+            glProgramUniform3fEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform3fv:
-            glProgramUniform3fv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform3fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3fvEXT:
-            glProgramUniform3fvEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform3fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3i:
-            glProgramUniform3i(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLintVal, captures[3].value.GLintVal,
-                               captures[4].value.GLintVal);
+            glProgramUniform3i(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform3iEXT:
-            glProgramUniform3iEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                  captures[4].value.GLintVal);
+            glProgramUniform3iEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform3iv:
-            glProgramUniform3iv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLintConstPointerVal);
+            glProgramUniform3iv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3ivEXT:
-            glProgramUniform3ivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLintConstPointerVal);
+            glProgramUniform3ivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3ui:
-            glProgramUniform3ui(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                                captures[4].value.GLuintVal);
+            glProgramUniform3ui(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform3uiEXT:
-            glProgramUniform3uiEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                                   captures[4].value.GLuintVal);
+            glProgramUniform3uiEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform3uiv:
-            glProgramUniform3uiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                 captures[2].value.GLsizeiVal,
-                                 captures[3].value.GLuintConstPointerVal);
+            glProgramUniform3uiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform3uivEXT:
-            glProgramUniform3uivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                    gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.GLuintConstPointerVal);
+            glProgramUniform3uivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4f:
-            glProgramUniform4f(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                               captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
+            glProgramUniform4f(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform4fEXT:
-            glProgramUniform4fEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                                  captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
+            glProgramUniform4fEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLProgramUniform4fv:
-            glProgramUniform4fv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform4fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4fvEXT:
-            glProgramUniform4fvEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLfloatConstPointerVal);
+            glProgramUniform4fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4i:
-            glProgramUniform4i(gShaderProgramMap[captures[0].value.GLuintVal],
-                               gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                               captures[2].value.GLintVal, captures[3].value.GLintVal,
-                               captures[4].value.GLintVal, captures[5].value.GLintVal);
+            glProgramUniform4i(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform4iEXT:
-            glProgramUniform4iEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                  captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                  captures[4].value.GLintVal, captures[5].value.GLintVal);
+            glProgramUniform4iEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLintVal);
             break;
         case angle::EntryPoint::GLProgramUniform4iv:
-            glProgramUniform4iv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLintConstPointerVal);
+            glProgramUniform4iv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4ivEXT:
-            glProgramUniform4ivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLsizeiVal,
-                                   captures[3].value.GLintConstPointerVal);
+            glProgramUniform4ivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4ui:
-            glProgramUniform4ui(gShaderProgramMap[captures[0].value.GLuintVal],
-                                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                                captures[4].value.GLuintVal, captures[5].value.GLuintVal);
+            glProgramUniform4ui(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal, captures[5].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform4uiEXT:
-            glProgramUniform4uiEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                   gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                   captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                                   captures[4].value.GLuintVal, captures[5].value.GLuintVal);
+            glProgramUniform4uiEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal, captures[5].value.GLuintVal);
             break;
         case angle::EntryPoint::GLProgramUniform4uiv:
-            glProgramUniform4uiv(gShaderProgramMap[captures[0].value.GLuintVal],
-                                 gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                 captures[2].value.GLsizeiVal,
-                                 captures[3].value.GLuintConstPointerVal);
+            glProgramUniform4uiv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniform4uivEXT:
-            glProgramUniform4uivEXT(gShaderProgramMap[captures[0].value.GLuintVal],
-                                    gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                                    captures[2].value.GLsizeiVal,
-                                    captures[3].value.GLuintConstPointerVal);
+            glProgramUniform4uivEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2fv:
-            glProgramUniformMatrix2fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2fvEXT:
-            glProgramUniformMatrix2fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2x3fv:
-            glProgramUniformMatrix2x3fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2x3fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2x3fvEXT:
-            glProgramUniformMatrix2x3fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2x3fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2x4fv:
-            glProgramUniformMatrix2x4fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2x4fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix2x4fvEXT:
-            glProgramUniformMatrix2x4fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix2x4fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3fv:
-            glProgramUniformMatrix3fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3fvEXT:
-            glProgramUniformMatrix3fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3x2fv:
-            glProgramUniformMatrix3x2fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3x2fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3x2fvEXT:
-            glProgramUniformMatrix3x2fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3x2fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3x4fv:
-            glProgramUniformMatrix3x4fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3x4fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix3x4fvEXT:
-            glProgramUniformMatrix3x4fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix3x4fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4fv:
-            glProgramUniformMatrix4fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4fvEXT:
-            glProgramUniformMatrix4fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4x2fv:
-            glProgramUniformMatrix4x2fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4x2fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4x2fvEXT:
-            glProgramUniformMatrix4x2fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4x2fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4x3fv:
-            glProgramUniformMatrix4x3fv(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4x3fv(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProgramUniformMatrix4x3fvEXT:
-            glProgramUniformMatrix4x3fvEXT(
-                gShaderProgramMap[captures[0].value.GLuintVal],
-                gUniformLocations[gCurrentProgram][captures[1].value.GLintVal],
-                captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal,
-                captures[4].value.GLfloatConstPointerVal);
+            glProgramUniformMatrix4x3fvEXT(gShaderProgramMap[captures[0].value.GLuintVal], gUniformLocations[gCurrentProgram][captures[1].value.GLintVal], captures[2].value.GLsizeiVal, captures[3].value.GLbooleanVal, captures[4].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLProvokingVertexANGLE:
             glProvokingVertexANGLE(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLPushDebugGroup:
-            glPushDebugGroup(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
+            glPushDebugGroup(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLPushDebugGroupKHR:
-            glPushDebugGroupKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal,
-                                captures[2].value.GLsizeiVal,
-                                captures[3].value.GLcharConstPointerVal);
+            glPushDebugGroupKHR(captures[0].value.GLenumVal, captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLPushGroupMarkerEXT:
-            glPushGroupMarkerEXT(captures[0].value.GLsizeiVal,
-                                 captures[1].value.GLcharConstPointerVal);
+            glPushGroupMarkerEXT(captures[0].value.GLsizeiVal, captures[1].value.GLcharConstPointerVal);
             break;
         case angle::EntryPoint::GLPushMatrix:
             glPushMatrix();
@@ -2997,87 +1973,49 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glQueryCounterEXT(gQueryMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal);
             break;
         case angle::EntryPoint::GLQueryMatrixxOES:
-            glQueryMatrixxOES(captures[0].value.GLfixedPointerVal,
-                              captures[1].value.GLintPointerVal);
+            glQueryMatrixxOES(captures[0].value.GLfixedPointerVal, captures[1].value.GLintPointerVal);
             break;
         case angle::EntryPoint::GLReadBuffer:
             glReadBuffer(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLReadPixels:
-            glReadPixels(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                         captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                         captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                         captures[6].value.voidPointerVal);
+            glReadPixels(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReadPixelsRobustANGLE:
-            glReadPixelsRobustANGLE(
-                captures[0].value.GLintVal, captures[1].value.GLintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                captures[6].value.GLsizeiVal, captures[7].value.GLsizeiPointerVal,
-                captures[8].value.GLsizeiPointerVal, captures[9].value.GLsizeiPointerVal,
-                captures[10].value.voidPointerVal);
+            glReadPixelsRobustANGLE(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiPointerVal, captures[8].value.GLsizeiPointerVal, captures[9].value.GLsizeiPointerVal, captures[10].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReadnPixels:
-            glReadnPixels(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                          captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                          captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                          captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
+            glReadnPixels(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReadnPixelsEXT:
-            glReadnPixelsEXT(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                             captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                             captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
+            glReadnPixelsEXT(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReadnPixelsKHR:
-            glReadnPixelsKHR(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                             captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                             captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                             captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
+            glReadnPixelsKHR(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.GLsizeiVal, captures[7].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReadnPixelsRobustANGLE:
-            glReadnPixelsRobustANGLE(
-                captures[0].value.GLintVal, captures[1].value.GLintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLenumVal, captures[5].value.GLenumVal,
-                captures[6].value.GLsizeiVal, captures[7].value.GLsizeiPointerVal,
-                captures[8].value.GLsizeiPointerVal, captures[9].value.GLsizeiPointerVal,
-                captures[10].value.voidPointerVal);
+            glReadnPixelsRobustANGLE(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal, captures[4].value.GLenumVal, captures[5].value.GLenumVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiPointerVal, captures[8].value.GLsizeiPointerVal, captures[9].value.GLsizeiPointerVal, captures[10].value.voidPointerVal);
             break;
         case angle::EntryPoint::GLReleaseShaderCompiler:
             glReleaseShaderCompiler();
             break;
         case angle::EntryPoint::GLReleaseTexturesANGLE:
-            glReleaseTexturesANGLE(captures[0].value.GLuintVal,
-                                   captures[1].value.GLuintConstPointerVal,
-                                   captures[2].value.GLenumPointerVal);
+            glReleaseTexturesANGLE(captures[0].value.GLuintVal, captures[1].value.GLuintConstPointerVal, captures[2].value.GLenumPointerVal);
             break;
         case angle::EntryPoint::GLRenderbufferStorage:
-            glRenderbufferStorage(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glRenderbufferStorage(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLRenderbufferStorageMultisample:
-            glRenderbufferStorageMultisample(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal);
+            glRenderbufferStorageMultisample(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLRenderbufferStorageMultisampleANGLE:
-            glRenderbufferStorageMultisampleANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal);
+            glRenderbufferStorageMultisampleANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLRenderbufferStorageMultisampleEXT:
-            glRenderbufferStorageMultisampleEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal);
+            glRenderbufferStorageMultisampleEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLRenderbufferStorageOES:
-            glRenderbufferStorageOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                     captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glRenderbufferStorageOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLRequestExtensionANGLE:
             glRequestExtensionANGLE(captures[0].value.GLcharConstPointerVal);
@@ -3086,12 +2024,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glResumeTransformFeedback();
             break;
         case angle::EntryPoint::GLRotatef:
-            glRotatef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                      captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glRotatef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLRotatex:
-            glRotatex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                      captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
+            glRotatex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal, captures[3].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLSampleCoverage:
             glSampleCoverage(captures[0].value.GLfloatVal, captures[1].value.GLbooleanVal);
@@ -3106,95 +2042,61 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glSampleMaskiANGLE(captures[0].value.GLuintVal, captures[1].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIiv:
-            glSamplerParameterIiv(gSamplerMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLenumVal,
-                                  captures[2].value.GLintConstPointerVal);
+            glSamplerParameterIiv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIivEXT:
-            glSamplerParameterIivEXT(gSamplerMap[captures[0].value.GLuintVal],
-                                     captures[1].value.GLenumVal,
-                                     captures[2].value.GLintConstPointerVal);
+            glSamplerParameterIivEXT(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIivOES:
-            glSamplerParameterIivOES(gSamplerMap[captures[0].value.GLuintVal],
-                                     captures[1].value.GLenumVal,
-                                     captures[2].value.GLintConstPointerVal);
+            glSamplerParameterIivOES(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIivRobustANGLE:
-            glSamplerParameterIivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
+            glSamplerParameterIivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIuiv:
-            glSamplerParameterIuiv(gSamplerMap[captures[0].value.GLuintVal],
-                                   captures[1].value.GLenumVal,
-                                   captures[2].value.GLuintConstPointerVal);
+            glSamplerParameterIuiv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIuivEXT:
-            glSamplerParameterIuivEXT(gSamplerMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal,
-                                      captures[2].value.GLuintConstPointerVal);
+            glSamplerParameterIuivEXT(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIuivOES:
-            glSamplerParameterIuivOES(gSamplerMap[captures[0].value.GLuintVal],
-                                      captures[1].value.GLenumVal,
-                                      captures[2].value.GLuintConstPointerVal);
+            glSamplerParameterIuivOES(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterIuivRobustANGLE:
-            glSamplerParameterIuivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
+            glSamplerParameterIuivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterf:
-            glSamplerParameterf(gSamplerMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
+            glSamplerParameterf(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLSamplerParameterfv:
-            glSamplerParameterfv(gSamplerMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLenumVal,
-                                 captures[2].value.GLfloatConstPointerVal);
+            glSamplerParameterfv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterfvRobustANGLE:
-            glSamplerParameterfvRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
+            glSamplerParameterfvRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameteri:
-            glSamplerParameteri(gSamplerMap[captures[0].value.GLuintVal],
-                                captures[1].value.GLenumVal, captures[2].value.GLintVal);
+            glSamplerParameteri(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLSamplerParameteriv:
-            glSamplerParameteriv(gSamplerMap[captures[0].value.GLuintVal],
-                                 captures[1].value.GLenumVal,
-                                 captures[2].value.GLintConstPointerVal);
+            glSamplerParameteriv(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLSamplerParameterivRobustANGLE:
-            glSamplerParameterivRobustANGLE(
-                gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
+            glSamplerParameterivRobustANGLE(gSamplerMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLScalef:
-            glScalef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                     captures[2].value.GLfloatVal);
+            glScalef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLScalex:
-            glScalex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                     captures[2].value.GLfixedVal);
+            glScalex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLScissor:
-            glScissor(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                      captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glScissor(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLSelectPerfMonitorCountersAMD:
-            glSelectPerfMonitorCountersAMD(captures[0].value.GLuintVal,
-                                           captures[1].value.GLbooleanVal,
-                                           captures[2].value.GLuintVal, captures[3].value.GLintVal,
-                                           captures[4].value.GLuintPointerVal);
+            glSelectPerfMonitorCountersAMD(captures[0].value.GLuintVal, captures[1].value.GLbooleanVal, captures[2].value.GLuintVal, captures[3].value.GLintVal, captures[4].value.GLuintPointerVal);
             break;
         case angle::EntryPoint::GLSemaphoreParameterui64vEXT:
-            glSemaphoreParameterui64vEXT(gSemaphoreMap[captures[0].value.GLuintVal],
-                                         captures[1].value.GLenumVal,
-                                         captures[2].value.GLuint64ConstPointerVal);
+            glSemaphoreParameterui64vEXT(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal, captures[2].value.GLuint64ConstPointerVal);
             break;
         case angle::EntryPoint::GLSetFenceNV:
             glSetFenceNV(gFenceNVMap[captures[0].value.GLuintVal], captures[1].value.GLenumVal);
@@ -3203,37 +2105,25 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glShadeModel(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLShaderBinary:
-            glShaderBinary(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal,
-                           captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal,
-                           captures[4].value.GLsizeiVal);
+            glShaderBinary(captures[0].value.GLsizeiVal, captures[1].value.GLuintConstPointerVal, captures[2].value.GLenumVal, captures[3].value.voidConstPointerVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLShaderSource:
-            glShaderSource(gShaderProgramMap[captures[0].value.GLuintVal],
-                           captures[1].value.GLsizeiVal,
-                           captures[2].value.GLcharConstPointerPointerVal,
-                           captures[3].value.GLintConstPointerVal);
+            glShaderSource(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerPointerVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLShadingRateQCOM:
             glShadingRateQCOM(captures[0].value.GLenumVal);
             break;
         case angle::EntryPoint::GLSignalSemaphoreEXT:
-            glSignalSemaphoreEXT(
-                gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLuintConstPointerVal, captures[3].value.GLuintVal,
-                captures[4].value.GLuintConstPointerVal, captures[5].value.GLenumConstPointerVal);
+            glSignalSemaphoreEXT(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintConstPointerVal, captures[3].value.GLuintVal, captures[4].value.GLuintConstPointerVal, captures[5].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLStartTilingQCOM:
-            glStartTilingQCOM(captures[0].value.GLuintVal, captures[1].value.GLuintVal,
-                              captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                              captures[4].value.GLbitfieldVal);
+            glStartTilingQCOM(captures[0].value.GLuintVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLbitfieldVal);
             break;
         case angle::EntryPoint::GLStencilFunc:
-            glStencilFunc(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                          captures[2].value.GLuintVal);
+            glStencilFunc(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLStencilFuncSeparate:
-            glStencilFuncSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLintVal, captures[3].value.GLuintVal);
+            glStencilFuncSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLStencilMask:
             glStencilMask(captures[0].value.GLuintVal);
@@ -3242,539 +2132,322 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glStencilMaskSeparate(captures[0].value.GLenumVal, captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLStencilOp:
-            glStencilOp(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                        captures[2].value.GLenumVal);
+            glStencilOp(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal);
             break;
         case angle::EntryPoint::GLStencilOpSeparate:
-            glStencilOpSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                captures[2].value.GLenumVal, captures[3].value.GLenumVal);
+            glStencilOpSeparate(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLenumVal, captures[3].value.GLenumVal);
             break;
         case angle::EntryPoint::GLTestFenceNV:
             glTestFenceNV(gFenceNVMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLTexBuffer:
-            glTexBuffer(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                        gBufferMap[captures[2].value.GLuintVal]);
+            glTexBuffer(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLTexBufferEXT:
-            glTexBufferEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                           gBufferMap[captures[2].value.GLuintVal]);
+            glTexBufferEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLTexBufferOES:
-            glTexBufferOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                           gBufferMap[captures[2].value.GLuintVal]);
+            glTexBufferOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLTexBufferRange:
-            glTexBufferRange(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             gBufferMap[captures[2].value.GLuintVal], captures[3].value.GLintptrVal,
-                             captures[4].value.GLsizeiptrVal);
+            glTexBufferRange(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal], captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLTexBufferRangeEXT:
-            glTexBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                gBufferMap[captures[2].value.GLuintVal],
-                                captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
+            glTexBufferRangeEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal], captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLTexBufferRangeOES:
-            glTexBufferRangeOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                gBufferMap[captures[2].value.GLuintVal],
-                                captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
+            glTexBufferRangeOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, gBufferMap[captures[2].value.GLuintVal], captures[3].value.GLintptrVal, captures[4].value.GLsizeiptrVal);
             break;
         case angle::EntryPoint::GLTexCoordPointer:
-            glTexCoordPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                              captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
+            glTexCoordPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexEnvf:
-            glTexEnvf(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                      captures[2].value.GLfloatVal);
+            glTexEnvf(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLTexEnvfv:
-            glTexEnvfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                       captures[2].value.GLfloatConstPointerVal);
+            glTexEnvfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLTexEnvi:
-            glTexEnvi(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                      captures[2].value.GLintVal);
+            glTexEnvi(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLTexEnviv:
-            glTexEnviv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                       captures[2].value.GLintConstPointerVal);
+            glTexEnviv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexEnvx:
-            glTexEnvx(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                      captures[2].value.GLfixedVal);
+            glTexEnvx(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLTexEnvxv:
-            glTexEnvxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                       captures[2].value.GLfixedConstPointerVal);
+            glTexEnvxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLTexGenfOES:
-            glTexGenfOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfloatVal);
+            glTexGenfOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLTexGenfvOES:
-            glTexGenfvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLfloatConstPointerVal);
+            glTexGenfvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLTexGeniOES:
-            glTexGeniOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLintVal);
+            glTexGeniOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLTexGenivOES:
-            glTexGenivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLintConstPointerVal);
+            glTexGenivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexGenxOES:
-            glTexGenxOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                         captures[2].value.GLfixedVal);
+            glTexGenxOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLTexGenxvOES:
-            glTexGenxvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                          captures[2].value.GLfixedConstPointerVal);
+            glTexGenxvOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLTexImage2D:
-            glTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                         captures[2].value.GLintVal, captures[3].value.GLsizeiVal,
-                         captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                         captures[6].value.GLenumVal, captures[7].value.GLenumVal,
-                         captures[8].value.voidConstPointerVal);
+            glTexImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLenumVal, captures[7].value.GLenumVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexImage2DExternalANGLE:
-            glTexImage2DExternalANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                      captures[2].value.GLintVal, captures[3].value.GLsizeiVal,
-                                      captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                                      captures[6].value.GLenumVal, captures[7].value.GLenumVal);
+            glTexImage2DExternalANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLenumVal, captures[7].value.GLenumVal);
             break;
         case angle::EntryPoint::GLTexImage2DRobustANGLE:
-            glTexImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                    captures[2].value.GLintVal, captures[3].value.GLsizeiVal,
-                                    captures[4].value.GLsizeiVal, captures[5].value.GLintVal,
-                                    captures[6].value.GLenumVal, captures[7].value.GLenumVal,
-                                    captures[8].value.GLsizeiVal,
-                                    captures[9].value.voidConstPointerVal);
+            glTexImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintVal, captures[6].value.GLenumVal, captures[7].value.GLenumVal, captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexImage3D:
-            glTexImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                         captures[2].value.GLintVal, captures[3].value.GLsizeiVal,
-                         captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                         captures[6].value.GLintVal, captures[7].value.GLenumVal,
-                         captures[8].value.GLenumVal, captures[9].value.voidConstPointerVal);
+            glTexImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLenumVal, captures[8].value.GLenumVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexImage3DOES:
-            glTexImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                            captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                            captures[6].value.GLintVal, captures[7].value.GLenumVal,
-                            captures[8].value.GLenumVal, captures[9].value.voidConstPointerVal);
+            glTexImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLenumVal, captures[8].value.GLenumVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexImage3DRobustANGLE:
-            glTexImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                    captures[2].value.GLintVal, captures[3].value.GLsizeiVal,
-                                    captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                    captures[6].value.GLintVal, captures[7].value.GLenumVal,
-                                    captures[8].value.GLenumVal, captures[9].value.GLsizeiVal,
-                                    captures[10].value.voidConstPointerVal);
+            glTexImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintVal, captures[7].value.GLenumVal, captures[8].value.GLenumVal, captures[9].value.GLsizeiVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIiv:
-            glTexParameterIiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                              captures[2].value.GLintConstPointerVal);
+            glTexParameterIiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIivEXT:
-            glTexParameterIivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLintConstPointerVal);
+            glTexParameterIivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIivOES:
-            glTexParameterIivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                 captures[2].value.GLintConstPointerVal);
+            glTexParameterIivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIivRobustANGLE:
-            glTexParameterIivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                         captures[2].value.GLsizeiVal,
-                                         captures[3].value.GLintConstPointerVal);
+            glTexParameterIivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIuiv:
-            glTexParameterIuiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                               captures[2].value.GLuintConstPointerVal);
+            glTexParameterIuiv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIuivEXT:
-            glTexParameterIuivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLuintConstPointerVal);
+            glTexParameterIuivEXT(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIuivOES:
-            glTexParameterIuivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                  captures[2].value.GLuintConstPointerVal);
+            glTexParameterIuivOES(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterIuivRobustANGLE:
-            glTexParameterIuivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                          captures[2].value.GLsizeiVal,
-                                          captures[3].value.GLuintConstPointerVal);
+            glTexParameterIuivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterf:
-            glTexParameterf(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLfloatVal);
+            glTexParameterf(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLTexParameterfv:
-            glTexParameterfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLfloatConstPointerVal);
+            glTexParameterfv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterfvRobustANGLE:
-            glTexParameterfvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLsizeiVal,
-                                        captures[3].value.GLfloatConstPointerVal);
+            glTexParameterfvRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameteri:
-            glTexParameteri(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLintVal);
+            glTexParameteri(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLTexParameteriv:
-            glTexParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLintConstPointerVal);
+            glTexParameteriv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterivRobustANGLE:
-            glTexParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                                        captures[2].value.GLsizeiVal,
-                                        captures[3].value.GLintConstPointerVal);
+            glTexParameterivRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexParameterx:
-            glTexParameterx(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLfixedVal);
+            glTexParameterx(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLTexParameterxv:
-            glTexParameterxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal,
-                             captures[2].value.GLfixedConstPointerVal);
+            glTexParameterxv(captures[0].value.GLenumVal, captures[1].value.GLenumVal, captures[2].value.GLfixedConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorage1DEXT:
-            glTexStorage1DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                              captures[2].value.GLenumVal, captures[3].value.GLsizeiVal);
+            glTexStorage1DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLTexStorage2D:
-            glTexStorage2D(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                           captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                           captures[4].value.GLsizeiVal);
+            glTexStorage2D(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLTexStorage2DEXT:
-            glTexStorage2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                              captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                              captures[4].value.GLsizeiVal);
+            glTexStorage2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLTexStorage2DMultisample:
-            glTexStorage2DMultisample(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                      captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                      captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal);
+            glTexStorage2DMultisample(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLTexStorage2DMultisampleANGLE:
-            glTexStorage2DMultisampleANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal);
+            glTexStorage2DMultisampleANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLTexStorage3D:
-            glTexStorage3D(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                           captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                           captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal);
+            glTexStorage3D(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLTexStorage3DEXT:
-            glTexStorage3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                              captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                              captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal);
+            glTexStorage3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLTexStorage3DMultisample:
-            glTexStorage3DMultisample(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                      captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                      captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                      captures[6].value.GLbooleanVal);
+            glTexStorage3DMultisample(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLTexStorage3DMultisampleOES:
-            glTexStorage3DMultisampleOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                         captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                         captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                         captures[6].value.GLbooleanVal);
+            glTexStorage3DMultisampleOES(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLbooleanVal);
             break;
         case angle::EntryPoint::GLTexStorageAttribs2DEXT:
-            glTexStorageAttribs2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                     captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                     captures[4].value.GLsizeiVal,
-                                     captures[5].value.GLintConstPointerVal);
+            glTexStorageAttribs2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorageAttribs3DEXT:
-            glTexStorageAttribs3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                     captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                     captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                     captures[6].value.GLintConstPointerVal);
+            glTexStorageAttribs3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorageMem2DEXT:
-            glTexStorageMem2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                 captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                 captures[4].value.GLsizeiVal,
-                                 gMemoryObjectMap[captures[5].value.GLuintVal],
-                                 captures[6].value.GLuint64Val);
+            glTexStorageMem2DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, gMemoryObjectMap[captures[5].value.GLuintVal], captures[6].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLTexStorageMem2DMultisampleEXT:
-            glTexStorageMem2DMultisampleEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal,
-                gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val);
+            glTexStorageMem2DMultisampleEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal, gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLTexStorageMem3DEXT:
-            glTexStorageMem3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                                 captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                 captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                 gMemoryObjectMap[captures[6].value.GLuintVal],
-                                 captures[7].value.GLuint64Val);
+            glTexStorageMem3DEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLTexStorageMem3DMultisampleEXT:
-            glTexStorageMem3DMultisampleEXT(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                captures[6].value.GLbooleanVal, gMemoryObjectMap[captures[7].value.GLuintVal],
-                captures[8].value.GLuint64Val);
+            glTexStorageMem3DMultisampleEXT(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLbooleanVal, gMemoryObjectMap[captures[7].value.GLuintVal], captures[8].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLTexStorageMemFlags2DANGLE:
-            glTexStorageMemFlags2DANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, gMemoryObjectMap[captures[5].value.GLuintVal],
-                captures[6].value.GLuint64Val, captures[7].value.GLbitfieldVal,
-                captures[8].value.GLbitfieldVal, captures[9].value.voidConstPointerVal);
+            glTexStorageMemFlags2DANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, gMemoryObjectMap[captures[5].value.GLuintVal], captures[6].value.GLuint64Val, captures[7].value.GLbitfieldVal, captures[8].value.GLbitfieldVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorageMemFlags2DMultisampleANGLE:
-            glTexStorageMemFlags2DMultisampleANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal,
-                gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val,
-                captures[8].value.GLbitfieldVal, captures[9].value.GLbitfieldVal,
-                captures[10].value.voidConstPointerVal);
+            glTexStorageMemFlags2DMultisampleANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLbooleanVal, gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val, captures[8].value.GLbitfieldVal, captures[9].value.GLbitfieldVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorageMemFlags3DANGLE:
-            glTexStorageMemFlags3DANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val,
-                captures[8].value.GLbitfieldVal, captures[9].value.GLbitfieldVal,
-                captures[10].value.voidConstPointerVal);
+            glTexStorageMemFlags3DANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, gMemoryObjectMap[captures[6].value.GLuintVal], captures[7].value.GLuint64Val, captures[8].value.GLbitfieldVal, captures[9].value.GLbitfieldVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexStorageMemFlags3DMultisampleANGLE:
-            glTexStorageMemFlags3DMultisampleANGLE(
-                captures[0].value.GLenumVal, captures[1].value.GLsizeiVal,
-                captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                captures[6].value.GLbooleanVal, gMemoryObjectMap[captures[7].value.GLuintVal],
-                captures[8].value.GLuint64Val, captures[9].value.GLbitfieldVal,
-                captures[10].value.GLbitfieldVal, captures[11].value.voidConstPointerVal);
+            glTexStorageMemFlags3DMultisampleANGLE(captures[0].value.GLenumVal, captures[1].value.GLsizeiVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLbooleanVal, gMemoryObjectMap[captures[7].value.GLuintVal], captures[8].value.GLuint64Val, captures[9].value.GLbitfieldVal, captures[10].value.GLbitfieldVal, captures[11].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexSubImage2D:
-            glTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLintVal, captures[3].value.GLintVal,
-                            captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                            captures[6].value.GLenumVal, captures[7].value.GLenumVal,
-                            captures[8].value.voidConstPointerVal);
+            glTexSubImage2D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLenumVal, captures[7].value.GLenumVal, captures[8].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexSubImage2DRobustANGLE:
-            glTexSubImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                       captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                       captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal,
-                                       captures[6].value.GLenumVal, captures[7].value.GLenumVal,
-                                       captures[8].value.GLsizeiVal,
-                                       captures[9].value.voidConstPointerVal);
+            glTexSubImage2DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLsizeiVal, captures[5].value.GLsizeiVal, captures[6].value.GLenumVal, captures[7].value.GLenumVal, captures[8].value.GLsizeiVal, captures[9].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexSubImage3D:
-            glTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                            captures[2].value.GLintVal, captures[3].value.GLintVal,
-                            captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                            captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                            captures[8].value.GLenumVal, captures[9].value.GLenumVal,
-                            captures[10].value.voidConstPointerVal);
+            glTexSubImage3D(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLenumVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexSubImage3DOES:
-            glTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                               captures[2].value.GLintVal, captures[3].value.GLintVal,
-                               captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                               captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                               captures[8].value.GLenumVal, captures[9].value.GLenumVal,
-                               captures[10].value.voidConstPointerVal);
+            glTexSubImage3DOES(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLenumVal, captures[10].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTexSubImage3DRobustANGLE:
-            glTexSubImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal,
-                                       captures[2].value.GLintVal, captures[3].value.GLintVal,
-                                       captures[4].value.GLintVal, captures[5].value.GLsizeiVal,
-                                       captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal,
-                                       captures[8].value.GLenumVal, captures[9].value.GLenumVal,
-                                       captures[10].value.GLsizeiVal,
-                                       captures[11].value.voidConstPointerVal);
+            glTexSubImage3DRobustANGLE(captures[0].value.GLenumVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal, captures[5].value.GLsizeiVal, captures[6].value.GLsizeiVal, captures[7].value.GLsizeiVal, captures[8].value.GLenumVal, captures[9].value.GLenumVal, captures[10].value.GLsizeiVal, captures[11].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLTextureFoveationParametersQCOM:
-            glTextureFoveationParametersQCOM(
-                gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal,
-                captures[2].value.GLuintVal, captures[3].value.GLfloatVal,
-                captures[4].value.GLfloatVal, captures[5].value.GLfloatVal,
-                captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
+            glTextureFoveationParametersQCOM(gTextureMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal, captures[5].value.GLfloatVal, captures[6].value.GLfloatVal, captures[7].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLTransformFeedbackVaryings:
-            glTransformFeedbackVaryings(
-                gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal,
-                captures[2].value.GLcharConstPointerPointerVal, captures[3].value.GLenumVal);
+            glTransformFeedbackVaryings(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLsizeiVal, captures[2].value.GLcharConstPointerPointerVal, captures[3].value.GLenumVal);
             break;
         case angle::EntryPoint::GLTranslatef:
-            glTranslatef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal,
-                         captures[2].value.GLfloatVal);
+            glTranslatef(captures[0].value.GLfloatVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLTranslatex:
-            glTranslatex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal,
-                         captures[2].value.GLfixedVal);
+            glTranslatex(captures[0].value.GLfixedVal, captures[1].value.GLfixedVal, captures[2].value.GLfixedVal);
             break;
         case angle::EntryPoint::GLUniform1f:
-            glUniform1f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLfloatVal);
+            glUniform1f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLUniform1fv:
-            glUniform1fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
+            glUniform1fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform1i:
-            glUniform1i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLintVal);
+            glUniform1i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLintVal);
             break;
         case angle::EntryPoint::GLUniform1iv:
-            glUniform1iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
+            glUniform1iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform1ui:
-            glUniform1ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLuintVal);
+            glUniform1ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLUniform1uiv:
-            glUniform1uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                          captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
+            glUniform1uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform2f:
-            glUniform2f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
+            glUniform2f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLUniform2fv:
-            glUniform2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
+            glUniform2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform2i:
-            glUniform2i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLintVal, captures[2].value.GLintVal);
+            glUniform2i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLintVal, captures[2].value.GLintVal);
             break;
         case angle::EntryPoint::GLUniform2iv:
-            glUniform2iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
+            glUniform2iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform2ui:
-            glUniform2ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLuintVal, captures[2].value.GLuintVal);
+            glUniform2ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLUniform2uiv:
-            glUniform2uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                          captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
+            glUniform2uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform3f:
-            glUniform3f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLfloatVal, captures[2].value.GLfloatVal,
-                        captures[3].value.GLfloatVal);
+            glUniform3f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLUniform3fv:
-            glUniform3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
+            glUniform3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform3i:
-            glUniform3i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLintVal, captures[2].value.GLintVal,
-                        captures[3].value.GLintVal);
+            glUniform3i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal);
             break;
         case angle::EntryPoint::GLUniform3iv:
-            glUniform3iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
+            glUniform3iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform3ui:
-            glUniform3ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLuintVal, captures[2].value.GLuintVal,
-                         captures[3].value.GLuintVal);
+            glUniform3ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLUniform3uiv:
-            glUniform3uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                          captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
+            glUniform3uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform4f:
-            glUniform4f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLfloatVal, captures[2].value.GLfloatVal,
-                        captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
+            glUniform4f(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLUniform4fv:
-            glUniform4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
+            glUniform4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform4i:
-            glUniform4i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                        captures[1].value.GLintVal, captures[2].value.GLintVal,
-                        captures[3].value.GLintVal, captures[4].value.GLintVal);
+            glUniform4i(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLUniform4iv:
-            glUniform4iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
+            glUniform4iv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniform4ui:
-            glUniform4ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                         captures[1].value.GLuintVal, captures[2].value.GLuintVal,
-                         captures[3].value.GLuintVal, captures[4].value.GLuintVal);
+            glUniform4ui(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLUniform4uiv:
-            glUniform4uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                          captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
+            glUniform4uiv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformBlockBinding:
-            glUniformBlockBinding(gShaderProgramMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLuintVal, captures[2].value.GLuintVal);
+            glUniformBlockBinding(gShaderProgramMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintVal);
             break;
         case angle::EntryPoint::GLUniformMatrix2fv:
-            glUniformMatrix2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                               captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                               captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix2x3fv:
-            glUniformMatrix2x3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix2x3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix2x4fv:
-            glUniformMatrix2x4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix2x4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix3fv:
-            glUniformMatrix3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                               captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                               captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix3x2fv:
-            glUniformMatrix3x2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix3x2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix3x4fv:
-            glUniformMatrix3x4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix3x4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix4fv:
-            glUniformMatrix4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                               captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                               captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix4fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix4x2fv:
-            glUniformMatrix4x2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix4x2fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUniformMatrix4x3fv:
-            glUniformMatrix4x3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal],
-                                 captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal,
-                                 captures[3].value.GLfloatConstPointerVal);
+            glUniformMatrix4x3fv(gUniformLocations[gCurrentProgram][captures[0].value.GLintVal], captures[1].value.GLsizeiVal, captures[2].value.GLbooleanVal, captures[3].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLUnmapBuffer:
             glUnmapBuffer(captures[0].value.GLenumVal);
@@ -3786,14 +2459,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glUseProgram(gShaderProgramMap[captures[0].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLUseProgramStages:
-            glUseProgramStages(gProgramPipelineMap[captures[0].value.GLuintVal],
-                               captures[1].value.GLbitfieldVal,
-                               gShaderProgramMap[captures[2].value.GLuintVal]);
+            glUseProgramStages(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLbitfieldVal, gShaderProgramMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLUseProgramStagesEXT:
-            glUseProgramStagesEXT(gProgramPipelineMap[captures[0].value.GLuintVal],
-                                  captures[1].value.GLbitfieldVal,
-                                  gShaderProgramMap[captures[2].value.GLuintVal]);
+            glUseProgramStagesEXT(gProgramPipelineMap[captures[0].value.GLuintVal], captures[1].value.GLbitfieldVal, gShaderProgramMap[captures[2].value.GLuintVal]);
             break;
         case angle::EntryPoint::GLValidateProgram:
             glValidateProgram(gShaderProgramMap[captures[0].value.GLuintVal]);
@@ -3808,33 +2477,25 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glVertexAttrib1f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLVertexAttrib1fv:
-            glVertexAttrib1fv(captures[0].value.GLuintVal,
-                              captures[1].value.GLfloatConstPointerVal);
+            glVertexAttrib1fv(captures[0].value.GLuintVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttrib2f:
-            glVertexAttrib2f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal,
-                             captures[2].value.GLfloatVal);
+            glVertexAttrib2f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLVertexAttrib2fv:
-            glVertexAttrib2fv(captures[0].value.GLuintVal,
-                              captures[1].value.GLfloatConstPointerVal);
+            glVertexAttrib2fv(captures[0].value.GLuintVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttrib3f:
-            glVertexAttrib3f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal,
-                             captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
+            glVertexAttrib3f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLVertexAttrib3fv:
-            glVertexAttrib3fv(captures[0].value.GLuintVal,
-                              captures[1].value.GLfloatConstPointerVal);
+            glVertexAttrib3fv(captures[0].value.GLuintVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttrib4f:
-            glVertexAttrib4f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal,
-                             captures[2].value.GLfloatVal, captures[3].value.GLfloatVal,
-                             captures[4].value.GLfloatVal);
+            glVertexAttrib4f(captures[0].value.GLuintVal, captures[1].value.GLfloatVal, captures[2].value.GLfloatVal, captures[3].value.GLfloatVal, captures[4].value.GLfloatVal);
             break;
         case angle::EntryPoint::GLVertexAttrib4fv:
-            glVertexAttrib4fv(captures[0].value.GLuintVal,
-                              captures[1].value.GLfloatConstPointerVal);
+            glVertexAttrib4fv(captures[0].value.GLuintVal, captures[1].value.GLfloatConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttribBinding:
             glVertexAttribBinding(captures[0].value.GLuintVal, captures[1].value.GLuintVal);
@@ -3849,132 +2510,88 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             glVertexAttribDivisorEXT(captures[0].value.GLuintVal, captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLVertexAttribFormat:
-            glVertexAttribFormat(captures[0].value.GLuintVal, captures[1].value.GLintVal,
-                                 captures[2].value.GLenumVal, captures[3].value.GLbooleanVal,
-                                 captures[4].value.GLuintVal);
+            glVertexAttribFormat(captures[0].value.GLuintVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLbooleanVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLVertexAttribI4i:
-            glVertexAttribI4i(captures[0].value.GLuintVal, captures[1].value.GLintVal,
-                              captures[2].value.GLintVal, captures[3].value.GLintVal,
-                              captures[4].value.GLintVal);
+            glVertexAttribI4i(captures[0].value.GLuintVal, captures[1].value.GLintVal, captures[2].value.GLintVal, captures[3].value.GLintVal, captures[4].value.GLintVal);
             break;
         case angle::EntryPoint::GLVertexAttribI4iv:
             glVertexAttribI4iv(captures[0].value.GLuintVal, captures[1].value.GLintConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttribI4ui:
-            glVertexAttribI4ui(captures[0].value.GLuintVal, captures[1].value.GLuintVal,
-                               captures[2].value.GLuintVal, captures[3].value.GLuintVal,
-                               captures[4].value.GLuintVal);
+            glVertexAttribI4ui(captures[0].value.GLuintVal, captures[1].value.GLuintVal, captures[2].value.GLuintVal, captures[3].value.GLuintVal, captures[4].value.GLuintVal);
             break;
         case angle::EntryPoint::GLVertexAttribI4uiv:
-            glVertexAttribI4uiv(captures[0].value.GLuintVal,
-                                captures[1].value.GLuintConstPointerVal);
+            glVertexAttribI4uiv(captures[0].value.GLuintVal, captures[1].value.GLuintConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttribIFormat:
-            glVertexAttribIFormat(captures[0].value.GLuintVal, captures[1].value.GLintVal,
-                                  captures[2].value.GLenumVal, captures[3].value.GLuintVal);
+            glVertexAttribIFormat(captures[0].value.GLuintVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLuintVal);
             break;
         case angle::EntryPoint::GLVertexAttribIPointer:
-            glVertexAttribIPointer(captures[0].value.GLuintVal, captures[1].value.GLintVal,
-                                   captures[2].value.GLenumVal, captures[3].value.GLsizeiVal,
-                                   captures[4].value.voidConstPointerVal);
+            glVertexAttribIPointer(captures[0].value.GLuintVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLsizeiVal, captures[4].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexAttribPointer:
-            glVertexAttribPointer(captures[0].value.GLuintVal, captures[1].value.GLintVal,
-                                  captures[2].value.GLenumVal, captures[3].value.GLbooleanVal,
-                                  captures[4].value.GLsizeiVal,
-                                  captures[5].value.voidConstPointerVal);
+            glVertexAttribPointer(captures[0].value.GLuintVal, captures[1].value.GLintVal, captures[2].value.GLenumVal, captures[3].value.GLbooleanVal, captures[4].value.GLsizeiVal, captures[5].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLVertexBindingDivisor:
             glVertexBindingDivisor(captures[0].value.GLuintVal, captures[1].value.GLuintVal);
             break;
         case angle::EntryPoint::GLVertexPointer:
-            glVertexPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                            captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
+            glVertexPointer(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::GLViewport:
-            glViewport(captures[0].value.GLintVal, captures[1].value.GLintVal,
-                       captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
+            glViewport(captures[0].value.GLintVal, captures[1].value.GLintVal, captures[2].value.GLsizeiVal, captures[3].value.GLsizeiVal);
             break;
         case angle::EntryPoint::GLWaitSemaphoreEXT:
-            glWaitSemaphoreEXT(gSemaphoreMap[captures[0].value.GLuintVal],
-                               captures[1].value.GLuintVal, captures[2].value.GLuintConstPointerVal,
-                               captures[3].value.GLuintVal, captures[4].value.GLuintConstPointerVal,
-                               captures[5].value.GLenumConstPointerVal);
+            glWaitSemaphoreEXT(gSemaphoreMap[captures[0].value.GLuintVal], captures[1].value.GLuintVal, captures[2].value.GLuintConstPointerVal, captures[3].value.GLuintVal, captures[4].value.GLuintConstPointerVal, captures[5].value.GLenumConstPointerVal);
             break;
         case angle::EntryPoint::GLWaitSync:
-            glWaitSync(gSyncMap2[captures[0].value.GLuintVal], captures[1].value.GLbitfieldVal,
-                       captures[2].value.GLuint64Val);
+            glWaitSync(gSyncMap2[captures[0].value.GLuintVal], captures[1].value.GLbitfieldVal, captures[2].value.GLuint64Val);
             break;
         case angle::EntryPoint::GLWeightPointerOES:
-            glWeightPointerOES(captures[0].value.GLintVal, captures[1].value.GLenumVal,
-                               captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
+            glWeightPointerOES(captures[0].value.GLintVal, captures[1].value.GLenumVal, captures[2].value.GLsizeiVal, captures[3].value.voidConstPointerVal);
             break;
         case angle::EntryPoint::EGLBindAPI:
             eglBindAPI(captures[0].value.EGLenumVal);
             break;
         case angle::EntryPoint::EGLBindTexImage:
-            eglBindTexImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                            captures[2].value.EGLintVal);
+            eglBindTexImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal);
             break;
         case angle::EntryPoint::EGLChooseConfig:
-            eglChooseConfig(captures[0].value.voidPointerVal,
-                            captures[1].value.EGLintConstPointerVal,
-                            captures[2].value.EGLConfigPointerVal, captures[3].value.EGLintVal,
-                            captures[4].value.EGLintPointerVal);
+            eglChooseConfig(captures[0].value.voidPointerVal, captures[1].value.EGLintConstPointerVal, captures[2].value.EGLConfigPointerVal, captures[3].value.EGLintVal, captures[4].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLClientWaitSync:
-            eglClientWaitSync(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                              captures[2].value.EGLintVal, captures[3].value.EGLTimeVal);
+            eglClientWaitSync(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLTimeVal);
             break;
         case angle::EntryPoint::EGLCopyBuffers:
-            eglCopyBuffers(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                           captures[2].value.EGLNativePixmapTypeVal);
+            eglCopyBuffers(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLNativePixmapTypeVal);
             break;
         case angle::EntryPoint::EGLCreateContext:
-            eglCreateContext(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                             captures[2].value.voidPointerVal,
-                             captures[3].value.EGLintConstPointerVal);
+            eglCreateContext(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.voidPointerVal, captures[3].value.EGLintConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreateImage:
-            eglCreateImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                           captures[2].value.EGLenumVal, captures[3].value.EGLClientBufferVal,
-                           captures[4].value.EGLAttribConstPointerVal);
+            eglCreateImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLenumVal, captures[3].value.EGLClientBufferVal, captures[4].value.EGLAttribConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreatePbufferFromClientBuffer:
-            eglCreatePbufferFromClientBuffer(
-                captures[0].value.voidPointerVal, captures[1].value.EGLenumVal,
-                captures[2].value.EGLClientBufferVal, captures[3].value.voidPointerVal,
-                captures[4].value.EGLintConstPointerVal);
+            eglCreatePbufferFromClientBuffer(captures[0].value.voidPointerVal, captures[1].value.EGLenumVal, captures[2].value.EGLClientBufferVal, captures[3].value.voidPointerVal, captures[4].value.EGLintConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreatePbufferSurface:
-            eglCreatePbufferSurface(captures[0].value.voidPointerVal,
-                                    captures[1].value.voidPointerVal,
-                                    captures[2].value.EGLintConstPointerVal);
+            eglCreatePbufferSurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreatePixmapSurface:
-            eglCreatePixmapSurface(
-                captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                captures[2].value.EGLNativePixmapTypeVal, captures[3].value.EGLintConstPointerVal);
+            eglCreatePixmapSurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLNativePixmapTypeVal, captures[3].value.EGLintConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreatePlatformPixmapSurface:
-            eglCreatePlatformPixmapSurface(
-                captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                captures[2].value.voidPointerVal, captures[3].value.EGLAttribConstPointerVal);
+            eglCreatePlatformPixmapSurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.voidPointerVal, captures[3].value.EGLAttribConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreatePlatformWindowSurface:
-            eglCreatePlatformWindowSurface(
-                captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                captures[2].value.voidPointerVal, captures[3].value.EGLAttribConstPointerVal);
+            eglCreatePlatformWindowSurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.voidPointerVal, captures[3].value.EGLAttribConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreateSync:
-            eglCreateSync(captures[0].value.voidPointerVal, captures[1].value.EGLenumVal,
-                          captures[2].value.EGLAttribConstPointerVal);
+            eglCreateSync(captures[0].value.voidPointerVal, captures[1].value.EGLenumVal, captures[2].value.EGLAttribConstPointerVal);
             break;
         case angle::EntryPoint::EGLCreateWindowSurface:
-            eglCreateWindowSurface(
-                captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                captures[2].value.EGLNativeWindowTypeVal, captures[3].value.EGLintConstPointerVal);
+            eglCreateWindowSurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLNativeWindowTypeVal, captures[3].value.EGLintConstPointerVal);
             break;
         case angle::EntryPoint::EGLDestroyContext:
             eglDestroyContext(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal);
@@ -3989,12 +2606,10 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             eglDestroySync(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal);
             break;
         case angle::EntryPoint::EGLGetConfigAttrib:
-            eglGetConfigAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                               captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
+            eglGetConfigAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLGetConfigs:
-            eglGetConfigs(captures[0].value.voidPointerVal, captures[1].value.EGLConfigPointerVal,
-                          captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
+            eglGetConfigs(captures[0].value.voidPointerVal, captures[1].value.EGLConfigPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLGetCurrentContext:
             eglGetCurrentContext();
@@ -4012,48 +2627,40 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             eglGetError();
             break;
         case angle::EntryPoint::EGLGetPlatformDisplay:
-            eglGetPlatformDisplay(captures[0].value.EGLenumVal, captures[1].value.voidPointerVal,
-                                  captures[2].value.EGLAttribConstPointerVal);
+            eglGetPlatformDisplay(captures[0].value.EGLenumVal, captures[1].value.voidPointerVal, captures[2].value.EGLAttribConstPointerVal);
             break;
         case angle::EntryPoint::EGLGetProcAddress:
             eglGetProcAddress(captures[0].value.charConstPointerVal);
             break;
         case angle::EntryPoint::EGLGetSyncAttrib:
-            eglGetSyncAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                             captures[2].value.EGLintVal, captures[3].value.EGLAttribPointerVal);
+            eglGetSyncAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLAttribPointerVal);
             break;
         case angle::EntryPoint::EGLInitialize:
-            eglInitialize(captures[0].value.voidPointerVal, captures[1].value.EGLintPointerVal,
-                          captures[2].value.EGLintPointerVal);
+            eglInitialize(captures[0].value.voidPointerVal, captures[1].value.EGLintPointerVal, captures[2].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLMakeCurrent:
-            eglMakeCurrent(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                           captures[2].value.voidPointerVal, captures[3].value.voidPointerVal);
+            eglMakeCurrent(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.voidPointerVal, captures[3].value.voidPointerVal);
             break;
         case angle::EntryPoint::EGLQueryAPI:
             eglQueryAPI();
             break;
         case angle::EntryPoint::EGLQueryContext:
-            eglQueryContext(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                            captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
+            eglQueryContext(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLQueryString:
             eglQueryString(captures[0].value.voidPointerVal, captures[1].value.EGLintVal);
             break;
         case angle::EntryPoint::EGLQuerySurface:
-            eglQuerySurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                            captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
+            eglQuerySurface(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLintPointerVal);
             break;
         case angle::EntryPoint::EGLReleaseTexImage:
-            eglReleaseTexImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                               captures[2].value.EGLintVal);
+            eglReleaseTexImage(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal);
             break;
         case angle::EntryPoint::EGLReleaseThread:
             eglReleaseThread();
             break;
         case angle::EntryPoint::EGLSurfaceAttrib:
-            eglSurfaceAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                             captures[2].value.EGLintVal, captures[3].value.EGLintVal);
+            eglSurfaceAttrib(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal, captures[3].value.EGLintVal);
             break;
         case angle::EntryPoint::EGLSwapBuffers:
             eglSwapBuffers(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal);
@@ -4074,8 +2681,7 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
             eglWaitNative(captures[0].value.EGLintVal);
             break;
         case angle::EntryPoint::EGLWaitSync:
-            eglWaitSync(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal,
-                        captures[2].value.EGLintVal);
+            eglWaitSync(captures[0].value.voidPointerVal, captures[1].value.voidPointerVal, captures[2].value.EGLintVal);
             break;
 
         default:
@@ -4086,3 +2692,4 @@ void ReplayTraceFunctionCall(const CallCapture &call, const TraceFunctionMap &cu
 }
 
 }  // namespace angle
+

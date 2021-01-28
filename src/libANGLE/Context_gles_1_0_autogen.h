@@ -10,20 +10,17 @@
 #ifndef ANGLE_CONTEXT_GLES_1_0_AUTOGEN_H_
 #define ANGLE_CONTEXT_GLES_1_0_AUTOGEN_H_
 
-#define ANGLE_GLES_1_0_CONTEXT_API                                                        \
-    void clientActiveTexture(GLenum texture);                                             \
-    void colorPointer(GLint size, VertexAttribType typePacked, GLsizei stride,            \
-                      const void *pointer);                                               \
-    void disableClientState(ClientVertexArrayType arrayPacked);                           \
-    void enableClientState(ClientVertexArrayType arrayPacked);                            \
-    void getFixedv(GLenum pname, GLfixed *params);                                        \
-    void getTexParameterxv(TextureType targetPacked, GLenum pname, GLfixed *params);      \
-    void normalPointer(VertexAttribType typePacked, GLsizei stride, const void *pointer); \
-    void texCoordPointer(GLint size, VertexAttribType typePacked, GLsizei stride,         \
-                         const void *pointer);                                            \
-    void texParameterx(TextureType targetPacked, GLenum pname, GLfixed param);            \
-    void texParameterxv(TextureType targetPacked, GLenum pname, const GLfixed *params);   \
-    void vertexPointer(GLint size, VertexAttribType typePacked, GLsizei stride,           \
-                       const void *pointer);
+#define ANGLE_GLES_1_0_CONTEXT_API \
+    void clientActiveTexture(GLenum texture); \
+    void colorPointer(GLint size, VertexAttribType typePacked, GLsizei stride, const void * pointer); \
+    void disableClientState(ClientVertexArrayType arrayPacked); \
+    void enableClientState(ClientVertexArrayType arrayPacked); \
+    void getFixedv(GLenum pname, GLfixed * params); \
+    void getTexParameterxv(TextureType targetPacked, GLenum pname, GLfixed * params); \
+    void normalPointer(VertexAttribType typePacked, GLsizei stride, const void * pointer); \
+    void texCoordPointer(GLint size, VertexAttribType typePacked, GLsizei stride, const void * pointer); \
+    void texParameterx(TextureType targetPacked, GLenum pname, GLfixed param); \
+    void texParameterxv(TextureType targetPacked, GLenum pname, const GLfixed * params); \
+    void vertexPointer(GLint size, VertexAttribType typePacked, GLsizei stride, const void * pointer); \
 
-#endif  // ANGLE_CONTEXT_API_1_0_AUTOGEN_H_
+#endif // ANGLE_CONTEXT_API_1_0_AUTOGEN_H_

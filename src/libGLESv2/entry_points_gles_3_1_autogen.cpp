@@ -14,35 +14,29 @@
 #include "common/gl_enum_utils.h"
 #include "libANGLE/Context.h"
 #include "libANGLE/Context.inl.h"
-#include "libANGLE/capture/capture_gles_3_1_autogen.h"
-#include "libANGLE/context_private_call.inl.h"
 #include "libANGLE/context_private_call_autogen.h"
-#include "libANGLE/entry_points_utils.h"
+#include "libANGLE/context_private_call.inl.h"
+#include "libANGLE/capture/capture_gles_3_1_autogen.h"
 #include "libANGLE/validationES31.h"
+#include "libANGLE/entry_points_utils.h"
 #include "libGLESv2/global_state.h"
 
 using namespace gl;
+
 
 extern "C" {
 void GL_APIENTRY GL_ActiveShaderProgram(GLuint pipeline, GLuint program)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLActiveShaderProgram, "context = %d, pipeline = %u, program = %u", CID(context),
-          pipeline, program);
+    EVENT(context, GLActiveShaderProgram, "context = %d, pipeline = %u, program = %u", CID(context), pipeline, program);
 
     if (context)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
-        ShaderProgramID programPacked    = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLActiveShaderProgram) &&
-              ValidateActiveShaderProgram(context, angle::EntryPoint::GLActiveShaderProgram,
-                                          pipelinePacked, programPacked)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLActiveShaderProgram) && ValidateActiveShaderProgram(context, angle::EntryPoint::GLActiveShaderProgram, pipelinePacked, programPacked)));
         if (isCallValid)
         {
             context->activeShaderProgram(pipelinePacked, programPacked);
@@ -56,40 +50,22 @@ void GL_APIENTRY GL_ActiveShaderProgram(GLuint pipeline, GLuint program)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_BindImageTexture(GLuint unit,
-                                     GLuint texture,
-                                     GLint level,
-                                     GLboolean layered,
-                                     GLint layer,
-                                     GLenum access,
-                                     GLenum format)
+void GL_APIENTRY GL_BindImageTexture(GLuint unit, GLuint texture, GLint level, GLboolean layered, GLint layer, GLenum access, GLenum format)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLBindImageTexture,
-          "context = %d, unit = %u, texture = %u, level = %d, layered = %s, layer = %d, access = "
-          "%s, format = %s",
-          CID(context), unit, texture, level, GLbooleanToString(layered), layer,
-          GLenumToString(GLESEnum::BufferAccessARB, access),
-          GLenumToString(GLESEnum::InternalFormat, format));
+    EVENT(context, GLBindImageTexture, "context = %d, unit = %u, texture = %u, level = %d, layered = %s, layer = %d, access = %s, format = %s", CID(context), unit, texture, level, GLbooleanToString(layered), layer, GLenumToString(GLESEnum::BufferAccessARB, access), GLenumToString(GLESEnum::InternalFormat, format));
 
     if (context)
     {
         TextureID texturePacked = PackParam<TextureID>(texture);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLBindImageTexture) &&
-              ValidateBindImageTexture(context, angle::EntryPoint::GLBindImageTexture, unit,
-                                       texturePacked, level, layered, layer, access, format)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLBindImageTexture) && ValidateBindImageTexture(context, angle::EntryPoint::GLBindImageTexture, unit, texturePacked, level, layered, layer, access, format)));
         if (isCallValid)
         {
             context->bindImageTexture(unit, texturePacked, level, layered, layer, access, format);
         }
-        ANGLE_CAPTURE_GL(BindImageTexture, isCallValid, context, unit, texturePacked, level,
-                         layered, layer, access, format);
+        ANGLE_CAPTURE_GL(BindImageTexture, isCallValid, context, unit, texturePacked, level, layered, layer, access, format);
     }
     else
     {
@@ -108,13 +84,7 @@ void GL_APIENTRY GL_BindProgramPipeline(GLuint pipeline)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLBindProgramPipeline) &&
-              ValidateBindProgramPipeline(context, angle::EntryPoint::GLBindProgramPipeline,
-                                          pipelinePacked)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLBindProgramPipeline) && ValidateBindProgramPipeline(context, angle::EntryPoint::GLBindProgramPipeline, pipelinePacked)));
         if (isCallValid)
         {
             context->bindProgramPipeline(pipelinePacked);
@@ -128,34 +98,22 @@ void GL_APIENTRY GL_BindProgramPipeline(GLuint pipeline)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_BindVertexBuffer(GLuint bindingindex,
-                                     GLuint buffer,
-                                     GLintptr offset,
-                                     GLsizei stride)
+void GL_APIENTRY GL_BindVertexBuffer(GLuint bindingindex, GLuint buffer, GLintptr offset, GLsizei stride)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLBindVertexBuffer,
-          "context = %d, bindingindex = %u, buffer = %u, offset = %llu, stride = %d", CID(context),
-          bindingindex, buffer, static_cast<unsigned long long>(offset), stride);
+    EVENT(context, GLBindVertexBuffer, "context = %d, bindingindex = %u, buffer = %u, offset = %llu, stride = %d", CID(context), bindingindex, buffer, static_cast<unsigned long long>(offset), stride);
 
     if (context)
     {
         BufferID bufferPacked = PackParam<BufferID>(buffer);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLBindVertexBuffer) &&
-              ValidateBindVertexBuffer(context, angle::EntryPoint::GLBindVertexBuffer, bindingindex,
-                                       bufferPacked, offset, stride)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLBindVertexBuffer) && ValidateBindVertexBuffer(context, angle::EntryPoint::GLBindVertexBuffer, bindingindex, bufferPacked, offset, stride)));
         if (isCallValid)
         {
             context->bindVertexBuffer(bindingindex, bufferPacked, offset, stride);
         }
-        ANGLE_CAPTURE_GL(BindVertexBuffer, isCallValid, context, bindingindex, bufferPacked, offset,
-                         stride);
+        ANGLE_CAPTURE_GL(BindVertexBuffer, isCallValid, context, bindingindex, bufferPacked, offset, stride);
     }
     else
     {
@@ -164,37 +122,27 @@ void GL_APIENTRY GL_BindVertexBuffer(GLuint bindingindex,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-GLuint GL_APIENTRY GL_CreateShaderProgramv(GLenum type, GLsizei count, const GLchar *const *strings)
+GLuint GL_APIENTRY GL_CreateShaderProgramv(GLenum type, GLsizei count, const GLchar *const*strings)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLCreateShaderProgramv,
-          "context = %d, type = %s, count = %d, strings = 0x%016" PRIxPTR "", CID(context),
-          GLenumToString(GLESEnum::ShaderType, type), count, (uintptr_t)strings);
+    EVENT(context, GLCreateShaderProgramv, "context = %d, type = %s, count = %d, strings = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::ShaderType, type), count, (uintptr_t)strings);
 
     GLuint returnValue;
     if (context)
     {
         ShaderType typePacked = PackParam<ShaderType>(type);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLCreateShaderProgramv) &&
-              ValidateCreateShaderProgramv(context, angle::EntryPoint::GLCreateShaderProgramv,
-                                           typePacked, count, strings)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLCreateShaderProgramv) && ValidateCreateShaderProgramv(context, angle::EntryPoint::GLCreateShaderProgramv, typePacked, count, strings)));
         if (isCallValid)
         {
             returnValue = context->createShaderProgramv(typePacked, count, strings);
         }
         else
         {
-            returnValue =
-                GetDefaultReturnValue<angle::EntryPoint::GLCreateShaderProgramv, GLuint>();
+            returnValue = GetDefaultReturnValue<angle::EntryPoint::GLCreateShaderProgramv, GLuint>();
         }
-        ANGLE_CAPTURE_GL(CreateShaderProgramv, isCallValid, context, typePacked, count, strings,
-                         returnValue);
+        ANGLE_CAPTURE_GL(CreateShaderProgramv, isCallValid, context, typePacked, count, strings, returnValue);
     }
     else
     {
@@ -209,17 +157,13 @@ void GL_APIENTRY GL_DeleteProgramPipelines(GLsizei n, const GLuint *pipelines)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLDeleteProgramPipelines, "context = %d, n = %d, pipelines = 0x%016" PRIxPTR "",
-          CID(context), n, (uintptr_t)pipelines);
+    EVENT(context, GLDeleteProgramPipelines, "context = %d, n = %d, pipelines = 0x%016" PRIxPTR "", CID(context), n, (uintptr_t)pipelines);
 
     if (context)
     {
-        const ProgramPipelineID *pipelinesPacked = PackParam<const ProgramPipelineID *>(pipelines);
+        const ProgramPipelineID * pipelinesPacked = PackParam<const ProgramPipelineID *>(pipelines);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateDeleteProgramPipelines(context, angle::EntryPoint::GLDeleteProgramPipelines, n,
-                                            pipelinesPacked));
+        bool isCallValid = (context->skipValidation() || ValidateDeleteProgramPipelines(context, angle::EntryPoint::GLDeleteProgramPipelines, n, pipelinesPacked));
         if (isCallValid)
         {
             context->deleteProgramPipelines(n, pipelinesPacked);
@@ -237,26 +181,17 @@ void GL_APIENTRY GL_DispatchCompute(GLuint num_groups_x, GLuint num_groups_y, GL
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLDispatchCompute,
-          "context = %d, num_groups_x = %u, num_groups_y = %u, num_groups_z = %u", CID(context),
-          num_groups_x, num_groups_y, num_groups_z);
+    EVENT(context, GLDispatchCompute, "context = %d, num_groups_x = %u, num_groups_y = %u, num_groups_z = %u", CID(context), num_groups_x, num_groups_y, num_groups_z);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLDispatchCompute) &&
-              ValidateDispatchCompute(context, angle::EntryPoint::GLDispatchCompute, num_groups_x,
-                                      num_groups_y, num_groups_z)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLDispatchCompute) && ValidateDispatchCompute(context, angle::EntryPoint::GLDispatchCompute, num_groups_x, num_groups_y, num_groups_z)));
         if (isCallValid)
         {
             context->dispatchCompute(num_groups_x, num_groups_y, num_groups_z);
         }
-        ANGLE_CAPTURE_GL(DispatchCompute, isCallValid, context, num_groups_x, num_groups_y,
-                         num_groups_z);
+        ANGLE_CAPTURE_GL(DispatchCompute, isCallValid, context, num_groups_x, num_groups_y, num_groups_z);
     }
     else
     {
@@ -269,15 +204,12 @@ void GL_APIENTRY GL_DispatchComputeIndirect(GLintptr indirect)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLDispatchComputeIndirect, "context = %d, indirect = %llu", CID(context),
-          static_cast<unsigned long long>(indirect));
+    EVENT(context, GLDispatchComputeIndirect, "context = %d, indirect = %llu", CID(context), static_cast<unsigned long long>(indirect));
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateDispatchComputeIndirect(
-                                context, angle::EntryPoint::GLDispatchComputeIndirect, indirect));
+        bool isCallValid = (context->skipValidation() || ValidateDispatchComputeIndirect(context, angle::EntryPoint::GLDispatchComputeIndirect, indirect));
         if (isCallValid)
         {
             context->dispatchComputeIndirect(indirect);
@@ -295,17 +227,13 @@ void GL_APIENTRY GL_DrawArraysIndirect(GLenum mode, const void *indirect)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLDrawArraysIndirect, "context = %d, mode = %s, indirect = 0x%016" PRIxPTR "",
-          CID(context), GLenumToString(GLESEnum::PrimitiveType, mode), (uintptr_t)indirect);
+    EVENT(context, GLDrawArraysIndirect, "context = %d, mode = %s, indirect = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::PrimitiveType, mode), (uintptr_t)indirect);
 
     if (context)
     {
         PrimitiveMode modePacked = PackParam<PrimitiveMode>(mode);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateDrawArraysIndirect(context, angle::EntryPoint::GLDrawArraysIndirect,
-                                        modePacked, indirect));
+        bool isCallValid = (context->skipValidation() || ValidateDrawArraysIndirect(context, angle::EntryPoint::GLDrawArraysIndirect, modePacked, indirect));
         if (isCallValid)
         {
             context->drawArraysIndirect(modePacked, indirect);
@@ -323,26 +251,19 @@ void GL_APIENTRY GL_DrawElementsIndirect(GLenum mode, GLenum type, const void *i
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLDrawElementsIndirect,
-          "context = %d, mode = %s, type = %s, indirect = 0x%016" PRIxPTR "", CID(context),
-          GLenumToString(GLESEnum::PrimitiveType, mode),
-          GLenumToString(GLESEnum::DrawElementsType, type), (uintptr_t)indirect);
+    EVENT(context, GLDrawElementsIndirect, "context = %d, mode = %s, type = %s, indirect = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::PrimitiveType, mode), GLenumToString(GLESEnum::DrawElementsType, type), (uintptr_t)indirect);
 
     if (context)
     {
-        PrimitiveMode modePacked    = PackParam<PrimitiveMode>(mode);
+        PrimitiveMode modePacked = PackParam<PrimitiveMode>(mode);
         DrawElementsType typePacked = PackParam<DrawElementsType>(type);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateDrawElementsIndirect(context, angle::EntryPoint::GLDrawElementsIndirect,
-                                          modePacked, typePacked, indirect));
+        bool isCallValid = (context->skipValidation() || ValidateDrawElementsIndirect(context, angle::EntryPoint::GLDrawElementsIndirect, modePacked, typePacked, indirect));
         if (isCallValid)
         {
             context->drawElementsIndirect(modePacked, typePacked, indirect);
         }
-        ANGLE_CAPTURE_GL(DrawElementsIndirect, isCallValid, context, modePacked, typePacked,
-                         indirect);
+        ANGLE_CAPTURE_GL(DrawElementsIndirect, isCallValid, context, modePacked, typePacked, indirect);
     }
     else
     {
@@ -355,17 +276,12 @@ void GL_APIENTRY GL_FramebufferParameteri(GLenum target, GLenum pname, GLint par
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLFramebufferParameteri, "context = %d, target = %s, pname = %s, param = %d",
-          CID(context), GLenumToString(GLESEnum::FramebufferTarget, target),
-          GLenumToString(GLESEnum::FramebufferParameterName, pname), param);
+    EVENT(context, GLFramebufferParameteri, "context = %d, target = %s, pname = %s, param = %d", CID(context), GLenumToString(GLESEnum::FramebufferTarget, target), GLenumToString(GLESEnum::FramebufferParameterName, pname), param);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateFramebufferParameteri(context, angle::EntryPoint::GLFramebufferParameteri,
-                                           target, pname, param));
+        bool isCallValid = (context->skipValidation() || ValidateFramebufferParameteri(context, angle::EntryPoint::GLFramebufferParameteri, target, pname, param));
         if (isCallValid)
         {
             context->framebufferParameteri(target, pname, param);
@@ -383,17 +299,13 @@ void GL_APIENTRY GL_GenProgramPipelines(GLsizei n, GLuint *pipelines)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGenProgramPipelines, "context = %d, n = %d, pipelines = 0x%016" PRIxPTR "",
-          CID(context), n, (uintptr_t)pipelines);
+    EVENT(context, GLGenProgramPipelines, "context = %d, n = %d, pipelines = 0x%016" PRIxPTR "", CID(context), n, (uintptr_t)pipelines);
 
     if (context)
     {
-        ProgramPipelineID *pipelinesPacked = PackParam<ProgramPipelineID *>(pipelines);
+        ProgramPipelineID * pipelinesPacked = PackParam<ProgramPipelineID *>(pipelines);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGenProgramPipelines(context, angle::EntryPoint::GLGenProgramPipelines, n,
-                                         pipelinesPacked));
+        bool isCallValid = (context->skipValidation() || ValidateGenProgramPipelines(context, angle::EntryPoint::GLGenProgramPipelines, n, pipelinesPacked));
         if (isCallValid)
         {
             context->genProgramPipelines(n, pipelinesPacked);
@@ -411,16 +323,12 @@ void GL_APIENTRY GL_GetBooleani_v(GLenum target, GLuint index, GLboolean *data)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetBooleani_v,
-          "context = %d, target = %s, index = %u, data = 0x%016" PRIxPTR "", CID(context),
-          GLenumToString(GLESEnum::BufferTargetARB, target), index, (uintptr_t)data);
+    EVENT(context, GLGetBooleani_v, "context = %d, target = %s, index = %u, data = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::BufferTargetARB, target), index, (uintptr_t)data);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetBooleani_v(context, angle::EntryPoint::GLGetBooleani_v,
-                                                  target, index, data));
+        bool isCallValid = (context->skipValidation() || ValidateGetBooleani_v(context, angle::EntryPoint::GLGetBooleani_v, target, index, data));
         if (isCallValid)
         {
             context->getBooleani_v(target, index, data);
@@ -438,18 +346,12 @@ void GL_APIENTRY GL_GetFramebufferParameteriv(GLenum target, GLenum pname, GLint
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetFramebufferParameteriv,
-          "context = %d, target = %s, pname = %s, params = 0x%016" PRIxPTR "", CID(context),
-          GLenumToString(GLESEnum::FramebufferTarget, target),
-          GLenumToString(GLESEnum::FramebufferAttachmentParameterName, pname), (uintptr_t)params);
+    EVENT(context, GLGetFramebufferParameteriv, "context = %d, target = %s, pname = %s, params = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::FramebufferTarget, target), GLenumToString(GLESEnum::FramebufferAttachmentParameterName, pname), (uintptr_t)params);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetFramebufferParameteriv(
-                 context, angle::EntryPoint::GLGetFramebufferParameteriv, target, pname, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetFramebufferParameteriv(context, angle::EntryPoint::GLGetFramebufferParameteriv, target, pname, params));
         if (isCallValid)
         {
             context->getFramebufferParameteriv(target, pname, params);
@@ -467,16 +369,12 @@ void GL_APIENTRY GL_GetMultisamplefv(GLenum pname, GLuint index, GLfloat *val)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetMultisamplefv,
-          "context = %d, pname = %s, index = %u, val = 0x%016" PRIxPTR "", CID(context),
-          GLenumToString(GLESEnum::AllEnums, pname), index, (uintptr_t)val);
+    EVENT(context, GLGetMultisamplefv, "context = %d, pname = %s, index = %u, val = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::AllEnums, pname), index, (uintptr_t)val);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetMultisamplefv(context, angle::EntryPoint::GLGetMultisamplefv,
-                                                     pname, index, val));
+        bool isCallValid = (context->skipValidation() || ValidateGetMultisamplefv(context, angle::EntryPoint::GLGetMultisamplefv, pname, index, val));
         if (isCallValid)
         {
             context->getMultisamplefv(pname, index, val);
@@ -490,33 +388,22 @@ void GL_APIENTRY GL_GetMultisamplefv(GLenum pname, GLuint index, GLfloat *val)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_GetProgramInterfaceiv(GLuint program,
-                                          GLenum programInterface,
-                                          GLenum pname,
-                                          GLint *params)
+void GL_APIENTRY GL_GetProgramInterfaceiv(GLuint program, GLenum programInterface, GLenum pname, GLint *params)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramInterfaceiv,
-          "context = %d, program = %u, programInterface = %s, pname = %s, params = 0x%016" PRIxPTR
-          "",
-          CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface),
-          GLenumToString(GLESEnum::ProgramInterfacePName, pname), (uintptr_t)params);
+    EVENT(context, GLGetProgramInterfaceiv, "context = %d, program = %u, programInterface = %s, pname = %s, params = 0x%016" PRIxPTR "", CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface), GLenumToString(GLESEnum::ProgramInterfacePName, pname), (uintptr_t)params);
 
     if (context)
     {
         ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetProgramInterfaceiv(context, angle::EntryPoint::GLGetProgramInterfaceiv,
-                                           programPacked, programInterface, pname, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramInterfaceiv(context, angle::EntryPoint::GLGetProgramInterfaceiv, programPacked, programInterface, pname, params));
         if (isCallValid)
         {
             context->getProgramInterfaceiv(programPacked, programInterface, pname, params);
         }
-        ANGLE_CAPTURE_GL(GetProgramInterfaceiv, isCallValid, context, programPacked,
-                         programInterface, pname, params);
+        ANGLE_CAPTURE_GL(GetProgramInterfaceiv, isCallValid, context, programPacked, programInterface, pname, params);
     }
     else
     {
@@ -525,32 +412,22 @@ void GL_APIENTRY GL_GetProgramInterfaceiv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_GetProgramPipelineInfoLog(GLuint pipeline,
-                                              GLsizei bufSize,
-                                              GLsizei *length,
-                                              GLchar *infoLog)
+void GL_APIENTRY GL_GetProgramPipelineInfoLog(GLuint pipeline, GLsizei bufSize, GLsizei *length, GLchar *infoLog)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramPipelineInfoLog,
-          "context = %d, pipeline = %u, bufSize = %d, length = 0x%016" PRIxPTR
-          ", infoLog = 0x%016" PRIxPTR "",
-          CID(context), pipeline, bufSize, (uintptr_t)length, (uintptr_t)infoLog);
+    EVENT(context, GLGetProgramPipelineInfoLog, "context = %d, pipeline = %u, bufSize = %d, length = 0x%016" PRIxPTR ", infoLog = 0x%016" PRIxPTR "", CID(context), pipeline, bufSize, (uintptr_t)length, (uintptr_t)infoLog);
 
     if (context)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetProgramPipelineInfoLog(
-                                context, angle::EntryPoint::GLGetProgramPipelineInfoLog,
-                                pipelinePacked, bufSize, length, infoLog));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramPipelineInfoLog(context, angle::EntryPoint::GLGetProgramPipelineInfoLog, pipelinePacked, bufSize, length, infoLog));
         if (isCallValid)
         {
             context->getProgramPipelineInfoLog(pipelinePacked, bufSize, length, infoLog);
         }
-        ANGLE_CAPTURE_GL(GetProgramPipelineInfoLog, isCallValid, context, pipelinePacked, bufSize,
-                         length, infoLog);
+        ANGLE_CAPTURE_GL(GetProgramPipelineInfoLog, isCallValid, context, pipelinePacked, bufSize, length, infoLog);
     }
     else
     {
@@ -563,18 +440,13 @@ void GL_APIENTRY GL_GetProgramPipelineiv(GLuint pipeline, GLenum pname, GLint *p
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramPipelineiv,
-          "context = %d, pipeline = %u, pname = %s, params = 0x%016" PRIxPTR "", CID(context),
-          pipeline, GLenumToString(GLESEnum::PipelineParameterName, pname), (uintptr_t)params);
+    EVENT(context, GLGetProgramPipelineiv, "context = %d, pipeline = %u, pname = %s, params = 0x%016" PRIxPTR "", CID(context), pipeline, GLenumToString(GLESEnum::PipelineParameterName, pname), (uintptr_t)params);
 
     if (context)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetProgramPipelineiv(context, angle::EntryPoint::GLGetProgramPipelineiv,
-                                          pipelinePacked, pname, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramPipelineiv(context, angle::EntryPoint::GLGetProgramPipelineiv, pipelinePacked, pname, params));
         if (isCallValid)
         {
             context->getProgramPipelineiv(pipelinePacked, pname, params);
@@ -588,37 +460,27 @@ void GL_APIENTRY GL_GetProgramPipelineiv(GLuint pipeline, GLenum pname, GLint *p
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-GLuint GL_APIENTRY GL_GetProgramResourceIndex(GLuint program,
-                                              GLenum programInterface,
-                                              const GLchar *name)
+GLuint GL_APIENTRY GL_GetProgramResourceIndex(GLuint program, GLenum programInterface, const GLchar *name)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramResourceIndex,
-          "context = %d, program = %u, programInterface = %s, name = 0x%016" PRIxPTR "",
-          CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface),
-          (uintptr_t)name);
+    EVENT(context, GLGetProgramResourceIndex, "context = %d, program = %u, programInterface = %s, name = 0x%016" PRIxPTR "", CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface), (uintptr_t)name);
 
     GLuint returnValue;
     if (context)
     {
         ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetProgramResourceIndex(context, angle::EntryPoint::GLGetProgramResourceIndex,
-                                             programPacked, programInterface, name));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramResourceIndex(context, angle::EntryPoint::GLGetProgramResourceIndex, programPacked, programInterface, name));
         if (isCallValid)
         {
             returnValue = context->getProgramResourceIndex(programPacked, programInterface, name);
         }
         else
         {
-            returnValue =
-                GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceIndex, GLuint>();
+            returnValue = GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceIndex, GLuint>();
         }
-        ANGLE_CAPTURE_GL(GetProgramResourceIndex, isCallValid, context, programPacked,
-                         programInterface, name, returnValue);
+        ANGLE_CAPTURE_GL(GetProgramResourceIndex, isCallValid, context, programPacked, programInterface, name, returnValue);
     }
     else
     {
@@ -629,79 +491,53 @@ GLuint GL_APIENTRY GL_GetProgramResourceIndex(GLuint program,
     return returnValue;
 }
 
-GLint GL_APIENTRY GL_GetProgramResourceLocation(GLuint program,
-                                                GLenum programInterface,
-                                                const GLchar *name)
+GLint GL_APIENTRY GL_GetProgramResourceLocation(GLuint program, GLenum programInterface, const GLchar *name)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramResourceLocation,
-          "context = %d, program = %u, programInterface = %s, name = 0x%016" PRIxPTR "",
-          CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface),
-          (uintptr_t)name);
+    EVENT(context, GLGetProgramResourceLocation, "context = %d, program = %u, programInterface = %s, name = 0x%016" PRIxPTR "", CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface), (uintptr_t)name);
 
     GLint returnValue;
     if (context)
     {
         ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetProgramResourceLocation(
-                                context, angle::EntryPoint::GLGetProgramResourceLocation,
-                                programPacked, programInterface, name));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramResourceLocation(context, angle::EntryPoint::GLGetProgramResourceLocation, programPacked, programInterface, name));
         if (isCallValid)
         {
-            returnValue =
-                context->getProgramResourceLocation(programPacked, programInterface, name);
+            returnValue = context->getProgramResourceLocation(programPacked, programInterface, name);
         }
         else
         {
-            returnValue =
-                GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceLocation, GLint>();
+            returnValue = GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceLocation, GLint>();
         }
-        ANGLE_CAPTURE_GL(GetProgramResourceLocation, isCallValid, context, programPacked,
-                         programInterface, name, returnValue);
+        ANGLE_CAPTURE_GL(GetProgramResourceLocation, isCallValid, context, programPacked, programInterface, name, returnValue);
     }
     else
     {
         GenerateContextLostErrorOnCurrentGlobalContext();
-        returnValue =
-            GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceLocation, GLint>();
+        returnValue = GetDefaultReturnValue<angle::EntryPoint::GLGetProgramResourceLocation, GLint>();
     }
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     return returnValue;
 }
 
-void GL_APIENTRY GL_GetProgramResourceName(GLuint program,
-                                           GLenum programInterface,
-                                           GLuint index,
-                                           GLsizei bufSize,
-                                           GLsizei *length,
-                                           GLchar *name)
+void GL_APIENTRY GL_GetProgramResourceName(GLuint program, GLenum programInterface, GLuint index, GLsizei bufSize, GLsizei *length, GLchar *name)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramResourceName,
-          "context = %d, program = %u, programInterface = %s, index = %u, bufSize = %d, length = "
-          "0x%016" PRIxPTR ", name = 0x%016" PRIxPTR "",
-          CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface),
-          index, bufSize, (uintptr_t)length, (uintptr_t)name);
+    EVENT(context, GLGetProgramResourceName, "context = %d, program = %u, programInterface = %s, index = %u, bufSize = %d, length = 0x%016" PRIxPTR ", name = 0x%016" PRIxPTR "", CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface), index, bufSize, (uintptr_t)length, (uintptr_t)name);
 
     if (context)
     {
         ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetProgramResourceName(
-                                context, angle::EntryPoint::GLGetProgramResourceName, programPacked,
-                                programInterface, index, bufSize, length, name));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramResourceName(context, angle::EntryPoint::GLGetProgramResourceName, programPacked, programInterface, index, bufSize, length, name));
         if (isCallValid)
         {
-            context->getProgramResourceName(programPacked, programInterface, index, bufSize, length,
-                                            name);
+            context->getProgramResourceName(programPacked, programInterface, index, bufSize, length, name);
         }
-        ANGLE_CAPTURE_GL(GetProgramResourceName, isCallValid, context, programPacked,
-                         programInterface, index, bufSize, length, name);
+        ANGLE_CAPTURE_GL(GetProgramResourceName, isCallValid, context, programPacked, programInterface, index, bufSize, length, name);
     }
     else
     {
@@ -710,38 +546,22 @@ void GL_APIENTRY GL_GetProgramResourceName(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_GetProgramResourceiv(GLuint program,
-                                         GLenum programInterface,
-                                         GLuint index,
-                                         GLsizei propCount,
-                                         const GLenum *props,
-                                         GLsizei count,
-                                         GLsizei *length,
-                                         GLint *params)
+void GL_APIENTRY GL_GetProgramResourceiv(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, const GLenum *props, GLsizei count, GLsizei *length, GLint *params)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetProgramResourceiv,
-          "context = %d, program = %u, programInterface = %s, index = %u, propCount = %d, props = "
-          "0x%016" PRIxPTR ", count = %d, length = 0x%016" PRIxPTR ", params = 0x%016" PRIxPTR "",
-          CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface),
-          index, propCount, (uintptr_t)props, count, (uintptr_t)length, (uintptr_t)params);
+    EVENT(context, GLGetProgramResourceiv, "context = %d, program = %u, programInterface = %s, index = %u, propCount = %d, props = 0x%016" PRIxPTR ", count = %d, length = 0x%016" PRIxPTR ", params = 0x%016" PRIxPTR "", CID(context), program, GLenumToString(GLESEnum::ProgramInterface, programInterface), index, propCount, (uintptr_t)props, count, (uintptr_t)length, (uintptr_t)params);
 
     if (context)
     {
         ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateGetProgramResourceiv(
-                                context, angle::EntryPoint::GLGetProgramResourceiv, programPacked,
-                                programInterface, index, propCount, props, count, length, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetProgramResourceiv(context, angle::EntryPoint::GLGetProgramResourceiv, programPacked, programInterface, index, propCount, props, count, length, params));
         if (isCallValid)
         {
-            context->getProgramResourceiv(programPacked, programInterface, index, propCount, props,
-                                          count, length, params);
+            context->getProgramResourceiv(programPacked, programInterface, index, propCount, props, count, length, params);
         }
-        ANGLE_CAPTURE_GL(GetProgramResourceiv, isCallValid, context, programPacked,
-                         programInterface, index, propCount, props, count, length, params);
+        ANGLE_CAPTURE_GL(GetProgramResourceiv, isCallValid, context, programPacked, programInterface, index, propCount, props, count, length, params);
     }
     else
     {
@@ -750,32 +570,22 @@ void GL_APIENTRY GL_GetProgramResourceiv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_GetTexLevelParameterfv(GLenum target,
-                                           GLint level,
-                                           GLenum pname,
-                                           GLfloat *params)
+void GL_APIENTRY GL_GetTexLevelParameterfv(GLenum target, GLint level, GLenum pname, GLfloat *params)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetTexLevelParameterfv,
-          "context = %d, target = %s, level = %d, pname = %s, params = 0x%016" PRIxPTR "",
-          CID(context), GLenumToString(GLESEnum::TextureTarget, target), level,
-          GLenumToString(GLESEnum::GetTextureParameter, pname), (uintptr_t)params);
+    EVENT(context, GLGetTexLevelParameterfv, "context = %d, target = %s, level = %d, pname = %s, params = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::TextureTarget, target), level, GLenumToString(GLESEnum::GetTextureParameter, pname), (uintptr_t)params);
 
     if (context)
     {
         TextureTarget targetPacked = PackParam<TextureTarget>(target);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetTexLevelParameterfv(context, angle::EntryPoint::GLGetTexLevelParameterfv,
-                                            targetPacked, level, pname, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetTexLevelParameterfv(context, angle::EntryPoint::GLGetTexLevelParameterfv, targetPacked, level, pname, params));
         if (isCallValid)
         {
             context->getTexLevelParameterfv(targetPacked, level, pname, params);
         }
-        ANGLE_CAPTURE_GL(GetTexLevelParameterfv, isCallValid, context, targetPacked, level, pname,
-                         params);
+        ANGLE_CAPTURE_GL(GetTexLevelParameterfv, isCallValid, context, targetPacked, level, pname, params);
     }
     else
     {
@@ -788,25 +598,18 @@ void GL_APIENTRY GL_GetTexLevelParameteriv(GLenum target, GLint level, GLenum pn
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLGetTexLevelParameteriv,
-          "context = %d, target = %s, level = %d, pname = %s, params = 0x%016" PRIxPTR "",
-          CID(context), GLenumToString(GLESEnum::TextureTarget, target), level,
-          GLenumToString(GLESEnum::GetTextureParameter, pname), (uintptr_t)params);
+    EVENT(context, GLGetTexLevelParameteriv, "context = %d, target = %s, level = %d, pname = %s, params = 0x%016" PRIxPTR "", CID(context), GLenumToString(GLESEnum::TextureTarget, target), level, GLenumToString(GLESEnum::GetTextureParameter, pname), (uintptr_t)params);
 
     if (context)
     {
         TextureTarget targetPacked = PackParam<TextureTarget>(target);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateGetTexLevelParameteriv(context, angle::EntryPoint::GLGetTexLevelParameteriv,
-                                            targetPacked, level, pname, params));
+        bool isCallValid = (context->skipValidation() || ValidateGetTexLevelParameteriv(context, angle::EntryPoint::GLGetTexLevelParameteriv, targetPacked, level, pname, params));
         if (isCallValid)
         {
             context->getTexLevelParameteriv(targetPacked, level, pname, params);
         }
-        ANGLE_CAPTURE_GL(GetTexLevelParameteriv, isCallValid, context, targetPacked, level, pname,
-                         params);
+        ANGLE_CAPTURE_GL(GetTexLevelParameteriv, isCallValid, context, targetPacked, level, pname, params);
     }
     else
     {
@@ -826,17 +629,14 @@ GLboolean GL_APIENTRY GL_IsProgramPipeline(GLuint pipeline)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid = (context->skipValidation() ||
-                            ValidateIsProgramPipeline(
-                                context, angle::EntryPoint::GLIsProgramPipeline, pipelinePacked));
+        bool isCallValid = (context->skipValidation() || ValidateIsProgramPipeline(context, angle::EntryPoint::GLIsProgramPipeline, pipelinePacked));
         if (isCallValid)
         {
             returnValue = context->isProgramPipeline(pipelinePacked);
         }
         else
         {
-            returnValue =
-                GetDefaultReturnValue<angle::EntryPoint::GLIsProgramPipeline, GLboolean>();
+            returnValue = GetDefaultReturnValue<angle::EntryPoint::GLIsProgramPipeline, GLboolean>();
         }
         ANGLE_CAPTURE_GL(IsProgramPipeline, isCallValid, context, pipelinePacked, returnValue);
     }
@@ -853,18 +653,12 @@ void GL_APIENTRY GL_MemoryBarrier(GLbitfield barriers)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLMemoryBarrier, "context = %d, barriers = %s", CID(context),
-          GLbitfieldToString(GLESEnum::MemoryBarrierMask, barriers).c_str());
+    EVENT(context, GLMemoryBarrier, "context = %d, barriers = %s", CID(context), GLbitfieldToString(GLESEnum::MemoryBarrierMask, barriers).c_str());
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLMemoryBarrier) &&
-              ValidateMemoryBarrier(context, angle::EntryPoint::GLMemoryBarrier, barriers)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLMemoryBarrier) && ValidateMemoryBarrier(context, angle::EntryPoint::GLMemoryBarrier, barriers)));
         if (isCallValid)
         {
             context->memoryBarrier(barriers);
@@ -882,19 +676,12 @@ void GL_APIENTRY GL_MemoryBarrierByRegion(GLbitfield barriers)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLMemoryBarrierByRegion, "context = %d, barriers = %s", CID(context),
-          GLbitfieldToString(GLESEnum::MemoryBarrierMask, barriers).c_str());
+    EVENT(context, GLMemoryBarrierByRegion, "context = %d, barriers = %s", CID(context), GLbitfieldToString(GLESEnum::MemoryBarrierMask, barriers).c_str());
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLMemoryBarrierByRegion) &&
-              ValidateMemoryBarrierByRegion(context, angle::EntryPoint::GLMemoryBarrierByRegion,
-                                            barriers)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLMemoryBarrierByRegion) && ValidateMemoryBarrierByRegion(context, angle::EntryPoint::GLMemoryBarrierByRegion, barriers)));
         if (isCallValid)
         {
             context->memoryBarrierByRegion(barriers);
@@ -912,21 +699,14 @@ void GL_APIENTRY GL_ProgramUniform1f(GLuint program, GLint location, GLfloat v0)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1f, "context = %d, program = %u, location = %d, v0 = %f",
-          CID(context), program, location, v0);
+    EVENT(context, GLProgramUniform1f, "context = %d, program = %u, location = %d, v0 = %f", CID(context), program, location, v0);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1f) &&
-              ValidateProgramUniform1f(context, angle::EntryPoint::GLProgramUniform1f,
-                                       programPacked, locationPacked, v0)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1f) && ValidateProgramUniform1f(context, angle::EntryPoint::GLProgramUniform1f, programPacked, locationPacked, v0)));
         if (isCallValid)
         {
             context->programUniform1f(programPacked, locationPacked, v0);
@@ -940,35 +720,23 @@ void GL_APIENTRY GL_ProgramUniform1f(GLuint program, GLint location, GLfloat v0)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform1fv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniform1fv(GLuint program, GLint location, GLsizei count, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1fv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform1fv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1fv) &&
-              ValidateProgramUniform1fv(context, angle::EntryPoint::GLProgramUniform1fv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1fv) && ValidateProgramUniform1fv(context, angle::EntryPoint::GLProgramUniform1fv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform1fv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform1fv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform1fv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -981,21 +749,14 @@ void GL_APIENTRY GL_ProgramUniform1i(GLuint program, GLint location, GLint v0)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1i, "context = %d, program = %u, location = %d, v0 = %d",
-          CID(context), program, location, v0);
+    EVENT(context, GLProgramUniform1i, "context = %d, program = %u, location = %d, v0 = %d", CID(context), program, location, v0);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1i) &&
-              ValidateProgramUniform1i(context, angle::EntryPoint::GLProgramUniform1i,
-                                       programPacked, locationPacked, v0)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1i) && ValidateProgramUniform1i(context, angle::EntryPoint::GLProgramUniform1i, programPacked, locationPacked, v0)));
         if (isCallValid)
         {
             context->programUniform1i(programPacked, locationPacked, v0);
@@ -1009,35 +770,23 @@ void GL_APIENTRY GL_ProgramUniform1i(GLuint program, GLint location, GLint v0)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform1iv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLint *value)
+void GL_APIENTRY GL_ProgramUniform1iv(GLuint program, GLint location, GLsizei count, const GLint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1iv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform1iv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1iv) &&
-              ValidateProgramUniform1iv(context, angle::EntryPoint::GLProgramUniform1iv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1iv) && ValidateProgramUniform1iv(context, angle::EntryPoint::GLProgramUniform1iv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform1iv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform1iv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform1iv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1050,27 +799,19 @@ void GL_APIENTRY GL_ProgramUniform1ui(GLuint program, GLint location, GLuint v0)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1ui, "context = %d, program = %u, location = %d, v0 = %u",
-          CID(context), program, location, v0);
+    EVENT(context, GLProgramUniform1ui, "context = %d, program = %u, location = %d, v0 = %u", CID(context), program, location, v0);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1ui) &&
-              ValidateProgramUniform1ui(context, angle::EntryPoint::GLProgramUniform1ui,
-                                        programPacked, locationPacked, v0)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1ui) && ValidateProgramUniform1ui(context, angle::EntryPoint::GLProgramUniform1ui, programPacked, locationPacked, v0)));
         if (isCallValid)
         {
             context->programUniform1ui(programPacked, locationPacked, v0);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform1ui, isCallValid, context, programPacked, locationPacked,
-                         v0);
+        ANGLE_CAPTURE_GL(ProgramUniform1ui, isCallValid, context, programPacked, locationPacked, v0);
     }
     else
     {
@@ -1079,35 +820,23 @@ void GL_APIENTRY GL_ProgramUniform1ui(GLuint program, GLint location, GLuint v0)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform1uiv(GLuint program,
-                                       GLint location,
-                                       GLsizei count,
-                                       const GLuint *value)
+void GL_APIENTRY GL_ProgramUniform1uiv(GLuint program, GLint location, GLsizei count, const GLuint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform1uiv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform1uiv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform1uiv) &&
-              ValidateProgramUniform1uiv(context, angle::EntryPoint::GLProgramUniform1uiv,
-                                         programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform1uiv) && ValidateProgramUniform1uiv(context, angle::EntryPoint::GLProgramUniform1uiv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform1uiv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform1uiv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform1uiv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1120,28 +849,19 @@ void GL_APIENTRY GL_ProgramUniform2f(GLuint program, GLint location, GLfloat v0,
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2f,
-          "context = %d, program = %u, location = %d, v0 = %f, v1 = %f", CID(context), program,
-          location, v0, v1);
+    EVENT(context, GLProgramUniform2f, "context = %d, program = %u, location = %d, v0 = %f, v1 = %f", CID(context), program, location, v0, v1);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2f) &&
-              ValidateProgramUniform2f(context, angle::EntryPoint::GLProgramUniform2f,
-                                       programPacked, locationPacked, v0, v1)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2f) && ValidateProgramUniform2f(context, angle::EntryPoint::GLProgramUniform2f, programPacked, locationPacked, v0, v1)));
         if (isCallValid)
         {
             context->programUniform2f(programPacked, locationPacked, v0, v1);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2f, isCallValid, context, programPacked, locationPacked, v0,
-                         v1);
+        ANGLE_CAPTURE_GL(ProgramUniform2f, isCallValid, context, programPacked, locationPacked, v0, v1);
     }
     else
     {
@@ -1150,35 +870,23 @@ void GL_APIENTRY GL_ProgramUniform2f(GLuint program, GLint location, GLfloat v0,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform2fv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniform2fv(GLuint program, GLint location, GLsizei count, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2fv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform2fv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2fv) &&
-              ValidateProgramUniform2fv(context, angle::EntryPoint::GLProgramUniform2fv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2fv) && ValidateProgramUniform2fv(context, angle::EntryPoint::GLProgramUniform2fv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform2fv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2fv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform2fv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1191,28 +899,19 @@ void GL_APIENTRY GL_ProgramUniform2i(GLuint program, GLint location, GLint v0, G
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2i,
-          "context = %d, program = %u, location = %d, v0 = %d, v1 = %d", CID(context), program,
-          location, v0, v1);
+    EVENT(context, GLProgramUniform2i, "context = %d, program = %u, location = %d, v0 = %d, v1 = %d", CID(context), program, location, v0, v1);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2i) &&
-              ValidateProgramUniform2i(context, angle::EntryPoint::GLProgramUniform2i,
-                                       programPacked, locationPacked, v0, v1)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2i) && ValidateProgramUniform2i(context, angle::EntryPoint::GLProgramUniform2i, programPacked, locationPacked, v0, v1)));
         if (isCallValid)
         {
             context->programUniform2i(programPacked, locationPacked, v0, v1);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2i, isCallValid, context, programPacked, locationPacked, v0,
-                         v1);
+        ANGLE_CAPTURE_GL(ProgramUniform2i, isCallValid, context, programPacked, locationPacked, v0, v1);
     }
     else
     {
@@ -1221,35 +920,23 @@ void GL_APIENTRY GL_ProgramUniform2i(GLuint program, GLint location, GLint v0, G
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform2iv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLint *value)
+void GL_APIENTRY GL_ProgramUniform2iv(GLuint program, GLint location, GLsizei count, const GLint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2iv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform2iv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2iv) &&
-              ValidateProgramUniform2iv(context, angle::EntryPoint::GLProgramUniform2iv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2iv) && ValidateProgramUniform2iv(context, angle::EntryPoint::GLProgramUniform2iv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform2iv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2iv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform2iv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1262,28 +949,19 @@ void GL_APIENTRY GL_ProgramUniform2ui(GLuint program, GLint location, GLuint v0,
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2ui,
-          "context = %d, program = %u, location = %d, v0 = %u, v1 = %u", CID(context), program,
-          location, v0, v1);
+    EVENT(context, GLProgramUniform2ui, "context = %d, program = %u, location = %d, v0 = %u, v1 = %u", CID(context), program, location, v0, v1);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2ui) &&
-              ValidateProgramUniform2ui(context, angle::EntryPoint::GLProgramUniform2ui,
-                                        programPacked, locationPacked, v0, v1)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2ui) && ValidateProgramUniform2ui(context, angle::EntryPoint::GLProgramUniform2ui, programPacked, locationPacked, v0, v1)));
         if (isCallValid)
         {
             context->programUniform2ui(programPacked, locationPacked, v0, v1);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2ui, isCallValid, context, programPacked, locationPacked, v0,
-                         v1);
+        ANGLE_CAPTURE_GL(ProgramUniform2ui, isCallValid, context, programPacked, locationPacked, v0, v1);
     }
     else
     {
@@ -1292,35 +970,23 @@ void GL_APIENTRY GL_ProgramUniform2ui(GLuint program, GLint location, GLuint v0,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform2uiv(GLuint program,
-                                       GLint location,
-                                       GLsizei count,
-                                       const GLuint *value)
+void GL_APIENTRY GL_ProgramUniform2uiv(GLuint program, GLint location, GLsizei count, const GLuint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform2uiv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform2uiv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform2uiv) &&
-              ValidateProgramUniform2uiv(context, angle::EntryPoint::GLProgramUniform2uiv,
-                                         programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform2uiv) && ValidateProgramUniform2uiv(context, angle::EntryPoint::GLProgramUniform2uiv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform2uiv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform2uiv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform2uiv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1329,33 +995,23 @@ void GL_APIENTRY GL_ProgramUniform2uiv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY
-GL_ProgramUniform3f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2)
+void GL_APIENTRY GL_ProgramUniform3f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3f,
-          "context = %d, program = %u, location = %d, v0 = %f, v1 = %f, v2 = %f", CID(context),
-          program, location, v0, v1, v2);
+    EVENT(context, GLProgramUniform3f, "context = %d, program = %u, location = %d, v0 = %f, v1 = %f, v2 = %f", CID(context), program, location, v0, v1, v2);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3f) &&
-              ValidateProgramUniform3f(context, angle::EntryPoint::GLProgramUniform3f,
-                                       programPacked, locationPacked, v0, v1, v2)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3f) && ValidateProgramUniform3f(context, angle::EntryPoint::GLProgramUniform3f, programPacked, locationPacked, v0, v1, v2)));
         if (isCallValid)
         {
             context->programUniform3f(programPacked, locationPacked, v0, v1, v2);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3f, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2);
+        ANGLE_CAPTURE_GL(ProgramUniform3f, isCallValid, context, programPacked, locationPacked, v0, v1, v2);
     }
     else
     {
@@ -1364,35 +1020,23 @@ GL_ProgramUniform3f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfl
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform3fv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniform3fv(GLuint program, GLint location, GLsizei count, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3fv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform3fv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3fv) &&
-              ValidateProgramUniform3fv(context, angle::EntryPoint::GLProgramUniform3fv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3fv) && ValidateProgramUniform3fv(context, angle::EntryPoint::GLProgramUniform3fv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform3fv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3fv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform3fv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1405,28 +1049,19 @@ void GL_APIENTRY GL_ProgramUniform3i(GLuint program, GLint location, GLint v0, G
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3i,
-          "context = %d, program = %u, location = %d, v0 = %d, v1 = %d, v2 = %d", CID(context),
-          program, location, v0, v1, v2);
+    EVENT(context, GLProgramUniform3i, "context = %d, program = %u, location = %d, v0 = %d, v1 = %d, v2 = %d", CID(context), program, location, v0, v1, v2);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3i) &&
-              ValidateProgramUniform3i(context, angle::EntryPoint::GLProgramUniform3i,
-                                       programPacked, locationPacked, v0, v1, v2)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3i) && ValidateProgramUniform3i(context, angle::EntryPoint::GLProgramUniform3i, programPacked, locationPacked, v0, v1, v2)));
         if (isCallValid)
         {
             context->programUniform3i(programPacked, locationPacked, v0, v1, v2);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3i, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2);
+        ANGLE_CAPTURE_GL(ProgramUniform3i, isCallValid, context, programPacked, locationPacked, v0, v1, v2);
     }
     else
     {
@@ -1435,35 +1070,23 @@ void GL_APIENTRY GL_ProgramUniform3i(GLuint program, GLint location, GLint v0, G
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform3iv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLint *value)
+void GL_APIENTRY GL_ProgramUniform3iv(GLuint program, GLint location, GLsizei count, const GLint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3iv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform3iv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3iv) &&
-              ValidateProgramUniform3iv(context, angle::EntryPoint::GLProgramUniform3iv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3iv) && ValidateProgramUniform3iv(context, angle::EntryPoint::GLProgramUniform3iv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform3iv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3iv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform3iv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1472,33 +1095,23 @@ void GL_APIENTRY GL_ProgramUniform3iv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY
-GL_ProgramUniform3ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2)
+void GL_APIENTRY GL_ProgramUniform3ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3ui,
-          "context = %d, program = %u, location = %d, v0 = %u, v1 = %u, v2 = %u", CID(context),
-          program, location, v0, v1, v2);
+    EVENT(context, GLProgramUniform3ui, "context = %d, program = %u, location = %d, v0 = %u, v1 = %u, v2 = %u", CID(context), program, location, v0, v1, v2);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3ui) &&
-              ValidateProgramUniform3ui(context, angle::EntryPoint::GLProgramUniform3ui,
-                                        programPacked, locationPacked, v0, v1, v2)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3ui) && ValidateProgramUniform3ui(context, angle::EntryPoint::GLProgramUniform3ui, programPacked, locationPacked, v0, v1, v2)));
         if (isCallValid)
         {
             context->programUniform3ui(programPacked, locationPacked, v0, v1, v2);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3ui, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2);
+        ANGLE_CAPTURE_GL(ProgramUniform3ui, isCallValid, context, programPacked, locationPacked, v0, v1, v2);
     }
     else
     {
@@ -1507,35 +1120,23 @@ GL_ProgramUniform3ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuin
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform3uiv(GLuint program,
-                                       GLint location,
-                                       GLsizei count,
-                                       const GLuint *value)
+void GL_APIENTRY GL_ProgramUniform3uiv(GLuint program, GLint location, GLsizei count, const GLuint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform3uiv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform3uiv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform3uiv) &&
-              ValidateProgramUniform3uiv(context, angle::EntryPoint::GLProgramUniform3uiv,
-                                         programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform3uiv) && ValidateProgramUniform3uiv(context, angle::EntryPoint::GLProgramUniform3uiv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform3uiv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform3uiv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform3uiv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1544,33 +1145,23 @@ void GL_APIENTRY GL_ProgramUniform3uiv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY
-GL_ProgramUniform4f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
+void GL_APIENTRY GL_ProgramUniform4f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4f,
-          "context = %d, program = %u, location = %d, v0 = %f, v1 = %f, v2 = %f, v3 = %f",
-          CID(context), program, location, v0, v1, v2, v3);
+    EVENT(context, GLProgramUniform4f, "context = %d, program = %u, location = %d, v0 = %f, v1 = %f, v2 = %f, v3 = %f", CID(context), program, location, v0, v1, v2, v3);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4f) &&
-              ValidateProgramUniform4f(context, angle::EntryPoint::GLProgramUniform4f,
-                                       programPacked, locationPacked, v0, v1, v2, v3)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4f) && ValidateProgramUniform4f(context, angle::EntryPoint::GLProgramUniform4f, programPacked, locationPacked, v0, v1, v2, v3)));
         if (isCallValid)
         {
             context->programUniform4f(programPacked, locationPacked, v0, v1, v2, v3);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4f, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2, v3);
+        ANGLE_CAPTURE_GL(ProgramUniform4f, isCallValid, context, programPacked, locationPacked, v0, v1, v2, v3);
     }
     else
     {
@@ -1579,35 +1170,23 @@ GL_ProgramUniform4f(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfl
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform4fv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniform4fv(GLuint program, GLint location, GLsizei count, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4fv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform4fv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4fv) &&
-              ValidateProgramUniform4fv(context, angle::EntryPoint::GLProgramUniform4fv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4fv) && ValidateProgramUniform4fv(context, angle::EntryPoint::GLProgramUniform4fv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform4fv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4fv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform4fv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1616,33 +1195,23 @@ void GL_APIENTRY GL_ProgramUniform4fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY
-GL_ProgramUniform4i(GLuint program, GLint location, GLint v0, GLint v1, GLint v2, GLint v3)
+void GL_APIENTRY GL_ProgramUniform4i(GLuint program, GLint location, GLint v0, GLint v1, GLint v2, GLint v3)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4i,
-          "context = %d, program = %u, location = %d, v0 = %d, v1 = %d, v2 = %d, v3 = %d",
-          CID(context), program, location, v0, v1, v2, v3);
+    EVENT(context, GLProgramUniform4i, "context = %d, program = %u, location = %d, v0 = %d, v1 = %d, v2 = %d, v3 = %d", CID(context), program, location, v0, v1, v2, v3);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4i) &&
-              ValidateProgramUniform4i(context, angle::EntryPoint::GLProgramUniform4i,
-                                       programPacked, locationPacked, v0, v1, v2, v3)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4i) && ValidateProgramUniform4i(context, angle::EntryPoint::GLProgramUniform4i, programPacked, locationPacked, v0, v1, v2, v3)));
         if (isCallValid)
         {
             context->programUniform4i(programPacked, locationPacked, v0, v1, v2, v3);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4i, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2, v3);
+        ANGLE_CAPTURE_GL(ProgramUniform4i, isCallValid, context, programPacked, locationPacked, v0, v1, v2, v3);
     }
     else
     {
@@ -1651,35 +1220,23 @@ GL_ProgramUniform4i(GLuint program, GLint location, GLint v0, GLint v1, GLint v2
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform4iv(GLuint program,
-                                      GLint location,
-                                      GLsizei count,
-                                      const GLint *value)
+void GL_APIENTRY GL_ProgramUniform4iv(GLuint program, GLint location, GLsizei count, const GLint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4iv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform4iv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4iv) &&
-              ValidateProgramUniform4iv(context, angle::EntryPoint::GLProgramUniform4iv,
-                                        programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4iv) && ValidateProgramUniform4iv(context, angle::EntryPoint::GLProgramUniform4iv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform4iv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4iv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform4iv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1688,33 +1245,23 @@ void GL_APIENTRY GL_ProgramUniform4iv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY
-GL_ProgramUniform4ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
+void GL_APIENTRY GL_ProgramUniform4ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4ui,
-          "context = %d, program = %u, location = %d, v0 = %u, v1 = %u, v2 = %u, v3 = %u",
-          CID(context), program, location, v0, v1, v2, v3);
+    EVENT(context, GLProgramUniform4ui, "context = %d, program = %u, location = %d, v0 = %u, v1 = %u, v2 = %u, v3 = %u", CID(context), program, location, v0, v1, v2, v3);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4ui) &&
-              ValidateProgramUniform4ui(context, angle::EntryPoint::GLProgramUniform4ui,
-                                        programPacked, locationPacked, v0, v1, v2, v3)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4ui) && ValidateProgramUniform4ui(context, angle::EntryPoint::GLProgramUniform4ui, programPacked, locationPacked, v0, v1, v2, v3)));
         if (isCallValid)
         {
             context->programUniform4ui(programPacked, locationPacked, v0, v1, v2, v3);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4ui, isCallValid, context, programPacked, locationPacked, v0,
-                         v1, v2, v3);
+        ANGLE_CAPTURE_GL(ProgramUniform4ui, isCallValid, context, programPacked, locationPacked, v0, v1, v2, v3);
     }
     else
     {
@@ -1723,35 +1270,23 @@ GL_ProgramUniform4ui(GLuint program, GLint location, GLuint v0, GLuint v1, GLuin
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniform4uiv(GLuint program,
-                                       GLint location,
-                                       GLsizei count,
-                                       const GLuint *value)
+void GL_APIENTRY GL_ProgramUniform4uiv(GLuint program, GLint location, GLsizei count, const GLuint *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniform4uiv,
-          "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "",
-          CID(context), program, location, count, (uintptr_t)value);
+    EVENT(context, GLProgramUniform4uiv, "context = %d, program = %u, location = %d, count = %d, value = 0x%016" PRIxPTR "", CID(context), program, location, count, (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniform4uiv) &&
-              ValidateProgramUniform4uiv(context, angle::EntryPoint::GLProgramUniform4uiv,
-                                         programPacked, locationPacked, count, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniform4uiv) && ValidateProgramUniform4uiv(context, angle::EntryPoint::GLProgramUniform4uiv, programPacked, locationPacked, count, value)));
         if (isCallValid)
         {
             context->programUniform4uiv(programPacked, locationPacked, count, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniform4uiv, isCallValid, context, programPacked, locationPacked,
-                         count, value);
+        ANGLE_CAPTURE_GL(ProgramUniform4uiv, isCallValid, context, programPacked, locationPacked, count, value);
     }
     else
     {
@@ -1760,39 +1295,23 @@ void GL_APIENTRY GL_ProgramUniform4uiv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix2fv(GLuint program,
-                                            GLint location,
-                                            GLsizei count,
-                                            GLboolean transpose,
-                                            const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix2fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix2fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix2fv) &&
-              ValidateProgramUniformMatrix2fv(context, angle::EntryPoint::GLProgramUniformMatrix2fv,
-                                              programPacked, locationPacked, count, transpose,
-                                              value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix2fv) && ValidateProgramUniformMatrix2fv(context, angle::EntryPoint::GLProgramUniformMatrix2fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix2fv(programPacked, locationPacked, count, transpose,
-                                             value);
+            context->programUniformMatrix2fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix2fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix2fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -1801,39 +1320,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix2fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix2x3fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix2x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix2x3fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix2x3fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix2x3fv) &&
-              ValidateProgramUniformMatrix2x3fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix2x3fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix2x3fv) && ValidateProgramUniformMatrix2x3fv(context, angle::EntryPoint::GLProgramUniformMatrix2x3fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix2x3fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix2x3fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix2x3fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix2x3fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -1842,39 +1345,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix2x3fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix2x4fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix2x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix2x4fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix2x4fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix2x4fv) &&
-              ValidateProgramUniformMatrix2x4fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix2x4fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix2x4fv) && ValidateProgramUniformMatrix2x4fv(context, angle::EntryPoint::GLProgramUniformMatrix2x4fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix2x4fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix2x4fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix2x4fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix2x4fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -1883,39 +1370,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix2x4fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix3fv(GLuint program,
-                                            GLint location,
-                                            GLsizei count,
-                                            GLboolean transpose,
-                                            const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix3fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix3fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix3fv) &&
-              ValidateProgramUniformMatrix3fv(context, angle::EntryPoint::GLProgramUniformMatrix3fv,
-                                              programPacked, locationPacked, count, transpose,
-                                              value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix3fv) && ValidateProgramUniformMatrix3fv(context, angle::EntryPoint::GLProgramUniformMatrix3fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix3fv(programPacked, locationPacked, count, transpose,
-                                             value);
+            context->programUniformMatrix3fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix3fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix3fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -1924,39 +1395,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix3fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix3x2fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix3x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix3x2fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix3x2fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix3x2fv) &&
-              ValidateProgramUniformMatrix3x2fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix3x2fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix3x2fv) && ValidateProgramUniformMatrix3x2fv(context, angle::EntryPoint::GLProgramUniformMatrix3x2fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix3x2fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix3x2fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix3x2fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix3x2fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -1965,39 +1420,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix3x2fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix3x4fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix3x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix3x4fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix3x4fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix3x4fv) &&
-              ValidateProgramUniformMatrix3x4fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix3x4fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix3x4fv) && ValidateProgramUniformMatrix3x4fv(context, angle::EntryPoint::GLProgramUniformMatrix3x4fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix3x4fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix3x4fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix3x4fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix3x4fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -2006,39 +1445,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix3x4fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix4fv(GLuint program,
-                                            GLint location,
-                                            GLsizei count,
-                                            GLboolean transpose,
-                                            const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix4fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix4fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix4fv) &&
-              ValidateProgramUniformMatrix4fv(context, angle::EntryPoint::GLProgramUniformMatrix4fv,
-                                              programPacked, locationPacked, count, transpose,
-                                              value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix4fv) && ValidateProgramUniformMatrix4fv(context, angle::EntryPoint::GLProgramUniformMatrix4fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix4fv(programPacked, locationPacked, count, transpose,
-                                             value);
+            context->programUniformMatrix4fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix4fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix4fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -2047,39 +1470,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix4fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix4x2fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix4x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix4x2fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix4x2fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix4x2fv) &&
-              ValidateProgramUniformMatrix4x2fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix4x2fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix4x2fv) && ValidateProgramUniformMatrix4x2fv(context, angle::EntryPoint::GLProgramUniformMatrix4x2fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix4x2fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix4x2fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix4x2fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix4x2fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -2088,39 +1495,23 @@ void GL_APIENTRY GL_ProgramUniformMatrix4x2fv(GLuint program,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_ProgramUniformMatrix4x3fv(GLuint program,
-                                              GLint location,
-                                              GLsizei count,
-                                              GLboolean transpose,
-                                              const GLfloat *value)
+void GL_APIENTRY GL_ProgramUniformMatrix4x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat *value)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLProgramUniformMatrix4x3fv,
-          "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = "
-          "0x%016" PRIxPTR "",
-          CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
+    EVENT(context, GLProgramUniformMatrix4x3fv, "context = %d, program = %u, location = %d, count = %d, transpose = %s, value = 0x%016" PRIxPTR "", CID(context), program, location, count, GLbooleanToString(transpose), (uintptr_t)value);
 
     if (context)
     {
-        ShaderProgramID programPacked  = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         UniformLocation locationPacked = PackParam<UniformLocation>(location);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLProgramUniformMatrix4x3fv) &&
-              ValidateProgramUniformMatrix4x3fv(
-                  context, angle::EntryPoint::GLProgramUniformMatrix4x3fv, programPacked,
-                  locationPacked, count, transpose, value)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLProgramUniformMatrix4x3fv) && ValidateProgramUniformMatrix4x3fv(context, angle::EntryPoint::GLProgramUniformMatrix4x3fv, programPacked, locationPacked, count, transpose, value)));
         if (isCallValid)
         {
-            context->programUniformMatrix4x3fv(programPacked, locationPacked, count, transpose,
-                                               value);
+            context->programUniformMatrix4x3fv(programPacked, locationPacked, count, transpose, value);
         }
-        ANGLE_CAPTURE_GL(ProgramUniformMatrix4x3fv, isCallValid, context, programPacked,
-                         locationPacked, count, transpose, value);
+        ANGLE_CAPTURE_GL(ProgramUniformMatrix4x3fv, isCallValid, context, programPacked, locationPacked, count, transpose, value);
     }
     else
     {
@@ -2133,23 +1524,14 @@ void GL_APIENTRY GL_SampleMaski(GLuint maskNumber, GLbitfield mask)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLSampleMaski, "context = %d, maskNumber = %u, mask = %s", CID(context),
-          maskNumber, GLbitfieldToString(GLESEnum::AllEnums, mask).c_str());
+    EVENT(context, GLSampleMaski, "context = %d, maskNumber = %u, mask = %s", CID(context), maskNumber, GLbitfieldToString(GLESEnum::AllEnums, mask).c_str());
 
     if (context)
     {
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLSampleMaski) &&
-              ValidateSampleMaski(context->getPrivateState(),
-                                  context->getMutableErrorSetForValidation(),
-                                  angle::EntryPoint::GLSampleMaski, maskNumber, mask)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLSampleMaski) && ValidateSampleMaski(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLSampleMaski, maskNumber, mask)));
         if (isCallValid)
         {
-            ContextPrivateSampleMaski(context->getMutablePrivateState(),
-                                      context->getMutablePrivateStateCache(), maskNumber, mask);
+            ContextPrivateSampleMaski(context->getMutablePrivateState(), context->getMutablePrivateStateCache(), maskNumber, mask);
         }
         ANGLE_CAPTURE_GL(SampleMaski, isCallValid, context, maskNumber, mask);
     }
@@ -2160,41 +1542,22 @@ void GL_APIENTRY GL_SampleMaski(GLuint maskNumber, GLbitfield mask)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_TexStorage2DMultisample(GLenum target,
-                                            GLsizei samples,
-                                            GLenum internalformat,
-                                            GLsizei width,
-                                            GLsizei height,
-                                            GLboolean fixedsamplelocations)
+void GL_APIENTRY GL_TexStorage2DMultisample(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLTexStorage2DMultisample,
-          "context = %d, target = %s, samples = %d, internalformat = %s, width = %d, height = %d, "
-          "fixedsamplelocations = %s",
-          CID(context), GLenumToString(GLESEnum::TextureTarget, target), samples,
-          GLenumToString(GLESEnum::SizedInternalFormat, internalformat), width, height,
-          GLbooleanToString(fixedsamplelocations));
+    EVENT(context, GLTexStorage2DMultisample, "context = %d, target = %s, samples = %d, internalformat = %s, width = %d, height = %d, fixedsamplelocations = %s", CID(context), GLenumToString(GLESEnum::TextureTarget, target), samples, GLenumToString(GLESEnum::SizedInternalFormat, internalformat), width, height, GLbooleanToString(fixedsamplelocations));
 
     if (context)
     {
         TextureType targetPacked = PackParam<TextureType>(target);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLTexStorage2DMultisample) &&
-              ValidateTexStorage2DMultisample(context, angle::EntryPoint::GLTexStorage2DMultisample,
-                                              targetPacked, samples, internalformat, width, height,
-                                              fixedsamplelocations)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLTexStorage2DMultisample) && ValidateTexStorage2DMultisample(context, angle::EntryPoint::GLTexStorage2DMultisample, targetPacked, samples, internalformat, width, height, fixedsamplelocations)));
         if (isCallValid)
         {
-            context->texStorage2DMultisample(targetPacked, samples, internalformat, width, height,
-                                             fixedsamplelocations);
+            context->texStorage2DMultisample(targetPacked, samples, internalformat, width, height, fixedsamplelocations);
         }
-        ANGLE_CAPTURE_GL(TexStorage2DMultisample, isCallValid, context, targetPacked, samples,
-                         internalformat, width, height, fixedsamplelocations);
+        ANGLE_CAPTURE_GL(TexStorage2DMultisample, isCallValid, context, targetPacked, samples, internalformat, width, height, fixedsamplelocations);
     }
     else
     {
@@ -2207,28 +1570,19 @@ void GL_APIENTRY GL_UseProgramStages(GLuint pipeline, GLbitfield stages, GLuint 
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLUseProgramStages, "context = %d, pipeline = %u, stages = %s, program = %u",
-          CID(context), pipeline, GLbitfieldToString(GLESEnum::UseProgramStageMask, stages).c_str(),
-          program);
+    EVENT(context, GLUseProgramStages, "context = %d, pipeline = %u, stages = %s, program = %u", CID(context), pipeline, GLbitfieldToString(GLESEnum::UseProgramStageMask, stages).c_str(), program);
 
     if (context)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
-        ShaderProgramID programPacked    = PackParam<ShaderProgramID>(program);
+        ShaderProgramID programPacked = PackParam<ShaderProgramID>(program);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLUseProgramStages) &&
-              ValidateUseProgramStages(context, angle::EntryPoint::GLUseProgramStages,
-                                       pipelinePacked, stages, programPacked)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLUseProgramStages) && ValidateUseProgramStages(context, angle::EntryPoint::GLUseProgramStages, pipelinePacked, stages, programPacked)));
         if (isCallValid)
         {
             context->useProgramStages(pipelinePacked, stages, programPacked);
         }
-        ANGLE_CAPTURE_GL(UseProgramStages, isCallValid, context, pipelinePacked, stages,
-                         programPacked);
+        ANGLE_CAPTURE_GL(UseProgramStages, isCallValid, context, pipelinePacked, stages, programPacked);
     }
     else
     {
@@ -2241,20 +1595,13 @@ void GL_APIENTRY GL_ValidateProgramPipeline(GLuint pipeline)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLValidateProgramPipeline, "context = %d, pipeline = %u", CID(context),
-          pipeline);
+    EVENT(context, GLValidateProgramPipeline, "context = %d, pipeline = %u", CID(context), pipeline);
 
     if (context)
     {
         ProgramPipelineID pipelinePacked = PackParam<ProgramPipelineID>(pipeline);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLValidateProgramPipeline) &&
-              ValidateValidateProgramPipeline(context, angle::EntryPoint::GLValidateProgramPipeline,
-                                              pipelinePacked)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLValidateProgramPipeline) && ValidateValidateProgramPipeline(context, angle::EntryPoint::GLValidateProgramPipeline, pipelinePacked)));
         if (isCallValid)
         {
             context->validateProgramPipeline(pipelinePacked);
@@ -2272,16 +1619,12 @@ void GL_APIENTRY GL_VertexAttribBinding(GLuint attribindex, GLuint bindingindex)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLVertexAttribBinding, "context = %d, attribindex = %u, bindingindex = %u",
-          CID(context), attribindex, bindingindex);
+    EVENT(context, GLVertexAttribBinding, "context = %d, attribindex = %u, bindingindex = %u", CID(context), attribindex, bindingindex);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateVertexAttribBinding(context, angle::EntryPoint::GLVertexAttribBinding,
-                                         attribindex, bindingindex));
+        bool isCallValid = (context->skipValidation() || ValidateVertexAttribBinding(context, angle::EntryPoint::GLVertexAttribBinding, attribindex, bindingindex));
         if (isCallValid)
         {
             context->vertexAttribBinding(attribindex, bindingindex);
@@ -2295,34 +1638,22 @@ void GL_APIENTRY GL_VertexAttribBinding(GLuint attribindex, GLuint bindingindex)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_VertexAttribFormat(GLuint attribindex,
-                                       GLint size,
-                                       GLenum type,
-                                       GLboolean normalized,
-                                       GLuint relativeoffset)
+void GL_APIENTRY GL_VertexAttribFormat(GLuint attribindex, GLint size, GLenum type, GLboolean normalized, GLuint relativeoffset)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLVertexAttribFormat,
-          "context = %d, attribindex = %u, size = %d, type = %s, normalized = %s, relativeoffset = "
-          "%u",
-          CID(context), attribindex, size, GLenumToString(GLESEnum::VertexAttribType, type),
-          GLbooleanToString(normalized), relativeoffset);
+    EVENT(context, GLVertexAttribFormat, "context = %d, attribindex = %u, size = %d, type = %s, normalized = %s, relativeoffset = %u", CID(context), attribindex, size, GLenumToString(GLESEnum::VertexAttribType, type), GLbooleanToString(normalized), relativeoffset);
 
     if (context)
     {
         VertexAttribType typePacked = PackParam<VertexAttribType>(type);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateVertexAttribFormat(context, angle::EntryPoint::GLVertexAttribFormat,
-                                        attribindex, size, typePacked, normalized, relativeoffset));
+        bool isCallValid = (context->skipValidation() || ValidateVertexAttribFormat(context, angle::EntryPoint::GLVertexAttribFormat, attribindex, size, typePacked, normalized, relativeoffset));
         if (isCallValid)
         {
             context->vertexAttribFormat(attribindex, size, typePacked, normalized, relativeoffset);
         }
-        ANGLE_CAPTURE_GL(VertexAttribFormat, isCallValid, context, attribindex, size, typePacked,
-                         normalized, relativeoffset);
+        ANGLE_CAPTURE_GL(VertexAttribFormat, isCallValid, context, attribindex, size, typePacked, normalized, relativeoffset);
     }
     else
     {
@@ -2331,31 +1662,22 @@ void GL_APIENTRY GL_VertexAttribFormat(GLuint attribindex,
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-void GL_APIENTRY GL_VertexAttribIFormat(GLuint attribindex,
-                                        GLint size,
-                                        GLenum type,
-                                        GLuint relativeoffset)
+void GL_APIENTRY GL_VertexAttribIFormat(GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLVertexAttribIFormat,
-          "context = %d, attribindex = %u, size = %d, type = %s, relativeoffset = %u", CID(context),
-          attribindex, size, GLenumToString(GLESEnum::VertexAttribIType, type), relativeoffset);
+    EVENT(context, GLVertexAttribIFormat, "context = %d, attribindex = %u, size = %d, type = %s, relativeoffset = %u", CID(context), attribindex, size, GLenumToString(GLESEnum::VertexAttribIType, type), relativeoffset);
 
     if (context)
     {
         VertexAttribType typePacked = PackParam<VertexAttribType>(type);
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             ValidateVertexAttribIFormat(context, angle::EntryPoint::GLVertexAttribIFormat,
-                                         attribindex, size, typePacked, relativeoffset));
+        bool isCallValid = (context->skipValidation() || ValidateVertexAttribIFormat(context, angle::EntryPoint::GLVertexAttribIFormat, attribindex, size, typePacked, relativeoffset));
         if (isCallValid)
         {
             context->vertexAttribIFormat(attribindex, size, typePacked, relativeoffset);
         }
-        ANGLE_CAPTURE_GL(VertexAttribIFormat, isCallValid, context, attribindex, size, typePacked,
-                         relativeoffset);
+        ANGLE_CAPTURE_GL(VertexAttribIFormat, isCallValid, context, attribindex, size, typePacked, relativeoffset);
     }
     else
     {
@@ -2368,19 +1690,12 @@ void GL_APIENTRY GL_VertexBindingDivisor(GLuint bindingindex, GLuint divisor)
 {
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
     Context *context = GetValidGlobalContext();
-    EVENT(context, GLVertexBindingDivisor, "context = %d, bindingindex = %u, divisor = %u",
-          CID(context), bindingindex, divisor);
+    EVENT(context, GLVertexBindingDivisor, "context = %d, bindingindex = %u, divisor = %u", CID(context), bindingindex, divisor);
 
     if (context)
     {
         SCOPED_SHARE_CONTEXT_LOCK(context);
-        bool isCallValid =
-            (context->skipValidation() ||
-             (ValidatePixelLocalStorageInactive(context->getPrivateState(),
-                                                context->getMutableErrorSetForValidation(),
-                                                angle::EntryPoint::GLVertexBindingDivisor) &&
-              ValidateVertexBindingDivisor(context, angle::EntryPoint::GLVertexBindingDivisor,
-                                           bindingindex, divisor)));
+        bool isCallValid = (context->skipValidation() || (ValidatePixelLocalStorageInactive(context->getPrivateState(), context->getMutableErrorSetForValidation(), angle::EntryPoint::GLVertexBindingDivisor) && ValidateVertexBindingDivisor(context, angle::EntryPoint::GLVertexBindingDivisor, bindingindex, divisor)));
         if (isCallValid)
         {
             context->vertexBindingDivisor(bindingindex, divisor);
@@ -2394,4 +1709,4 @@ void GL_APIENTRY GL_VertexBindingDivisor(GLuint bindingindex, GLuint divisor)
     ASSERT(!egl::Display::GetCurrentThreadUnlockedTailCall()->any());
 }
 
-}  // extern "C"
+} // extern "C"

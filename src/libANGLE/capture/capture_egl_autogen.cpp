@@ -19,14 +19,7 @@ using namespace angle;
 
 namespace egl
 {
-CallCapture CaptureChooseConfig(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                const AttributeMap &attrib_listPacked,
-                                EGLConfig *configs,
-                                EGLint config_size,
-                                EGLint *num_config,
-                                EGLBoolean returnValue)
+CallCapture CaptureChooseConfig(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, const AttributeMap & attrib_listPacked, EGLConfig * configs, EGLint config_size, EGLint * num_config, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -43,12 +36,7 @@ CallCapture CaptureChooseConfig(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLChooseConfig, std::move(paramBuffer));
 }
 
-CallCapture CaptureCopyBuffers(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               SurfaceID surfacePacked,
-                               EGLNativePixmapType target,
-                               EGLBoolean returnValue)
+CallCapture CaptureCopyBuffers(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLNativePixmapType target, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -63,13 +51,7 @@ CallCapture CaptureCopyBuffers(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCopyBuffers, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateContext(egl::Thread *thread,
-                                 bool isCallValid,
-                                 egl::Display *dpyPacked,
-                                 egl::Config *configPacked,
-                                 gl::ContextID share_contextPacked,
-                                 const AttributeMap &attrib_listPacked,
-                                 EGLContext returnValue)
+CallCapture CaptureCreateContext(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, gl::ContextID share_contextPacked, const AttributeMap & attrib_listPacked, EGLContext returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -85,12 +67,7 @@ CallCapture CaptureCreateContext(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateContext, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePbufferSurface(egl::Thread *thread,
-                                        bool isCallValid,
-                                        egl::Display *dpyPacked,
-                                        egl::Config *configPacked,
-                                        const AttributeMap &attrib_listPacked,
-                                        EGLSurface returnValue)
+CallCapture CaptureCreatePbufferSurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -105,13 +82,7 @@ CallCapture CaptureCreatePbufferSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreatePbufferSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePixmapSurface(egl::Thread *thread,
-                                       bool isCallValid,
-                                       egl::Display *dpyPacked,
-                                       egl::Config *configPacked,
-                                       EGLNativePixmapType pixmap,
-                                       const AttributeMap &attrib_listPacked,
-                                       EGLSurface returnValue)
+CallCapture CaptureCreatePixmapSurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, EGLNativePixmapType pixmap, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -127,13 +98,7 @@ CallCapture CaptureCreatePixmapSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreatePixmapSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateWindowSurface(egl::Thread *thread,
-                                       bool isCallValid,
-                                       egl::Display *dpyPacked,
-                                       egl::Config *configPacked,
-                                       EGLNativeWindowType win,
-                                       const AttributeMap &attrib_listPacked,
-                                       EGLSurface returnValue)
+CallCapture CaptureCreateWindowSurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, EGLNativeWindowType win, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -149,11 +114,7 @@ CallCapture CaptureCreateWindowSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateWindowSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroyContext(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  gl::ContextID ctxPacked,
-                                  EGLBoolean returnValue)
+CallCapture CaptureDestroyContext(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -167,11 +128,7 @@ CallCapture CaptureDestroyContext(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroyContext, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroySurface(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  SurfaceID surfacePacked,
-                                  EGLBoolean returnValue)
+CallCapture CaptureDestroySurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -185,13 +142,7 @@ CallCapture CaptureDestroySurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroySurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetConfigAttrib(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   egl::Config *configPacked,
-                                   EGLint attribute,
-                                   EGLint *value,
-                                   EGLBoolean returnValue)
+CallCapture CaptureGetConfigAttrib(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, EGLint attribute, EGLint * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -207,13 +158,7 @@ CallCapture CaptureGetConfigAttrib(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetConfigAttrib, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetConfigs(egl::Thread *thread,
-                              bool isCallValid,
-                              egl::Display *dpyPacked,
-                              EGLConfig *configs,
-                              EGLint config_size,
-                              EGLint *num_config,
-                              EGLBoolean returnValue)
+CallCapture CaptureGetConfigs(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLConfig * configs, EGLint config_size, EGLint * num_config, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -229,9 +174,11 @@ CallCapture CaptureGetConfigs(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetConfigs, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetCurrentDisplay(egl::Thread *thread, bool isCallValid, EGLDisplay returnValue)
+CallCapture CaptureGetCurrentDisplay(egl::Thread * thread, bool isCallValid, EGLDisplay returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLDisplay);
     InitParamValue(ParamType::TEGLDisplay, returnValue, &returnValueCapture.value);
@@ -240,10 +187,7 @@ CallCapture CaptureGetCurrentDisplay(egl::Thread *thread, bool isCallValid, EGLD
     return CallCapture(angle::EntryPoint::EGLGetCurrentDisplay, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetCurrentSurface(egl::Thread *thread,
-                                     bool isCallValid,
-                                     EGLint readdraw,
-                                     EGLSurface returnValue)
+CallCapture CaptureGetCurrentSurface(egl::Thread * thread, bool isCallValid, EGLint readdraw, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -256,10 +200,7 @@ CallCapture CaptureGetCurrentSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetCurrentSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetDisplay(egl::Thread *thread,
-                              bool isCallValid,
-                              EGLNativeDisplayType display_id,
-                              EGLDisplay returnValue)
+CallCapture CaptureGetDisplay(egl::Thread * thread, bool isCallValid, EGLNativeDisplayType display_id, EGLDisplay returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -272,9 +213,11 @@ CallCapture CaptureGetDisplay(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetDisplay, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetError(egl::Thread *thread, bool isCallValid, EGLint returnValue)
+CallCapture CaptureGetError(egl::Thread * thread, bool isCallValid, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLint);
     InitParamValue(ParamType::TEGLint, returnValue, &returnValueCapture.value);
@@ -283,22 +226,16 @@ CallCapture CaptureGetError(egl::Thread *thread, bool isCallValid, EGLint return
     return CallCapture(angle::EntryPoint::EGLGetError, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetProcAddress(egl::Thread *thread,
-                                  bool isCallValid,
-                                  const char *procname,
-                                  __eglMustCastToProperFunctionPointerType returnValue)
+CallCapture CaptureGetProcAddress(egl::Thread * thread, bool isCallValid, const char * procname, __eglMustCastToProperFunctionPointerType returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     return CallCapture(angle::EntryPoint::EGLGetProcAddress, std::move(paramBuffer));
 }
 
-CallCapture CaptureInitialize(egl::Thread *thread,
-                              bool isCallValid,
-                              egl::Display *dpyPacked,
-                              EGLint *major,
-                              EGLint *minor,
-                              EGLBoolean returnValue)
+CallCapture CaptureInitialize(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint * major, EGLint * minor, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -313,13 +250,7 @@ CallCapture CaptureInitialize(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLInitialize, std::move(paramBuffer));
 }
 
-CallCapture CaptureMakeCurrent(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               SurfaceID drawPacked,
-                               SurfaceID readPacked,
-                               gl::ContextID ctxPacked,
-                               EGLBoolean returnValue)
+CallCapture CaptureMakeCurrent(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID drawPacked, SurfaceID readPacked, gl::ContextID ctxPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -335,13 +266,7 @@ CallCapture CaptureMakeCurrent(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLMakeCurrent, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryContext(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                gl::ContextID ctxPacked,
-                                EGLint attribute,
-                                EGLint *value,
-                                EGLBoolean returnValue)
+CallCapture CaptureQueryContext(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked, EGLint attribute, EGLint * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -357,11 +282,7 @@ CallCapture CaptureQueryContext(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryContext, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryString(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               EGLint name,
-                               const char *returnValue)
+CallCapture CaptureQueryString(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint name, const char * returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -375,13 +296,7 @@ CallCapture CaptureQueryString(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryString, std::move(paramBuffer));
 }
 
-CallCapture CaptureQuerySurface(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                SurfaceID surfacePacked,
-                                EGLint attribute,
-                                EGLint *value,
-                                EGLBoolean returnValue)
+CallCapture CaptureQuerySurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint attribute, EGLint * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -397,11 +312,7 @@ CallCapture CaptureQuerySurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQuerySurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureSwapBuffers(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               SurfaceID surfacePacked,
-                               EGLBoolean returnValue)
+CallCapture CaptureSwapBuffers(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -415,10 +326,7 @@ CallCapture CaptureSwapBuffers(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSwapBuffers, std::move(paramBuffer));
 }
 
-CallCapture CaptureTerminate(egl::Thread *thread,
-                             bool isCallValid,
-                             egl::Display *dpyPacked,
-                             EGLBoolean returnValue)
+CallCapture CaptureTerminate(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -431,9 +339,11 @@ CallCapture CaptureTerminate(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLTerminate, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitGL(egl::Thread *thread, bool isCallValid, EGLBoolean returnValue)
+CallCapture CaptureWaitGL(egl::Thread * thread, bool isCallValid, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLBoolean);
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
@@ -442,10 +352,7 @@ CallCapture CaptureWaitGL(egl::Thread *thread, bool isCallValid, EGLBoolean retu
     return CallCapture(angle::EntryPoint::EGLWaitGL, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitNative(egl::Thread *thread,
-                              bool isCallValid,
-                              EGLint engine,
-                              EGLBoolean returnValue)
+CallCapture CaptureWaitNative(egl::Thread * thread, bool isCallValid, EGLint engine, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -458,12 +365,7 @@ CallCapture CaptureWaitNative(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLWaitNative, std::move(paramBuffer));
 }
 
-CallCapture CaptureBindTexImage(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                SurfaceID surfacePacked,
-                                EGLint buffer,
-                                EGLBoolean returnValue)
+CallCapture CaptureBindTexImage(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint buffer, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -478,12 +380,7 @@ CallCapture CaptureBindTexImage(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLBindTexImage, std::move(paramBuffer));
 }
 
-CallCapture CaptureReleaseTexImage(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   SurfaceID surfacePacked,
-                                   EGLint buffer,
-                                   EGLBoolean returnValue)
+CallCapture CaptureReleaseTexImage(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint buffer, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -498,13 +395,7 @@ CallCapture CaptureReleaseTexImage(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLReleaseTexImage, std::move(paramBuffer));
 }
 
-CallCapture CaptureSurfaceAttrib(egl::Thread *thread,
-                                 bool isCallValid,
-                                 egl::Display *dpyPacked,
-                                 SurfaceID surfacePacked,
-                                 EGLint attribute,
-                                 EGLint value,
-                                 EGLBoolean returnValue)
+CallCapture CaptureSurfaceAttrib(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint attribute, EGLint value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -520,11 +411,7 @@ CallCapture CaptureSurfaceAttrib(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSurfaceAttrib, std::move(paramBuffer));
 }
 
-CallCapture CaptureSwapInterval(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                EGLint interval,
-                                EGLBoolean returnValue)
+CallCapture CaptureSwapInterval(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint interval, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -538,10 +425,7 @@ CallCapture CaptureSwapInterval(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSwapInterval, std::move(paramBuffer));
 }
 
-CallCapture CaptureBindAPI(egl::Thread *thread,
-                           bool isCallValid,
-                           EGLenum api,
-                           EGLBoolean returnValue)
+CallCapture CaptureBindAPI(egl::Thread * thread, bool isCallValid, EGLenum api, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -554,14 +438,7 @@ CallCapture CaptureBindAPI(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLBindAPI, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePbufferFromClientBuffer(egl::Thread *thread,
-                                                 bool isCallValid,
-                                                 egl::Display *dpyPacked,
-                                                 EGLenum buftype,
-                                                 EGLClientBuffer buffer,
-                                                 egl::Config *configPacked,
-                                                 const AttributeMap &attrib_listPacked,
-                                                 EGLSurface returnValue)
+CallCapture CaptureCreatePbufferFromClientBuffer(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLenum buftype, EGLClientBuffer buffer, egl::Config * configPacked, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -578,9 +455,11 @@ CallCapture CaptureCreatePbufferFromClientBuffer(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreatePbufferFromClientBuffer, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryAPI(egl::Thread *thread, bool isCallValid, EGLenum returnValue)
+CallCapture CaptureQueryAPI(egl::Thread * thread, bool isCallValid, EGLenum returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLenum);
     InitParamValue(ParamType::TEGLenum, returnValue, &returnValueCapture.value);
@@ -589,9 +468,11 @@ CallCapture CaptureQueryAPI(egl::Thread *thread, bool isCallValid, EGLenum retur
     return CallCapture(angle::EntryPoint::EGLQueryAPI, std::move(paramBuffer));
 }
 
-CallCapture CaptureReleaseThread(egl::Thread *thread, bool isCallValid, EGLBoolean returnValue)
+CallCapture CaptureReleaseThread(egl::Thread * thread, bool isCallValid, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLBoolean);
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
@@ -600,9 +481,11 @@ CallCapture CaptureReleaseThread(egl::Thread *thread, bool isCallValid, EGLBoole
     return CallCapture(angle::EntryPoint::EGLReleaseThread, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitClient(egl::Thread *thread, bool isCallValid, EGLBoolean returnValue)
+CallCapture CaptureWaitClient(egl::Thread * thread, bool isCallValid, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLBoolean);
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
@@ -611,9 +494,11 @@ CallCapture CaptureWaitClient(egl::Thread *thread, bool isCallValid, EGLBoolean 
     return CallCapture(angle::EntryPoint::EGLWaitClient, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetCurrentContext(egl::Thread *thread, bool isCallValid, EGLContext returnValue)
+CallCapture CaptureGetCurrentContext(egl::Thread * thread, bool isCallValid, EGLContext returnValue)
 {
     ParamBuffer paramBuffer;
+
+    
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLContext);
     InitParamValue(ParamType::TEGLContext, returnValue, &returnValueCapture.value);
@@ -622,13 +507,7 @@ CallCapture CaptureGetCurrentContext(egl::Thread *thread, bool isCallValid, EGLC
     return CallCapture(angle::EntryPoint::EGLGetCurrentContext, std::move(paramBuffer));
 }
 
-CallCapture CaptureClientWaitSync(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  egl::SyncID syncPacked,
-                                  EGLint flags,
-                                  EGLTime timeout,
-                                  EGLint returnValue)
+CallCapture CaptureClientWaitSync(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint flags, EGLTime timeout, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -644,14 +523,7 @@ CallCapture CaptureClientWaitSync(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLClientWaitSync, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateImage(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               gl::ContextID ctxPacked,
-                               EGLenum target,
-                               EGLClientBuffer buffer,
-                               const AttributeMap &attrib_listPacked,
-                               EGLImage returnValue)
+CallCapture CaptureCreateImage(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked, EGLenum target, EGLClientBuffer buffer, const AttributeMap & attrib_listPacked, EGLImage returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -668,13 +540,7 @@ CallCapture CaptureCreateImage(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateImage, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePlatformPixmapSurface(egl::Thread *thread,
-                                               bool isCallValid,
-                                               egl::Display *dpyPacked,
-                                               egl::Config *configPacked,
-                                               void *native_pixmap,
-                                               const AttributeMap &attrib_listPacked,
-                                               EGLSurface returnValue)
+CallCapture CaptureCreatePlatformPixmapSurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, void * native_pixmap, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -690,13 +556,7 @@ CallCapture CaptureCreatePlatformPixmapSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreatePlatformPixmapSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePlatformWindowSurface(egl::Thread *thread,
-                                               bool isCallValid,
-                                               egl::Display *dpyPacked,
-                                               egl::Config *configPacked,
-                                               void *native_window,
-                                               const AttributeMap &attrib_listPacked,
-                                               EGLSurface returnValue)
+CallCapture CaptureCreatePlatformWindowSurface(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, void * native_window, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -712,12 +572,7 @@ CallCapture CaptureCreatePlatformWindowSurface(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreatePlatformWindowSurface, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateSync(egl::Thread *thread,
-                              bool isCallValid,
-                              egl::Display *dpyPacked,
-                              EGLenum type,
-                              const AttributeMap &attrib_listPacked,
-                              EGLSync returnValue)
+CallCapture CaptureCreateSync(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLenum type, const AttributeMap & attrib_listPacked, EGLSync returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -732,11 +587,7 @@ CallCapture CaptureCreateSync(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateSync, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroyImage(egl::Thread *thread,
-                                bool isCallValid,
-                                egl::Display *dpyPacked,
-                                ImageID imagePacked,
-                                EGLBoolean returnValue)
+CallCapture CaptureDestroyImage(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, ImageID imagePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -750,11 +601,7 @@ CallCapture CaptureDestroyImage(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroyImage, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroySync(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               egl::SyncID syncPacked,
-                               EGLBoolean returnValue)
+CallCapture CaptureDestroySync(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -768,12 +615,7 @@ CallCapture CaptureDestroySync(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroySync, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetPlatformDisplay(egl::Thread *thread,
-                                      bool isCallValid,
-                                      EGLenum platform,
-                                      void *native_display,
-                                      const AttributeMap &attrib_listPacked,
-                                      EGLDisplay returnValue)
+CallCapture CaptureGetPlatformDisplay(egl::Thread * thread, bool isCallValid, EGLenum platform, void * native_display, const AttributeMap & attrib_listPacked, EGLDisplay returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -788,13 +630,7 @@ CallCapture CaptureGetPlatformDisplay(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetPlatformDisplay, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetSyncAttrib(egl::Thread *thread,
-                                 bool isCallValid,
-                                 egl::Display *dpyPacked,
-                                 egl::SyncID syncPacked,
-                                 EGLint attribute,
-                                 EGLAttrib *value,
-                                 EGLBoolean returnValue)
+CallCapture CaptureGetSyncAttrib(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint attribute, EGLAttrib * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -810,12 +646,7 @@ CallCapture CaptureGetSyncAttrib(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetSyncAttrib, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitSync(egl::Thread *thread,
-                            bool isCallValid,
-                            egl::Display *dpyPacked,
-                            egl::SyncID syncPacked,
-                            EGLint flags,
-                            EGLBoolean returnValue)
+CallCapture CaptureWaitSync(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint flags, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -830,11 +661,7 @@ CallCapture CaptureWaitSync(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLWaitSync, std::move(paramBuffer));
 }
 
-CallCapture CaptureSetBlobCacheFuncsANDROID(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            EGLSetBlobFuncANDROID set,
-                                            EGLGetBlobFuncANDROID get)
+CallCapture CaptureSetBlobCacheFuncsANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLSetBlobFuncANDROID set, EGLGetBlobFuncANDROID get)
 {
     ParamBuffer paramBuffer;
 
@@ -845,10 +672,7 @@ CallCapture CaptureSetBlobCacheFuncsANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSetBlobCacheFuncsANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateNativeClientBufferANDROID(egl::Thread *thread,
-                                                   bool isCallValid,
-                                                   const AttributeMap &attrib_listPacked,
-                                                   EGLClientBuffer returnValue)
+CallCapture CaptureCreateNativeClientBufferANDROID(egl::Thread * thread, bool isCallValid, const AttributeMap & attrib_listPacked, EGLClientBuffer returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -858,16 +682,10 @@ CallCapture CaptureCreateNativeClientBufferANDROID(egl::Thread *thread,
     InitParamValue(ParamType::TEGLClientBuffer, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLCreateNativeClientBufferANDROID,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLCreateNativeClientBufferANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetCompositorTimingSupportedANDROID(egl::Thread *thread,
-                                                       bool isCallValid,
-                                                       egl::Display *dpyPacked,
-                                                       SurfaceID surfacePacked,
-                                                       CompositorTiming namePacked,
-                                                       EGLBoolean returnValue)
+CallCapture CaptureGetCompositorTimingSupportedANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, CompositorTiming namePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -879,18 +697,10 @@ CallCapture CaptureGetCompositorTimingSupportedANDROID(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLGetCompositorTimingSupportedANDROID,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLGetCompositorTimingSupportedANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetCompositorTimingANDROID(egl::Thread *thread,
-                                              bool isCallValid,
-                                              egl::Display *dpyPacked,
-                                              SurfaceID surfacePacked,
-                                              EGLint numTimestamps,
-                                              const EGLint *names,
-                                              EGLnsecsANDROID *values,
-                                              EGLBoolean returnValue)
+CallCapture CaptureGetCompositorTimingANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint numTimestamps, const EGLint * names, EGLnsecsANDROID * values, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -907,12 +717,7 @@ CallCapture CaptureGetCompositorTimingANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetCompositorTimingANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetNextFrameIdANDROID(egl::Thread *thread,
-                                         bool isCallValid,
-                                         egl::Display *dpyPacked,
-                                         SurfaceID surfacePacked,
-                                         EGLuint64KHR *frameId,
-                                         EGLBoolean returnValue)
+CallCapture CaptureGetNextFrameIdANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLuint64KHR * frameId, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -927,12 +732,7 @@ CallCapture CaptureGetNextFrameIdANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetNextFrameIdANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetFrameTimestampSupportedANDROID(egl::Thread *thread,
-                                                     bool isCallValid,
-                                                     egl::Display *dpyPacked,
-                                                     SurfaceID surfacePacked,
-                                                     Timestamp timestampPacked,
-                                                     EGLBoolean returnValue)
+CallCapture CaptureGetFrameTimestampSupportedANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, Timestamp timestampPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -944,19 +744,10 @@ CallCapture CaptureGetFrameTimestampSupportedANDROID(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLGetFrameTimestampSupportedANDROID,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLGetFrameTimestampSupportedANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetFrameTimestampsANDROID(egl::Thread *thread,
-                                             bool isCallValid,
-                                             egl::Display *dpyPacked,
-                                             SurfaceID surfacePacked,
-                                             EGLuint64KHR frameId,
-                                             EGLint numTimestamps,
-                                             const EGLint *timestamps,
-                                             EGLnsecsANDROID *values,
-                                             EGLBoolean returnValue)
+CallCapture CaptureGetFrameTimestampsANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLuint64KHR frameId, EGLint numTimestamps, const EGLint * timestamps, EGLnsecsANDROID * values, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -974,10 +765,7 @@ CallCapture CaptureGetFrameTimestampsANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetFrameTimestampsANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetNativeClientBufferANDROID(egl::Thread *thread,
-                                                bool isCallValid,
-                                                const struct AHardwareBuffer *buffer,
-                                                EGLClientBuffer returnValue)
+CallCapture CaptureGetNativeClientBufferANDROID(egl::Thread * thread, bool isCallValid, const struct AHardwareBuffer * buffer, EGLClientBuffer returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -990,11 +778,7 @@ CallCapture CaptureGetNativeClientBufferANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetNativeClientBufferANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureDupNativeFenceFDANDROID(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           egl::SyncID syncPacked,
-                                           EGLint returnValue)
+CallCapture CaptureDupNativeFenceFDANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1008,12 +792,7 @@ CallCapture CaptureDupNativeFenceFDANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDupNativeFenceFDANDROID, std::move(paramBuffer));
 }
 
-CallCapture CapturePresentationTimeANDROID(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           SurfaceID surfacePacked,
-                                           EGLnsecsANDROID time,
-                                           EGLBoolean returnValue)
+CallCapture CapturePresentationTimeANDROID(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLnsecsANDROID time, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1028,12 +807,7 @@ CallCapture CapturePresentationTimeANDROID(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLPresentationTimeANDROID, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateDeviceANGLE(egl::Thread *thread,
-                                     bool isCallValid,
-                                     EGLint device_type,
-                                     void *native_device,
-                                     const EGLAttrib *attrib_list,
-                                     EGLDeviceEXT returnValue)
+CallCapture CaptureCreateDeviceANGLE(egl::Thread * thread, bool isCallValid, EGLint device_type, void * native_device, const EGLAttrib * attrib_list, EGLDeviceEXT returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1048,10 +822,7 @@ CallCapture CaptureCreateDeviceANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateDeviceANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureReleaseDeviceANGLE(egl::Thread *thread,
-                                      bool isCallValid,
-                                      egl::Device *devicePacked,
-                                      EGLBoolean returnValue)
+CallCapture CaptureReleaseDeviceANGLE(egl::Thread * thread, bool isCallValid, egl::Device * devicePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1064,10 +835,7 @@ CallCapture CaptureReleaseDeviceANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLReleaseDeviceANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureAcquireExternalContextANGLE(egl::Thread *thread,
-                                               bool isCallValid,
-                                               egl::Display *dpyPacked,
-                                               SurfaceID drawAndReadPacked)
+CallCapture CaptureAcquireExternalContextANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID drawAndReadPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1077,9 +845,7 @@ CallCapture CaptureAcquireExternalContextANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLAcquireExternalContextANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureReleaseExternalContextANGLE(egl::Thread *thread,
-                                               bool isCallValid,
-                                               egl::Display *dpyPacked)
+CallCapture CaptureReleaseExternalContextANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1088,12 +854,7 @@ CallCapture CaptureReleaseExternalContextANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLReleaseExternalContextANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryStringiANGLE(egl::Thread *thread,
-                                     bool isCallValid,
-                                     egl::Display *dpyPacked,
-                                     EGLint name,
-                                     EGLint index,
-                                     const char *returnValue)
+CallCapture CaptureQueryStringiANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint name, EGLint index, const char * returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1108,12 +869,7 @@ CallCapture CaptureQueryStringiANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryStringiANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDisplayAttribANGLE(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           EGLint attribute,
-                                           EGLAttrib *value,
-                                           EGLBoolean returnValue)
+CallCapture CaptureQueryDisplayAttribANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint attribute, EGLAttrib * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1128,11 +884,7 @@ CallCapture CaptureQueryDisplayAttribANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDisplayAttribANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureCopyMetalSharedEventANGLE(egl::Thread *thread,
-                                             bool isCallValid,
-                                             egl::Display *dpyPacked,
-                                             egl::SyncID syncPacked,
-                                             void *returnValue)
+CallCapture CaptureCopyMetalSharedEventANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, void * returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1146,9 +898,7 @@ CallCapture CaptureCopyMetalSharedEventANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCopyMetalSharedEventANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureSetValidationEnabledANGLE(egl::Thread *thread,
-                                             bool isCallValid,
-                                             EGLBoolean validationState)
+CallCapture CaptureSetValidationEnabledANGLE(egl::Thread * thread, bool isCallValid, EGLBoolean validationState)
 {
     ParamBuffer paramBuffer;
 
@@ -1157,10 +907,7 @@ CallCapture CaptureSetValidationEnabledANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSetValidationEnabledANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureReleaseHighPowerGPUANGLE(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            gl::ContextID ctxPacked)
+CallCapture CaptureReleaseHighPowerGPUANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1170,10 +917,7 @@ CallCapture CaptureReleaseHighPowerGPUANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLReleaseHighPowerGPUANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureReacquireHighPowerGPUANGLE(egl::Thread *thread,
-                                              bool isCallValid,
-                                              egl::Display *dpyPacked,
-                                              gl::ContextID ctxPacked)
+CallCapture CaptureReacquireHighPowerGPUANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1183,9 +927,7 @@ CallCapture CaptureReacquireHighPowerGPUANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLReacquireHighPowerGPUANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureHandleGPUSwitchANGLE(egl::Thread *thread,
-                                        bool isCallValid,
-                                        egl::Display *dpyPacked)
+CallCapture CaptureHandleGPUSwitchANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1194,11 +936,7 @@ CallCapture CaptureHandleGPUSwitchANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLHandleGPUSwitchANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureForceGPUSwitchANGLE(egl::Thread *thread,
-                                       bool isCallValid,
-                                       egl::Display *dpyPacked,
-                                       EGLint gpuIDHigh,
-                                       EGLint gpuIDLow)
+CallCapture CaptureForceGPUSwitchANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint gpuIDHigh, EGLint gpuIDLow)
 {
     ParamBuffer paramBuffer;
 
@@ -1209,11 +947,7 @@ CallCapture CaptureForceGPUSwitchANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLForceGPUSwitchANGLE, std::move(paramBuffer));
 }
 
-CallCapture CapturePrepareSwapBuffersANGLE(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           SurfaceID surfacePacked,
-                                           EGLBoolean returnValue)
+CallCapture CapturePrepareSwapBuffersANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1227,11 +961,7 @@ CallCapture CapturePrepareSwapBuffersANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLPrepareSwapBuffersANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureProgramCacheGetAttribANGLE(egl::Thread *thread,
-                                              bool isCallValid,
-                                              egl::Display *dpyPacked,
-                                              EGLenum attrib,
-                                              EGLint returnValue)
+CallCapture CaptureProgramCacheGetAttribANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLenum attrib, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1245,14 +975,7 @@ CallCapture CaptureProgramCacheGetAttribANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLProgramCacheGetAttribANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureProgramCacheQueryANGLE(egl::Thread *thread,
-                                          bool isCallValid,
-                                          egl::Display *dpyPacked,
-                                          EGLint index,
-                                          void *key,
-                                          EGLint *keysize,
-                                          void *binary,
-                                          EGLint *binarysize)
+CallCapture CaptureProgramCacheQueryANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint index, void * key, EGLint * keysize, void * binary, EGLint * binarysize)
 {
     ParamBuffer paramBuffer;
 
@@ -1266,13 +989,7 @@ CallCapture CaptureProgramCacheQueryANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLProgramCacheQueryANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureProgramCachePopulateANGLE(egl::Thread *thread,
-                                             bool isCallValid,
-                                             egl::Display *dpyPacked,
-                                             const void *key,
-                                             EGLint keysize,
-                                             const void *binary,
-                                             EGLint binarysize)
+CallCapture CaptureProgramCachePopulateANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, const void * key, EGLint keysize, const void * binary, EGLint binarysize)
 {
     ParamBuffer paramBuffer;
 
@@ -1285,12 +1002,7 @@ CallCapture CaptureProgramCachePopulateANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLProgramCachePopulateANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureProgramCacheResizeANGLE(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           EGLint limit,
-                                           EGLint mode,
-                                           EGLint returnValue)
+CallCapture CaptureProgramCacheResizeANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint limit, EGLint mode, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1305,13 +1017,7 @@ CallCapture CaptureProgramCacheResizeANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLProgramCacheResizeANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureQuerySurfacePointerANGLE(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            SurfaceID surfacePacked,
-                                            EGLint attribute,
-                                            void **value,
-                                            EGLBoolean returnValue)
+CallCapture CaptureQuerySurfacePointerANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint attribute, void ** value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1327,12 +1033,7 @@ CallCapture CaptureQuerySurfacePointerANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQuerySurfacePointerANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateStreamProducerD3DTextureANGLE(egl::Thread *thread,
-                                                       bool isCallValid,
-                                                       egl::Display *dpyPacked,
-                                                       egl::Stream *streamPacked,
-                                                       const AttributeMap &attrib_listPacked,
-                                                       EGLBoolean returnValue)
+CallCapture CaptureCreateStreamProducerD3DTextureANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, const AttributeMap & attrib_listPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1344,17 +1045,10 @@ CallCapture CaptureCreateStreamProducerD3DTextureANGLE(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLCreateStreamProducerD3DTextureANGLE,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLCreateStreamProducerD3DTextureANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamPostD3DTextureANGLE(egl::Thread *thread,
-                                             bool isCallValid,
-                                             egl::Display *dpyPacked,
-                                             egl::Stream *streamPacked,
-                                             void *texture,
-                                             const AttributeMap &attrib_listPacked,
-                                             EGLBoolean returnValue)
+CallCapture CaptureStreamPostD3DTextureANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, void * texture, const AttributeMap & attrib_listPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1370,12 +1064,7 @@ CallCapture CaptureStreamPostD3DTextureANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLStreamPostD3DTextureANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureSwapBuffersWithFrameTokenANGLE(egl::Thread *thread,
-                                                  bool isCallValid,
-                                                  egl::Display *dpyPacked,
-                                                  SurfaceID surfacePacked,
-                                                  EGLFrameTokenANGLE frametoken,
-                                                  EGLBoolean returnValue)
+CallCapture CaptureSwapBuffersWithFrameTokenANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLFrameTokenANGLE frametoken, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1387,17 +1076,10 @@ CallCapture CaptureSwapBuffersWithFrameTokenANGLE(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLSwapBuffersWithFrameTokenANGLE,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLSwapBuffersWithFrameTokenANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetMscRateANGLE(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   SurfaceID surfacePacked,
-                                   EGLint *numerator,
-                                   EGLint *denominator,
-                                   EGLBoolean returnValue)
+CallCapture CaptureGetMscRateANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint * numerator, EGLint * denominator, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1413,21 +1095,14 @@ CallCapture CaptureGetMscRateANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetMscRateANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureExportVkImageANGLE(egl::Thread *thread,
-                                      bool isCallValid,
-                                      egl::Display *dpyPacked,
-                                      ImageID imagePacked,
-                                      void *vk_image,
-                                      void *vk_image_create_info,
-                                      EGLBoolean returnValue)
+CallCapture CaptureExportVkImageANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, ImageID imagePacked, void * vk_image, void * vk_image_create_info, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
     paramBuffer.addValueParam("dpyPacked", ParamType::Tegl_DisplayPointer, dpyPacked);
     paramBuffer.addValueParam("imagePacked", ParamType::TImageID, imagePacked);
     paramBuffer.addValueParam("vk_image", ParamType::TvoidPointer, vk_image);
-    paramBuffer.addValueParam("vk_image_create_info", ParamType::TvoidPointer,
-                              vk_image_create_info);
+    paramBuffer.addValueParam("vk_image_create_info", ParamType::TvoidPointer, vk_image_create_info);
 
     ParamCapture returnValueCapture("returnValue", ParamType::TEGLBoolean);
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
@@ -1436,9 +1111,7 @@ CallCapture CaptureExportVkImageANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLExportVkImageANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitUntilWorkScheduledANGLE(egl::Thread *thread,
-                                               bool isCallValid,
-                                               egl::Display *dpyPacked)
+CallCapture CaptureWaitUntilWorkScheduledANGLE(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked)
 {
     ParamBuffer paramBuffer;
 
@@ -1447,14 +1120,7 @@ CallCapture CaptureWaitUntilWorkScheduledANGLE(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLWaitUntilWorkScheduledANGLE, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetSyncValuesCHROMIUM(egl::Thread *thread,
-                                         bool isCallValid,
-                                         egl::Display *dpyPacked,
-                                         SurfaceID surfacePacked,
-                                         EGLuint64KHR *ust,
-                                         EGLuint64KHR *msc,
-                                         EGLuint64KHR *sbc,
-                                         EGLBoolean returnValue)
+CallCapture CaptureGetSyncValuesCHROMIUM(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLuint64KHR * ust, EGLuint64KHR * msc, EGLuint64KHR * sbc, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1471,12 +1137,7 @@ CallCapture CaptureGetSyncValuesCHROMIUM(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetSyncValuesCHROMIUM, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDeviceAttribEXT(egl::Thread *thread,
-                                        bool isCallValid,
-                                        egl::Device *devicePacked,
-                                        EGLint attribute,
-                                        EGLAttrib *value,
-                                        EGLBoolean returnValue)
+CallCapture CaptureQueryDeviceAttribEXT(egl::Thread * thread, bool isCallValid, egl::Device * devicePacked, EGLint attribute, EGLAttrib * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1491,11 +1152,7 @@ CallCapture CaptureQueryDeviceAttribEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDeviceAttribEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDeviceStringEXT(egl::Thread *thread,
-                                        bool isCallValid,
-                                        egl::Device *devicePacked,
-                                        EGLint name,
-                                        const char *returnValue)
+CallCapture CaptureQueryDeviceStringEXT(egl::Thread * thread, bool isCallValid, egl::Device * devicePacked, EGLint name, const char * returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1509,12 +1166,7 @@ CallCapture CaptureQueryDeviceStringEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDeviceStringEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDisplayAttribEXT(egl::Thread *thread,
-                                         bool isCallValid,
-                                         egl::Display *dpyPacked,
-                                         EGLint attribute,
-                                         EGLAttrib *value,
-                                         EGLBoolean returnValue)
+CallCapture CaptureQueryDisplayAttribEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint attribute, EGLAttrib * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1529,13 +1181,7 @@ CallCapture CaptureQueryDisplayAttribEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDisplayAttribEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDmaBufFormatsEXT(egl::Thread *thread,
-                                         bool isCallValid,
-                                         egl::Display *dpyPacked,
-                                         EGLint max_formats,
-                                         EGLint *formats,
-                                         EGLint *num_formats,
-                                         EGLBoolean returnValue)
+CallCapture CaptureQueryDmaBufFormatsEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint max_formats, EGLint * formats, EGLint * num_formats, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1551,15 +1197,7 @@ CallCapture CaptureQueryDmaBufFormatsEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDmaBufFormatsEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDmaBufModifiersEXT(egl::Thread *thread,
-                                           bool isCallValid,
-                                           egl::Display *dpyPacked,
-                                           EGLint format,
-                                           EGLint max_modifiers,
-                                           EGLuint64KHR *modifiers,
-                                           EGLBoolean *external_only,
-                                           EGLint *num_modifiers,
-                                           EGLBoolean returnValue)
+CallCapture CaptureQueryDmaBufModifiersEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLint format, EGLint max_modifiers, EGLuint64KHR * modifiers, EGLBoolean * external_only, EGLint * num_modifiers, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1577,13 +1215,7 @@ CallCapture CaptureQueryDmaBufModifiersEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDmaBufModifiersEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePlatformPixmapSurfaceEXT(egl::Thread *thread,
-                                                  bool isCallValid,
-                                                  egl::Display *dpyPacked,
-                                                  egl::Config *configPacked,
-                                                  void *native_pixmap,
-                                                  const AttributeMap &attrib_listPacked,
-                                                  EGLSurface returnValue)
+CallCapture CaptureCreatePlatformPixmapSurfaceEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, void * native_pixmap, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1596,17 +1228,10 @@ CallCapture CaptureCreatePlatformPixmapSurfaceEXT(egl::Thread *thread,
     InitParamValue(ParamType::TEGLSurface, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLCreatePlatformPixmapSurfaceEXT,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLCreatePlatformPixmapSurfaceEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreatePlatformWindowSurfaceEXT(egl::Thread *thread,
-                                                  bool isCallValid,
-                                                  egl::Display *dpyPacked,
-                                                  egl::Config *configPacked,
-                                                  void *native_window,
-                                                  const AttributeMap &attrib_listPacked,
-                                                  EGLSurface returnValue)
+CallCapture CaptureCreatePlatformWindowSurfaceEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, void * native_window, const AttributeMap & attrib_listPacked, EGLSurface returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1619,16 +1244,10 @@ CallCapture CaptureCreatePlatformWindowSurfaceEXT(egl::Thread *thread,
     InitParamValue(ParamType::TEGLSurface, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLCreatePlatformWindowSurfaceEXT,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLCreatePlatformWindowSurfaceEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetPlatformDisplayEXT(egl::Thread *thread,
-                                         bool isCallValid,
-                                         EGLenum platform,
-                                         void *native_display,
-                                         const AttributeMap &attrib_listPacked,
-                                         EGLDisplay returnValue)
+CallCapture CaptureGetPlatformDisplayEXT(egl::Thread * thread, bool isCallValid, EGLenum platform, void * native_display, const AttributeMap & attrib_listPacked, EGLDisplay returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1643,15 +1262,7 @@ CallCapture CaptureGetPlatformDisplayEXT(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetPlatformDisplayEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureQuerySupportedCompressionRatesEXT(egl::Thread *thread,
-                                                     bool isCallValid,
-                                                     egl::Display *dpyPacked,
-                                                     egl::Config *configPacked,
-                                                     const EGLAttrib *attrib_list,
-                                                     EGLint *rates,
-                                                     EGLint rate_size,
-                                                     EGLint *num_rates,
-                                                     EGLBoolean returnValue)
+CallCapture CaptureQuerySupportedCompressionRatesEXT(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Config * configPacked, const EGLAttrib * attrib_list, EGLint * rates, EGLint rate_size, EGLint * num_rates, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1666,15 +1277,10 @@ CallCapture CaptureQuerySupportedCompressionRatesEXT(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLQuerySupportedCompressionRatesEXT,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLQuerySupportedCompressionRatesEXT, std::move(paramBuffer));
 }
 
-CallCapture CaptureDebugMessageControlKHR(egl::Thread *thread,
-                                          bool isCallValid,
-                                          EGLDEBUGPROCKHR callback,
-                                          const AttributeMap &attrib_listPacked,
-                                          EGLint returnValue)
+CallCapture CaptureDebugMessageControlKHR(egl::Thread * thread, bool isCallValid, EGLDEBUGPROCKHR callback, const AttributeMap & attrib_listPacked, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1688,13 +1294,7 @@ CallCapture CaptureDebugMessageControlKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDebugMessageControlKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureLabelObjectKHR(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *displayPacked,
-                                  ObjectType objectTypePacked,
-                                  EGLObjectKHR object,
-                                  EGLLabelKHR label,
-                                  EGLint returnValue)
+CallCapture CaptureLabelObjectKHR(egl::Thread * thread, bool isCallValid, egl::Display * displayPacked, ObjectType objectTypePacked, EGLObjectKHR object, EGLLabelKHR label, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1710,11 +1310,7 @@ CallCapture CaptureLabelObjectKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLLabelObjectKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryDebugKHR(egl::Thread *thread,
-                                 bool isCallValid,
-                                 EGLint attribute,
-                                 EGLAttrib *value,
-                                 EGLBoolean returnValue)
+CallCapture CaptureQueryDebugKHR(egl::Thread * thread, bool isCallValid, EGLint attribute, EGLAttrib * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1728,13 +1324,7 @@ CallCapture CaptureQueryDebugKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryDebugKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureClientWaitSyncKHR(egl::Thread *thread,
-                                     bool isCallValid,
-                                     egl::Display *dpyPacked,
-                                     egl::SyncID syncPacked,
-                                     EGLint flags,
-                                     EGLTimeKHR timeout,
-                                     EGLint returnValue)
+CallCapture CaptureClientWaitSyncKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint flags, EGLTimeKHR timeout, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1750,12 +1340,7 @@ CallCapture CaptureClientWaitSyncKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLClientWaitSyncKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateSyncKHR(egl::Thread *thread,
-                                 bool isCallValid,
-                                 egl::Display *dpyPacked,
-                                 EGLenum type,
-                                 const AttributeMap &attrib_listPacked,
-                                 EGLSyncKHR returnValue)
+CallCapture CaptureCreateSyncKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, EGLenum type, const AttributeMap & attrib_listPacked, EGLSyncKHR returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1770,11 +1355,7 @@ CallCapture CaptureCreateSyncKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateSyncKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroySyncKHR(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  egl::SyncID syncPacked,
-                                  EGLBoolean returnValue)
+CallCapture CaptureDestroySyncKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1788,13 +1369,7 @@ CallCapture CaptureDestroySyncKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroySyncKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureGetSyncAttribKHR(egl::Thread *thread,
-                                    bool isCallValid,
-                                    egl::Display *dpyPacked,
-                                    egl::SyncID syncPacked,
-                                    EGLint attribute,
-                                    EGLint *value,
-                                    EGLBoolean returnValue)
+CallCapture CaptureGetSyncAttribKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint attribute, EGLint * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1810,14 +1385,7 @@ CallCapture CaptureGetSyncAttribKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLGetSyncAttribKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateImageKHR(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  gl::ContextID ctxPacked,
-                                  EGLenum target,
-                                  EGLClientBuffer buffer,
-                                  const AttributeMap &attrib_listPacked,
-                                  EGLImageKHR returnValue)
+CallCapture CaptureCreateImageKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, gl::ContextID ctxPacked, EGLenum target, EGLClientBuffer buffer, const AttributeMap & attrib_listPacked, EGLImageKHR returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1834,11 +1402,7 @@ CallCapture CaptureCreateImageKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateImageKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroyImageKHR(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   ImageID imagePacked,
-                                   EGLBoolean returnValue)
+CallCapture CaptureDestroyImageKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, ImageID imagePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1852,12 +1416,7 @@ CallCapture CaptureDestroyImageKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroyImageKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureLockSurfaceKHR(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  SurfaceID surfacePacked,
-                                  const AttributeMap &attrib_listPacked,
-                                  EGLBoolean returnValue)
+CallCapture CaptureLockSurfaceKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, const AttributeMap & attrib_listPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1872,13 +1431,7 @@ CallCapture CaptureLockSurfaceKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLLockSurfaceKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureQuerySurface64KHR(egl::Thread *thread,
-                                     bool isCallValid,
-                                     egl::Display *dpyPacked,
-                                     SurfaceID surfacePacked,
-                                     EGLint attribute,
-                                     EGLAttribKHR *value,
-                                     EGLBoolean returnValue)
+CallCapture CaptureQuerySurface64KHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint attribute, EGLAttribKHR * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1894,11 +1447,7 @@ CallCapture CaptureQuerySurface64KHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQuerySurface64KHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureUnlockSurfaceKHR(egl::Thread *thread,
-                                    bool isCallValid,
-                                    egl::Display *dpyPacked,
-                                    SurfaceID surfacePacked,
-                                    EGLBoolean returnValue)
+CallCapture CaptureUnlockSurfaceKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1912,13 +1461,7 @@ CallCapture CaptureUnlockSurfaceKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLUnlockSurfaceKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureSetDamageRegionKHR(egl::Thread *thread,
-                                      bool isCallValid,
-                                      egl::Display *dpyPacked,
-                                      SurfaceID surfacePacked,
-                                      EGLint *rects,
-                                      EGLint n_rects,
-                                      EGLBoolean returnValue)
+CallCapture CaptureSetDamageRegionKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint * rects, EGLint n_rects, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1934,12 +1477,7 @@ CallCapture CaptureSetDamageRegionKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSetDamageRegionKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureSignalSyncKHR(egl::Thread *thread,
-                                 bool isCallValid,
-                                 egl::Display *dpyPacked,
-                                 egl::SyncID syncPacked,
-                                 EGLenum mode,
-                                 EGLBoolean returnValue)
+CallCapture CaptureSignalSyncKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLenum mode, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1954,11 +1492,7 @@ CallCapture CaptureSignalSyncKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSignalSyncKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureCreateStreamKHR(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   const AttributeMap &attrib_listPacked,
-                                   EGLStreamKHR returnValue)
+CallCapture CaptureCreateStreamKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, const AttributeMap & attrib_listPacked, EGLStreamKHR returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1972,11 +1506,7 @@ CallCapture CaptureCreateStreamKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLCreateStreamKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureDestroyStreamKHR(egl::Thread *thread,
-                                    bool isCallValid,
-                                    egl::Display *dpyPacked,
-                                    egl::Stream *streamPacked,
-                                    EGLBoolean returnValue)
+CallCapture CaptureDestroyStreamKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -1990,13 +1520,7 @@ CallCapture CaptureDestroyStreamKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLDestroyStreamKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryStreamKHR(egl::Thread *thread,
-                                  bool isCallValid,
-                                  egl::Display *dpyPacked,
-                                  egl::Stream *streamPacked,
-                                  EGLenum attribute,
-                                  EGLint *value,
-                                  EGLBoolean returnValue)
+CallCapture CaptureQueryStreamKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLenum attribute, EGLint * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2012,13 +1536,7 @@ CallCapture CaptureQueryStreamKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryStreamKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureQueryStreamu64KHR(egl::Thread *thread,
-                                     bool isCallValid,
-                                     egl::Display *dpyPacked,
-                                     egl::Stream *streamPacked,
-                                     EGLenum attribute,
-                                     EGLuint64KHR *value,
-                                     EGLBoolean returnValue)
+CallCapture CaptureQueryStreamu64KHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLenum attribute, EGLuint64KHR * value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2034,13 +1552,7 @@ CallCapture CaptureQueryStreamu64KHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLQueryStreamu64KHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamAttribKHR(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   egl::Stream *streamPacked,
-                                   EGLenum attribute,
-                                   EGLint value,
-                                   EGLBoolean returnValue)
+CallCapture CaptureStreamAttribKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLenum attribute, EGLint value, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2056,11 +1568,7 @@ CallCapture CaptureStreamAttribKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLStreamAttribKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamConsumerAcquireKHR(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            egl::Stream *streamPacked,
-                                            EGLBoolean returnValue)
+CallCapture CaptureStreamConsumerAcquireKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2074,11 +1582,7 @@ CallCapture CaptureStreamConsumerAcquireKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLStreamConsumerAcquireKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamConsumerGLTextureExternalKHR(egl::Thread *thread,
-                                                      bool isCallValid,
-                                                      egl::Display *dpyPacked,
-                                                      egl::Stream *streamPacked,
-                                                      EGLBoolean returnValue)
+CallCapture CaptureStreamConsumerGLTextureExternalKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2089,15 +1593,10 @@ CallCapture CaptureStreamConsumerGLTextureExternalKHR(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLStreamConsumerGLTextureExternalKHR,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLStreamConsumerGLTextureExternalKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamConsumerReleaseKHR(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            egl::Stream *streamPacked,
-                                            EGLBoolean returnValue)
+CallCapture CaptureStreamConsumerReleaseKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2111,13 +1610,7 @@ CallCapture CaptureStreamConsumerReleaseKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLStreamConsumerReleaseKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureSwapBuffersWithDamageKHR(egl::Thread *thread,
-                                            bool isCallValid,
-                                            egl::Display *dpyPacked,
-                                            SurfaceID surfacePacked,
-                                            const EGLint *rects,
-                                            EGLint n_rects,
-                                            EGLBoolean returnValue)
+CallCapture CaptureSwapBuffersWithDamageKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, const EGLint * rects, EGLint n_rects, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2133,12 +1626,7 @@ CallCapture CaptureSwapBuffersWithDamageKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLSwapBuffersWithDamageKHR, std::move(paramBuffer));
 }
 
-CallCapture CaptureWaitSyncKHR(egl::Thread *thread,
-                               bool isCallValid,
-                               egl::Display *dpyPacked,
-                               egl::SyncID syncPacked,
-                               EGLint flags,
-                               EGLint returnValue)
+CallCapture CaptureWaitSyncKHR(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::SyncID syncPacked, EGLint flags, EGLint returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2153,15 +1641,7 @@ CallCapture CaptureWaitSyncKHR(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLWaitSyncKHR, std::move(paramBuffer));
 }
 
-CallCapture CapturePostSubBufferNV(egl::Thread *thread,
-                                   bool isCallValid,
-                                   egl::Display *dpyPacked,
-                                   SurfaceID surfacePacked,
-                                   EGLint x,
-                                   EGLint y,
-                                   EGLint width,
-                                   EGLint height,
-                                   EGLBoolean returnValue)
+CallCapture CapturePostSubBufferNV(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, SurfaceID surfacePacked, EGLint x, EGLint y, EGLint width, EGLint height, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2179,12 +1659,7 @@ CallCapture CapturePostSubBufferNV(egl::Thread *thread,
     return CallCapture(angle::EntryPoint::EGLPostSubBufferNV, std::move(paramBuffer));
 }
 
-CallCapture CaptureStreamConsumerGLTextureExternalAttribsNV(egl::Thread *thread,
-                                                            bool isCallValid,
-                                                            egl::Display *dpyPacked,
-                                                            egl::Stream *streamPacked,
-                                                            const AttributeMap &attrib_listPacked,
-                                                            EGLBoolean returnValue)
+CallCapture CaptureStreamConsumerGLTextureExternalAttribsNV(egl::Thread * thread, bool isCallValid, egl::Display * dpyPacked, egl::Stream * streamPacked, const AttributeMap & attrib_listPacked, EGLBoolean returnValue)
 {
     ParamBuffer paramBuffer;
 
@@ -2196,8 +1671,20 @@ CallCapture CaptureStreamConsumerGLTextureExternalAttribsNV(egl::Thread *thread,
     InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
     paramBuffer.addReturnValue(std::move(returnValueCapture));
 
-    return CallCapture(angle::EntryPoint::EGLStreamConsumerGLTextureExternalAttribsNV,
-                       std::move(paramBuffer));
+    return CallCapture(angle::EntryPoint::EGLStreamConsumerGLTextureExternalAttribsNV, std::move(paramBuffer));
+}
+
+CallCapture CaptureToggleWindowed(egl::Thread * thread, bool isCallValid, EGLBoolean returnValue)
+{
+    ParamBuffer paramBuffer;
+
+    
+
+    ParamCapture returnValueCapture("returnValue", ParamType::TEGLBoolean);
+    InitParamValue(ParamType::TEGLBoolean, returnValue, &returnValueCapture.value);
+    paramBuffer.addReturnValue(std::move(returnValueCapture));
+
+    return CallCapture(angle::EntryPoint::EGLToggleWindowed, std::move(paramBuffer));
 }
 
 }  // namespace egl

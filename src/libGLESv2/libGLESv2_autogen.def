@@ -1489,3 +1489,6 @@ EXPORTS
 
     ; EGL_NV_stream_consumer_gltexture_yuv
     EGL_StreamConsumerGLTextureExternalAttribsNV
+
+    ; EGL_SMOOGI_toggle_windowed
+    EGL_ToggleWindowed

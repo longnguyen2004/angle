@@ -158,8 +158,7 @@ ANGLE_UTIL_EXPORT PFNGLGETBOOLEANVPROC l_glGetBooleanv;
 ANGLE_UTIL_EXPORT PFNGLGETBUFFERPARAMETERIVPROC l_glGetBufferParameteriv;
 ANGLE_UTIL_EXPORT PFNGLGETERRORPROC l_glGetError;
 ANGLE_UTIL_EXPORT PFNGLGETFLOATVPROC l_glGetFloatv;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC
-    l_glGetFramebufferAttachmentParameteriv;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC l_glGetFramebufferAttachmentParameteriv;
 ANGLE_UTIL_EXPORT PFNGLGETINTEGERVPROC l_glGetIntegerv;
 ANGLE_UTIL_EXPORT PFNGLGETPROGRAMIVPROC l_glGetProgramiv;
 ANGLE_UTIL_EXPORT PFNGLGETPROGRAMINFOLOGPROC l_glGetProgramInfoLog;
@@ -466,21 +465,16 @@ ANGLE_UTIL_EXPORT PFNGLGETPERFMONITORCOUNTERSAMDPROC l_glGetPerfMonitorCountersA
 ANGLE_UTIL_EXPORT PFNGLGETPERFMONITORGROUPSTRINGAMDPROC l_glGetPerfMonitorGroupStringAMD;
 ANGLE_UTIL_EXPORT PFNGLGETPERFMONITORGROUPSAMDPROC l_glGetPerfMonitorGroupsAMD;
 ANGLE_UTIL_EXPORT PFNGLSELECTPERFMONITORCOUNTERSAMDPROC l_glSelectPerfMonitorCountersAMD;
-ANGLE_UTIL_EXPORT PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC
-    l_glDrawArraysInstancedBaseInstanceANGLE;
-ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC
-    l_glDrawElementsInstancedBaseVertexBaseInstanceANGLE;
-ANGLE_UTIL_EXPORT PFNGLMULTIDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC
-    l_glMultiDrawArraysInstancedBaseInstanceANGLE;
-ANGLE_UTIL_EXPORT PFNGLMULTIDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC
-    l_glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE;
+ANGLE_UTIL_EXPORT PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC l_glDrawArraysInstancedBaseInstanceANGLE;
+ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC l_glDrawElementsInstancedBaseVertexBaseInstanceANGLE;
+ANGLE_UTIL_EXPORT PFNGLMULTIDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC l_glMultiDrawArraysInstancedBaseInstanceANGLE;
+ANGLE_UTIL_EXPORT PFNGLMULTIDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC l_glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE;
 ANGLE_UTIL_EXPORT PFNGLBLOBCACHECALLBACKSANGLEPROC l_glBlobCacheCallbacksANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETPOINTERVANGLEPROC l_glGetPointervANGLE;
 ANGLE_UTIL_EXPORT PFNGLCOPYSUBTEXTURE3DANGLEPROC l_glCopySubTexture3DANGLE;
 ANGLE_UTIL_EXPORT PFNGLCOPYTEXTURE3DANGLEPROC l_glCopyTexture3DANGLE;
 ANGLE_UTIL_EXPORT PFNGLBLITFRAMEBUFFERANGLEPROC l_glBlitFramebufferANGLE;
-ANGLE_UTIL_EXPORT PFNGLRENDERBUFFERSTORAGEMULTISAMPLEANGLEPROC
-    l_glRenderbufferStorageMultisampleANGLE;
+ANGLE_UTIL_EXPORT PFNGLRENDERBUFFERSTORAGEMULTISAMPLEANGLEPROC l_glRenderbufferStorageMultisampleANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETCOMPRESSEDTEXIMAGEANGLEPROC l_glGetCompressedTexImageANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETRENDERBUFFERIMAGEANGLEPROC l_glGetRenderbufferImageANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETTEXIMAGEANGLEPROC l_glGetTexImageANGLE;
@@ -491,11 +485,9 @@ ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDANGLEPROC l_glDrawElementsInstancedA
 ANGLE_UTIL_EXPORT PFNGLVERTEXATTRIBDIVISORANGLEPROC l_glVertexAttribDivisorANGLE;
 ANGLE_UTIL_EXPORT PFNGLLOGICOPANGLEPROC l_glLogicOpANGLE;
 ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS2DANGLEPROC l_glTexStorageMemFlags2DANGLE;
-ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS2DMULTISAMPLEANGLEPROC
-    l_glTexStorageMemFlags2DMultisampleANGLE;
+ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS2DMULTISAMPLEANGLEPROC l_glTexStorageMemFlags2DMultisampleANGLE;
 ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS3DANGLEPROC l_glTexStorageMemFlags3DANGLE;
-ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS3DMULTISAMPLEANGLEPROC
-    l_glTexStorageMemFlags3DMultisampleANGLE;
+ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEMFLAGS3DMULTISAMPLEANGLEPROC l_glTexStorageMemFlags3DMultisampleANGLE;
 ANGLE_UTIL_EXPORT PFNGLIMPORTMEMORYZIRCONHANDLEANGLEPROC l_glImportMemoryZirconHandleANGLE;
 ANGLE_UTIL_EXPORT PFNGLMULTIDRAWARRAYSANGLEPROC l_glMultiDrawArraysANGLE;
 ANGLE_UTIL_EXPORT PFNGLMULTIDRAWARRAYSINSTANCEDANGLEPROC l_glMultiDrawArraysInstancedANGLE;
@@ -507,22 +499,17 @@ ANGLE_UTIL_EXPORT PFNGLDISABLEEXTENSIONANGLEPROC l_glDisableExtensionANGLE;
 ANGLE_UTIL_EXPORT PFNGLREQUESTEXTENSIONANGLEPROC l_glRequestExtensionANGLE;
 ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXIMAGE2DROBUSTANGLEPROC l_glCompressedTexImage2DRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXIMAGE3DROBUSTANGLEPROC l_glCompressedTexImage3DRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXSUBIMAGE2DROBUSTANGLEPROC
-    l_glCompressedTexSubImage2DRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXSUBIMAGE3DROBUSTANGLEPROC
-    l_glCompressedTexSubImage3DRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETACTIVEUNIFORMBLOCKIVROBUSTANGLEPROC
-    l_glGetActiveUniformBlockivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXSUBIMAGE2DROBUSTANGLEPROC l_glCompressedTexSubImage2DRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLCOMPRESSEDTEXSUBIMAGE3DROBUSTANGLEPROC l_glCompressedTexSubImage3DRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETACTIVEUNIFORMBLOCKIVROBUSTANGLEPROC l_glGetActiveUniformBlockivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETBOOLEANI_VROBUSTANGLEPROC l_glGetBooleani_vRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETBOOLEANVROBUSTANGLEPROC l_glGetBooleanvRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETBUFFERPARAMETERI64VROBUSTANGLEPROC l_glGetBufferParameteri64vRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETBUFFERPARAMETERIVROBUSTANGLEPROC l_glGetBufferParameterivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETBUFFERPOINTERVROBUSTANGLEPROC l_glGetBufferPointervRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETFLOATVROBUSTANGLEPROC l_glGetFloatvRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVROBUSTANGLEPROC
-    l_glGetFramebufferAttachmentParameterivRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPARAMETERIVROBUSTANGLEPROC
-    l_glGetFramebufferParameterivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVROBUSTANGLEPROC l_glGetFramebufferAttachmentParameterivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPARAMETERIVROBUSTANGLEPROC l_glGetFramebufferParameterivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETINTEGER64I_VROBUSTANGLEPROC l_glGetInteger64i_vRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETINTEGER64VROBUSTANGLEPROC l_glGetInteger64vRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETINTEGERI_VROBUSTANGLEPROC l_glGetIntegeri_vRobustANGLE;
@@ -537,11 +524,9 @@ ANGLE_UTIL_EXPORT PFNGLGETQUERYOBJECTIVROBUSTANGLEPROC l_glGetQueryObjectivRobus
 ANGLE_UTIL_EXPORT PFNGLGETQUERYOBJECTUI64VROBUSTANGLEPROC l_glGetQueryObjectui64vRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETQUERYOBJECTUIVROBUSTANGLEPROC l_glGetQueryObjectuivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETQUERYIVROBUSTANGLEPROC l_glGetQueryivRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETRENDERBUFFERPARAMETERIVROBUSTANGLEPROC
-    l_glGetRenderbufferParameterivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETRENDERBUFFERPARAMETERIVROBUSTANGLEPROC l_glGetRenderbufferParameterivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETSAMPLERPARAMETERIIVROBUSTANGLEPROC l_glGetSamplerParameterIivRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETSAMPLERPARAMETERIUIVROBUSTANGLEPROC
-    l_glGetSamplerParameterIuivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETSAMPLERPARAMETERIUIVROBUSTANGLEPROC l_glGetSamplerParameterIuivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETSAMPLERPARAMETERFVROBUSTANGLEPROC l_glGetSamplerParameterfvRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETSAMPLERPARAMETERIVROBUSTANGLEPROC l_glGetSamplerParameterivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETSHADERIVROBUSTANGLEPROC l_glGetShaderivRobustANGLE;
@@ -556,8 +541,7 @@ ANGLE_UTIL_EXPORT PFNGLGETUNIFORMIVROBUSTANGLEPROC l_glGetUniformivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETUNIFORMUIVROBUSTANGLEPROC l_glGetUniformuivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBIIVROBUSTANGLEPROC l_glGetVertexAttribIivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBIUIVROBUSTANGLEPROC l_glGetVertexAttribIuivRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBPOINTERVROBUSTANGLEPROC
-    l_glGetVertexAttribPointervRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBPOINTERVROBUSTANGLEPROC l_glGetVertexAttribPointervRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBFVROBUSTANGLEPROC l_glGetVertexAttribfvRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETVERTEXATTRIBIVROBUSTANGLEPROC l_glGetVertexAttribivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLGETNUNIFORMFVROBUSTANGLEPROC l_glGetnUniformfvRobustANGLE;
@@ -580,28 +564,17 @@ ANGLE_UTIL_EXPORT PFNGLTEXSUBIMAGE3DROBUSTANGLEPROC l_glTexSubImage3DRobustANGLE
 ANGLE_UTIL_EXPORT PFNGLIMPORTSEMAPHOREZIRCONHANDLEANGLEPROC l_glImportSemaphoreZirconHandleANGLE;
 ANGLE_UTIL_EXPORT PFNGLBEGINPIXELLOCALSTORAGEANGLEPROC l_glBeginPixelLocalStorageANGLE;
 ANGLE_UTIL_EXPORT PFNGLENDPIXELLOCALSTORAGEANGLEPROC l_glEndPixelLocalStorageANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERMEMORYLESSPIXELLOCALSTORAGEANGLEPROC
-    l_glFramebufferMemorylessPixelLocalStorageANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEFVANGLEPROC
-    l_glFramebufferPixelLocalClearValuefvANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEIVANGLEPROC
-    l_glFramebufferPixelLocalClearValueivANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEUIVANGLEPROC
-    l_glFramebufferPixelLocalClearValueuivANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALSTORAGEINTERRUPTANGLEPROC
-    l_glFramebufferPixelLocalStorageInterruptANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALSTORAGERESTOREANGLEPROC
-    l_glFramebufferPixelLocalStorageRestoreANGLE;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTUREPIXELLOCALSTORAGEANGLEPROC
-    l_glFramebufferTexturePixelLocalStorageANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVANGLEPROC
-    l_glGetFramebufferPixelLocalStorageParameterfvANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVROBUSTANGLEPROC
-    l_glGetFramebufferPixelLocalStorageParameterfvRobustANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVANGLEPROC
-    l_glGetFramebufferPixelLocalStorageParameterivANGLE;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVROBUSTANGLEPROC
-    l_glGetFramebufferPixelLocalStorageParameterivRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERMEMORYLESSPIXELLOCALSTORAGEANGLEPROC l_glFramebufferMemorylessPixelLocalStorageANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEFVANGLEPROC l_glFramebufferPixelLocalClearValuefvANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEIVANGLEPROC l_glFramebufferPixelLocalClearValueivANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEUIVANGLEPROC l_glFramebufferPixelLocalClearValueuivANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALSTORAGEINTERRUPTANGLEPROC l_glFramebufferPixelLocalStorageInterruptANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERPIXELLOCALSTORAGERESTOREANGLEPROC l_glFramebufferPixelLocalStorageRestoreANGLE;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTUREPIXELLOCALSTORAGEANGLEPROC l_glFramebufferTexturePixelLocalStorageANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVANGLEPROC l_glGetFramebufferPixelLocalStorageParameterfvANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVROBUSTANGLEPROC l_glGetFramebufferPixelLocalStorageParameterfvRobustANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVANGLEPROC l_glGetFramebufferPixelLocalStorageParameterivANGLE;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVROBUSTANGLEPROC l_glGetFramebufferPixelLocalStorageParameterivRobustANGLE;
 ANGLE_UTIL_EXPORT PFNGLPIXELLOCALSTORAGEBARRIERANGLEPROC l_glPixelLocalStorageBarrierANGLE;
 ANGLE_UTIL_EXPORT PFNGLINVALIDATETEXTUREANGLEPROC l_glInvalidateTextureANGLE;
 ANGLE_UTIL_EXPORT PFNGLTEXIMAGE2DEXTERNALANGLEPROC l_glTexImage2DExternalANGLE;
@@ -619,17 +592,13 @@ ANGLE_UTIL_EXPORT PFNGLCOVERAGEMODULATIONCHROMIUMPROC l_glCoverageModulationCHRO
 ANGLE_UTIL_EXPORT PFNGLLOSECONTEXTCHROMIUMPROC l_glLoseContextCHROMIUM;
 ANGLE_UTIL_EXPORT PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC l_glEGLImageTargetTexStorageEXT;
 ANGLE_UTIL_EXPORT PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC l_glEGLImageTargetTextureStorageEXT;
-ANGLE_UTIL_EXPORT PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEEXTPROC
-    l_glDrawArraysInstancedBaseInstanceEXT;
-ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEEXTPROC
-    l_glDrawElementsInstancedBaseInstanceEXT;
-ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEEXTPROC
-    l_glDrawElementsInstancedBaseVertexBaseInstanceEXT;
+ANGLE_UTIL_EXPORT PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEEXTPROC l_glDrawArraysInstancedBaseInstanceEXT;
+ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEEXTPROC l_glDrawElementsInstancedBaseInstanceEXT;
+ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEEXTPROC l_glDrawElementsInstancedBaseVertexBaseInstanceEXT;
 ANGLE_UTIL_EXPORT PFNGLBINDFRAGDATALOCATIONEXTPROC l_glBindFragDataLocationEXT;
 ANGLE_UTIL_EXPORT PFNGLBINDFRAGDATALOCATIONINDEXEDEXTPROC l_glBindFragDataLocationIndexedEXT;
 ANGLE_UTIL_EXPORT PFNGLGETFRAGDATAINDEXEXTPROC l_glGetFragDataIndexEXT;
-ANGLE_UTIL_EXPORT PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC
-    l_glGetProgramResourceLocationIndexEXT;
+ANGLE_UTIL_EXPORT PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC l_glGetProgramResourceLocationIndexEXT;
 ANGLE_UTIL_EXPORT PFNGLBUFFERSTORAGEEXTPROC l_glBufferStorageEXT;
 ANGLE_UTIL_EXPORT PFNGLCLEARTEXIMAGEEXTPROC l_glClearTexImageEXT;
 ANGLE_UTIL_EXPORT PFNGLCLEARTEXSUBIMAGEEXTPROC l_glClearTexSubImageEXT;
@@ -663,8 +632,7 @@ ANGLE_UTIL_EXPORT PFNGLDISABLEIEXTPROC l_glDisableiEXT;
 ANGLE_UTIL_EXPORT PFNGLENABLEIEXTPROC l_glEnableiEXT;
 ANGLE_UTIL_EXPORT PFNGLISENABLEDIEXTPROC l_glIsEnablediEXT;
 ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSBASEVERTEXEXTPROC l_glDrawElementsBaseVertexEXT;
-ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXEXTPROC
-    l_glDrawElementsInstancedBaseVertexEXT;
+ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXEXTPROC l_glDrawElementsInstancedBaseVertexEXT;
 ANGLE_UTIL_EXPORT PFNGLDRAWRANGEELEMENTSBASEVERTEXEXTPROC l_glDrawRangeElementsBaseVertexEXT;
 ANGLE_UTIL_EXPORT PFNGLMULTIDRAWELEMENTSBASEVERTEXEXTPROC l_glMultiDrawElementsBaseVertexEXT;
 ANGLE_UTIL_EXPORT PFNGLBUFFERSTORAGEEXTERNALEXTPROC l_glBufferStorageExternalEXT;
@@ -690,8 +658,7 @@ ANGLE_UTIL_EXPORT PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC l_glTexStorageMem3DMult
 ANGLE_UTIL_EXPORT PFNGLIMPORTMEMORYFDEXTPROC l_glImportMemoryFdEXT;
 ANGLE_UTIL_EXPORT PFNGLMULTIDRAWARRAYSINDIRECTEXTPROC l_glMultiDrawArraysIndirectEXT;
 ANGLE_UTIL_EXPORT PFNGLMULTIDRAWELEMENTSINDIRECTEXTPROC l_glMultiDrawElementsIndirectEXT;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTURE2DMULTISAMPLEEXTPROC
-    l_glFramebufferTexture2DMultisampleEXT;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTURE2DMULTISAMPLEEXTPROC l_glFramebufferTexture2DMultisampleEXT;
 ANGLE_UTIL_EXPORT PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC l_glRenderbufferStorageMultisampleEXT;
 ANGLE_UTIL_EXPORT PFNGLPOLYGONOFFSETCLAMPEXTPROC l_glPolygonOffsetClampEXT;
 ANGLE_UTIL_EXPORT PFNGLPRIMITIVEBOUNDINGBOXEXTPROC l_glPrimitiveBoundingBoxEXT;
@@ -797,8 +764,7 @@ ANGLE_UTIL_EXPORT PFNGLSETFENCENVPROC l_glSetFenceNV;
 ANGLE_UTIL_EXPORT PFNGLTESTFENCENVPROC l_glTestFenceNV;
 ANGLE_UTIL_EXPORT PFNGLBLITFRAMEBUFFERNVPROC l_glBlitFramebufferNV;
 ANGLE_UTIL_EXPORT PFNGLPOLYGONMODENVPROC l_glPolygonModeNV;
-ANGLE_UTIL_EXPORT PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC
-    l_glEGLImageTargetRenderbufferStorageOES;
+ANGLE_UTIL_EXPORT PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC l_glEGLImageTargetRenderbufferStorageOES;
 ANGLE_UTIL_EXPORT PFNGLEGLIMAGETARGETTEXTURE2DOESPROC l_glEGLImageTargetTexture2DOES;
 ANGLE_UTIL_EXPORT PFNGLCOPYIMAGESUBDATAOESPROC l_glCopyImageSubDataOES;
 ANGLE_UTIL_EXPORT PFNGLBLENDEQUATIONSEPARATEIOESPROC l_glBlendEquationSeparateiOES;
@@ -810,8 +776,7 @@ ANGLE_UTIL_EXPORT PFNGLDISABLEIOESPROC l_glDisableiOES;
 ANGLE_UTIL_EXPORT PFNGLENABLEIOESPROC l_glEnableiOES;
 ANGLE_UTIL_EXPORT PFNGLISENABLEDIOESPROC l_glIsEnablediOES;
 ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSBASEVERTEXOESPROC l_glDrawElementsBaseVertexOES;
-ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXOESPROC
-    l_glDrawElementsInstancedBaseVertexOES;
+ANGLE_UTIL_EXPORT PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXOESPROC l_glDrawElementsInstancedBaseVertexOES;
 ANGLE_UTIL_EXPORT PFNGLDRAWRANGEELEMENTSBASEVERTEXOESPROC l_glDrawRangeElementsBaseVertexOES;
 ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTUREOESPROC l_glFramebufferTextureOES;
 ANGLE_UTIL_EXPORT PFNGLGETPROGRAMBINARYOESPROC l_glGetProgramBinaryOES;
@@ -845,8 +810,7 @@ ANGLE_UTIL_EXPORT PFNGLGENVERTEXARRAYSOESPROC l_glGenVertexArraysOES;
 ANGLE_UTIL_EXPORT PFNGLISVERTEXARRAYOESPROC l_glIsVertexArrayOES;
 ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC l_glFramebufferTextureMultiviewOVR;
 ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERFOVEATIONCONFIGQCOMPROC l_glFramebufferFoveationConfigQCOM;
-ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERFOVEATIONPARAMETERSQCOMPROC
-    l_glFramebufferFoveationParametersQCOM;
+ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERFOVEATIONPARAMETERSQCOMPROC l_glFramebufferFoveationParametersQCOM;
 ANGLE_UTIL_EXPORT PFNGLSHADINGRATEQCOMPROC l_glShadingRateQCOM;
 ANGLE_UTIL_EXPORT PFNGLTEXTUREFOVEATIONPARAMETERSQCOMPROC l_glTextureFoveationParametersQCOM;
 ANGLE_UTIL_EXPORT PFNGLENDTILINGQCOMPROC l_glEndTilingQCOM;
@@ -870,8 +834,7 @@ ANGLE_UTIL_EXPORT PFNGLFRAMEBUFFERTEXTURE2DOESPROC l_glFramebufferTexture2DOES;
 ANGLE_UTIL_EXPORT PFNGLGENFRAMEBUFFERSOESPROC l_glGenFramebuffersOES;
 ANGLE_UTIL_EXPORT PFNGLGENRENDERBUFFERSOESPROC l_glGenRenderbuffersOES;
 ANGLE_UTIL_EXPORT PFNGLGENERATEMIPMAPOESPROC l_glGenerateMipmapOES;
-ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOESPROC
-    l_glGetFramebufferAttachmentParameterivOES;
+ANGLE_UTIL_EXPORT PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOESPROC l_glGetFramebufferAttachmentParameterivOES;
 ANGLE_UTIL_EXPORT PFNGLGETRENDERBUFFERPARAMETERIVOESPROC l_glGetRenderbufferParameterivOES;
 ANGLE_UTIL_EXPORT PFNGLISFRAMEBUFFEROESPROC l_glIsFramebufferOES;
 ANGLE_UTIL_EXPORT PFNGLISRENDERBUFFEROESPROC l_glIsRenderbufferOES;
@@ -894,1427 +857,848 @@ ANGLE_UTIL_EXPORT PFNGLTEXGENXVOESPROC l_glTexGenxvOES;
 
 void LoadUtilGLES(LoadProc loadProc)
 {
-    l_glAlphaFunc       = reinterpret_cast<PFNGLALPHAFUNCPROC>(loadProc("glAlphaFunc"));
-    l_glClipPlanef      = reinterpret_cast<PFNGLCLIPPLANEFPROC>(loadProc("glClipPlanef"));
-    l_glColor4f         = reinterpret_cast<PFNGLCOLOR4FPROC>(loadProc("glColor4f"));
-    l_glFogf            = reinterpret_cast<PFNGLFOGFPROC>(loadProc("glFogf"));
-    l_glFogfv           = reinterpret_cast<PFNGLFOGFVPROC>(loadProc("glFogfv"));
-    l_glFrustumf        = reinterpret_cast<PFNGLFRUSTUMFPROC>(loadProc("glFrustumf"));
-    l_glGetClipPlanef   = reinterpret_cast<PFNGLGETCLIPPLANEFPROC>(loadProc("glGetClipPlanef"));
-    l_glGetLightfv      = reinterpret_cast<PFNGLGETLIGHTFVPROC>(loadProc("glGetLightfv"));
-    l_glGetMaterialfv   = reinterpret_cast<PFNGLGETMATERIALFVPROC>(loadProc("glGetMaterialfv"));
-    l_glGetTexEnvfv     = reinterpret_cast<PFNGLGETTEXENVFVPROC>(loadProc("glGetTexEnvfv"));
-    l_glLightModelf     = reinterpret_cast<PFNGLLIGHTMODELFPROC>(loadProc("glLightModelf"));
-    l_glLightModelfv    = reinterpret_cast<PFNGLLIGHTMODELFVPROC>(loadProc("glLightModelfv"));
-    l_glLightf          = reinterpret_cast<PFNGLLIGHTFPROC>(loadProc("glLightf"));
-    l_glLightfv         = reinterpret_cast<PFNGLLIGHTFVPROC>(loadProc("glLightfv"));
-    l_glLoadMatrixf     = reinterpret_cast<PFNGLLOADMATRIXFPROC>(loadProc("glLoadMatrixf"));
-    l_glMaterialf       = reinterpret_cast<PFNGLMATERIALFPROC>(loadProc("glMaterialf"));
-    l_glMaterialfv      = reinterpret_cast<PFNGLMATERIALFVPROC>(loadProc("glMaterialfv"));
-    l_glMultMatrixf     = reinterpret_cast<PFNGLMULTMATRIXFPROC>(loadProc("glMultMatrixf"));
+    l_glAlphaFunc = reinterpret_cast<PFNGLALPHAFUNCPROC>(loadProc("glAlphaFunc"));
+    l_glClipPlanef = reinterpret_cast<PFNGLCLIPPLANEFPROC>(loadProc("glClipPlanef"));
+    l_glColor4f = reinterpret_cast<PFNGLCOLOR4FPROC>(loadProc("glColor4f"));
+    l_glFogf = reinterpret_cast<PFNGLFOGFPROC>(loadProc("glFogf"));
+    l_glFogfv = reinterpret_cast<PFNGLFOGFVPROC>(loadProc("glFogfv"));
+    l_glFrustumf = reinterpret_cast<PFNGLFRUSTUMFPROC>(loadProc("glFrustumf"));
+    l_glGetClipPlanef = reinterpret_cast<PFNGLGETCLIPPLANEFPROC>(loadProc("glGetClipPlanef"));
+    l_glGetLightfv = reinterpret_cast<PFNGLGETLIGHTFVPROC>(loadProc("glGetLightfv"));
+    l_glGetMaterialfv = reinterpret_cast<PFNGLGETMATERIALFVPROC>(loadProc("glGetMaterialfv"));
+    l_glGetTexEnvfv = reinterpret_cast<PFNGLGETTEXENVFVPROC>(loadProc("glGetTexEnvfv"));
+    l_glLightModelf = reinterpret_cast<PFNGLLIGHTMODELFPROC>(loadProc("glLightModelf"));
+    l_glLightModelfv = reinterpret_cast<PFNGLLIGHTMODELFVPROC>(loadProc("glLightModelfv"));
+    l_glLightf = reinterpret_cast<PFNGLLIGHTFPROC>(loadProc("glLightf"));
+    l_glLightfv = reinterpret_cast<PFNGLLIGHTFVPROC>(loadProc("glLightfv"));
+    l_glLoadMatrixf = reinterpret_cast<PFNGLLOADMATRIXFPROC>(loadProc("glLoadMatrixf"));
+    l_glMaterialf = reinterpret_cast<PFNGLMATERIALFPROC>(loadProc("glMaterialf"));
+    l_glMaterialfv = reinterpret_cast<PFNGLMATERIALFVPROC>(loadProc("glMaterialfv"));
+    l_glMultMatrixf = reinterpret_cast<PFNGLMULTMATRIXFPROC>(loadProc("glMultMatrixf"));
     l_glMultiTexCoord4f = reinterpret_cast<PFNGLMULTITEXCOORD4FPROC>(loadProc("glMultiTexCoord4f"));
-    l_glNormal3f        = reinterpret_cast<PFNGLNORMAL3FPROC>(loadProc("glNormal3f"));
-    l_glOrthof          = reinterpret_cast<PFNGLORTHOFPROC>(loadProc("glOrthof"));
+    l_glNormal3f = reinterpret_cast<PFNGLNORMAL3FPROC>(loadProc("glNormal3f"));
+    l_glOrthof = reinterpret_cast<PFNGLORTHOFPROC>(loadProc("glOrthof"));
     l_glPointParameterf = reinterpret_cast<PFNGLPOINTPARAMETERFPROC>(loadProc("glPointParameterf"));
-    l_glPointParameterfv =
-        reinterpret_cast<PFNGLPOINTPARAMETERFVPROC>(loadProc("glPointParameterfv"));
-    l_glPointSize   = reinterpret_cast<PFNGLPOINTSIZEPROC>(loadProc("glPointSize"));
-    l_glRotatef     = reinterpret_cast<PFNGLROTATEFPROC>(loadProc("glRotatef"));
-    l_glScalef      = reinterpret_cast<PFNGLSCALEFPROC>(loadProc("glScalef"));
-    l_glTexEnvf     = reinterpret_cast<PFNGLTEXENVFPROC>(loadProc("glTexEnvf"));
-    l_glTexEnvfv    = reinterpret_cast<PFNGLTEXENVFVPROC>(loadProc("glTexEnvfv"));
-    l_glTranslatef  = reinterpret_cast<PFNGLTRANSLATEFPROC>(loadProc("glTranslatef"));
-    l_glAlphaFuncx  = reinterpret_cast<PFNGLALPHAFUNCXPROC>(loadProc("glAlphaFuncx"));
+    l_glPointParameterfv = reinterpret_cast<PFNGLPOINTPARAMETERFVPROC>(loadProc("glPointParameterfv"));
+    l_glPointSize = reinterpret_cast<PFNGLPOINTSIZEPROC>(loadProc("glPointSize"));
+    l_glRotatef = reinterpret_cast<PFNGLROTATEFPROC>(loadProc("glRotatef"));
+    l_glScalef = reinterpret_cast<PFNGLSCALEFPROC>(loadProc("glScalef"));
+    l_glTexEnvf = reinterpret_cast<PFNGLTEXENVFPROC>(loadProc("glTexEnvf"));
+    l_glTexEnvfv = reinterpret_cast<PFNGLTEXENVFVPROC>(loadProc("glTexEnvfv"));
+    l_glTranslatef = reinterpret_cast<PFNGLTRANSLATEFPROC>(loadProc("glTranslatef"));
+    l_glAlphaFuncx = reinterpret_cast<PFNGLALPHAFUNCXPROC>(loadProc("glAlphaFuncx"));
     l_glClearColorx = reinterpret_cast<PFNGLCLEARCOLORXPROC>(loadProc("glClearColorx"));
     l_glClearDepthx = reinterpret_cast<PFNGLCLEARDEPTHXPROC>(loadProc("glClearDepthx"));
-    l_glClientActiveTexture =
-        reinterpret_cast<PFNGLCLIENTACTIVETEXTUREPROC>(loadProc("glClientActiveTexture"));
-    l_glClipPlanex   = reinterpret_cast<PFNGLCLIPPLANEXPROC>(loadProc("glClipPlanex"));
-    l_glColor4ub     = reinterpret_cast<PFNGLCOLOR4UBPROC>(loadProc("glColor4ub"));
-    l_glColor4x      = reinterpret_cast<PFNGLCOLOR4XPROC>(loadProc("glColor4x"));
+    l_glClientActiveTexture = reinterpret_cast<PFNGLCLIENTACTIVETEXTUREPROC>(loadProc("glClientActiveTexture"));
+    l_glClipPlanex = reinterpret_cast<PFNGLCLIPPLANEXPROC>(loadProc("glClipPlanex"));
+    l_glColor4ub = reinterpret_cast<PFNGLCOLOR4UBPROC>(loadProc("glColor4ub"));
+    l_glColor4x = reinterpret_cast<PFNGLCOLOR4XPROC>(loadProc("glColor4x"));
     l_glColorPointer = reinterpret_cast<PFNGLCOLORPOINTERPROC>(loadProc("glColorPointer"));
-    l_glDepthRangex  = reinterpret_cast<PFNGLDEPTHRANGEXPROC>(loadProc("glDepthRangex"));
-    l_glDisableClientState =
-        reinterpret_cast<PFNGLDISABLECLIENTSTATEPROC>(loadProc("glDisableClientState"));
-    l_glEnableClientState =
-        reinterpret_cast<PFNGLENABLECLIENTSTATEPROC>(loadProc("glEnableClientState"));
-    l_glFogx          = reinterpret_cast<PFNGLFOGXPROC>(loadProc("glFogx"));
-    l_glFogxv         = reinterpret_cast<PFNGLFOGXVPROC>(loadProc("glFogxv"));
-    l_glFrustumx      = reinterpret_cast<PFNGLFRUSTUMXPROC>(loadProc("glFrustumx"));
+    l_glDepthRangex = reinterpret_cast<PFNGLDEPTHRANGEXPROC>(loadProc("glDepthRangex"));
+    l_glDisableClientState = reinterpret_cast<PFNGLDISABLECLIENTSTATEPROC>(loadProc("glDisableClientState"));
+    l_glEnableClientState = reinterpret_cast<PFNGLENABLECLIENTSTATEPROC>(loadProc("glEnableClientState"));
+    l_glFogx = reinterpret_cast<PFNGLFOGXPROC>(loadProc("glFogx"));
+    l_glFogxv = reinterpret_cast<PFNGLFOGXVPROC>(loadProc("glFogxv"));
+    l_glFrustumx = reinterpret_cast<PFNGLFRUSTUMXPROC>(loadProc("glFrustumx"));
     l_glGetClipPlanex = reinterpret_cast<PFNGLGETCLIPPLANEXPROC>(loadProc("glGetClipPlanex"));
-    l_glGetFixedv     = reinterpret_cast<PFNGLGETFIXEDVPROC>(loadProc("glGetFixedv"));
-    l_glGetLightxv    = reinterpret_cast<PFNGLGETLIGHTXVPROC>(loadProc("glGetLightxv"));
+    l_glGetFixedv = reinterpret_cast<PFNGLGETFIXEDVPROC>(loadProc("glGetFixedv"));
+    l_glGetLightxv = reinterpret_cast<PFNGLGETLIGHTXVPROC>(loadProc("glGetLightxv"));
     l_glGetMaterialxv = reinterpret_cast<PFNGLGETMATERIALXVPROC>(loadProc("glGetMaterialxv"));
-    l_glGetTexEnviv   = reinterpret_cast<PFNGLGETTEXENVIVPROC>(loadProc("glGetTexEnviv"));
-    l_glGetTexEnvxv   = reinterpret_cast<PFNGLGETTEXENVXVPROC>(loadProc("glGetTexEnvxv"));
-    l_glGetTexParameterxv =
-        reinterpret_cast<PFNGLGETTEXPARAMETERXVPROC>(loadProc("glGetTexParameterxv"));
-    l_glLightModelx     = reinterpret_cast<PFNGLLIGHTMODELXPROC>(loadProc("glLightModelx"));
-    l_glLightModelxv    = reinterpret_cast<PFNGLLIGHTMODELXVPROC>(loadProc("glLightModelxv"));
-    l_glLightx          = reinterpret_cast<PFNGLLIGHTXPROC>(loadProc("glLightx"));
-    l_glLightxv         = reinterpret_cast<PFNGLLIGHTXVPROC>(loadProc("glLightxv"));
-    l_glLineWidthx      = reinterpret_cast<PFNGLLINEWIDTHXPROC>(loadProc("glLineWidthx"));
-    l_glLoadIdentity    = reinterpret_cast<PFNGLLOADIDENTITYPROC>(loadProc("glLoadIdentity"));
-    l_glLoadMatrixx     = reinterpret_cast<PFNGLLOADMATRIXXPROC>(loadProc("glLoadMatrixx"));
-    l_glLogicOp         = reinterpret_cast<PFNGLLOGICOPPROC>(loadProc("glLogicOp"));
-    l_glMaterialx       = reinterpret_cast<PFNGLMATERIALXPROC>(loadProc("glMaterialx"));
-    l_glMaterialxv      = reinterpret_cast<PFNGLMATERIALXVPROC>(loadProc("glMaterialxv"));
-    l_glMatrixMode      = reinterpret_cast<PFNGLMATRIXMODEPROC>(loadProc("glMatrixMode"));
-    l_glMultMatrixx     = reinterpret_cast<PFNGLMULTMATRIXXPROC>(loadProc("glMultMatrixx"));
+    l_glGetTexEnviv = reinterpret_cast<PFNGLGETTEXENVIVPROC>(loadProc("glGetTexEnviv"));
+    l_glGetTexEnvxv = reinterpret_cast<PFNGLGETTEXENVXVPROC>(loadProc("glGetTexEnvxv"));
+    l_glGetTexParameterxv = reinterpret_cast<PFNGLGETTEXPARAMETERXVPROC>(loadProc("glGetTexParameterxv"));
+    l_glLightModelx = reinterpret_cast<PFNGLLIGHTMODELXPROC>(loadProc("glLightModelx"));
+    l_glLightModelxv = reinterpret_cast<PFNGLLIGHTMODELXVPROC>(loadProc("glLightModelxv"));
+    l_glLightx = reinterpret_cast<PFNGLLIGHTXPROC>(loadProc("glLightx"));
+    l_glLightxv = reinterpret_cast<PFNGLLIGHTXVPROC>(loadProc("glLightxv"));
+    l_glLineWidthx = reinterpret_cast<PFNGLLINEWIDTHXPROC>(loadProc("glLineWidthx"));
+    l_glLoadIdentity = reinterpret_cast<PFNGLLOADIDENTITYPROC>(loadProc("glLoadIdentity"));
+    l_glLoadMatrixx = reinterpret_cast<PFNGLLOADMATRIXXPROC>(loadProc("glLoadMatrixx"));
+    l_glLogicOp = reinterpret_cast<PFNGLLOGICOPPROC>(loadProc("glLogicOp"));
+    l_glMaterialx = reinterpret_cast<PFNGLMATERIALXPROC>(loadProc("glMaterialx"));
+    l_glMaterialxv = reinterpret_cast<PFNGLMATERIALXVPROC>(loadProc("glMaterialxv"));
+    l_glMatrixMode = reinterpret_cast<PFNGLMATRIXMODEPROC>(loadProc("glMatrixMode"));
+    l_glMultMatrixx = reinterpret_cast<PFNGLMULTMATRIXXPROC>(loadProc("glMultMatrixx"));
     l_glMultiTexCoord4x = reinterpret_cast<PFNGLMULTITEXCOORD4XPROC>(loadProc("glMultiTexCoord4x"));
-    l_glNormal3x        = reinterpret_cast<PFNGLNORMAL3XPROC>(loadProc("glNormal3x"));
-    l_glNormalPointer   = reinterpret_cast<PFNGLNORMALPOINTERPROC>(loadProc("glNormalPointer"));
-    l_glOrthox          = reinterpret_cast<PFNGLORTHOXPROC>(loadProc("glOrthox"));
+    l_glNormal3x = reinterpret_cast<PFNGLNORMAL3XPROC>(loadProc("glNormal3x"));
+    l_glNormalPointer = reinterpret_cast<PFNGLNORMALPOINTERPROC>(loadProc("glNormalPointer"));
+    l_glOrthox = reinterpret_cast<PFNGLORTHOXPROC>(loadProc("glOrthox"));
     l_glPointParameterx = reinterpret_cast<PFNGLPOINTPARAMETERXPROC>(loadProc("glPointParameterx"));
-    l_glPointParameterxv =
-        reinterpret_cast<PFNGLPOINTPARAMETERXVPROC>(loadProc("glPointParameterxv"));
-    l_glPointSizex      = reinterpret_cast<PFNGLPOINTSIZEXPROC>(loadProc("glPointSizex"));
-    l_glPolygonOffsetx  = reinterpret_cast<PFNGLPOLYGONOFFSETXPROC>(loadProc("glPolygonOffsetx"));
-    l_glPopMatrix       = reinterpret_cast<PFNGLPOPMATRIXPROC>(loadProc("glPopMatrix"));
-    l_glPushMatrix      = reinterpret_cast<PFNGLPUSHMATRIXPROC>(loadProc("glPushMatrix"));
-    l_glRotatex         = reinterpret_cast<PFNGLROTATEXPROC>(loadProc("glRotatex"));
+    l_glPointParameterxv = reinterpret_cast<PFNGLPOINTPARAMETERXVPROC>(loadProc("glPointParameterxv"));
+    l_glPointSizex = reinterpret_cast<PFNGLPOINTSIZEXPROC>(loadProc("glPointSizex"));
+    l_glPolygonOffsetx = reinterpret_cast<PFNGLPOLYGONOFFSETXPROC>(loadProc("glPolygonOffsetx"));
+    l_glPopMatrix = reinterpret_cast<PFNGLPOPMATRIXPROC>(loadProc("glPopMatrix"));
+    l_glPushMatrix = reinterpret_cast<PFNGLPUSHMATRIXPROC>(loadProc("glPushMatrix"));
+    l_glRotatex = reinterpret_cast<PFNGLROTATEXPROC>(loadProc("glRotatex"));
     l_glSampleCoveragex = reinterpret_cast<PFNGLSAMPLECOVERAGEXPROC>(loadProc("glSampleCoveragex"));
-    l_glScalex          = reinterpret_cast<PFNGLSCALEXPROC>(loadProc("glScalex"));
-    l_glShadeModel      = reinterpret_cast<PFNGLSHADEMODELPROC>(loadProc("glShadeModel"));
+    l_glScalex = reinterpret_cast<PFNGLSCALEXPROC>(loadProc("glScalex"));
+    l_glShadeModel = reinterpret_cast<PFNGLSHADEMODELPROC>(loadProc("glShadeModel"));
     l_glTexCoordPointer = reinterpret_cast<PFNGLTEXCOORDPOINTERPROC>(loadProc("glTexCoordPointer"));
-    l_glTexEnvi         = reinterpret_cast<PFNGLTEXENVIPROC>(loadProc("glTexEnvi"));
-    l_glTexEnvx         = reinterpret_cast<PFNGLTEXENVXPROC>(loadProc("glTexEnvx"));
-    l_glTexEnviv        = reinterpret_cast<PFNGLTEXENVIVPROC>(loadProc("glTexEnviv"));
-    l_glTexEnvxv        = reinterpret_cast<PFNGLTEXENVXVPROC>(loadProc("glTexEnvxv"));
-    l_glTexParameterx   = reinterpret_cast<PFNGLTEXPARAMETERXPROC>(loadProc("glTexParameterx"));
-    l_glTexParameterxv  = reinterpret_cast<PFNGLTEXPARAMETERXVPROC>(loadProc("glTexParameterxv"));
-    l_glTranslatex      = reinterpret_cast<PFNGLTRANSLATEXPROC>(loadProc("glTranslatex"));
-    l_glVertexPointer   = reinterpret_cast<PFNGLVERTEXPOINTERPROC>(loadProc("glVertexPointer"));
-    l_glActiveTexture   = reinterpret_cast<PFNGLACTIVETEXTUREPROC>(loadProc("glActiveTexture"));
-    l_glAttachShader    = reinterpret_cast<PFNGLATTACHSHADERPROC>(loadProc("glAttachShader"));
-    l_glBindAttribLocation =
-        reinterpret_cast<PFNGLBINDATTRIBLOCATIONPROC>(loadProc("glBindAttribLocation"));
-    l_glBindBuffer      = reinterpret_cast<PFNGLBINDBUFFERPROC>(loadProc("glBindBuffer"));
+    l_glTexEnvi = reinterpret_cast<PFNGLTEXENVIPROC>(loadProc("glTexEnvi"));
+    l_glTexEnvx = reinterpret_cast<PFNGLTEXENVXPROC>(loadProc("glTexEnvx"));
+    l_glTexEnviv = reinterpret_cast<PFNGLTEXENVIVPROC>(loadProc("glTexEnviv"));
+    l_glTexEnvxv = reinterpret_cast<PFNGLTEXENVXVPROC>(loadProc("glTexEnvxv"));
+    l_glTexParameterx = reinterpret_cast<PFNGLTEXPARAMETERXPROC>(loadProc("glTexParameterx"));
+    l_glTexParameterxv = reinterpret_cast<PFNGLTEXPARAMETERXVPROC>(loadProc("glTexParameterxv"));
+    l_glTranslatex = reinterpret_cast<PFNGLTRANSLATEXPROC>(loadProc("glTranslatex"));
+    l_glVertexPointer = reinterpret_cast<PFNGLVERTEXPOINTERPROC>(loadProc("glVertexPointer"));
+    l_glActiveTexture = reinterpret_cast<PFNGLACTIVETEXTUREPROC>(loadProc("glActiveTexture"));
+    l_glAttachShader = reinterpret_cast<PFNGLATTACHSHADERPROC>(loadProc("glAttachShader"));
+    l_glBindAttribLocation = reinterpret_cast<PFNGLBINDATTRIBLOCATIONPROC>(loadProc("glBindAttribLocation"));
+    l_glBindBuffer = reinterpret_cast<PFNGLBINDBUFFERPROC>(loadProc("glBindBuffer"));
     l_glBindFramebuffer = reinterpret_cast<PFNGLBINDFRAMEBUFFERPROC>(loadProc("glBindFramebuffer"));
-    l_glBindRenderbuffer =
-        reinterpret_cast<PFNGLBINDRENDERBUFFERPROC>(loadProc("glBindRenderbuffer"));
-    l_glBindTexture   = reinterpret_cast<PFNGLBINDTEXTUREPROC>(loadProc("glBindTexture"));
-    l_glBlendColor    = reinterpret_cast<PFNGLBLENDCOLORPROC>(loadProc("glBlendColor"));
+    l_glBindRenderbuffer = reinterpret_cast<PFNGLBINDRENDERBUFFERPROC>(loadProc("glBindRenderbuffer"));
+    l_glBindTexture = reinterpret_cast<PFNGLBINDTEXTUREPROC>(loadProc("glBindTexture"));
+    l_glBlendColor = reinterpret_cast<PFNGLBLENDCOLORPROC>(loadProc("glBlendColor"));
     l_glBlendEquation = reinterpret_cast<PFNGLBLENDEQUATIONPROC>(loadProc("glBlendEquation"));
-    l_glBlendEquationSeparate =
-        reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEPROC>(loadProc("glBlendEquationSeparate"));
+    l_glBlendEquationSeparate = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEPROC>(loadProc("glBlendEquationSeparate"));
     l_glBlendFunc = reinterpret_cast<PFNGLBLENDFUNCPROC>(loadProc("glBlendFunc"));
-    l_glBlendFuncSeparate =
-        reinterpret_cast<PFNGLBLENDFUNCSEPARATEPROC>(loadProc("glBlendFuncSeparate"));
-    l_glBufferData    = reinterpret_cast<PFNGLBUFFERDATAPROC>(loadProc("glBufferData"));
+    l_glBlendFuncSeparate = reinterpret_cast<PFNGLBLENDFUNCSEPARATEPROC>(loadProc("glBlendFuncSeparate"));
+    l_glBufferData = reinterpret_cast<PFNGLBUFFERDATAPROC>(loadProc("glBufferData"));
     l_glBufferSubData = reinterpret_cast<PFNGLBUFFERSUBDATAPROC>(loadProc("glBufferSubData"));
-    l_glCheckFramebufferStatus =
-        reinterpret_cast<PFNGLCHECKFRAMEBUFFERSTATUSPROC>(loadProc("glCheckFramebufferStatus"));
-    l_glClear         = reinterpret_cast<PFNGLCLEARPROC>(loadProc("glClear"));
-    l_glClearColor    = reinterpret_cast<PFNGLCLEARCOLORPROC>(loadProc("glClearColor"));
-    l_glClearDepthf   = reinterpret_cast<PFNGLCLEARDEPTHFPROC>(loadProc("glClearDepthf"));
-    l_glClearStencil  = reinterpret_cast<PFNGLCLEARSTENCILPROC>(loadProc("glClearStencil"));
-    l_glColorMask     = reinterpret_cast<PFNGLCOLORMASKPROC>(loadProc("glColorMask"));
+    l_glCheckFramebufferStatus = reinterpret_cast<PFNGLCHECKFRAMEBUFFERSTATUSPROC>(loadProc("glCheckFramebufferStatus"));
+    l_glClear = reinterpret_cast<PFNGLCLEARPROC>(loadProc("glClear"));
+    l_glClearColor = reinterpret_cast<PFNGLCLEARCOLORPROC>(loadProc("glClearColor"));
+    l_glClearDepthf = reinterpret_cast<PFNGLCLEARDEPTHFPROC>(loadProc("glClearDepthf"));
+    l_glClearStencil = reinterpret_cast<PFNGLCLEARSTENCILPROC>(loadProc("glClearStencil"));
+    l_glColorMask = reinterpret_cast<PFNGLCOLORMASKPROC>(loadProc("glColorMask"));
     l_glCompileShader = reinterpret_cast<PFNGLCOMPILESHADERPROC>(loadProc("glCompileShader"));
-    l_glCompressedTexImage2D =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE2DPROC>(loadProc("glCompressedTexImage2D"));
-    l_glCompressedTexSubImage2D =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC>(loadProc("glCompressedTexSubImage2D"));
+    l_glCompressedTexImage2D = reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE2DPROC>(loadProc("glCompressedTexImage2D"));
+    l_glCompressedTexSubImage2D = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC>(loadProc("glCompressedTexSubImage2D"));
     l_glCopyTexImage2D = reinterpret_cast<PFNGLCOPYTEXIMAGE2DPROC>(loadProc("glCopyTexImage2D"));
-    l_glCopyTexSubImage2D =
-        reinterpret_cast<PFNGLCOPYTEXSUBIMAGE2DPROC>(loadProc("glCopyTexSubImage2D"));
+    l_glCopyTexSubImage2D = reinterpret_cast<PFNGLCOPYTEXSUBIMAGE2DPROC>(loadProc("glCopyTexSubImage2D"));
     l_glCreateProgram = reinterpret_cast<PFNGLCREATEPROGRAMPROC>(loadProc("glCreateProgram"));
-    l_glCreateShader  = reinterpret_cast<PFNGLCREATESHADERPROC>(loadProc("glCreateShader"));
-    l_glCullFace      = reinterpret_cast<PFNGLCULLFACEPROC>(loadProc("glCullFace"));
+    l_glCreateShader = reinterpret_cast<PFNGLCREATESHADERPROC>(loadProc("glCreateShader"));
+    l_glCullFace = reinterpret_cast<PFNGLCULLFACEPROC>(loadProc("glCullFace"));
     l_glDeleteBuffers = reinterpret_cast<PFNGLDELETEBUFFERSPROC>(loadProc("glDeleteBuffers"));
-    l_glDeleteFramebuffers =
-        reinterpret_cast<PFNGLDELETEFRAMEBUFFERSPROC>(loadProc("glDeleteFramebuffers"));
+    l_glDeleteFramebuffers = reinterpret_cast<PFNGLDELETEFRAMEBUFFERSPROC>(loadProc("glDeleteFramebuffers"));
     l_glDeleteProgram = reinterpret_cast<PFNGLDELETEPROGRAMPROC>(loadProc("glDeleteProgram"));
-    l_glDeleteRenderbuffers =
-        reinterpret_cast<PFNGLDELETERENDERBUFFERSPROC>(loadProc("glDeleteRenderbuffers"));
-    l_glDeleteShader   = reinterpret_cast<PFNGLDELETESHADERPROC>(loadProc("glDeleteShader"));
+    l_glDeleteRenderbuffers = reinterpret_cast<PFNGLDELETERENDERBUFFERSPROC>(loadProc("glDeleteRenderbuffers"));
+    l_glDeleteShader = reinterpret_cast<PFNGLDELETESHADERPROC>(loadProc("glDeleteShader"));
     l_glDeleteTextures = reinterpret_cast<PFNGLDELETETEXTURESPROC>(loadProc("glDeleteTextures"));
-    l_glDepthFunc      = reinterpret_cast<PFNGLDEPTHFUNCPROC>(loadProc("glDepthFunc"));
-    l_glDepthMask      = reinterpret_cast<PFNGLDEPTHMASKPROC>(loadProc("glDepthMask"));
-    l_glDepthRangef    = reinterpret_cast<PFNGLDEPTHRANGEFPROC>(loadProc("glDepthRangef"));
-    l_glDetachShader   = reinterpret_cast<PFNGLDETACHSHADERPROC>(loadProc("glDetachShader"));
-    l_glDisable        = reinterpret_cast<PFNGLDISABLEPROC>(loadProc("glDisable"));
-    l_glDisableVertexAttribArray =
-        reinterpret_cast<PFNGLDISABLEVERTEXATTRIBARRAYPROC>(loadProc("glDisableVertexAttribArray"));
-    l_glDrawArrays   = reinterpret_cast<PFNGLDRAWARRAYSPROC>(loadProc("glDrawArrays"));
+    l_glDepthFunc = reinterpret_cast<PFNGLDEPTHFUNCPROC>(loadProc("glDepthFunc"));
+    l_glDepthMask = reinterpret_cast<PFNGLDEPTHMASKPROC>(loadProc("glDepthMask"));
+    l_glDepthRangef = reinterpret_cast<PFNGLDEPTHRANGEFPROC>(loadProc("glDepthRangef"));
+    l_glDetachShader = reinterpret_cast<PFNGLDETACHSHADERPROC>(loadProc("glDetachShader"));
+    l_glDisable = reinterpret_cast<PFNGLDISABLEPROC>(loadProc("glDisable"));
+    l_glDisableVertexAttribArray = reinterpret_cast<PFNGLDISABLEVERTEXATTRIBARRAYPROC>(loadProc("glDisableVertexAttribArray"));
+    l_glDrawArrays = reinterpret_cast<PFNGLDRAWARRAYSPROC>(loadProc("glDrawArrays"));
     l_glDrawElements = reinterpret_cast<PFNGLDRAWELEMENTSPROC>(loadProc("glDrawElements"));
-    l_glEnable       = reinterpret_cast<PFNGLENABLEPROC>(loadProc("glEnable"));
-    l_glEnableVertexAttribArray =
-        reinterpret_cast<PFNGLENABLEVERTEXATTRIBARRAYPROC>(loadProc("glEnableVertexAttribArray"));
+    l_glEnable = reinterpret_cast<PFNGLENABLEPROC>(loadProc("glEnable"));
+    l_glEnableVertexAttribArray = reinterpret_cast<PFNGLENABLEVERTEXATTRIBARRAYPROC>(loadProc("glEnableVertexAttribArray"));
     l_glFinish = reinterpret_cast<PFNGLFINISHPROC>(loadProc("glFinish"));
-    l_glFlush  = reinterpret_cast<PFNGLFLUSHPROC>(loadProc("glFlush"));
-    l_glFramebufferRenderbuffer =
-        reinterpret_cast<PFNGLFRAMEBUFFERRENDERBUFFERPROC>(loadProc("glFramebufferRenderbuffer"));
-    l_glFramebufferTexture2D =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DPROC>(loadProc("glFramebufferTexture2D"));
-    l_glFrontFace       = reinterpret_cast<PFNGLFRONTFACEPROC>(loadProc("glFrontFace"));
-    l_glGenBuffers      = reinterpret_cast<PFNGLGENBUFFERSPROC>(loadProc("glGenBuffers"));
-    l_glGenerateMipmap  = reinterpret_cast<PFNGLGENERATEMIPMAPPROC>(loadProc("glGenerateMipmap"));
+    l_glFlush = reinterpret_cast<PFNGLFLUSHPROC>(loadProc("glFlush"));
+    l_glFramebufferRenderbuffer = reinterpret_cast<PFNGLFRAMEBUFFERRENDERBUFFERPROC>(loadProc("glFramebufferRenderbuffer"));
+    l_glFramebufferTexture2D = reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DPROC>(loadProc("glFramebufferTexture2D"));
+    l_glFrontFace = reinterpret_cast<PFNGLFRONTFACEPROC>(loadProc("glFrontFace"));
+    l_glGenBuffers = reinterpret_cast<PFNGLGENBUFFERSPROC>(loadProc("glGenBuffers"));
+    l_glGenerateMipmap = reinterpret_cast<PFNGLGENERATEMIPMAPPROC>(loadProc("glGenerateMipmap"));
     l_glGenFramebuffers = reinterpret_cast<PFNGLGENFRAMEBUFFERSPROC>(loadProc("glGenFramebuffers"));
-    l_glGenRenderbuffers =
-        reinterpret_cast<PFNGLGENRENDERBUFFERSPROC>(loadProc("glGenRenderbuffers"));
-    l_glGenTextures     = reinterpret_cast<PFNGLGENTEXTURESPROC>(loadProc("glGenTextures"));
+    l_glGenRenderbuffers = reinterpret_cast<PFNGLGENRENDERBUFFERSPROC>(loadProc("glGenRenderbuffers"));
+    l_glGenTextures = reinterpret_cast<PFNGLGENTEXTURESPROC>(loadProc("glGenTextures"));
     l_glGetActiveAttrib = reinterpret_cast<PFNGLGETACTIVEATTRIBPROC>(loadProc("glGetActiveAttrib"));
-    l_glGetActiveUniform =
-        reinterpret_cast<PFNGLGETACTIVEUNIFORMPROC>(loadProc("glGetActiveUniform"));
-    l_glGetAttachedShaders =
-        reinterpret_cast<PFNGLGETATTACHEDSHADERSPROC>(loadProc("glGetAttachedShaders"));
-    l_glGetAttribLocation =
-        reinterpret_cast<PFNGLGETATTRIBLOCATIONPROC>(loadProc("glGetAttribLocation"));
+    l_glGetActiveUniform = reinterpret_cast<PFNGLGETACTIVEUNIFORMPROC>(loadProc("glGetActiveUniform"));
+    l_glGetAttachedShaders = reinterpret_cast<PFNGLGETATTACHEDSHADERSPROC>(loadProc("glGetAttachedShaders"));
+    l_glGetAttribLocation = reinterpret_cast<PFNGLGETATTRIBLOCATIONPROC>(loadProc("glGetAttribLocation"));
     l_glGetBooleanv = reinterpret_cast<PFNGLGETBOOLEANVPROC>(loadProc("glGetBooleanv"));
-    l_glGetBufferParameteriv =
-        reinterpret_cast<PFNGLGETBUFFERPARAMETERIVPROC>(loadProc("glGetBufferParameteriv"));
-    l_glGetError  = reinterpret_cast<PFNGLGETERRORPROC>(loadProc("glGetError"));
+    l_glGetBufferParameteriv = reinterpret_cast<PFNGLGETBUFFERPARAMETERIVPROC>(loadProc("glGetBufferParameteriv"));
+    l_glGetError = reinterpret_cast<PFNGLGETERRORPROC>(loadProc("glGetError"));
     l_glGetFloatv = reinterpret_cast<PFNGLGETFLOATVPROC>(loadProc("glGetFloatv"));
-    l_glGetFramebufferAttachmentParameteriv =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC>(
-            loadProc("glGetFramebufferAttachmentParameteriv"));
-    l_glGetIntegerv  = reinterpret_cast<PFNGLGETINTEGERVPROC>(loadProc("glGetIntegerv"));
+    l_glGetFramebufferAttachmentParameteriv = reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC>(loadProc("glGetFramebufferAttachmentParameteriv"));
+    l_glGetIntegerv = reinterpret_cast<PFNGLGETINTEGERVPROC>(loadProc("glGetIntegerv"));
     l_glGetProgramiv = reinterpret_cast<PFNGLGETPROGRAMIVPROC>(loadProc("glGetProgramiv"));
-    l_glGetProgramInfoLog =
-        reinterpret_cast<PFNGLGETPROGRAMINFOLOGPROC>(loadProc("glGetProgramInfoLog"));
-    l_glGetRenderbufferParameteriv = reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVPROC>(
-        loadProc("glGetRenderbufferParameteriv"));
+    l_glGetProgramInfoLog = reinterpret_cast<PFNGLGETPROGRAMINFOLOGPROC>(loadProc("glGetProgramInfoLog"));
+    l_glGetRenderbufferParameteriv = reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVPROC>(loadProc("glGetRenderbufferParameteriv"));
     l_glGetShaderiv = reinterpret_cast<PFNGLGETSHADERIVPROC>(loadProc("glGetShaderiv"));
-    l_glGetShaderInfoLog =
-        reinterpret_cast<PFNGLGETSHADERINFOLOGPROC>(loadProc("glGetShaderInfoLog"));
-    l_glGetShaderPrecisionFormat =
-        reinterpret_cast<PFNGLGETSHADERPRECISIONFORMATPROC>(loadProc("glGetShaderPrecisionFormat"));
+    l_glGetShaderInfoLog = reinterpret_cast<PFNGLGETSHADERINFOLOGPROC>(loadProc("glGetShaderInfoLog"));
+    l_glGetShaderPrecisionFormat = reinterpret_cast<PFNGLGETSHADERPRECISIONFORMATPROC>(loadProc("glGetShaderPrecisionFormat"));
     l_glGetShaderSource = reinterpret_cast<PFNGLGETSHADERSOURCEPROC>(loadProc("glGetShaderSource"));
-    l_glGetString       = reinterpret_cast<PFNGLGETSTRINGPROC>(loadProc("glGetString"));
-    l_glGetTexParameterfv =
-        reinterpret_cast<PFNGLGETTEXPARAMETERFVPROC>(loadProc("glGetTexParameterfv"));
-    l_glGetTexParameteriv =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIVPROC>(loadProc("glGetTexParameteriv"));
+    l_glGetString = reinterpret_cast<PFNGLGETSTRINGPROC>(loadProc("glGetString"));
+    l_glGetTexParameterfv = reinterpret_cast<PFNGLGETTEXPARAMETERFVPROC>(loadProc("glGetTexParameterfv"));
+    l_glGetTexParameteriv = reinterpret_cast<PFNGLGETTEXPARAMETERIVPROC>(loadProc("glGetTexParameteriv"));
     l_glGetUniformfv = reinterpret_cast<PFNGLGETUNIFORMFVPROC>(loadProc("glGetUniformfv"));
     l_glGetUniformiv = reinterpret_cast<PFNGLGETUNIFORMIVPROC>(loadProc("glGetUniformiv"));
-    l_glGetUniformLocation =
-        reinterpret_cast<PFNGLGETUNIFORMLOCATIONPROC>(loadProc("glGetUniformLocation"));
-    l_glGetVertexAttribfv =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBFVPROC>(loadProc("glGetVertexAttribfv"));
-    l_glGetVertexAttribiv =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBIVPROC>(loadProc("glGetVertexAttribiv"));
-    l_glGetVertexAttribPointerv =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBPOINTERVPROC>(loadProc("glGetVertexAttribPointerv"));
-    l_glHint           = reinterpret_cast<PFNGLHINTPROC>(loadProc("glHint"));
-    l_glIsBuffer       = reinterpret_cast<PFNGLISBUFFERPROC>(loadProc("glIsBuffer"));
-    l_glIsEnabled      = reinterpret_cast<PFNGLISENABLEDPROC>(loadProc("glIsEnabled"));
-    l_glIsFramebuffer  = reinterpret_cast<PFNGLISFRAMEBUFFERPROC>(loadProc("glIsFramebuffer"));
-    l_glIsProgram      = reinterpret_cast<PFNGLISPROGRAMPROC>(loadProc("glIsProgram"));
+    l_glGetUniformLocation = reinterpret_cast<PFNGLGETUNIFORMLOCATIONPROC>(loadProc("glGetUniformLocation"));
+    l_glGetVertexAttribfv = reinterpret_cast<PFNGLGETVERTEXATTRIBFVPROC>(loadProc("glGetVertexAttribfv"));
+    l_glGetVertexAttribiv = reinterpret_cast<PFNGLGETVERTEXATTRIBIVPROC>(loadProc("glGetVertexAttribiv"));
+    l_glGetVertexAttribPointerv = reinterpret_cast<PFNGLGETVERTEXATTRIBPOINTERVPROC>(loadProc("glGetVertexAttribPointerv"));
+    l_glHint = reinterpret_cast<PFNGLHINTPROC>(loadProc("glHint"));
+    l_glIsBuffer = reinterpret_cast<PFNGLISBUFFERPROC>(loadProc("glIsBuffer"));
+    l_glIsEnabled = reinterpret_cast<PFNGLISENABLEDPROC>(loadProc("glIsEnabled"));
+    l_glIsFramebuffer = reinterpret_cast<PFNGLISFRAMEBUFFERPROC>(loadProc("glIsFramebuffer"));
+    l_glIsProgram = reinterpret_cast<PFNGLISPROGRAMPROC>(loadProc("glIsProgram"));
     l_glIsRenderbuffer = reinterpret_cast<PFNGLISRENDERBUFFERPROC>(loadProc("glIsRenderbuffer"));
-    l_glIsShader       = reinterpret_cast<PFNGLISSHADERPROC>(loadProc("glIsShader"));
-    l_glIsTexture      = reinterpret_cast<PFNGLISTEXTUREPROC>(loadProc("glIsTexture"));
-    l_glLineWidth      = reinterpret_cast<PFNGLLINEWIDTHPROC>(loadProc("glLineWidth"));
-    l_glLinkProgram    = reinterpret_cast<PFNGLLINKPROGRAMPROC>(loadProc("glLinkProgram"));
-    l_glPixelStorei    = reinterpret_cast<PFNGLPIXELSTOREIPROC>(loadProc("glPixelStorei"));
-    l_glPolygonOffset  = reinterpret_cast<PFNGLPOLYGONOFFSETPROC>(loadProc("glPolygonOffset"));
-    l_glReadPixels     = reinterpret_cast<PFNGLREADPIXELSPROC>(loadProc("glReadPixels"));
-    l_glReleaseShaderCompiler =
-        reinterpret_cast<PFNGLRELEASESHADERCOMPILERPROC>(loadProc("glReleaseShaderCompiler"));
-    l_glRenderbufferStorage =
-        reinterpret_cast<PFNGLRENDERBUFFERSTORAGEPROC>(loadProc("glRenderbufferStorage"));
+    l_glIsShader = reinterpret_cast<PFNGLISSHADERPROC>(loadProc("glIsShader"));
+    l_glIsTexture = reinterpret_cast<PFNGLISTEXTUREPROC>(loadProc("glIsTexture"));
+    l_glLineWidth = reinterpret_cast<PFNGLLINEWIDTHPROC>(loadProc("glLineWidth"));
+    l_glLinkProgram = reinterpret_cast<PFNGLLINKPROGRAMPROC>(loadProc("glLinkProgram"));
+    l_glPixelStorei = reinterpret_cast<PFNGLPIXELSTOREIPROC>(loadProc("glPixelStorei"));
+    l_glPolygonOffset = reinterpret_cast<PFNGLPOLYGONOFFSETPROC>(loadProc("glPolygonOffset"));
+    l_glReadPixels = reinterpret_cast<PFNGLREADPIXELSPROC>(loadProc("glReadPixels"));
+    l_glReleaseShaderCompiler = reinterpret_cast<PFNGLRELEASESHADERCOMPILERPROC>(loadProc("glReleaseShaderCompiler"));
+    l_glRenderbufferStorage = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEPROC>(loadProc("glRenderbufferStorage"));
     l_glSampleCoverage = reinterpret_cast<PFNGLSAMPLECOVERAGEPROC>(loadProc("glSampleCoverage"));
-    l_glScissor        = reinterpret_cast<PFNGLSCISSORPROC>(loadProc("glScissor"));
-    l_glShaderBinary   = reinterpret_cast<PFNGLSHADERBINARYPROC>(loadProc("glShaderBinary"));
-    l_glShaderSource   = reinterpret_cast<PFNGLSHADERSOURCEPROC>(loadProc("glShaderSource"));
-    l_glStencilFunc    = reinterpret_cast<PFNGLSTENCILFUNCPROC>(loadProc("glStencilFunc"));
-    l_glStencilFuncSeparate =
-        reinterpret_cast<PFNGLSTENCILFUNCSEPARATEPROC>(loadProc("glStencilFuncSeparate"));
+    l_glScissor = reinterpret_cast<PFNGLSCISSORPROC>(loadProc("glScissor"));
+    l_glShaderBinary = reinterpret_cast<PFNGLSHADERBINARYPROC>(loadProc("glShaderBinary"));
+    l_glShaderSource = reinterpret_cast<PFNGLSHADERSOURCEPROC>(loadProc("glShaderSource"));
+    l_glStencilFunc = reinterpret_cast<PFNGLSTENCILFUNCPROC>(loadProc("glStencilFunc"));
+    l_glStencilFuncSeparate = reinterpret_cast<PFNGLSTENCILFUNCSEPARATEPROC>(loadProc("glStencilFuncSeparate"));
     l_glStencilMask = reinterpret_cast<PFNGLSTENCILMASKPROC>(loadProc("glStencilMask"));
-    l_glStencilMaskSeparate =
-        reinterpret_cast<PFNGLSTENCILMASKSEPARATEPROC>(loadProc("glStencilMaskSeparate"));
+    l_glStencilMaskSeparate = reinterpret_cast<PFNGLSTENCILMASKSEPARATEPROC>(loadProc("glStencilMaskSeparate"));
     l_glStencilOp = reinterpret_cast<PFNGLSTENCILOPPROC>(loadProc("glStencilOp"));
-    l_glStencilOpSeparate =
-        reinterpret_cast<PFNGLSTENCILOPSEPARATEPROC>(loadProc("glStencilOpSeparate"));
-    l_glTexImage2D     = reinterpret_cast<PFNGLTEXIMAGE2DPROC>(loadProc("glTexImage2D"));
-    l_glTexParameterf  = reinterpret_cast<PFNGLTEXPARAMETERFPROC>(loadProc("glTexParameterf"));
+    l_glStencilOpSeparate = reinterpret_cast<PFNGLSTENCILOPSEPARATEPROC>(loadProc("glStencilOpSeparate"));
+    l_glTexImage2D = reinterpret_cast<PFNGLTEXIMAGE2DPROC>(loadProc("glTexImage2D"));
+    l_glTexParameterf = reinterpret_cast<PFNGLTEXPARAMETERFPROC>(loadProc("glTexParameterf"));
     l_glTexParameterfv = reinterpret_cast<PFNGLTEXPARAMETERFVPROC>(loadProc("glTexParameterfv"));
-    l_glTexParameteri  = reinterpret_cast<PFNGLTEXPARAMETERIPROC>(loadProc("glTexParameteri"));
+    l_glTexParameteri = reinterpret_cast<PFNGLTEXPARAMETERIPROC>(loadProc("glTexParameteri"));
     l_glTexParameteriv = reinterpret_cast<PFNGLTEXPARAMETERIVPROC>(loadProc("glTexParameteriv"));
-    l_glTexSubImage2D  = reinterpret_cast<PFNGLTEXSUBIMAGE2DPROC>(loadProc("glTexSubImage2D"));
-    l_glUniform1f      = reinterpret_cast<PFNGLUNIFORM1FPROC>(loadProc("glUniform1f"));
-    l_glUniform1fv     = reinterpret_cast<PFNGLUNIFORM1FVPROC>(loadProc("glUniform1fv"));
-    l_glUniform1i      = reinterpret_cast<PFNGLUNIFORM1IPROC>(loadProc("glUniform1i"));
-    l_glUniform1iv     = reinterpret_cast<PFNGLUNIFORM1IVPROC>(loadProc("glUniform1iv"));
-    l_glUniform2f      = reinterpret_cast<PFNGLUNIFORM2FPROC>(loadProc("glUniform2f"));
-    l_glUniform2fv     = reinterpret_cast<PFNGLUNIFORM2FVPROC>(loadProc("glUniform2fv"));
-    l_glUniform2i      = reinterpret_cast<PFNGLUNIFORM2IPROC>(loadProc("glUniform2i"));
-    l_glUniform2iv     = reinterpret_cast<PFNGLUNIFORM2IVPROC>(loadProc("glUniform2iv"));
-    l_glUniform3f      = reinterpret_cast<PFNGLUNIFORM3FPROC>(loadProc("glUniform3f"));
-    l_glUniform3fv     = reinterpret_cast<PFNGLUNIFORM3FVPROC>(loadProc("glUniform3fv"));
-    l_glUniform3i      = reinterpret_cast<PFNGLUNIFORM3IPROC>(loadProc("glUniform3i"));
-    l_glUniform3iv     = reinterpret_cast<PFNGLUNIFORM3IVPROC>(loadProc("glUniform3iv"));
-    l_glUniform4f      = reinterpret_cast<PFNGLUNIFORM4FPROC>(loadProc("glUniform4f"));
-    l_glUniform4fv     = reinterpret_cast<PFNGLUNIFORM4FVPROC>(loadProc("glUniform4fv"));
-    l_glUniform4i      = reinterpret_cast<PFNGLUNIFORM4IPROC>(loadProc("glUniform4i"));
-    l_glUniform4iv     = reinterpret_cast<PFNGLUNIFORM4IVPROC>(loadProc("glUniform4iv"));
-    l_glUniformMatrix2fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX2FVPROC>(loadProc("glUniformMatrix2fv"));
-    l_glUniformMatrix3fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX3FVPROC>(loadProc("glUniformMatrix3fv"));
-    l_glUniformMatrix4fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX4FVPROC>(loadProc("glUniformMatrix4fv"));
-    l_glUseProgram      = reinterpret_cast<PFNGLUSEPROGRAMPROC>(loadProc("glUseProgram"));
+    l_glTexSubImage2D = reinterpret_cast<PFNGLTEXSUBIMAGE2DPROC>(loadProc("glTexSubImage2D"));
+    l_glUniform1f = reinterpret_cast<PFNGLUNIFORM1FPROC>(loadProc("glUniform1f"));
+    l_glUniform1fv = reinterpret_cast<PFNGLUNIFORM1FVPROC>(loadProc("glUniform1fv"));
+    l_glUniform1i = reinterpret_cast<PFNGLUNIFORM1IPROC>(loadProc("glUniform1i"));
+    l_glUniform1iv = reinterpret_cast<PFNGLUNIFORM1IVPROC>(loadProc("glUniform1iv"));
+    l_glUniform2f = reinterpret_cast<PFNGLUNIFORM2FPROC>(loadProc("glUniform2f"));
+    l_glUniform2fv = reinterpret_cast<PFNGLUNIFORM2FVPROC>(loadProc("glUniform2fv"));
+    l_glUniform2i = reinterpret_cast<PFNGLUNIFORM2IPROC>(loadProc("glUniform2i"));
+    l_glUniform2iv = reinterpret_cast<PFNGLUNIFORM2IVPROC>(loadProc("glUniform2iv"));
+    l_glUniform3f = reinterpret_cast<PFNGLUNIFORM3FPROC>(loadProc("glUniform3f"));
+    l_glUniform3fv = reinterpret_cast<PFNGLUNIFORM3FVPROC>(loadProc("glUniform3fv"));
+    l_glUniform3i = reinterpret_cast<PFNGLUNIFORM3IPROC>(loadProc("glUniform3i"));
+    l_glUniform3iv = reinterpret_cast<PFNGLUNIFORM3IVPROC>(loadProc("glUniform3iv"));
+    l_glUniform4f = reinterpret_cast<PFNGLUNIFORM4FPROC>(loadProc("glUniform4f"));
+    l_glUniform4fv = reinterpret_cast<PFNGLUNIFORM4FVPROC>(loadProc("glUniform4fv"));
+    l_glUniform4i = reinterpret_cast<PFNGLUNIFORM4IPROC>(loadProc("glUniform4i"));
+    l_glUniform4iv = reinterpret_cast<PFNGLUNIFORM4IVPROC>(loadProc("glUniform4iv"));
+    l_glUniformMatrix2fv = reinterpret_cast<PFNGLUNIFORMMATRIX2FVPROC>(loadProc("glUniformMatrix2fv"));
+    l_glUniformMatrix3fv = reinterpret_cast<PFNGLUNIFORMMATRIX3FVPROC>(loadProc("glUniformMatrix3fv"));
+    l_glUniformMatrix4fv = reinterpret_cast<PFNGLUNIFORMMATRIX4FVPROC>(loadProc("glUniformMatrix4fv"));
+    l_glUseProgram = reinterpret_cast<PFNGLUSEPROGRAMPROC>(loadProc("glUseProgram"));
     l_glValidateProgram = reinterpret_cast<PFNGLVALIDATEPROGRAMPROC>(loadProc("glValidateProgram"));
-    l_glVertexAttrib1f  = reinterpret_cast<PFNGLVERTEXATTRIB1FPROC>(loadProc("glVertexAttrib1f"));
+    l_glVertexAttrib1f = reinterpret_cast<PFNGLVERTEXATTRIB1FPROC>(loadProc("glVertexAttrib1f"));
     l_glVertexAttrib1fv = reinterpret_cast<PFNGLVERTEXATTRIB1FVPROC>(loadProc("glVertexAttrib1fv"));
-    l_glVertexAttrib2f  = reinterpret_cast<PFNGLVERTEXATTRIB2FPROC>(loadProc("glVertexAttrib2f"));
+    l_glVertexAttrib2f = reinterpret_cast<PFNGLVERTEXATTRIB2FPROC>(loadProc("glVertexAttrib2f"));
     l_glVertexAttrib2fv = reinterpret_cast<PFNGLVERTEXATTRIB2FVPROC>(loadProc("glVertexAttrib2fv"));
-    l_glVertexAttrib3f  = reinterpret_cast<PFNGLVERTEXATTRIB3FPROC>(loadProc("glVertexAttrib3f"));
+    l_glVertexAttrib3f = reinterpret_cast<PFNGLVERTEXATTRIB3FPROC>(loadProc("glVertexAttrib3f"));
     l_glVertexAttrib3fv = reinterpret_cast<PFNGLVERTEXATTRIB3FVPROC>(loadProc("glVertexAttrib3fv"));
-    l_glVertexAttrib4f  = reinterpret_cast<PFNGLVERTEXATTRIB4FPROC>(loadProc("glVertexAttrib4f"));
+    l_glVertexAttrib4f = reinterpret_cast<PFNGLVERTEXATTRIB4FPROC>(loadProc("glVertexAttrib4f"));
     l_glVertexAttrib4fv = reinterpret_cast<PFNGLVERTEXATTRIB4FVPROC>(loadProc("glVertexAttrib4fv"));
-    l_glVertexAttribPointer =
-        reinterpret_cast<PFNGLVERTEXATTRIBPOINTERPROC>(loadProc("glVertexAttribPointer"));
-    l_glViewport   = reinterpret_cast<PFNGLVIEWPORTPROC>(loadProc("glViewport"));
+    l_glVertexAttribPointer = reinterpret_cast<PFNGLVERTEXATTRIBPOINTERPROC>(loadProc("glVertexAttribPointer"));
+    l_glViewport = reinterpret_cast<PFNGLVIEWPORTPROC>(loadProc("glViewport"));
     l_glReadBuffer = reinterpret_cast<PFNGLREADBUFFERPROC>(loadProc("glReadBuffer"));
-    l_glDrawRangeElements =
-        reinterpret_cast<PFNGLDRAWRANGEELEMENTSPROC>(loadProc("glDrawRangeElements"));
-    l_glTexImage3D    = reinterpret_cast<PFNGLTEXIMAGE3DPROC>(loadProc("glTexImage3D"));
+    l_glDrawRangeElements = reinterpret_cast<PFNGLDRAWRANGEELEMENTSPROC>(loadProc("glDrawRangeElements"));
+    l_glTexImage3D = reinterpret_cast<PFNGLTEXIMAGE3DPROC>(loadProc("glTexImage3D"));
     l_glTexSubImage3D = reinterpret_cast<PFNGLTEXSUBIMAGE3DPROC>(loadProc("glTexSubImage3D"));
-    l_glCopyTexSubImage3D =
-        reinterpret_cast<PFNGLCOPYTEXSUBIMAGE3DPROC>(loadProc("glCopyTexSubImage3D"));
-    l_glCompressedTexImage3D =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DPROC>(loadProc("glCompressedTexImage3D"));
-    l_glCompressedTexSubImage3D =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC>(loadProc("glCompressedTexSubImage3D"));
-    l_glGenQueries    = reinterpret_cast<PFNGLGENQUERIESPROC>(loadProc("glGenQueries"));
+    l_glCopyTexSubImage3D = reinterpret_cast<PFNGLCOPYTEXSUBIMAGE3DPROC>(loadProc("glCopyTexSubImage3D"));
+    l_glCompressedTexImage3D = reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DPROC>(loadProc("glCompressedTexImage3D"));
+    l_glCompressedTexSubImage3D = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC>(loadProc("glCompressedTexSubImage3D"));
+    l_glGenQueries = reinterpret_cast<PFNGLGENQUERIESPROC>(loadProc("glGenQueries"));
     l_glDeleteQueries = reinterpret_cast<PFNGLDELETEQUERIESPROC>(loadProc("glDeleteQueries"));
-    l_glIsQuery       = reinterpret_cast<PFNGLISQUERYPROC>(loadProc("glIsQuery"));
-    l_glBeginQuery    = reinterpret_cast<PFNGLBEGINQUERYPROC>(loadProc("glBeginQuery"));
-    l_glEndQuery      = reinterpret_cast<PFNGLENDQUERYPROC>(loadProc("glEndQuery"));
-    l_glGetQueryiv    = reinterpret_cast<PFNGLGETQUERYIVPROC>(loadProc("glGetQueryiv"));
-    l_glGetQueryObjectuiv =
-        reinterpret_cast<PFNGLGETQUERYOBJECTUIVPROC>(loadProc("glGetQueryObjectuiv"));
+    l_glIsQuery = reinterpret_cast<PFNGLISQUERYPROC>(loadProc("glIsQuery"));
+    l_glBeginQuery = reinterpret_cast<PFNGLBEGINQUERYPROC>(loadProc("glBeginQuery"));
+    l_glEndQuery = reinterpret_cast<PFNGLENDQUERYPROC>(loadProc("glEndQuery"));
+    l_glGetQueryiv = reinterpret_cast<PFNGLGETQUERYIVPROC>(loadProc("glGetQueryiv"));
+    l_glGetQueryObjectuiv = reinterpret_cast<PFNGLGETQUERYOBJECTUIVPROC>(loadProc("glGetQueryObjectuiv"));
     l_glUnmapBuffer = reinterpret_cast<PFNGLUNMAPBUFFERPROC>(loadProc("glUnmapBuffer"));
-    l_glGetBufferPointerv =
-        reinterpret_cast<PFNGLGETBUFFERPOINTERVPROC>(loadProc("glGetBufferPointerv"));
+    l_glGetBufferPointerv = reinterpret_cast<PFNGLGETBUFFERPOINTERVPROC>(loadProc("glGetBufferPointerv"));
     l_glDrawBuffers = reinterpret_cast<PFNGLDRAWBUFFERSPROC>(loadProc("glDrawBuffers"));
-    l_glUniformMatrix2x3fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX2X3FVPROC>(loadProc("glUniformMatrix2x3fv"));
-    l_glUniformMatrix3x2fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX3X2FVPROC>(loadProc("glUniformMatrix3x2fv"));
-    l_glUniformMatrix2x4fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX2X4FVPROC>(loadProc("glUniformMatrix2x4fv"));
-    l_glUniformMatrix4x2fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX4X2FVPROC>(loadProc("glUniformMatrix4x2fv"));
-    l_glUniformMatrix3x4fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX3X4FVPROC>(loadProc("glUniformMatrix3x4fv"));
-    l_glUniformMatrix4x3fv =
-        reinterpret_cast<PFNGLUNIFORMMATRIX4X3FVPROC>(loadProc("glUniformMatrix4x3fv"));
+    l_glUniformMatrix2x3fv = reinterpret_cast<PFNGLUNIFORMMATRIX2X3FVPROC>(loadProc("glUniformMatrix2x3fv"));
+    l_glUniformMatrix3x2fv = reinterpret_cast<PFNGLUNIFORMMATRIX3X2FVPROC>(loadProc("glUniformMatrix3x2fv"));
+    l_glUniformMatrix2x4fv = reinterpret_cast<PFNGLUNIFORMMATRIX2X4FVPROC>(loadProc("glUniformMatrix2x4fv"));
+    l_glUniformMatrix4x2fv = reinterpret_cast<PFNGLUNIFORMMATRIX4X2FVPROC>(loadProc("glUniformMatrix4x2fv"));
+    l_glUniformMatrix3x4fv = reinterpret_cast<PFNGLUNIFORMMATRIX3X4FVPROC>(loadProc("glUniformMatrix3x4fv"));
+    l_glUniformMatrix4x3fv = reinterpret_cast<PFNGLUNIFORMMATRIX4X3FVPROC>(loadProc("glUniformMatrix4x3fv"));
     l_glBlitFramebuffer = reinterpret_cast<PFNGLBLITFRAMEBUFFERPROC>(loadProc("glBlitFramebuffer"));
-    l_glRenderbufferStorageMultisample = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC>(
-        loadProc("glRenderbufferStorageMultisample"));
-    l_glFramebufferTextureLayer =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTURELAYERPROC>(loadProc("glFramebufferTextureLayer"));
+    l_glRenderbufferStorageMultisample = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC>(loadProc("glRenderbufferStorageMultisample"));
+    l_glFramebufferTextureLayer = reinterpret_cast<PFNGLFRAMEBUFFERTEXTURELAYERPROC>(loadProc("glFramebufferTextureLayer"));
     l_glMapBufferRange = reinterpret_cast<PFNGLMAPBUFFERRANGEPROC>(loadProc("glMapBufferRange"));
-    l_glFlushMappedBufferRange =
-        reinterpret_cast<PFNGLFLUSHMAPPEDBUFFERRANGEPROC>(loadProc("glFlushMappedBufferRange"));
+    l_glFlushMappedBufferRange = reinterpret_cast<PFNGLFLUSHMAPPEDBUFFERRANGEPROC>(loadProc("glFlushMappedBufferRange"));
     l_glBindVertexArray = reinterpret_cast<PFNGLBINDVERTEXARRAYPROC>(loadProc("glBindVertexArray"));
-    l_glDeleteVertexArrays =
-        reinterpret_cast<PFNGLDELETEVERTEXARRAYSPROC>(loadProc("glDeleteVertexArrays"));
+    l_glDeleteVertexArrays = reinterpret_cast<PFNGLDELETEVERTEXARRAYSPROC>(loadProc("glDeleteVertexArrays"));
     l_glGenVertexArrays = reinterpret_cast<PFNGLGENVERTEXARRAYSPROC>(loadProc("glGenVertexArrays"));
-    l_glIsVertexArray   = reinterpret_cast<PFNGLISVERTEXARRAYPROC>(loadProc("glIsVertexArray"));
-    l_glGetIntegeri_v   = reinterpret_cast<PFNGLGETINTEGERI_VPROC>(loadProc("glGetIntegeri_v"));
-    l_glBeginTransformFeedback =
-        reinterpret_cast<PFNGLBEGINTRANSFORMFEEDBACKPROC>(loadProc("glBeginTransformFeedback"));
-    l_glEndTransformFeedback =
-        reinterpret_cast<PFNGLENDTRANSFORMFEEDBACKPROC>(loadProc("glEndTransformFeedback"));
+    l_glIsVertexArray = reinterpret_cast<PFNGLISVERTEXARRAYPROC>(loadProc("glIsVertexArray"));
+    l_glGetIntegeri_v = reinterpret_cast<PFNGLGETINTEGERI_VPROC>(loadProc("glGetIntegeri_v"));
+    l_glBeginTransformFeedback = reinterpret_cast<PFNGLBEGINTRANSFORMFEEDBACKPROC>(loadProc("glBeginTransformFeedback"));
+    l_glEndTransformFeedback = reinterpret_cast<PFNGLENDTRANSFORMFEEDBACKPROC>(loadProc("glEndTransformFeedback"));
     l_glBindBufferRange = reinterpret_cast<PFNGLBINDBUFFERRANGEPROC>(loadProc("glBindBufferRange"));
-    l_glBindBufferBase  = reinterpret_cast<PFNGLBINDBUFFERBASEPROC>(loadProc("glBindBufferBase"));
-    l_glTransformFeedbackVaryings = reinterpret_cast<PFNGLTRANSFORMFEEDBACKVARYINGSPROC>(
-        loadProc("glTransformFeedbackVaryings"));
-    l_glGetTransformFeedbackVarying = reinterpret_cast<PFNGLGETTRANSFORMFEEDBACKVARYINGPROC>(
-        loadProc("glGetTransformFeedbackVarying"));
-    l_glVertexAttribIPointer =
-        reinterpret_cast<PFNGLVERTEXATTRIBIPOINTERPROC>(loadProc("glVertexAttribIPointer"));
-    l_glGetVertexAttribIiv =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBIIVPROC>(loadProc("glGetVertexAttribIiv"));
-    l_glGetVertexAttribIuiv =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBIUIVPROC>(loadProc("glGetVertexAttribIuiv"));
+    l_glBindBufferBase = reinterpret_cast<PFNGLBINDBUFFERBASEPROC>(loadProc("glBindBufferBase"));
+    l_glTransformFeedbackVaryings = reinterpret_cast<PFNGLTRANSFORMFEEDBACKVARYINGSPROC>(loadProc("glTransformFeedbackVaryings"));
+    l_glGetTransformFeedbackVarying = reinterpret_cast<PFNGLGETTRANSFORMFEEDBACKVARYINGPROC>(loadProc("glGetTransformFeedbackVarying"));
+    l_glVertexAttribIPointer = reinterpret_cast<PFNGLVERTEXATTRIBIPOINTERPROC>(loadProc("glVertexAttribIPointer"));
+    l_glGetVertexAttribIiv = reinterpret_cast<PFNGLGETVERTEXATTRIBIIVPROC>(loadProc("glGetVertexAttribIiv"));
+    l_glGetVertexAttribIuiv = reinterpret_cast<PFNGLGETVERTEXATTRIBIUIVPROC>(loadProc("glGetVertexAttribIuiv"));
     l_glVertexAttribI4i = reinterpret_cast<PFNGLVERTEXATTRIBI4IPROC>(loadProc("glVertexAttribI4i"));
-    l_glVertexAttribI4ui =
-        reinterpret_cast<PFNGLVERTEXATTRIBI4UIPROC>(loadProc("glVertexAttribI4ui"));
-    l_glVertexAttribI4iv =
-        reinterpret_cast<PFNGLVERTEXATTRIBI4IVPROC>(loadProc("glVertexAttribI4iv"));
-    l_glVertexAttribI4uiv =
-        reinterpret_cast<PFNGLVERTEXATTRIBI4UIVPROC>(loadProc("glVertexAttribI4uiv"));
+    l_glVertexAttribI4ui = reinterpret_cast<PFNGLVERTEXATTRIBI4UIPROC>(loadProc("glVertexAttribI4ui"));
+    l_glVertexAttribI4iv = reinterpret_cast<PFNGLVERTEXATTRIBI4IVPROC>(loadProc("glVertexAttribI4iv"));
+    l_glVertexAttribI4uiv = reinterpret_cast<PFNGLVERTEXATTRIBI4UIVPROC>(loadProc("glVertexAttribI4uiv"));
     l_glGetUniformuiv = reinterpret_cast<PFNGLGETUNIFORMUIVPROC>(loadProc("glGetUniformuiv"));
-    l_glGetFragDataLocation =
-        reinterpret_cast<PFNGLGETFRAGDATALOCATIONPROC>(loadProc("glGetFragDataLocation"));
-    l_glUniform1ui     = reinterpret_cast<PFNGLUNIFORM1UIPROC>(loadProc("glUniform1ui"));
-    l_glUniform2ui     = reinterpret_cast<PFNGLUNIFORM2UIPROC>(loadProc("glUniform2ui"));
-    l_glUniform3ui     = reinterpret_cast<PFNGLUNIFORM3UIPROC>(loadProc("glUniform3ui"));
-    l_glUniform4ui     = reinterpret_cast<PFNGLUNIFORM4UIPROC>(loadProc("glUniform4ui"));
-    l_glUniform1uiv    = reinterpret_cast<PFNGLUNIFORM1UIVPROC>(loadProc("glUniform1uiv"));
-    l_glUniform2uiv    = reinterpret_cast<PFNGLUNIFORM2UIVPROC>(loadProc("glUniform2uiv"));
-    l_glUniform3uiv    = reinterpret_cast<PFNGLUNIFORM3UIVPROC>(loadProc("glUniform3uiv"));
-    l_glUniform4uiv    = reinterpret_cast<PFNGLUNIFORM4UIVPROC>(loadProc("glUniform4uiv"));
-    l_glClearBufferiv  = reinterpret_cast<PFNGLCLEARBUFFERIVPROC>(loadProc("glClearBufferiv"));
+    l_glGetFragDataLocation = reinterpret_cast<PFNGLGETFRAGDATALOCATIONPROC>(loadProc("glGetFragDataLocation"));
+    l_glUniform1ui = reinterpret_cast<PFNGLUNIFORM1UIPROC>(loadProc("glUniform1ui"));
+    l_glUniform2ui = reinterpret_cast<PFNGLUNIFORM2UIPROC>(loadProc("glUniform2ui"));
+    l_glUniform3ui = reinterpret_cast<PFNGLUNIFORM3UIPROC>(loadProc("glUniform3ui"));
+    l_glUniform4ui = reinterpret_cast<PFNGLUNIFORM4UIPROC>(loadProc("glUniform4ui"));
+    l_glUniform1uiv = reinterpret_cast<PFNGLUNIFORM1UIVPROC>(loadProc("glUniform1uiv"));
+    l_glUniform2uiv = reinterpret_cast<PFNGLUNIFORM2UIVPROC>(loadProc("glUniform2uiv"));
+    l_glUniform3uiv = reinterpret_cast<PFNGLUNIFORM3UIVPROC>(loadProc("glUniform3uiv"));
+    l_glUniform4uiv = reinterpret_cast<PFNGLUNIFORM4UIVPROC>(loadProc("glUniform4uiv"));
+    l_glClearBufferiv = reinterpret_cast<PFNGLCLEARBUFFERIVPROC>(loadProc("glClearBufferiv"));
     l_glClearBufferuiv = reinterpret_cast<PFNGLCLEARBUFFERUIVPROC>(loadProc("glClearBufferuiv"));
-    l_glClearBufferfv  = reinterpret_cast<PFNGLCLEARBUFFERFVPROC>(loadProc("glClearBufferfv"));
-    l_glClearBufferfi  = reinterpret_cast<PFNGLCLEARBUFFERFIPROC>(loadProc("glClearBufferfi"));
-    l_glGetStringi     = reinterpret_cast<PFNGLGETSTRINGIPROC>(loadProc("glGetStringi"));
-    l_glCopyBufferSubData =
-        reinterpret_cast<PFNGLCOPYBUFFERSUBDATAPROC>(loadProc("glCopyBufferSubData"));
-    l_glGetUniformIndices =
-        reinterpret_cast<PFNGLGETUNIFORMINDICESPROC>(loadProc("glGetUniformIndices"));
-    l_glGetActiveUniformsiv =
-        reinterpret_cast<PFNGLGETACTIVEUNIFORMSIVPROC>(loadProc("glGetActiveUniformsiv"));
-    l_glGetUniformBlockIndex =
-        reinterpret_cast<PFNGLGETUNIFORMBLOCKINDEXPROC>(loadProc("glGetUniformBlockIndex"));
-    l_glGetActiveUniformBlockiv =
-        reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKIVPROC>(loadProc("glGetActiveUniformBlockiv"));
-    l_glGetActiveUniformBlockName = reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC>(
-        loadProc("glGetActiveUniformBlockName"));
-    l_glUniformBlockBinding =
-        reinterpret_cast<PFNGLUNIFORMBLOCKBINDINGPROC>(loadProc("glUniformBlockBinding"));
-    l_glDrawArraysInstanced =
-        reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDPROC>(loadProc("glDrawArraysInstanced"));
-    l_glDrawElementsInstanced =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDPROC>(loadProc("glDrawElementsInstanced"));
-    l_glFenceSync       = reinterpret_cast<PFNGLFENCESYNCPROC>(loadProc("glFenceSync"));
-    l_glIsSync          = reinterpret_cast<PFNGLISSYNCPROC>(loadProc("glIsSync"));
-    l_glDeleteSync      = reinterpret_cast<PFNGLDELETESYNCPROC>(loadProc("glDeleteSync"));
-    l_glClientWaitSync  = reinterpret_cast<PFNGLCLIENTWAITSYNCPROC>(loadProc("glClientWaitSync"));
-    l_glWaitSync        = reinterpret_cast<PFNGLWAITSYNCPROC>(loadProc("glWaitSync"));
-    l_glGetInteger64v   = reinterpret_cast<PFNGLGETINTEGER64VPROC>(loadProc("glGetInteger64v"));
-    l_glGetSynciv       = reinterpret_cast<PFNGLGETSYNCIVPROC>(loadProc("glGetSynciv"));
+    l_glClearBufferfv = reinterpret_cast<PFNGLCLEARBUFFERFVPROC>(loadProc("glClearBufferfv"));
+    l_glClearBufferfi = reinterpret_cast<PFNGLCLEARBUFFERFIPROC>(loadProc("glClearBufferfi"));
+    l_glGetStringi = reinterpret_cast<PFNGLGETSTRINGIPROC>(loadProc("glGetStringi"));
+    l_glCopyBufferSubData = reinterpret_cast<PFNGLCOPYBUFFERSUBDATAPROC>(loadProc("glCopyBufferSubData"));
+    l_glGetUniformIndices = reinterpret_cast<PFNGLGETUNIFORMINDICESPROC>(loadProc("glGetUniformIndices"));
+    l_glGetActiveUniformsiv = reinterpret_cast<PFNGLGETACTIVEUNIFORMSIVPROC>(loadProc("glGetActiveUniformsiv"));
+    l_glGetUniformBlockIndex = reinterpret_cast<PFNGLGETUNIFORMBLOCKINDEXPROC>(loadProc("glGetUniformBlockIndex"));
+    l_glGetActiveUniformBlockiv = reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKIVPROC>(loadProc("glGetActiveUniformBlockiv"));
+    l_glGetActiveUniformBlockName = reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC>(loadProc("glGetActiveUniformBlockName"));
+    l_glUniformBlockBinding = reinterpret_cast<PFNGLUNIFORMBLOCKBINDINGPROC>(loadProc("glUniformBlockBinding"));
+    l_glDrawArraysInstanced = reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDPROC>(loadProc("glDrawArraysInstanced"));
+    l_glDrawElementsInstanced = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDPROC>(loadProc("glDrawElementsInstanced"));
+    l_glFenceSync = reinterpret_cast<PFNGLFENCESYNCPROC>(loadProc("glFenceSync"));
+    l_glIsSync = reinterpret_cast<PFNGLISSYNCPROC>(loadProc("glIsSync"));
+    l_glDeleteSync = reinterpret_cast<PFNGLDELETESYNCPROC>(loadProc("glDeleteSync"));
+    l_glClientWaitSync = reinterpret_cast<PFNGLCLIENTWAITSYNCPROC>(loadProc("glClientWaitSync"));
+    l_glWaitSync = reinterpret_cast<PFNGLWAITSYNCPROC>(loadProc("glWaitSync"));
+    l_glGetInteger64v = reinterpret_cast<PFNGLGETINTEGER64VPROC>(loadProc("glGetInteger64v"));
+    l_glGetSynciv = reinterpret_cast<PFNGLGETSYNCIVPROC>(loadProc("glGetSynciv"));
     l_glGetInteger64i_v = reinterpret_cast<PFNGLGETINTEGER64I_VPROC>(loadProc("glGetInteger64i_v"));
-    l_glGetBufferParameteri64v =
-        reinterpret_cast<PFNGLGETBUFFERPARAMETERI64VPROC>(loadProc("glGetBufferParameteri64v"));
-    l_glGenSamplers    = reinterpret_cast<PFNGLGENSAMPLERSPROC>(loadProc("glGenSamplers"));
+    l_glGetBufferParameteri64v = reinterpret_cast<PFNGLGETBUFFERPARAMETERI64VPROC>(loadProc("glGetBufferParameteri64v"));
+    l_glGenSamplers = reinterpret_cast<PFNGLGENSAMPLERSPROC>(loadProc("glGenSamplers"));
     l_glDeleteSamplers = reinterpret_cast<PFNGLDELETESAMPLERSPROC>(loadProc("glDeleteSamplers"));
-    l_glIsSampler      = reinterpret_cast<PFNGLISSAMPLERPROC>(loadProc("glIsSampler"));
-    l_glBindSampler    = reinterpret_cast<PFNGLBINDSAMPLERPROC>(loadProc("glBindSampler"));
-    l_glSamplerParameteri =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIPROC>(loadProc("glSamplerParameteri"));
-    l_glSamplerParameteriv =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIVPROC>(loadProc("glSamplerParameteriv"));
-    l_glSamplerParameterf =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERFPROC>(loadProc("glSamplerParameterf"));
-    l_glSamplerParameterfv =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERFVPROC>(loadProc("glSamplerParameterfv"));
-    l_glGetSamplerParameteriv =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIVPROC>(loadProc("glGetSamplerParameteriv"));
-    l_glGetSamplerParameterfv =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERFVPROC>(loadProc("glGetSamplerParameterfv"));
-    l_glVertexAttribDivisor =
-        reinterpret_cast<PFNGLVERTEXATTRIBDIVISORPROC>(loadProc("glVertexAttribDivisor"));
-    l_glBindTransformFeedback =
-        reinterpret_cast<PFNGLBINDTRANSFORMFEEDBACKPROC>(loadProc("glBindTransformFeedback"));
-    l_glDeleteTransformFeedbacks =
-        reinterpret_cast<PFNGLDELETETRANSFORMFEEDBACKSPROC>(loadProc("glDeleteTransformFeedbacks"));
-    l_glGenTransformFeedbacks =
-        reinterpret_cast<PFNGLGENTRANSFORMFEEDBACKSPROC>(loadProc("glGenTransformFeedbacks"));
-    l_glIsTransformFeedback =
-        reinterpret_cast<PFNGLISTRANSFORMFEEDBACKPROC>(loadProc("glIsTransformFeedback"));
-    l_glPauseTransformFeedback =
-        reinterpret_cast<PFNGLPAUSETRANSFORMFEEDBACKPROC>(loadProc("glPauseTransformFeedback"));
-    l_glResumeTransformFeedback =
-        reinterpret_cast<PFNGLRESUMETRANSFORMFEEDBACKPROC>(loadProc("glResumeTransformFeedback"));
-    l_glGetProgramBinary =
-        reinterpret_cast<PFNGLGETPROGRAMBINARYPROC>(loadProc("glGetProgramBinary"));
+    l_glIsSampler = reinterpret_cast<PFNGLISSAMPLERPROC>(loadProc("glIsSampler"));
+    l_glBindSampler = reinterpret_cast<PFNGLBINDSAMPLERPROC>(loadProc("glBindSampler"));
+    l_glSamplerParameteri = reinterpret_cast<PFNGLSAMPLERPARAMETERIPROC>(loadProc("glSamplerParameteri"));
+    l_glSamplerParameteriv = reinterpret_cast<PFNGLSAMPLERPARAMETERIVPROC>(loadProc("glSamplerParameteriv"));
+    l_glSamplerParameterf = reinterpret_cast<PFNGLSAMPLERPARAMETERFPROC>(loadProc("glSamplerParameterf"));
+    l_glSamplerParameterfv = reinterpret_cast<PFNGLSAMPLERPARAMETERFVPROC>(loadProc("glSamplerParameterfv"));
+    l_glGetSamplerParameteriv = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIVPROC>(loadProc("glGetSamplerParameteriv"));
+    l_glGetSamplerParameterfv = reinterpret_cast<PFNGLGETSAMPLERPARAMETERFVPROC>(loadProc("glGetSamplerParameterfv"));
+    l_glVertexAttribDivisor = reinterpret_cast<PFNGLVERTEXATTRIBDIVISORPROC>(loadProc("glVertexAttribDivisor"));
+    l_glBindTransformFeedback = reinterpret_cast<PFNGLBINDTRANSFORMFEEDBACKPROC>(loadProc("glBindTransformFeedback"));
+    l_glDeleteTransformFeedbacks = reinterpret_cast<PFNGLDELETETRANSFORMFEEDBACKSPROC>(loadProc("glDeleteTransformFeedbacks"));
+    l_glGenTransformFeedbacks = reinterpret_cast<PFNGLGENTRANSFORMFEEDBACKSPROC>(loadProc("glGenTransformFeedbacks"));
+    l_glIsTransformFeedback = reinterpret_cast<PFNGLISTRANSFORMFEEDBACKPROC>(loadProc("glIsTransformFeedback"));
+    l_glPauseTransformFeedback = reinterpret_cast<PFNGLPAUSETRANSFORMFEEDBACKPROC>(loadProc("glPauseTransformFeedback"));
+    l_glResumeTransformFeedback = reinterpret_cast<PFNGLRESUMETRANSFORMFEEDBACKPROC>(loadProc("glResumeTransformFeedback"));
+    l_glGetProgramBinary = reinterpret_cast<PFNGLGETPROGRAMBINARYPROC>(loadProc("glGetProgramBinary"));
     l_glProgramBinary = reinterpret_cast<PFNGLPROGRAMBINARYPROC>(loadProc("glProgramBinary"));
-    l_glProgramParameteri =
-        reinterpret_cast<PFNGLPROGRAMPARAMETERIPROC>(loadProc("glProgramParameteri"));
-    l_glInvalidateFramebuffer =
-        reinterpret_cast<PFNGLINVALIDATEFRAMEBUFFERPROC>(loadProc("glInvalidateFramebuffer"));
-    l_glInvalidateSubFramebuffer =
-        reinterpret_cast<PFNGLINVALIDATESUBFRAMEBUFFERPROC>(loadProc("glInvalidateSubFramebuffer"));
+    l_glProgramParameteri = reinterpret_cast<PFNGLPROGRAMPARAMETERIPROC>(loadProc("glProgramParameteri"));
+    l_glInvalidateFramebuffer = reinterpret_cast<PFNGLINVALIDATEFRAMEBUFFERPROC>(loadProc("glInvalidateFramebuffer"));
+    l_glInvalidateSubFramebuffer = reinterpret_cast<PFNGLINVALIDATESUBFRAMEBUFFERPROC>(loadProc("glInvalidateSubFramebuffer"));
     l_glTexStorage2D = reinterpret_cast<PFNGLTEXSTORAGE2DPROC>(loadProc("glTexStorage2D"));
     l_glTexStorage3D = reinterpret_cast<PFNGLTEXSTORAGE3DPROC>(loadProc("glTexStorage3D"));
-    l_glGetInternalformativ =
-        reinterpret_cast<PFNGLGETINTERNALFORMATIVPROC>(loadProc("glGetInternalformativ"));
+    l_glGetInternalformativ = reinterpret_cast<PFNGLGETINTERNALFORMATIVPROC>(loadProc("glGetInternalformativ"));
     l_glDispatchCompute = reinterpret_cast<PFNGLDISPATCHCOMPUTEPROC>(loadProc("glDispatchCompute"));
-    l_glDispatchComputeIndirect =
-        reinterpret_cast<PFNGLDISPATCHCOMPUTEINDIRECTPROC>(loadProc("glDispatchComputeIndirect"));
-    l_glDrawArraysIndirect =
-        reinterpret_cast<PFNGLDRAWARRAYSINDIRECTPROC>(loadProc("glDrawArraysIndirect"));
-    l_glDrawElementsIndirect =
-        reinterpret_cast<PFNGLDRAWELEMENTSINDIRECTPROC>(loadProc("glDrawElementsIndirect"));
-    l_glFramebufferParameteri =
-        reinterpret_cast<PFNGLFRAMEBUFFERPARAMETERIPROC>(loadProc("glFramebufferParameteri"));
-    l_glGetFramebufferParameteriv = reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVPROC>(
-        loadProc("glGetFramebufferParameteriv"));
-    l_glGetProgramInterfaceiv =
-        reinterpret_cast<PFNGLGETPROGRAMINTERFACEIVPROC>(loadProc("glGetProgramInterfaceiv"));
-    l_glGetProgramResourceIndex =
-        reinterpret_cast<PFNGLGETPROGRAMRESOURCEINDEXPROC>(loadProc("glGetProgramResourceIndex"));
-    l_glGetProgramResourceName =
-        reinterpret_cast<PFNGLGETPROGRAMRESOURCENAMEPROC>(loadProc("glGetProgramResourceName"));
-    l_glGetProgramResourceiv =
-        reinterpret_cast<PFNGLGETPROGRAMRESOURCEIVPROC>(loadProc("glGetProgramResourceiv"));
-    l_glGetProgramResourceLocation = reinterpret_cast<PFNGLGETPROGRAMRESOURCELOCATIONPROC>(
-        loadProc("glGetProgramResourceLocation"));
-    l_glUseProgramStages =
-        reinterpret_cast<PFNGLUSEPROGRAMSTAGESPROC>(loadProc("glUseProgramStages"));
-    l_glActiveShaderProgram =
-        reinterpret_cast<PFNGLACTIVESHADERPROGRAMPROC>(loadProc("glActiveShaderProgram"));
-    l_glCreateShaderProgramv =
-        reinterpret_cast<PFNGLCREATESHADERPROGRAMVPROC>(loadProc("glCreateShaderProgramv"));
-    l_glBindProgramPipeline =
-        reinterpret_cast<PFNGLBINDPROGRAMPIPELINEPROC>(loadProc("glBindProgramPipeline"));
-    l_glDeleteProgramPipelines =
-        reinterpret_cast<PFNGLDELETEPROGRAMPIPELINESPROC>(loadProc("glDeleteProgramPipelines"));
-    l_glGenProgramPipelines =
-        reinterpret_cast<PFNGLGENPROGRAMPIPELINESPROC>(loadProc("glGenProgramPipelines"));
-    l_glIsProgramPipeline =
-        reinterpret_cast<PFNGLISPROGRAMPIPELINEPROC>(loadProc("glIsProgramPipeline"));
-    l_glGetProgramPipelineiv =
-        reinterpret_cast<PFNGLGETPROGRAMPIPELINEIVPROC>(loadProc("glGetProgramPipelineiv"));
-    l_glProgramUniform1i =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1IPROC>(loadProc("glProgramUniform1i"));
-    l_glProgramUniform2i =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2IPROC>(loadProc("glProgramUniform2i"));
-    l_glProgramUniform3i =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3IPROC>(loadProc("glProgramUniform3i"));
-    l_glProgramUniform4i =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4IPROC>(loadProc("glProgramUniform4i"));
-    l_glProgramUniform1ui =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1UIPROC>(loadProc("glProgramUniform1ui"));
-    l_glProgramUniform2ui =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2UIPROC>(loadProc("glProgramUniform2ui"));
-    l_glProgramUniform3ui =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3UIPROC>(loadProc("glProgramUniform3ui"));
-    l_glProgramUniform4ui =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4UIPROC>(loadProc("glProgramUniform4ui"));
-    l_glProgramUniform1f =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1FPROC>(loadProc("glProgramUniform1f"));
-    l_glProgramUniform2f =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2FPROC>(loadProc("glProgramUniform2f"));
-    l_glProgramUniform3f =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3FPROC>(loadProc("glProgramUniform3f"));
-    l_glProgramUniform4f =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4FPROC>(loadProc("glProgramUniform4f"));
-    l_glProgramUniform1iv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1IVPROC>(loadProc("glProgramUniform1iv"));
-    l_glProgramUniform2iv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2IVPROC>(loadProc("glProgramUniform2iv"));
-    l_glProgramUniform3iv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3IVPROC>(loadProc("glProgramUniform3iv"));
-    l_glProgramUniform4iv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4IVPROC>(loadProc("glProgramUniform4iv"));
-    l_glProgramUniform1uiv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1UIVPROC>(loadProc("glProgramUniform1uiv"));
-    l_glProgramUniform2uiv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2UIVPROC>(loadProc("glProgramUniform2uiv"));
-    l_glProgramUniform3uiv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3UIVPROC>(loadProc("glProgramUniform3uiv"));
-    l_glProgramUniform4uiv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4UIVPROC>(loadProc("glProgramUniform4uiv"));
-    l_glProgramUniform1fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1FVPROC>(loadProc("glProgramUniform1fv"));
-    l_glProgramUniform2fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2FVPROC>(loadProc("glProgramUniform2fv"));
-    l_glProgramUniform3fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3FVPROC>(loadProc("glProgramUniform3fv"));
-    l_glProgramUniform4fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4FVPROC>(loadProc("glProgramUniform4fv"));
-    l_glProgramUniformMatrix2fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2FVPROC>(loadProc("glProgramUniformMatrix2fv"));
-    l_glProgramUniformMatrix3fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3FVPROC>(loadProc("glProgramUniformMatrix3fv"));
-    l_glProgramUniformMatrix4fv =
-        reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>(loadProc("glProgramUniformMatrix4fv"));
-    l_glProgramUniformMatrix2x3fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC>(
-        loadProc("glProgramUniformMatrix2x3fv"));
-    l_glProgramUniformMatrix3x2fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC>(
-        loadProc("glProgramUniformMatrix3x2fv"));
-    l_glProgramUniformMatrix2x4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC>(
-        loadProc("glProgramUniformMatrix2x4fv"));
-    l_glProgramUniformMatrix4x2fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC>(
-        loadProc("glProgramUniformMatrix4x2fv"));
-    l_glProgramUniformMatrix3x4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC>(
-        loadProc("glProgramUniformMatrix3x4fv"));
-    l_glProgramUniformMatrix4x3fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC>(
-        loadProc("glProgramUniformMatrix4x3fv"));
-    l_glValidateProgramPipeline =
-        reinterpret_cast<PFNGLVALIDATEPROGRAMPIPELINEPROC>(loadProc("glValidateProgramPipeline"));
-    l_glGetProgramPipelineInfoLog = reinterpret_cast<PFNGLGETPROGRAMPIPELINEINFOLOGPROC>(
-        loadProc("glGetProgramPipelineInfoLog"));
-    l_glBindImageTexture =
-        reinterpret_cast<PFNGLBINDIMAGETEXTUREPROC>(loadProc("glBindImageTexture"));
+    l_glDispatchComputeIndirect = reinterpret_cast<PFNGLDISPATCHCOMPUTEINDIRECTPROC>(loadProc("glDispatchComputeIndirect"));
+    l_glDrawArraysIndirect = reinterpret_cast<PFNGLDRAWARRAYSINDIRECTPROC>(loadProc("glDrawArraysIndirect"));
+    l_glDrawElementsIndirect = reinterpret_cast<PFNGLDRAWELEMENTSINDIRECTPROC>(loadProc("glDrawElementsIndirect"));
+    l_glFramebufferParameteri = reinterpret_cast<PFNGLFRAMEBUFFERPARAMETERIPROC>(loadProc("glFramebufferParameteri"));
+    l_glGetFramebufferParameteriv = reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVPROC>(loadProc("glGetFramebufferParameteriv"));
+    l_glGetProgramInterfaceiv = reinterpret_cast<PFNGLGETPROGRAMINTERFACEIVPROC>(loadProc("glGetProgramInterfaceiv"));
+    l_glGetProgramResourceIndex = reinterpret_cast<PFNGLGETPROGRAMRESOURCEINDEXPROC>(loadProc("glGetProgramResourceIndex"));
+    l_glGetProgramResourceName = reinterpret_cast<PFNGLGETPROGRAMRESOURCENAMEPROC>(loadProc("glGetProgramResourceName"));
+    l_glGetProgramResourceiv = reinterpret_cast<PFNGLGETPROGRAMRESOURCEIVPROC>(loadProc("glGetProgramResourceiv"));
+    l_glGetProgramResourceLocation = reinterpret_cast<PFNGLGETPROGRAMRESOURCELOCATIONPROC>(loadProc("glGetProgramResourceLocation"));
+    l_glUseProgramStages = reinterpret_cast<PFNGLUSEPROGRAMSTAGESPROC>(loadProc("glUseProgramStages"));
+    l_glActiveShaderProgram = reinterpret_cast<PFNGLACTIVESHADERPROGRAMPROC>(loadProc("glActiveShaderProgram"));
+    l_glCreateShaderProgramv = reinterpret_cast<PFNGLCREATESHADERPROGRAMVPROC>(loadProc("glCreateShaderProgramv"));
+    l_glBindProgramPipeline = reinterpret_cast<PFNGLBINDPROGRAMPIPELINEPROC>(loadProc("glBindProgramPipeline"));
+    l_glDeleteProgramPipelines = reinterpret_cast<PFNGLDELETEPROGRAMPIPELINESPROC>(loadProc("glDeleteProgramPipelines"));
+    l_glGenProgramPipelines = reinterpret_cast<PFNGLGENPROGRAMPIPELINESPROC>(loadProc("glGenProgramPipelines"));
+    l_glIsProgramPipeline = reinterpret_cast<PFNGLISPROGRAMPIPELINEPROC>(loadProc("glIsProgramPipeline"));
+    l_glGetProgramPipelineiv = reinterpret_cast<PFNGLGETPROGRAMPIPELINEIVPROC>(loadProc("glGetProgramPipelineiv"));
+    l_glProgramUniform1i = reinterpret_cast<PFNGLPROGRAMUNIFORM1IPROC>(loadProc("glProgramUniform1i"));
+    l_glProgramUniform2i = reinterpret_cast<PFNGLPROGRAMUNIFORM2IPROC>(loadProc("glProgramUniform2i"));
+    l_glProgramUniform3i = reinterpret_cast<PFNGLPROGRAMUNIFORM3IPROC>(loadProc("glProgramUniform3i"));
+    l_glProgramUniform4i = reinterpret_cast<PFNGLPROGRAMUNIFORM4IPROC>(loadProc("glProgramUniform4i"));
+    l_glProgramUniform1ui = reinterpret_cast<PFNGLPROGRAMUNIFORM1UIPROC>(loadProc("glProgramUniform1ui"));
+    l_glProgramUniform2ui = reinterpret_cast<PFNGLPROGRAMUNIFORM2UIPROC>(loadProc("glProgramUniform2ui"));
+    l_glProgramUniform3ui = reinterpret_cast<PFNGLPROGRAMUNIFORM3UIPROC>(loadProc("glProgramUniform3ui"));
+    l_glProgramUniform4ui = reinterpret_cast<PFNGLPROGRAMUNIFORM4UIPROC>(loadProc("glProgramUniform4ui"));
+    l_glProgramUniform1f = reinterpret_cast<PFNGLPROGRAMUNIFORM1FPROC>(loadProc("glProgramUniform1f"));
+    l_glProgramUniform2f = reinterpret_cast<PFNGLPROGRAMUNIFORM2FPROC>(loadProc("glProgramUniform2f"));
+    l_glProgramUniform3f = reinterpret_cast<PFNGLPROGRAMUNIFORM3FPROC>(loadProc("glProgramUniform3f"));
+    l_glProgramUniform4f = reinterpret_cast<PFNGLPROGRAMUNIFORM4FPROC>(loadProc("glProgramUniform4f"));
+    l_glProgramUniform1iv = reinterpret_cast<PFNGLPROGRAMUNIFORM1IVPROC>(loadProc("glProgramUniform1iv"));
+    l_glProgramUniform2iv = reinterpret_cast<PFNGLPROGRAMUNIFORM2IVPROC>(loadProc("glProgramUniform2iv"));
+    l_glProgramUniform3iv = reinterpret_cast<PFNGLPROGRAMUNIFORM3IVPROC>(loadProc("glProgramUniform3iv"));
+    l_glProgramUniform4iv = reinterpret_cast<PFNGLPROGRAMUNIFORM4IVPROC>(loadProc("glProgramUniform4iv"));
+    l_glProgramUniform1uiv = reinterpret_cast<PFNGLPROGRAMUNIFORM1UIVPROC>(loadProc("glProgramUniform1uiv"));
+    l_glProgramUniform2uiv = reinterpret_cast<PFNGLPROGRAMUNIFORM2UIVPROC>(loadProc("glProgramUniform2uiv"));
+    l_glProgramUniform3uiv = reinterpret_cast<PFNGLPROGRAMUNIFORM3UIVPROC>(loadProc("glProgramUniform3uiv"));
+    l_glProgramUniform4uiv = reinterpret_cast<PFNGLPROGRAMUNIFORM4UIVPROC>(loadProc("glProgramUniform4uiv"));
+    l_glProgramUniform1fv = reinterpret_cast<PFNGLPROGRAMUNIFORM1FVPROC>(loadProc("glProgramUniform1fv"));
+    l_glProgramUniform2fv = reinterpret_cast<PFNGLPROGRAMUNIFORM2FVPROC>(loadProc("glProgramUniform2fv"));
+    l_glProgramUniform3fv = reinterpret_cast<PFNGLPROGRAMUNIFORM3FVPROC>(loadProc("glProgramUniform3fv"));
+    l_glProgramUniform4fv = reinterpret_cast<PFNGLPROGRAMUNIFORM4FVPROC>(loadProc("glProgramUniform4fv"));
+    l_glProgramUniformMatrix2fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2FVPROC>(loadProc("glProgramUniformMatrix2fv"));
+    l_glProgramUniformMatrix3fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3FVPROC>(loadProc("glProgramUniformMatrix3fv"));
+    l_glProgramUniformMatrix4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>(loadProc("glProgramUniformMatrix4fv"));
+    l_glProgramUniformMatrix2x3fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC>(loadProc("glProgramUniformMatrix2x3fv"));
+    l_glProgramUniformMatrix3x2fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC>(loadProc("glProgramUniformMatrix3x2fv"));
+    l_glProgramUniformMatrix2x4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC>(loadProc("glProgramUniformMatrix2x4fv"));
+    l_glProgramUniformMatrix4x2fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC>(loadProc("glProgramUniformMatrix4x2fv"));
+    l_glProgramUniformMatrix3x4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC>(loadProc("glProgramUniformMatrix3x4fv"));
+    l_glProgramUniformMatrix4x3fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC>(loadProc("glProgramUniformMatrix4x3fv"));
+    l_glValidateProgramPipeline = reinterpret_cast<PFNGLVALIDATEPROGRAMPIPELINEPROC>(loadProc("glValidateProgramPipeline"));
+    l_glGetProgramPipelineInfoLog = reinterpret_cast<PFNGLGETPROGRAMPIPELINEINFOLOGPROC>(loadProc("glGetProgramPipelineInfoLog"));
+    l_glBindImageTexture = reinterpret_cast<PFNGLBINDIMAGETEXTUREPROC>(loadProc("glBindImageTexture"));
     l_glGetBooleani_v = reinterpret_cast<PFNGLGETBOOLEANI_VPROC>(loadProc("glGetBooleani_v"));
     l_glMemoryBarrier = reinterpret_cast<PFNGLMEMORYBARRIERPROC>(loadProc("glMemoryBarrier"));
-    l_glMemoryBarrierByRegion =
-        reinterpret_cast<PFNGLMEMORYBARRIERBYREGIONPROC>(loadProc("glMemoryBarrierByRegion"));
-    l_glTexStorage2DMultisample =
-        reinterpret_cast<PFNGLTEXSTORAGE2DMULTISAMPLEPROC>(loadProc("glTexStorage2DMultisample"));
-    l_glGetMultisamplefv =
-        reinterpret_cast<PFNGLGETMULTISAMPLEFVPROC>(loadProc("glGetMultisamplefv"));
+    l_glMemoryBarrierByRegion = reinterpret_cast<PFNGLMEMORYBARRIERBYREGIONPROC>(loadProc("glMemoryBarrierByRegion"));
+    l_glTexStorage2DMultisample = reinterpret_cast<PFNGLTEXSTORAGE2DMULTISAMPLEPROC>(loadProc("glTexStorage2DMultisample"));
+    l_glGetMultisamplefv = reinterpret_cast<PFNGLGETMULTISAMPLEFVPROC>(loadProc("glGetMultisamplefv"));
     l_glSampleMaski = reinterpret_cast<PFNGLSAMPLEMASKIPROC>(loadProc("glSampleMaski"));
-    l_glGetTexLevelParameteriv =
-        reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVPROC>(loadProc("glGetTexLevelParameteriv"));
-    l_glGetTexLevelParameterfv =
-        reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVPROC>(loadProc("glGetTexLevelParameterfv"));
-    l_glBindVertexBuffer =
-        reinterpret_cast<PFNGLBINDVERTEXBUFFERPROC>(loadProc("glBindVertexBuffer"));
-    l_glVertexAttribFormat =
-        reinterpret_cast<PFNGLVERTEXATTRIBFORMATPROC>(loadProc("glVertexAttribFormat"));
-    l_glVertexAttribIFormat =
-        reinterpret_cast<PFNGLVERTEXATTRIBIFORMATPROC>(loadProc("glVertexAttribIFormat"));
-    l_glVertexAttribBinding =
-        reinterpret_cast<PFNGLVERTEXATTRIBBINDINGPROC>(loadProc("glVertexAttribBinding"));
-    l_glVertexBindingDivisor =
-        reinterpret_cast<PFNGLVERTEXBINDINGDIVISORPROC>(loadProc("glVertexBindingDivisor"));
+    l_glGetTexLevelParameteriv = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVPROC>(loadProc("glGetTexLevelParameteriv"));
+    l_glGetTexLevelParameterfv = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVPROC>(loadProc("glGetTexLevelParameterfv"));
+    l_glBindVertexBuffer = reinterpret_cast<PFNGLBINDVERTEXBUFFERPROC>(loadProc("glBindVertexBuffer"));
+    l_glVertexAttribFormat = reinterpret_cast<PFNGLVERTEXATTRIBFORMATPROC>(loadProc("glVertexAttribFormat"));
+    l_glVertexAttribIFormat = reinterpret_cast<PFNGLVERTEXATTRIBIFORMATPROC>(loadProc("glVertexAttribIFormat"));
+    l_glVertexAttribBinding = reinterpret_cast<PFNGLVERTEXATTRIBBINDINGPROC>(loadProc("glVertexAttribBinding"));
+    l_glVertexBindingDivisor = reinterpret_cast<PFNGLVERTEXBINDINGDIVISORPROC>(loadProc("glVertexBindingDivisor"));
     l_glBlendBarrier = reinterpret_cast<PFNGLBLENDBARRIERPROC>(loadProc("glBlendBarrier"));
-    l_glCopyImageSubData =
-        reinterpret_cast<PFNGLCOPYIMAGESUBDATAPROC>(loadProc("glCopyImageSubData"));
-    l_glDebugMessageControl =
-        reinterpret_cast<PFNGLDEBUGMESSAGECONTROLPROC>(loadProc("glDebugMessageControl"));
-    l_glDebugMessageInsert =
-        reinterpret_cast<PFNGLDEBUGMESSAGEINSERTPROC>(loadProc("glDebugMessageInsert"));
-    l_glDebugMessageCallback =
-        reinterpret_cast<PFNGLDEBUGMESSAGECALLBACKPROC>(loadProc("glDebugMessageCallback"));
-    l_glGetDebugMessageLog =
-        reinterpret_cast<PFNGLGETDEBUGMESSAGELOGPROC>(loadProc("glGetDebugMessageLog"));
+    l_glCopyImageSubData = reinterpret_cast<PFNGLCOPYIMAGESUBDATAPROC>(loadProc("glCopyImageSubData"));
+    l_glDebugMessageControl = reinterpret_cast<PFNGLDEBUGMESSAGECONTROLPROC>(loadProc("glDebugMessageControl"));
+    l_glDebugMessageInsert = reinterpret_cast<PFNGLDEBUGMESSAGEINSERTPROC>(loadProc("glDebugMessageInsert"));
+    l_glDebugMessageCallback = reinterpret_cast<PFNGLDEBUGMESSAGECALLBACKPROC>(loadProc("glDebugMessageCallback"));
+    l_glGetDebugMessageLog = reinterpret_cast<PFNGLGETDEBUGMESSAGELOGPROC>(loadProc("glGetDebugMessageLog"));
     l_glPushDebugGroup = reinterpret_cast<PFNGLPUSHDEBUGGROUPPROC>(loadProc("glPushDebugGroup"));
-    l_glPopDebugGroup  = reinterpret_cast<PFNGLPOPDEBUGGROUPPROC>(loadProc("glPopDebugGroup"));
-    l_glObjectLabel    = reinterpret_cast<PFNGLOBJECTLABELPROC>(loadProc("glObjectLabel"));
+    l_glPopDebugGroup = reinterpret_cast<PFNGLPOPDEBUGGROUPPROC>(loadProc("glPopDebugGroup"));
+    l_glObjectLabel = reinterpret_cast<PFNGLOBJECTLABELPROC>(loadProc("glObjectLabel"));
     l_glGetObjectLabel = reinterpret_cast<PFNGLGETOBJECTLABELPROC>(loadProc("glGetObjectLabel"));
     l_glObjectPtrLabel = reinterpret_cast<PFNGLOBJECTPTRLABELPROC>(loadProc("glObjectPtrLabel"));
-    l_glGetObjectPtrLabel =
-        reinterpret_cast<PFNGLGETOBJECTPTRLABELPROC>(loadProc("glGetObjectPtrLabel"));
-    l_glGetPointerv    = reinterpret_cast<PFNGLGETPOINTERVPROC>(loadProc("glGetPointerv"));
-    l_glEnablei        = reinterpret_cast<PFNGLENABLEIPROC>(loadProc("glEnablei"));
-    l_glDisablei       = reinterpret_cast<PFNGLDISABLEIPROC>(loadProc("glDisablei"));
+    l_glGetObjectPtrLabel = reinterpret_cast<PFNGLGETOBJECTPTRLABELPROC>(loadProc("glGetObjectPtrLabel"));
+    l_glGetPointerv = reinterpret_cast<PFNGLGETPOINTERVPROC>(loadProc("glGetPointerv"));
+    l_glEnablei = reinterpret_cast<PFNGLENABLEIPROC>(loadProc("glEnablei"));
+    l_glDisablei = reinterpret_cast<PFNGLDISABLEIPROC>(loadProc("glDisablei"));
     l_glBlendEquationi = reinterpret_cast<PFNGLBLENDEQUATIONIPROC>(loadProc("glBlendEquationi"));
-    l_glBlendEquationSeparatei =
-        reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIPROC>(loadProc("glBlendEquationSeparatei"));
+    l_glBlendEquationSeparatei = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIPROC>(loadProc("glBlendEquationSeparatei"));
     l_glBlendFunci = reinterpret_cast<PFNGLBLENDFUNCIPROC>(loadProc("glBlendFunci"));
-    l_glBlendFuncSeparatei =
-        reinterpret_cast<PFNGLBLENDFUNCSEPARATEIPROC>(loadProc("glBlendFuncSeparatei"));
+    l_glBlendFuncSeparatei = reinterpret_cast<PFNGLBLENDFUNCSEPARATEIPROC>(loadProc("glBlendFuncSeparatei"));
     l_glColorMaski = reinterpret_cast<PFNGLCOLORMASKIPROC>(loadProc("glColorMaski"));
     l_glIsEnabledi = reinterpret_cast<PFNGLISENABLEDIPROC>(loadProc("glIsEnabledi"));
-    l_glDrawElementsBaseVertex =
-        reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXPROC>(loadProc("glDrawElementsBaseVertex"));
-    l_glDrawRangeElementsBaseVertex = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC>(
-        loadProc("glDrawRangeElementsBaseVertex"));
-    l_glDrawElementsInstancedBaseVertex =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC>(
-            loadProc("glDrawElementsInstancedBaseVertex"));
-    l_glFramebufferTexture =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREPROC>(loadProc("glFramebufferTexture"));
-    l_glPrimitiveBoundingBox =
-        reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXPROC>(loadProc("glPrimitiveBoundingBox"));
-    l_glGetGraphicsResetStatus =
-        reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSPROC>(loadProc("glGetGraphicsResetStatus"));
-    l_glReadnPixels    = reinterpret_cast<PFNGLREADNPIXELSPROC>(loadProc("glReadnPixels"));
-    l_glGetnUniformfv  = reinterpret_cast<PFNGLGETNUNIFORMFVPROC>(loadProc("glGetnUniformfv"));
-    l_glGetnUniformiv  = reinterpret_cast<PFNGLGETNUNIFORMIVPROC>(loadProc("glGetnUniformiv"));
+    l_glDrawElementsBaseVertex = reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXPROC>(loadProc("glDrawElementsBaseVertex"));
+    l_glDrawRangeElementsBaseVertex = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC>(loadProc("glDrawRangeElementsBaseVertex"));
+    l_glDrawElementsInstancedBaseVertex = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC>(loadProc("glDrawElementsInstancedBaseVertex"));
+    l_glFramebufferTexture = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREPROC>(loadProc("glFramebufferTexture"));
+    l_glPrimitiveBoundingBox = reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXPROC>(loadProc("glPrimitiveBoundingBox"));
+    l_glGetGraphicsResetStatus = reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSPROC>(loadProc("glGetGraphicsResetStatus"));
+    l_glReadnPixels = reinterpret_cast<PFNGLREADNPIXELSPROC>(loadProc("glReadnPixels"));
+    l_glGetnUniformfv = reinterpret_cast<PFNGLGETNUNIFORMFVPROC>(loadProc("glGetnUniformfv"));
+    l_glGetnUniformiv = reinterpret_cast<PFNGLGETNUNIFORMIVPROC>(loadProc("glGetnUniformiv"));
     l_glGetnUniformuiv = reinterpret_cast<PFNGLGETNUNIFORMUIVPROC>(loadProc("glGetnUniformuiv"));
-    l_glMinSampleShading =
-        reinterpret_cast<PFNGLMINSAMPLESHADINGPROC>(loadProc("glMinSampleShading"));
+    l_glMinSampleShading = reinterpret_cast<PFNGLMINSAMPLESHADINGPROC>(loadProc("glMinSampleShading"));
     l_glPatchParameteri = reinterpret_cast<PFNGLPATCHPARAMETERIPROC>(loadProc("glPatchParameteri"));
     l_glTexParameterIiv = reinterpret_cast<PFNGLTEXPARAMETERIIVPROC>(loadProc("glTexParameterIiv"));
-    l_glTexParameterIuiv =
-        reinterpret_cast<PFNGLTEXPARAMETERIUIVPROC>(loadProc("glTexParameterIuiv"));
-    l_glGetTexParameterIiv =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIIVPROC>(loadProc("glGetTexParameterIiv"));
-    l_glGetTexParameterIuiv =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIUIVPROC>(loadProc("glGetTexParameterIuiv"));
-    l_glSamplerParameterIiv =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIIVPROC>(loadProc("glSamplerParameterIiv"));
-    l_glSamplerParameterIuiv =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVPROC>(loadProc("glSamplerParameterIuiv"));
-    l_glGetSamplerParameterIiv =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVPROC>(loadProc("glGetSamplerParameterIiv"));
-    l_glGetSamplerParameterIuiv =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVPROC>(loadProc("glGetSamplerParameterIuiv"));
-    l_glTexBuffer      = reinterpret_cast<PFNGLTEXBUFFERPROC>(loadProc("glTexBuffer"));
+    l_glTexParameterIuiv = reinterpret_cast<PFNGLTEXPARAMETERIUIVPROC>(loadProc("glTexParameterIuiv"));
+    l_glGetTexParameterIiv = reinterpret_cast<PFNGLGETTEXPARAMETERIIVPROC>(loadProc("glGetTexParameterIiv"));
+    l_glGetTexParameterIuiv = reinterpret_cast<PFNGLGETTEXPARAMETERIUIVPROC>(loadProc("glGetTexParameterIuiv"));
+    l_glSamplerParameterIiv = reinterpret_cast<PFNGLSAMPLERPARAMETERIIVPROC>(loadProc("glSamplerParameterIiv"));
+    l_glSamplerParameterIuiv = reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVPROC>(loadProc("glSamplerParameterIuiv"));
+    l_glGetSamplerParameterIiv = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVPROC>(loadProc("glGetSamplerParameterIiv"));
+    l_glGetSamplerParameterIuiv = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVPROC>(loadProc("glGetSamplerParameterIuiv"));
+    l_glTexBuffer = reinterpret_cast<PFNGLTEXBUFFERPROC>(loadProc("glTexBuffer"));
     l_glTexBufferRange = reinterpret_cast<PFNGLTEXBUFFERRANGEPROC>(loadProc("glTexBufferRange"));
-    l_glTexStorage3DMultisample =
-        reinterpret_cast<PFNGLTEXSTORAGE3DMULTISAMPLEPROC>(loadProc("glTexStorage3DMultisample"));
-    l_glBeginPerfMonitorAMD =
-        reinterpret_cast<PFNGLBEGINPERFMONITORAMDPROC>(loadProc("glBeginPerfMonitorAMD"));
-    l_glDeletePerfMonitorsAMD =
-        reinterpret_cast<PFNGLDELETEPERFMONITORSAMDPROC>(loadProc("glDeletePerfMonitorsAMD"));
-    l_glEndPerfMonitorAMD =
-        reinterpret_cast<PFNGLENDPERFMONITORAMDPROC>(loadProc("glEndPerfMonitorAMD"));
-    l_glGenPerfMonitorsAMD =
-        reinterpret_cast<PFNGLGENPERFMONITORSAMDPROC>(loadProc("glGenPerfMonitorsAMD"));
-    l_glGetPerfMonitorCounterDataAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERDATAAMDPROC>(
-        loadProc("glGetPerfMonitorCounterDataAMD"));
-    l_glGetPerfMonitorCounterInfoAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERINFOAMDPROC>(
-        loadProc("glGetPerfMonitorCounterInfoAMD"));
-    l_glGetPerfMonitorCounterStringAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC>(
-        loadProc("glGetPerfMonitorCounterStringAMD"));
-    l_glGetPerfMonitorCountersAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERSAMDPROC>(
-        loadProc("glGetPerfMonitorCountersAMD"));
-    l_glGetPerfMonitorGroupStringAMD = reinterpret_cast<PFNGLGETPERFMONITORGROUPSTRINGAMDPROC>(
-        loadProc("glGetPerfMonitorGroupStringAMD"));
-    l_glGetPerfMonitorGroupsAMD =
-        reinterpret_cast<PFNGLGETPERFMONITORGROUPSAMDPROC>(loadProc("glGetPerfMonitorGroupsAMD"));
-    l_glSelectPerfMonitorCountersAMD = reinterpret_cast<PFNGLSELECTPERFMONITORCOUNTERSAMDPROC>(
-        loadProc("glSelectPerfMonitorCountersAMD"));
-    l_glDrawArraysInstancedBaseInstanceANGLE =
-        reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC>(
-            loadProc("glDrawArraysInstancedBaseInstanceANGLE"));
-    l_glDrawElementsInstancedBaseVertexBaseInstanceANGLE =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC>(
-            loadProc("glDrawElementsInstancedBaseVertexBaseInstanceANGLE"));
-    l_glMultiDrawArraysInstancedBaseInstanceANGLE =
-        reinterpret_cast<PFNGLMULTIDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC>(
-            loadProc("glMultiDrawArraysInstancedBaseInstanceANGLE"));
-    l_glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE =
-        reinterpret_cast<PFNGLMULTIDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC>(
-            loadProc("glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE"));
-    l_glBlobCacheCallbacksANGLE =
-        reinterpret_cast<PFNGLBLOBCACHECALLBACKSANGLEPROC>(loadProc("glBlobCacheCallbacksANGLE"));
-    l_glGetPointervANGLE =
-        reinterpret_cast<PFNGLGETPOINTERVANGLEPROC>(loadProc("glGetPointervANGLE"));
-    l_glCopySubTexture3DANGLE =
-        reinterpret_cast<PFNGLCOPYSUBTEXTURE3DANGLEPROC>(loadProc("glCopySubTexture3DANGLE"));
-    l_glCopyTexture3DANGLE =
-        reinterpret_cast<PFNGLCOPYTEXTURE3DANGLEPROC>(loadProc("glCopyTexture3DANGLE"));
-    l_glBlitFramebufferANGLE =
-        reinterpret_cast<PFNGLBLITFRAMEBUFFERANGLEPROC>(loadProc("glBlitFramebufferANGLE"));
-    l_glRenderbufferStorageMultisampleANGLE =
-        reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEANGLEPROC>(
-            loadProc("glRenderbufferStorageMultisampleANGLE"));
-    l_glGetCompressedTexImageANGLE = reinterpret_cast<PFNGLGETCOMPRESSEDTEXIMAGEANGLEPROC>(
-        loadProc("glGetCompressedTexImageANGLE"));
-    l_glGetRenderbufferImageANGLE = reinterpret_cast<PFNGLGETRENDERBUFFERIMAGEANGLEPROC>(
-        loadProc("glGetRenderbufferImageANGLE"));
-    l_glGetTexImageANGLE =
-        reinterpret_cast<PFNGLGETTEXIMAGEANGLEPROC>(loadProc("glGetTexImageANGLE"));
-    l_glGetTexLevelParameterfvANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVANGLEPROC>(
-        loadProc("glGetTexLevelParameterfvANGLE"));
-    l_glGetTexLevelParameterivANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVANGLEPROC>(
-        loadProc("glGetTexLevelParameterivANGLE"));
-    l_glDrawArraysInstancedANGLE =
-        reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDANGLEPROC>(loadProc("glDrawArraysInstancedANGLE"));
-    l_glDrawElementsInstancedANGLE = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDANGLEPROC>(
-        loadProc("glDrawElementsInstancedANGLE"));
-    l_glVertexAttribDivisorANGLE =
-        reinterpret_cast<PFNGLVERTEXATTRIBDIVISORANGLEPROC>(loadProc("glVertexAttribDivisorANGLE"));
+    l_glTexStorage3DMultisample = reinterpret_cast<PFNGLTEXSTORAGE3DMULTISAMPLEPROC>(loadProc("glTexStorage3DMultisample"));
+    l_glBeginPerfMonitorAMD = reinterpret_cast<PFNGLBEGINPERFMONITORAMDPROC>(loadProc("glBeginPerfMonitorAMD"));
+    l_glDeletePerfMonitorsAMD = reinterpret_cast<PFNGLDELETEPERFMONITORSAMDPROC>(loadProc("glDeletePerfMonitorsAMD"));
+    l_glEndPerfMonitorAMD = reinterpret_cast<PFNGLENDPERFMONITORAMDPROC>(loadProc("glEndPerfMonitorAMD"));
+    l_glGenPerfMonitorsAMD = reinterpret_cast<PFNGLGENPERFMONITORSAMDPROC>(loadProc("glGenPerfMonitorsAMD"));
+    l_glGetPerfMonitorCounterDataAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERDATAAMDPROC>(loadProc("glGetPerfMonitorCounterDataAMD"));
+    l_glGetPerfMonitorCounterInfoAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERINFOAMDPROC>(loadProc("glGetPerfMonitorCounterInfoAMD"));
+    l_glGetPerfMonitorCounterStringAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC>(loadProc("glGetPerfMonitorCounterStringAMD"));
+    l_glGetPerfMonitorCountersAMD = reinterpret_cast<PFNGLGETPERFMONITORCOUNTERSAMDPROC>(loadProc("glGetPerfMonitorCountersAMD"));
+    l_glGetPerfMonitorGroupStringAMD = reinterpret_cast<PFNGLGETPERFMONITORGROUPSTRINGAMDPROC>(loadProc("glGetPerfMonitorGroupStringAMD"));
+    l_glGetPerfMonitorGroupsAMD = reinterpret_cast<PFNGLGETPERFMONITORGROUPSAMDPROC>(loadProc("glGetPerfMonitorGroupsAMD"));
+    l_glSelectPerfMonitorCountersAMD = reinterpret_cast<PFNGLSELECTPERFMONITORCOUNTERSAMDPROC>(loadProc("glSelectPerfMonitorCountersAMD"));
+    l_glDrawArraysInstancedBaseInstanceANGLE = reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC>(loadProc("glDrawArraysInstancedBaseInstanceANGLE"));
+    l_glDrawElementsInstancedBaseVertexBaseInstanceANGLE = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC>(loadProc("glDrawElementsInstancedBaseVertexBaseInstanceANGLE"));
+    l_glMultiDrawArraysInstancedBaseInstanceANGLE = reinterpret_cast<PFNGLMULTIDRAWARRAYSINSTANCEDBASEINSTANCEANGLEPROC>(loadProc("glMultiDrawArraysInstancedBaseInstanceANGLE"));
+    l_glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE = reinterpret_cast<PFNGLMULTIDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEANGLEPROC>(loadProc("glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE"));
+    l_glBlobCacheCallbacksANGLE = reinterpret_cast<PFNGLBLOBCACHECALLBACKSANGLEPROC>(loadProc("glBlobCacheCallbacksANGLE"));
+    l_glGetPointervANGLE = reinterpret_cast<PFNGLGETPOINTERVANGLEPROC>(loadProc("glGetPointervANGLE"));
+    l_glCopySubTexture3DANGLE = reinterpret_cast<PFNGLCOPYSUBTEXTURE3DANGLEPROC>(loadProc("glCopySubTexture3DANGLE"));
+    l_glCopyTexture3DANGLE = reinterpret_cast<PFNGLCOPYTEXTURE3DANGLEPROC>(loadProc("glCopyTexture3DANGLE"));
+    l_glBlitFramebufferANGLE = reinterpret_cast<PFNGLBLITFRAMEBUFFERANGLEPROC>(loadProc("glBlitFramebufferANGLE"));
+    l_glRenderbufferStorageMultisampleANGLE = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEANGLEPROC>(loadProc("glRenderbufferStorageMultisampleANGLE"));
+    l_glGetCompressedTexImageANGLE = reinterpret_cast<PFNGLGETCOMPRESSEDTEXIMAGEANGLEPROC>(loadProc("glGetCompressedTexImageANGLE"));
+    l_glGetRenderbufferImageANGLE = reinterpret_cast<PFNGLGETRENDERBUFFERIMAGEANGLEPROC>(loadProc("glGetRenderbufferImageANGLE"));
+    l_glGetTexImageANGLE = reinterpret_cast<PFNGLGETTEXIMAGEANGLEPROC>(loadProc("glGetTexImageANGLE"));
+    l_glGetTexLevelParameterfvANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVANGLEPROC>(loadProc("glGetTexLevelParameterfvANGLE"));
+    l_glGetTexLevelParameterivANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVANGLEPROC>(loadProc("glGetTexLevelParameterivANGLE"));
+    l_glDrawArraysInstancedANGLE = reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDANGLEPROC>(loadProc("glDrawArraysInstancedANGLE"));
+    l_glDrawElementsInstancedANGLE = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDANGLEPROC>(loadProc("glDrawElementsInstancedANGLE"));
+    l_glVertexAttribDivisorANGLE = reinterpret_cast<PFNGLVERTEXATTRIBDIVISORANGLEPROC>(loadProc("glVertexAttribDivisorANGLE"));
     l_glLogicOpANGLE = reinterpret_cast<PFNGLLOGICOPANGLEPROC>(loadProc("glLogicOpANGLE"));
-    l_glTexStorageMemFlags2DANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS2DANGLEPROC>(
-        loadProc("glTexStorageMemFlags2DANGLE"));
-    l_glTexStorageMemFlags2DMultisampleANGLE =
-        reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS2DMULTISAMPLEANGLEPROC>(
-            loadProc("glTexStorageMemFlags2DMultisampleANGLE"));
-    l_glTexStorageMemFlags3DANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS3DANGLEPROC>(
-        loadProc("glTexStorageMemFlags3DANGLE"));
-    l_glTexStorageMemFlags3DMultisampleANGLE =
-        reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS3DMULTISAMPLEANGLEPROC>(
-            loadProc("glTexStorageMemFlags3DMultisampleANGLE"));
-    l_glImportMemoryZirconHandleANGLE = reinterpret_cast<PFNGLIMPORTMEMORYZIRCONHANDLEANGLEPROC>(
-        loadProc("glImportMemoryZirconHandleANGLE"));
-    l_glMultiDrawArraysANGLE =
-        reinterpret_cast<PFNGLMULTIDRAWARRAYSANGLEPROC>(loadProc("glMultiDrawArraysANGLE"));
-    l_glMultiDrawArraysInstancedANGLE = reinterpret_cast<PFNGLMULTIDRAWARRAYSINSTANCEDANGLEPROC>(
-        loadProc("glMultiDrawArraysInstancedANGLE"));
-    l_glMultiDrawElementsANGLE =
-        reinterpret_cast<PFNGLMULTIDRAWELEMENTSANGLEPROC>(loadProc("glMultiDrawElementsANGLE"));
-    l_glMultiDrawElementsInstancedANGLE =
-        reinterpret_cast<PFNGLMULTIDRAWELEMENTSINSTANCEDANGLEPROC>(
-            loadProc("glMultiDrawElementsInstancedANGLE"));
-    l_glPolygonModeANGLE =
-        reinterpret_cast<PFNGLPOLYGONMODEANGLEPROC>(loadProc("glPolygonModeANGLE"));
-    l_glProvokingVertexANGLE =
-        reinterpret_cast<PFNGLPROVOKINGVERTEXANGLEPROC>(loadProc("glProvokingVertexANGLE"));
-    l_glDisableExtensionANGLE =
-        reinterpret_cast<PFNGLDISABLEEXTENSIONANGLEPROC>(loadProc("glDisableExtensionANGLE"));
-    l_glRequestExtensionANGLE =
-        reinterpret_cast<PFNGLREQUESTEXTENSIONANGLEPROC>(loadProc("glRequestExtensionANGLE"));
-    l_glCompressedTexImage2DRobustANGLE =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE2DROBUSTANGLEPROC>(
-            loadProc("glCompressedTexImage2DRobustANGLE"));
-    l_glCompressedTexImage3DRobustANGLE =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DROBUSTANGLEPROC>(
-            loadProc("glCompressedTexImage3DRobustANGLE"));
-    l_glCompressedTexSubImage2DRobustANGLE =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE2DROBUSTANGLEPROC>(
-            loadProc("glCompressedTexSubImage2DRobustANGLE"));
-    l_glCompressedTexSubImage3DRobustANGLE =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DROBUSTANGLEPROC>(
-            loadProc("glCompressedTexSubImage3DRobustANGLE"));
-    l_glGetActiveUniformBlockivRobustANGLE =
-        reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKIVROBUSTANGLEPROC>(
-            loadProc("glGetActiveUniformBlockivRobustANGLE"));
-    l_glGetBooleani_vRobustANGLE =
-        reinterpret_cast<PFNGLGETBOOLEANI_VROBUSTANGLEPROC>(loadProc("glGetBooleani_vRobustANGLE"));
-    l_glGetBooleanvRobustANGLE =
-        reinterpret_cast<PFNGLGETBOOLEANVROBUSTANGLEPROC>(loadProc("glGetBooleanvRobustANGLE"));
-    l_glGetBufferParameteri64vRobustANGLE =
-        reinterpret_cast<PFNGLGETBUFFERPARAMETERI64VROBUSTANGLEPROC>(
-            loadProc("glGetBufferParameteri64vRobustANGLE"));
-    l_glGetBufferParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETBUFFERPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetBufferParameterivRobustANGLE"));
-    l_glGetBufferPointervRobustANGLE = reinterpret_cast<PFNGLGETBUFFERPOINTERVROBUSTANGLEPROC>(
-        loadProc("glGetBufferPointervRobustANGLE"));
-    l_glGetFloatvRobustANGLE =
-        reinterpret_cast<PFNGLGETFLOATVROBUSTANGLEPROC>(loadProc("glGetFloatvRobustANGLE"));
-    l_glGetFramebufferAttachmentParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetFramebufferAttachmentParameterivRobustANGLE"));
-    l_glGetFramebufferParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetFramebufferParameterivRobustANGLE"));
-    l_glGetInteger64i_vRobustANGLE = reinterpret_cast<PFNGLGETINTEGER64I_VROBUSTANGLEPROC>(
-        loadProc("glGetInteger64i_vRobustANGLE"));
-    l_glGetInteger64vRobustANGLE =
-        reinterpret_cast<PFNGLGETINTEGER64VROBUSTANGLEPROC>(loadProc("glGetInteger64vRobustANGLE"));
-    l_glGetIntegeri_vRobustANGLE =
-        reinterpret_cast<PFNGLGETINTEGERI_VROBUSTANGLEPROC>(loadProc("glGetIntegeri_vRobustANGLE"));
-    l_glGetIntegervRobustANGLE =
-        reinterpret_cast<PFNGLGETINTEGERVROBUSTANGLEPROC>(loadProc("glGetIntegervRobustANGLE"));
-    l_glGetInternalformativRobustANGLE = reinterpret_cast<PFNGLGETINTERNALFORMATIVROBUSTANGLEPROC>(
-        loadProc("glGetInternalformativRobustANGLE"));
-    l_glGetMultisamplefvRobustANGLE = reinterpret_cast<PFNGLGETMULTISAMPLEFVROBUSTANGLEPROC>(
-        loadProc("glGetMultisamplefvRobustANGLE"));
-    l_glGetPointervRobustANGLERobustANGLE =
-        reinterpret_cast<PFNGLGETPOINTERVROBUSTANGLEROBUSTANGLEPROC>(
-            loadProc("glGetPointervRobustANGLERobustANGLE"));
-    l_glGetProgramInterfaceivRobustANGLE =
-        reinterpret_cast<PFNGLGETPROGRAMINTERFACEIVROBUSTANGLEPROC>(
-            loadProc("glGetProgramInterfaceivRobustANGLE"));
-    l_glGetProgramivRobustANGLE =
-        reinterpret_cast<PFNGLGETPROGRAMIVROBUSTANGLEPROC>(loadProc("glGetProgramivRobustANGLE"));
-    l_glGetQueryObjecti64vRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTI64VROBUSTANGLEPROC>(
-        loadProc("glGetQueryObjecti64vRobustANGLE"));
-    l_glGetQueryObjectivRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTIVROBUSTANGLEPROC>(
-        loadProc("glGetQueryObjectivRobustANGLE"));
-    l_glGetQueryObjectui64vRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTUI64VROBUSTANGLEPROC>(
-        loadProc("glGetQueryObjectui64vRobustANGLE"));
-    l_glGetQueryObjectuivRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTUIVROBUSTANGLEPROC>(
-        loadProc("glGetQueryObjectuivRobustANGLE"));
-    l_glGetQueryivRobustANGLE =
-        reinterpret_cast<PFNGLGETQUERYIVROBUSTANGLEPROC>(loadProc("glGetQueryivRobustANGLE"));
-    l_glGetRenderbufferParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetRenderbufferParameterivRobustANGLE"));
-    l_glGetSamplerParameterIivRobustANGLE =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVROBUSTANGLEPROC>(
-            loadProc("glGetSamplerParameterIivRobustANGLE"));
-    l_glGetSamplerParameterIuivRobustANGLE =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVROBUSTANGLEPROC>(
-            loadProc("glGetSamplerParameterIuivRobustANGLE"));
-    l_glGetSamplerParameterfvRobustANGLE =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERFVROBUSTANGLEPROC>(
-            loadProc("glGetSamplerParameterfvRobustANGLE"));
-    l_glGetSamplerParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETSAMPLERPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetSamplerParameterivRobustANGLE"));
-    l_glGetShaderivRobustANGLE =
-        reinterpret_cast<PFNGLGETSHADERIVROBUSTANGLEPROC>(loadProc("glGetShaderivRobustANGLE"));
-    l_glGetTexLevelParameterfvRobustANGLE =
-        reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVROBUSTANGLEPROC>(
-            loadProc("glGetTexLevelParameterfvRobustANGLE"));
-    l_glGetTexLevelParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetTexLevelParameterivRobustANGLE"));
-    l_glGetTexParameterIivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIIVROBUSTANGLEPROC>(
-        loadProc("glGetTexParameterIivRobustANGLE"));
-    l_glGetTexParameterIuivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIUIVROBUSTANGLEPROC>(
-        loadProc("glGetTexParameterIuivRobustANGLE"));
-    l_glGetTexParameterfvRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERFVROBUSTANGLEPROC>(
-        loadProc("glGetTexParameterfvRobustANGLE"));
-    l_glGetTexParameterivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIVROBUSTANGLEPROC>(
-        loadProc("glGetTexParameterivRobustANGLE"));
-    l_glGetUniformfvRobustANGLE =
-        reinterpret_cast<PFNGLGETUNIFORMFVROBUSTANGLEPROC>(loadProc("glGetUniformfvRobustANGLE"));
-    l_glGetUniformivRobustANGLE =
-        reinterpret_cast<PFNGLGETUNIFORMIVROBUSTANGLEPROC>(loadProc("glGetUniformivRobustANGLE"));
-    l_glGetUniformuivRobustANGLE =
-        reinterpret_cast<PFNGLGETUNIFORMUIVROBUSTANGLEPROC>(loadProc("glGetUniformuivRobustANGLE"));
-    l_glGetVertexAttribIivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIIVROBUSTANGLEPROC>(
-        loadProc("glGetVertexAttribIivRobustANGLE"));
-    l_glGetVertexAttribIuivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIUIVROBUSTANGLEPROC>(
-        loadProc("glGetVertexAttribIuivRobustANGLE"));
-    l_glGetVertexAttribPointervRobustANGLE =
-        reinterpret_cast<PFNGLGETVERTEXATTRIBPOINTERVROBUSTANGLEPROC>(
-            loadProc("glGetVertexAttribPointervRobustANGLE"));
-    l_glGetVertexAttribfvRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBFVROBUSTANGLEPROC>(
-        loadProc("glGetVertexAttribfvRobustANGLE"));
-    l_glGetVertexAttribivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIVROBUSTANGLEPROC>(
-        loadProc("glGetVertexAttribivRobustANGLE"));
-    l_glGetnUniformfvRobustANGLE =
-        reinterpret_cast<PFNGLGETNUNIFORMFVROBUSTANGLEPROC>(loadProc("glGetnUniformfvRobustANGLE"));
-    l_glGetnUniformivRobustANGLE =
-        reinterpret_cast<PFNGLGETNUNIFORMIVROBUSTANGLEPROC>(loadProc("glGetnUniformivRobustANGLE"));
-    l_glGetnUniformuivRobustANGLE = reinterpret_cast<PFNGLGETNUNIFORMUIVROBUSTANGLEPROC>(
-        loadProc("glGetnUniformuivRobustANGLE"));
-    l_glReadPixelsRobustANGLE =
-        reinterpret_cast<PFNGLREADPIXELSROBUSTANGLEPROC>(loadProc("glReadPixelsRobustANGLE"));
-    l_glReadnPixelsRobustANGLE =
-        reinterpret_cast<PFNGLREADNPIXELSROBUSTANGLEPROC>(loadProc("glReadnPixelsRobustANGLE"));
-    l_glSamplerParameterIivRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERIIVROBUSTANGLEPROC>(
-        loadProc("glSamplerParameterIivRobustANGLE"));
-    l_glSamplerParameterIuivRobustANGLE =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVROBUSTANGLEPROC>(
-            loadProc("glSamplerParameterIuivRobustANGLE"));
-    l_glSamplerParameterfvRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERFVROBUSTANGLEPROC>(
-        loadProc("glSamplerParameterfvRobustANGLE"));
-    l_glSamplerParameterivRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERIVROBUSTANGLEPROC>(
-        loadProc("glSamplerParameterivRobustANGLE"));
-    l_glTexImage2DRobustANGLE =
-        reinterpret_cast<PFNGLTEXIMAGE2DROBUSTANGLEPROC>(loadProc("glTexImage2DRobustANGLE"));
-    l_glTexImage3DRobustANGLE =
-        reinterpret_cast<PFNGLTEXIMAGE3DROBUSTANGLEPROC>(loadProc("glTexImage3DRobustANGLE"));
-    l_glTexParameterIivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIIVROBUSTANGLEPROC>(
-        loadProc("glTexParameterIivRobustANGLE"));
-    l_glTexParameterIuivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIUIVROBUSTANGLEPROC>(
-        loadProc("glTexParameterIuivRobustANGLE"));
-    l_glTexParameterfvRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERFVROBUSTANGLEPROC>(
-        loadProc("glTexParameterfvRobustANGLE"));
-    l_glTexParameterivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIVROBUSTANGLEPROC>(
-        loadProc("glTexParameterivRobustANGLE"));
-    l_glTexSubImage2DRobustANGLE =
-        reinterpret_cast<PFNGLTEXSUBIMAGE2DROBUSTANGLEPROC>(loadProc("glTexSubImage2DRobustANGLE"));
-    l_glTexSubImage3DRobustANGLE =
-        reinterpret_cast<PFNGLTEXSUBIMAGE3DROBUSTANGLEPROC>(loadProc("glTexSubImage3DRobustANGLE"));
-    l_glImportSemaphoreZirconHandleANGLE =
-        reinterpret_cast<PFNGLIMPORTSEMAPHOREZIRCONHANDLEANGLEPROC>(
-            loadProc("glImportSemaphoreZirconHandleANGLE"));
-    l_glBeginPixelLocalStorageANGLE = reinterpret_cast<PFNGLBEGINPIXELLOCALSTORAGEANGLEPROC>(
-        loadProc("glBeginPixelLocalStorageANGLE"));
-    l_glEndPixelLocalStorageANGLE = reinterpret_cast<PFNGLENDPIXELLOCALSTORAGEANGLEPROC>(
-        loadProc("glEndPixelLocalStorageANGLE"));
-    l_glFramebufferMemorylessPixelLocalStorageANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERMEMORYLESSPIXELLOCALSTORAGEANGLEPROC>(
-            loadProc("glFramebufferMemorylessPixelLocalStorageANGLE"));
-    l_glFramebufferPixelLocalClearValuefvANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEFVANGLEPROC>(
-            loadProc("glFramebufferPixelLocalClearValuefvANGLE"));
-    l_glFramebufferPixelLocalClearValueivANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEIVANGLEPROC>(
-            loadProc("glFramebufferPixelLocalClearValueivANGLE"));
-    l_glFramebufferPixelLocalClearValueuivANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEUIVANGLEPROC>(
-            loadProc("glFramebufferPixelLocalClearValueuivANGLE"));
-    l_glFramebufferPixelLocalStorageInterruptANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALSTORAGEINTERRUPTANGLEPROC>(
-            loadProc("glFramebufferPixelLocalStorageInterruptANGLE"));
-    l_glFramebufferPixelLocalStorageRestoreANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALSTORAGERESTOREANGLEPROC>(
-            loadProc("glFramebufferPixelLocalStorageRestoreANGLE"));
-    l_glFramebufferTexturePixelLocalStorageANGLE =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREPIXELLOCALSTORAGEANGLEPROC>(
-            loadProc("glFramebufferTexturePixelLocalStorageANGLE"));
-    l_glGetFramebufferPixelLocalStorageParameterfvANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVANGLEPROC>(
-            loadProc("glGetFramebufferPixelLocalStorageParameterfvANGLE"));
-    l_glGetFramebufferPixelLocalStorageParameterfvRobustANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVROBUSTANGLEPROC>(
-            loadProc("glGetFramebufferPixelLocalStorageParameterfvRobustANGLE"));
-    l_glGetFramebufferPixelLocalStorageParameterivANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVANGLEPROC>(
-            loadProc("glGetFramebufferPixelLocalStorageParameterivANGLE"));
-    l_glGetFramebufferPixelLocalStorageParameterivRobustANGLE =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVROBUSTANGLEPROC>(
-            loadProc("glGetFramebufferPixelLocalStorageParameterivRobustANGLE"));
-    l_glPixelLocalStorageBarrierANGLE = reinterpret_cast<PFNGLPIXELLOCALSTORAGEBARRIERANGLEPROC>(
-        loadProc("glPixelLocalStorageBarrierANGLE"));
-    l_glInvalidateTextureANGLE =
-        reinterpret_cast<PFNGLINVALIDATETEXTUREANGLEPROC>(loadProc("glInvalidateTextureANGLE"));
-    l_glTexImage2DExternalANGLE =
-        reinterpret_cast<PFNGLTEXIMAGE2DEXTERNALANGLEPROC>(loadProc("glTexImage2DExternalANGLE"));
-    l_glGetMultisamplefvANGLE =
-        reinterpret_cast<PFNGLGETMULTISAMPLEFVANGLEPROC>(loadProc("glGetMultisamplefvANGLE"));
-    l_glSampleMaskiANGLE =
-        reinterpret_cast<PFNGLSAMPLEMASKIANGLEPROC>(loadProc("glSampleMaskiANGLE"));
-    l_glTexStorage2DMultisampleANGLE = reinterpret_cast<PFNGLTEXSTORAGE2DMULTISAMPLEANGLEPROC>(
-        loadProc("glTexStorage2DMultisampleANGLE"));
-    l_glGetTranslatedShaderSourceANGLE = reinterpret_cast<PFNGLGETTRANSLATEDSHADERSOURCEANGLEPROC>(
-        loadProc("glGetTranslatedShaderSourceANGLE"));
-    l_glAcquireTexturesANGLE =
-        reinterpret_cast<PFNGLACQUIRETEXTURESANGLEPROC>(loadProc("glAcquireTexturesANGLE"));
-    l_glReleaseTexturesANGLE =
-        reinterpret_cast<PFNGLRELEASETEXTURESANGLEPROC>(loadProc("glReleaseTexturesANGLE"));
-    l_glBindUniformLocationCHROMIUM = reinterpret_cast<PFNGLBINDUNIFORMLOCATIONCHROMIUMPROC>(
-        loadProc("glBindUniformLocationCHROMIUM"));
-    l_glCompressedCopyTextureCHROMIUM = reinterpret_cast<PFNGLCOMPRESSEDCOPYTEXTURECHROMIUMPROC>(
-        loadProc("glCompressedCopyTextureCHROMIUM"));
-    l_glCopySubTextureCHROMIUM =
-        reinterpret_cast<PFNGLCOPYSUBTEXTURECHROMIUMPROC>(loadProc("glCopySubTextureCHROMIUM"));
-    l_glCopyTextureCHROMIUM =
-        reinterpret_cast<PFNGLCOPYTEXTURECHROMIUMPROC>(loadProc("glCopyTextureCHROMIUM"));
-    l_glCoverageModulationCHROMIUM = reinterpret_cast<PFNGLCOVERAGEMODULATIONCHROMIUMPROC>(
-        loadProc("glCoverageModulationCHROMIUM"));
-    l_glLoseContextCHROMIUM =
-        reinterpret_cast<PFNGLLOSECONTEXTCHROMIUMPROC>(loadProc("glLoseContextCHROMIUM"));
-    l_glEGLImageTargetTexStorageEXT = reinterpret_cast<PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC>(
-        loadProc("glEGLImageTargetTexStorageEXT"));
-    l_glEGLImageTargetTextureStorageEXT =
-        reinterpret_cast<PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC>(
-            loadProc("glEGLImageTargetTextureStorageEXT"));
-    l_glDrawArraysInstancedBaseInstanceEXT =
-        reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEEXTPROC>(
-            loadProc("glDrawArraysInstancedBaseInstanceEXT"));
-    l_glDrawElementsInstancedBaseInstanceEXT =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEEXTPROC>(
-            loadProc("glDrawElementsInstancedBaseInstanceEXT"));
-    l_glDrawElementsInstancedBaseVertexBaseInstanceEXT =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEEXTPROC>(
-            loadProc("glDrawElementsInstancedBaseVertexBaseInstanceEXT"));
-    l_glBindFragDataLocationEXT =
-        reinterpret_cast<PFNGLBINDFRAGDATALOCATIONEXTPROC>(loadProc("glBindFragDataLocationEXT"));
-    l_glBindFragDataLocationIndexedEXT = reinterpret_cast<PFNGLBINDFRAGDATALOCATIONINDEXEDEXTPROC>(
-        loadProc("glBindFragDataLocationIndexedEXT"));
-    l_glGetFragDataIndexEXT =
-        reinterpret_cast<PFNGLGETFRAGDATAINDEXEXTPROC>(loadProc("glGetFragDataIndexEXT"));
-    l_glGetProgramResourceLocationIndexEXT =
-        reinterpret_cast<PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC>(
-            loadProc("glGetProgramResourceLocationIndexEXT"));
-    l_glBufferStorageEXT =
-        reinterpret_cast<PFNGLBUFFERSTORAGEEXTPROC>(loadProc("glBufferStorageEXT"));
-    l_glClearTexImageEXT =
-        reinterpret_cast<PFNGLCLEARTEXIMAGEEXTPROC>(loadProc("glClearTexImageEXT"));
-    l_glClearTexSubImageEXT =
-        reinterpret_cast<PFNGLCLEARTEXSUBIMAGEEXTPROC>(loadProc("glClearTexSubImageEXT"));
+    l_glTexStorageMemFlags2DANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS2DANGLEPROC>(loadProc("glTexStorageMemFlags2DANGLE"));
+    l_glTexStorageMemFlags2DMultisampleANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS2DMULTISAMPLEANGLEPROC>(loadProc("glTexStorageMemFlags2DMultisampleANGLE"));
+    l_glTexStorageMemFlags3DANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS3DANGLEPROC>(loadProc("glTexStorageMemFlags3DANGLE"));
+    l_glTexStorageMemFlags3DMultisampleANGLE = reinterpret_cast<PFNGLTEXSTORAGEMEMFLAGS3DMULTISAMPLEANGLEPROC>(loadProc("glTexStorageMemFlags3DMultisampleANGLE"));
+    l_glImportMemoryZirconHandleANGLE = reinterpret_cast<PFNGLIMPORTMEMORYZIRCONHANDLEANGLEPROC>(loadProc("glImportMemoryZirconHandleANGLE"));
+    l_glMultiDrawArraysANGLE = reinterpret_cast<PFNGLMULTIDRAWARRAYSANGLEPROC>(loadProc("glMultiDrawArraysANGLE"));
+    l_glMultiDrawArraysInstancedANGLE = reinterpret_cast<PFNGLMULTIDRAWARRAYSINSTANCEDANGLEPROC>(loadProc("glMultiDrawArraysInstancedANGLE"));
+    l_glMultiDrawElementsANGLE = reinterpret_cast<PFNGLMULTIDRAWELEMENTSANGLEPROC>(loadProc("glMultiDrawElementsANGLE"));
+    l_glMultiDrawElementsInstancedANGLE = reinterpret_cast<PFNGLMULTIDRAWELEMENTSINSTANCEDANGLEPROC>(loadProc("glMultiDrawElementsInstancedANGLE"));
+    l_glPolygonModeANGLE = reinterpret_cast<PFNGLPOLYGONMODEANGLEPROC>(loadProc("glPolygonModeANGLE"));
+    l_glProvokingVertexANGLE = reinterpret_cast<PFNGLPROVOKINGVERTEXANGLEPROC>(loadProc("glProvokingVertexANGLE"));
+    l_glDisableExtensionANGLE = reinterpret_cast<PFNGLDISABLEEXTENSIONANGLEPROC>(loadProc("glDisableExtensionANGLE"));
+    l_glRequestExtensionANGLE = reinterpret_cast<PFNGLREQUESTEXTENSIONANGLEPROC>(loadProc("glRequestExtensionANGLE"));
+    l_glCompressedTexImage2DRobustANGLE = reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE2DROBUSTANGLEPROC>(loadProc("glCompressedTexImage2DRobustANGLE"));
+    l_glCompressedTexImage3DRobustANGLE = reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DROBUSTANGLEPROC>(loadProc("glCompressedTexImage3DRobustANGLE"));
+    l_glCompressedTexSubImage2DRobustANGLE = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE2DROBUSTANGLEPROC>(loadProc("glCompressedTexSubImage2DRobustANGLE"));
+    l_glCompressedTexSubImage3DRobustANGLE = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DROBUSTANGLEPROC>(loadProc("glCompressedTexSubImage3DRobustANGLE"));
+    l_glGetActiveUniformBlockivRobustANGLE = reinterpret_cast<PFNGLGETACTIVEUNIFORMBLOCKIVROBUSTANGLEPROC>(loadProc("glGetActiveUniformBlockivRobustANGLE"));
+    l_glGetBooleani_vRobustANGLE = reinterpret_cast<PFNGLGETBOOLEANI_VROBUSTANGLEPROC>(loadProc("glGetBooleani_vRobustANGLE"));
+    l_glGetBooleanvRobustANGLE = reinterpret_cast<PFNGLGETBOOLEANVROBUSTANGLEPROC>(loadProc("glGetBooleanvRobustANGLE"));
+    l_glGetBufferParameteri64vRobustANGLE = reinterpret_cast<PFNGLGETBUFFERPARAMETERI64VROBUSTANGLEPROC>(loadProc("glGetBufferParameteri64vRobustANGLE"));
+    l_glGetBufferParameterivRobustANGLE = reinterpret_cast<PFNGLGETBUFFERPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetBufferParameterivRobustANGLE"));
+    l_glGetBufferPointervRobustANGLE = reinterpret_cast<PFNGLGETBUFFERPOINTERVROBUSTANGLEPROC>(loadProc("glGetBufferPointervRobustANGLE"));
+    l_glGetFloatvRobustANGLE = reinterpret_cast<PFNGLGETFLOATVROBUSTANGLEPROC>(loadProc("glGetFloatvRobustANGLE"));
+    l_glGetFramebufferAttachmentParameterivRobustANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetFramebufferAttachmentParameterivRobustANGLE"));
+    l_glGetFramebufferParameterivRobustANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetFramebufferParameterivRobustANGLE"));
+    l_glGetInteger64i_vRobustANGLE = reinterpret_cast<PFNGLGETINTEGER64I_VROBUSTANGLEPROC>(loadProc("glGetInteger64i_vRobustANGLE"));
+    l_glGetInteger64vRobustANGLE = reinterpret_cast<PFNGLGETINTEGER64VROBUSTANGLEPROC>(loadProc("glGetInteger64vRobustANGLE"));
+    l_glGetIntegeri_vRobustANGLE = reinterpret_cast<PFNGLGETINTEGERI_VROBUSTANGLEPROC>(loadProc("glGetIntegeri_vRobustANGLE"));
+    l_glGetIntegervRobustANGLE = reinterpret_cast<PFNGLGETINTEGERVROBUSTANGLEPROC>(loadProc("glGetIntegervRobustANGLE"));
+    l_glGetInternalformativRobustANGLE = reinterpret_cast<PFNGLGETINTERNALFORMATIVROBUSTANGLEPROC>(loadProc("glGetInternalformativRobustANGLE"));
+    l_glGetMultisamplefvRobustANGLE = reinterpret_cast<PFNGLGETMULTISAMPLEFVROBUSTANGLEPROC>(loadProc("glGetMultisamplefvRobustANGLE"));
+    l_glGetPointervRobustANGLERobustANGLE = reinterpret_cast<PFNGLGETPOINTERVROBUSTANGLEROBUSTANGLEPROC>(loadProc("glGetPointervRobustANGLERobustANGLE"));
+    l_glGetProgramInterfaceivRobustANGLE = reinterpret_cast<PFNGLGETPROGRAMINTERFACEIVROBUSTANGLEPROC>(loadProc("glGetProgramInterfaceivRobustANGLE"));
+    l_glGetProgramivRobustANGLE = reinterpret_cast<PFNGLGETPROGRAMIVROBUSTANGLEPROC>(loadProc("glGetProgramivRobustANGLE"));
+    l_glGetQueryObjecti64vRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTI64VROBUSTANGLEPROC>(loadProc("glGetQueryObjecti64vRobustANGLE"));
+    l_glGetQueryObjectivRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTIVROBUSTANGLEPROC>(loadProc("glGetQueryObjectivRobustANGLE"));
+    l_glGetQueryObjectui64vRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTUI64VROBUSTANGLEPROC>(loadProc("glGetQueryObjectui64vRobustANGLE"));
+    l_glGetQueryObjectuivRobustANGLE = reinterpret_cast<PFNGLGETQUERYOBJECTUIVROBUSTANGLEPROC>(loadProc("glGetQueryObjectuivRobustANGLE"));
+    l_glGetQueryivRobustANGLE = reinterpret_cast<PFNGLGETQUERYIVROBUSTANGLEPROC>(loadProc("glGetQueryivRobustANGLE"));
+    l_glGetRenderbufferParameterivRobustANGLE = reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetRenderbufferParameterivRobustANGLE"));
+    l_glGetSamplerParameterIivRobustANGLE = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVROBUSTANGLEPROC>(loadProc("glGetSamplerParameterIivRobustANGLE"));
+    l_glGetSamplerParameterIuivRobustANGLE = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVROBUSTANGLEPROC>(loadProc("glGetSamplerParameterIuivRobustANGLE"));
+    l_glGetSamplerParameterfvRobustANGLE = reinterpret_cast<PFNGLGETSAMPLERPARAMETERFVROBUSTANGLEPROC>(loadProc("glGetSamplerParameterfvRobustANGLE"));
+    l_glGetSamplerParameterivRobustANGLE = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetSamplerParameterivRobustANGLE"));
+    l_glGetShaderivRobustANGLE = reinterpret_cast<PFNGLGETSHADERIVROBUSTANGLEPROC>(loadProc("glGetShaderivRobustANGLE"));
+    l_glGetTexLevelParameterfvRobustANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERFVROBUSTANGLEPROC>(loadProc("glGetTexLevelParameterfvRobustANGLE"));
+    l_glGetTexLevelParameterivRobustANGLE = reinterpret_cast<PFNGLGETTEXLEVELPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetTexLevelParameterivRobustANGLE"));
+    l_glGetTexParameterIivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIIVROBUSTANGLEPROC>(loadProc("glGetTexParameterIivRobustANGLE"));
+    l_glGetTexParameterIuivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIUIVROBUSTANGLEPROC>(loadProc("glGetTexParameterIuivRobustANGLE"));
+    l_glGetTexParameterfvRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERFVROBUSTANGLEPROC>(loadProc("glGetTexParameterfvRobustANGLE"));
+    l_glGetTexParameterivRobustANGLE = reinterpret_cast<PFNGLGETTEXPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetTexParameterivRobustANGLE"));
+    l_glGetUniformfvRobustANGLE = reinterpret_cast<PFNGLGETUNIFORMFVROBUSTANGLEPROC>(loadProc("glGetUniformfvRobustANGLE"));
+    l_glGetUniformivRobustANGLE = reinterpret_cast<PFNGLGETUNIFORMIVROBUSTANGLEPROC>(loadProc("glGetUniformivRobustANGLE"));
+    l_glGetUniformuivRobustANGLE = reinterpret_cast<PFNGLGETUNIFORMUIVROBUSTANGLEPROC>(loadProc("glGetUniformuivRobustANGLE"));
+    l_glGetVertexAttribIivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIIVROBUSTANGLEPROC>(loadProc("glGetVertexAttribIivRobustANGLE"));
+    l_glGetVertexAttribIuivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIUIVROBUSTANGLEPROC>(loadProc("glGetVertexAttribIuivRobustANGLE"));
+    l_glGetVertexAttribPointervRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBPOINTERVROBUSTANGLEPROC>(loadProc("glGetVertexAttribPointervRobustANGLE"));
+    l_glGetVertexAttribfvRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBFVROBUSTANGLEPROC>(loadProc("glGetVertexAttribfvRobustANGLE"));
+    l_glGetVertexAttribivRobustANGLE = reinterpret_cast<PFNGLGETVERTEXATTRIBIVROBUSTANGLEPROC>(loadProc("glGetVertexAttribivRobustANGLE"));
+    l_glGetnUniformfvRobustANGLE = reinterpret_cast<PFNGLGETNUNIFORMFVROBUSTANGLEPROC>(loadProc("glGetnUniformfvRobustANGLE"));
+    l_glGetnUniformivRobustANGLE = reinterpret_cast<PFNGLGETNUNIFORMIVROBUSTANGLEPROC>(loadProc("glGetnUniformivRobustANGLE"));
+    l_glGetnUniformuivRobustANGLE = reinterpret_cast<PFNGLGETNUNIFORMUIVROBUSTANGLEPROC>(loadProc("glGetnUniformuivRobustANGLE"));
+    l_glReadPixelsRobustANGLE = reinterpret_cast<PFNGLREADPIXELSROBUSTANGLEPROC>(loadProc("glReadPixelsRobustANGLE"));
+    l_glReadnPixelsRobustANGLE = reinterpret_cast<PFNGLREADNPIXELSROBUSTANGLEPROC>(loadProc("glReadnPixelsRobustANGLE"));
+    l_glSamplerParameterIivRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERIIVROBUSTANGLEPROC>(loadProc("glSamplerParameterIivRobustANGLE"));
+    l_glSamplerParameterIuivRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVROBUSTANGLEPROC>(loadProc("glSamplerParameterIuivRobustANGLE"));
+    l_glSamplerParameterfvRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERFVROBUSTANGLEPROC>(loadProc("glSamplerParameterfvRobustANGLE"));
+    l_glSamplerParameterivRobustANGLE = reinterpret_cast<PFNGLSAMPLERPARAMETERIVROBUSTANGLEPROC>(loadProc("glSamplerParameterivRobustANGLE"));
+    l_glTexImage2DRobustANGLE = reinterpret_cast<PFNGLTEXIMAGE2DROBUSTANGLEPROC>(loadProc("glTexImage2DRobustANGLE"));
+    l_glTexImage3DRobustANGLE = reinterpret_cast<PFNGLTEXIMAGE3DROBUSTANGLEPROC>(loadProc("glTexImage3DRobustANGLE"));
+    l_glTexParameterIivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIIVROBUSTANGLEPROC>(loadProc("glTexParameterIivRobustANGLE"));
+    l_glTexParameterIuivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIUIVROBUSTANGLEPROC>(loadProc("glTexParameterIuivRobustANGLE"));
+    l_glTexParameterfvRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERFVROBUSTANGLEPROC>(loadProc("glTexParameterfvRobustANGLE"));
+    l_glTexParameterivRobustANGLE = reinterpret_cast<PFNGLTEXPARAMETERIVROBUSTANGLEPROC>(loadProc("glTexParameterivRobustANGLE"));
+    l_glTexSubImage2DRobustANGLE = reinterpret_cast<PFNGLTEXSUBIMAGE2DROBUSTANGLEPROC>(loadProc("glTexSubImage2DRobustANGLE"));
+    l_glTexSubImage3DRobustANGLE = reinterpret_cast<PFNGLTEXSUBIMAGE3DROBUSTANGLEPROC>(loadProc("glTexSubImage3DRobustANGLE"));
+    l_glImportSemaphoreZirconHandleANGLE = reinterpret_cast<PFNGLIMPORTSEMAPHOREZIRCONHANDLEANGLEPROC>(loadProc("glImportSemaphoreZirconHandleANGLE"));
+    l_glBeginPixelLocalStorageANGLE = reinterpret_cast<PFNGLBEGINPIXELLOCALSTORAGEANGLEPROC>(loadProc("glBeginPixelLocalStorageANGLE"));
+    l_glEndPixelLocalStorageANGLE = reinterpret_cast<PFNGLENDPIXELLOCALSTORAGEANGLEPROC>(loadProc("glEndPixelLocalStorageANGLE"));
+    l_glFramebufferMemorylessPixelLocalStorageANGLE = reinterpret_cast<PFNGLFRAMEBUFFERMEMORYLESSPIXELLOCALSTORAGEANGLEPROC>(loadProc("glFramebufferMemorylessPixelLocalStorageANGLE"));
+    l_glFramebufferPixelLocalClearValuefvANGLE = reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEFVANGLEPROC>(loadProc("glFramebufferPixelLocalClearValuefvANGLE"));
+    l_glFramebufferPixelLocalClearValueivANGLE = reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEIVANGLEPROC>(loadProc("glFramebufferPixelLocalClearValueivANGLE"));
+    l_glFramebufferPixelLocalClearValueuivANGLE = reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALCLEARVALUEUIVANGLEPROC>(loadProc("glFramebufferPixelLocalClearValueuivANGLE"));
+    l_glFramebufferPixelLocalStorageInterruptANGLE = reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALSTORAGEINTERRUPTANGLEPROC>(loadProc("glFramebufferPixelLocalStorageInterruptANGLE"));
+    l_glFramebufferPixelLocalStorageRestoreANGLE = reinterpret_cast<PFNGLFRAMEBUFFERPIXELLOCALSTORAGERESTOREANGLEPROC>(loadProc("glFramebufferPixelLocalStorageRestoreANGLE"));
+    l_glFramebufferTexturePixelLocalStorageANGLE = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREPIXELLOCALSTORAGEANGLEPROC>(loadProc("glFramebufferTexturePixelLocalStorageANGLE"));
+    l_glGetFramebufferPixelLocalStorageParameterfvANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVANGLEPROC>(loadProc("glGetFramebufferPixelLocalStorageParameterfvANGLE"));
+    l_glGetFramebufferPixelLocalStorageParameterfvRobustANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERFVROBUSTANGLEPROC>(loadProc("glGetFramebufferPixelLocalStorageParameterfvRobustANGLE"));
+    l_glGetFramebufferPixelLocalStorageParameterivANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVANGLEPROC>(loadProc("glGetFramebufferPixelLocalStorageParameterivANGLE"));
+    l_glGetFramebufferPixelLocalStorageParameterivRobustANGLE = reinterpret_cast<PFNGLGETFRAMEBUFFERPIXELLOCALSTORAGEPARAMETERIVROBUSTANGLEPROC>(loadProc("glGetFramebufferPixelLocalStorageParameterivRobustANGLE"));
+    l_glPixelLocalStorageBarrierANGLE = reinterpret_cast<PFNGLPIXELLOCALSTORAGEBARRIERANGLEPROC>(loadProc("glPixelLocalStorageBarrierANGLE"));
+    l_glInvalidateTextureANGLE = reinterpret_cast<PFNGLINVALIDATETEXTUREANGLEPROC>(loadProc("glInvalidateTextureANGLE"));
+    l_glTexImage2DExternalANGLE = reinterpret_cast<PFNGLTEXIMAGE2DEXTERNALANGLEPROC>(loadProc("glTexImage2DExternalANGLE"));
+    l_glGetMultisamplefvANGLE = reinterpret_cast<PFNGLGETMULTISAMPLEFVANGLEPROC>(loadProc("glGetMultisamplefvANGLE"));
+    l_glSampleMaskiANGLE = reinterpret_cast<PFNGLSAMPLEMASKIANGLEPROC>(loadProc("glSampleMaskiANGLE"));
+    l_glTexStorage2DMultisampleANGLE = reinterpret_cast<PFNGLTEXSTORAGE2DMULTISAMPLEANGLEPROC>(loadProc("glTexStorage2DMultisampleANGLE"));
+    l_glGetTranslatedShaderSourceANGLE = reinterpret_cast<PFNGLGETTRANSLATEDSHADERSOURCEANGLEPROC>(loadProc("glGetTranslatedShaderSourceANGLE"));
+    l_glAcquireTexturesANGLE = reinterpret_cast<PFNGLACQUIRETEXTURESANGLEPROC>(loadProc("glAcquireTexturesANGLE"));
+    l_glReleaseTexturesANGLE = reinterpret_cast<PFNGLRELEASETEXTURESANGLEPROC>(loadProc("glReleaseTexturesANGLE"));
+    l_glBindUniformLocationCHROMIUM = reinterpret_cast<PFNGLBINDUNIFORMLOCATIONCHROMIUMPROC>(loadProc("glBindUniformLocationCHROMIUM"));
+    l_glCompressedCopyTextureCHROMIUM = reinterpret_cast<PFNGLCOMPRESSEDCOPYTEXTURECHROMIUMPROC>(loadProc("glCompressedCopyTextureCHROMIUM"));
+    l_glCopySubTextureCHROMIUM = reinterpret_cast<PFNGLCOPYSUBTEXTURECHROMIUMPROC>(loadProc("glCopySubTextureCHROMIUM"));
+    l_glCopyTextureCHROMIUM = reinterpret_cast<PFNGLCOPYTEXTURECHROMIUMPROC>(loadProc("glCopyTextureCHROMIUM"));
+    l_glCoverageModulationCHROMIUM = reinterpret_cast<PFNGLCOVERAGEMODULATIONCHROMIUMPROC>(loadProc("glCoverageModulationCHROMIUM"));
+    l_glLoseContextCHROMIUM = reinterpret_cast<PFNGLLOSECONTEXTCHROMIUMPROC>(loadProc("glLoseContextCHROMIUM"));
+    l_glEGLImageTargetTexStorageEXT = reinterpret_cast<PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC>(loadProc("glEGLImageTargetTexStorageEXT"));
+    l_glEGLImageTargetTextureStorageEXT = reinterpret_cast<PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC>(loadProc("glEGLImageTargetTextureStorageEXT"));
+    l_glDrawArraysInstancedBaseInstanceEXT = reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEEXTPROC>(loadProc("glDrawArraysInstancedBaseInstanceEXT"));
+    l_glDrawElementsInstancedBaseInstanceEXT = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEEXTPROC>(loadProc("glDrawElementsInstancedBaseInstanceEXT"));
+    l_glDrawElementsInstancedBaseVertexBaseInstanceEXT = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEEXTPROC>(loadProc("glDrawElementsInstancedBaseVertexBaseInstanceEXT"));
+    l_glBindFragDataLocationEXT = reinterpret_cast<PFNGLBINDFRAGDATALOCATIONEXTPROC>(loadProc("glBindFragDataLocationEXT"));
+    l_glBindFragDataLocationIndexedEXT = reinterpret_cast<PFNGLBINDFRAGDATALOCATIONINDEXEDEXTPROC>(loadProc("glBindFragDataLocationIndexedEXT"));
+    l_glGetFragDataIndexEXT = reinterpret_cast<PFNGLGETFRAGDATAINDEXEXTPROC>(loadProc("glGetFragDataIndexEXT"));
+    l_glGetProgramResourceLocationIndexEXT = reinterpret_cast<PFNGLGETPROGRAMRESOURCELOCATIONINDEXEXTPROC>(loadProc("glGetProgramResourceLocationIndexEXT"));
+    l_glBufferStorageEXT = reinterpret_cast<PFNGLBUFFERSTORAGEEXTPROC>(loadProc("glBufferStorageEXT"));
+    l_glClearTexImageEXT = reinterpret_cast<PFNGLCLEARTEXIMAGEEXTPROC>(loadProc("glClearTexImageEXT"));
+    l_glClearTexSubImageEXT = reinterpret_cast<PFNGLCLEARTEXSUBIMAGEEXTPROC>(loadProc("glClearTexSubImageEXT"));
     l_glClipControlEXT = reinterpret_cast<PFNGLCLIPCONTROLEXTPROC>(loadProc("glClipControlEXT"));
-    l_glCopyImageSubDataEXT =
-        reinterpret_cast<PFNGLCOPYIMAGESUBDATAEXTPROC>(loadProc("glCopyImageSubDataEXT"));
-    l_glGetObjectLabelEXT =
-        reinterpret_cast<PFNGLGETOBJECTLABELEXTPROC>(loadProc("glGetObjectLabelEXT"));
+    l_glCopyImageSubDataEXT = reinterpret_cast<PFNGLCOPYIMAGESUBDATAEXTPROC>(loadProc("glCopyImageSubDataEXT"));
+    l_glGetObjectLabelEXT = reinterpret_cast<PFNGLGETOBJECTLABELEXTPROC>(loadProc("glGetObjectLabelEXT"));
     l_glLabelObjectEXT = reinterpret_cast<PFNGLLABELOBJECTEXTPROC>(loadProc("glLabelObjectEXT"));
-    l_glInsertEventMarkerEXT =
-        reinterpret_cast<PFNGLINSERTEVENTMARKEREXTPROC>(loadProc("glInsertEventMarkerEXT"));
-    l_glPopGroupMarkerEXT =
-        reinterpret_cast<PFNGLPOPGROUPMARKEREXTPROC>(loadProc("glPopGroupMarkerEXT"));
-    l_glPushGroupMarkerEXT =
-        reinterpret_cast<PFNGLPUSHGROUPMARKEREXTPROC>(loadProc("glPushGroupMarkerEXT"));
-    l_glDiscardFramebufferEXT =
-        reinterpret_cast<PFNGLDISCARDFRAMEBUFFEREXTPROC>(loadProc("glDiscardFramebufferEXT"));
+    l_glInsertEventMarkerEXT = reinterpret_cast<PFNGLINSERTEVENTMARKEREXTPROC>(loadProc("glInsertEventMarkerEXT"));
+    l_glPopGroupMarkerEXT = reinterpret_cast<PFNGLPOPGROUPMARKEREXTPROC>(loadProc("glPopGroupMarkerEXT"));
+    l_glPushGroupMarkerEXT = reinterpret_cast<PFNGLPUSHGROUPMARKEREXTPROC>(loadProc("glPushGroupMarkerEXT"));
+    l_glDiscardFramebufferEXT = reinterpret_cast<PFNGLDISCARDFRAMEBUFFEREXTPROC>(loadProc("glDiscardFramebufferEXT"));
     l_glBeginQueryEXT = reinterpret_cast<PFNGLBEGINQUERYEXTPROC>(loadProc("glBeginQueryEXT"));
-    l_glDeleteQueriesEXT =
-        reinterpret_cast<PFNGLDELETEQUERIESEXTPROC>(loadProc("glDeleteQueriesEXT"));
-    l_glEndQueryEXT   = reinterpret_cast<PFNGLENDQUERYEXTPROC>(loadProc("glEndQueryEXT"));
+    l_glDeleteQueriesEXT = reinterpret_cast<PFNGLDELETEQUERIESEXTPROC>(loadProc("glDeleteQueriesEXT"));
+    l_glEndQueryEXT = reinterpret_cast<PFNGLENDQUERYEXTPROC>(loadProc("glEndQueryEXT"));
     l_glGenQueriesEXT = reinterpret_cast<PFNGLGENQUERIESEXTPROC>(loadProc("glGenQueriesEXT"));
-    l_glGetInteger64vEXT =
-        reinterpret_cast<PFNGLGETINTEGER64VEXTPROC>(loadProc("glGetInteger64vEXT"));
-    l_glGetQueryObjecti64vEXT =
-        reinterpret_cast<PFNGLGETQUERYOBJECTI64VEXTPROC>(loadProc("glGetQueryObjecti64vEXT"));
-    l_glGetQueryObjectivEXT =
-        reinterpret_cast<PFNGLGETQUERYOBJECTIVEXTPROC>(loadProc("glGetQueryObjectivEXT"));
-    l_glGetQueryObjectui64vEXT =
-        reinterpret_cast<PFNGLGETQUERYOBJECTUI64VEXTPROC>(loadProc("glGetQueryObjectui64vEXT"));
-    l_glGetQueryObjectuivEXT =
-        reinterpret_cast<PFNGLGETQUERYOBJECTUIVEXTPROC>(loadProc("glGetQueryObjectuivEXT"));
-    l_glGetQueryivEXT   = reinterpret_cast<PFNGLGETQUERYIVEXTPROC>(loadProc("glGetQueryivEXT"));
-    l_glIsQueryEXT      = reinterpret_cast<PFNGLISQUERYEXTPROC>(loadProc("glIsQueryEXT"));
+    l_glGetInteger64vEXT = reinterpret_cast<PFNGLGETINTEGER64VEXTPROC>(loadProc("glGetInteger64vEXT"));
+    l_glGetQueryObjecti64vEXT = reinterpret_cast<PFNGLGETQUERYOBJECTI64VEXTPROC>(loadProc("glGetQueryObjecti64vEXT"));
+    l_glGetQueryObjectivEXT = reinterpret_cast<PFNGLGETQUERYOBJECTIVEXTPROC>(loadProc("glGetQueryObjectivEXT"));
+    l_glGetQueryObjectui64vEXT = reinterpret_cast<PFNGLGETQUERYOBJECTUI64VEXTPROC>(loadProc("glGetQueryObjectui64vEXT"));
+    l_glGetQueryObjectuivEXT = reinterpret_cast<PFNGLGETQUERYOBJECTUIVEXTPROC>(loadProc("glGetQueryObjectuivEXT"));
+    l_glGetQueryivEXT = reinterpret_cast<PFNGLGETQUERYIVEXTPROC>(loadProc("glGetQueryivEXT"));
+    l_glIsQueryEXT = reinterpret_cast<PFNGLISQUERYEXTPROC>(loadProc("glIsQueryEXT"));
     l_glQueryCounterEXT = reinterpret_cast<PFNGLQUERYCOUNTEREXTPROC>(loadProc("glQueryCounterEXT"));
-    l_glDrawBuffersEXT  = reinterpret_cast<PFNGLDRAWBUFFERSEXTPROC>(loadProc("glDrawBuffersEXT"));
-    l_glBlendEquationSeparateiEXT = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIEXTPROC>(
-        loadProc("glBlendEquationSeparateiEXT"));
-    l_glBlendEquationiEXT =
-        reinterpret_cast<PFNGLBLENDEQUATIONIEXTPROC>(loadProc("glBlendEquationiEXT"));
-    l_glBlendFuncSeparateiEXT =
-        reinterpret_cast<PFNGLBLENDFUNCSEPARATEIEXTPROC>(loadProc("glBlendFuncSeparateiEXT"));
+    l_glDrawBuffersEXT = reinterpret_cast<PFNGLDRAWBUFFERSEXTPROC>(loadProc("glDrawBuffersEXT"));
+    l_glBlendEquationSeparateiEXT = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIEXTPROC>(loadProc("glBlendEquationSeparateiEXT"));
+    l_glBlendEquationiEXT = reinterpret_cast<PFNGLBLENDEQUATIONIEXTPROC>(loadProc("glBlendEquationiEXT"));
+    l_glBlendFuncSeparateiEXT = reinterpret_cast<PFNGLBLENDFUNCSEPARATEIEXTPROC>(loadProc("glBlendFuncSeparateiEXT"));
     l_glBlendFunciEXT = reinterpret_cast<PFNGLBLENDFUNCIEXTPROC>(loadProc("glBlendFunciEXT"));
     l_glColorMaskiEXT = reinterpret_cast<PFNGLCOLORMASKIEXTPROC>(loadProc("glColorMaskiEXT"));
-    l_glDisableiEXT   = reinterpret_cast<PFNGLDISABLEIEXTPROC>(loadProc("glDisableiEXT"));
-    l_glEnableiEXT    = reinterpret_cast<PFNGLENABLEIEXTPROC>(loadProc("glEnableiEXT"));
+    l_glDisableiEXT = reinterpret_cast<PFNGLDISABLEIEXTPROC>(loadProc("glDisableiEXT"));
+    l_glEnableiEXT = reinterpret_cast<PFNGLENABLEIEXTPROC>(loadProc("glEnableiEXT"));
     l_glIsEnablediEXT = reinterpret_cast<PFNGLISENABLEDIEXTPROC>(loadProc("glIsEnablediEXT"));
-    l_glDrawElementsBaseVertexEXT = reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXEXTPROC>(
-        loadProc("glDrawElementsBaseVertexEXT"));
-    l_glDrawElementsInstancedBaseVertexEXT =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXEXTPROC>(
-            loadProc("glDrawElementsInstancedBaseVertexEXT"));
-    l_glDrawRangeElementsBaseVertexEXT = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXEXTPROC>(
-        loadProc("glDrawRangeElementsBaseVertexEXT"));
-    l_glMultiDrawElementsBaseVertexEXT = reinterpret_cast<PFNGLMULTIDRAWELEMENTSBASEVERTEXEXTPROC>(
-        loadProc("glMultiDrawElementsBaseVertexEXT"));
-    l_glBufferStorageExternalEXT =
-        reinterpret_cast<PFNGLBUFFERSTORAGEEXTERNALEXTPROC>(loadProc("glBufferStorageExternalEXT"));
-    l_glNamedBufferStorageExternalEXT = reinterpret_cast<PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC>(
-        loadProc("glNamedBufferStorageExternalEXT"));
-    l_glFramebufferTextureEXT =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREEXTPROC>(loadProc("glFramebufferTextureEXT"));
-    l_glDrawArraysInstancedEXT =
-        reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDEXTPROC>(loadProc("glDrawArraysInstancedEXT"));
-    l_glDrawElementsInstancedEXT =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDEXTPROC>(loadProc("glDrawElementsInstancedEXT"));
-    l_glVertexAttribDivisorEXT =
-        reinterpret_cast<PFNGLVERTEXATTRIBDIVISOREXTPROC>(loadProc("glVertexAttribDivisorEXT"));
-    l_glFlushMappedBufferRangeEXT = reinterpret_cast<PFNGLFLUSHMAPPEDBUFFERRANGEEXTPROC>(
-        loadProc("glFlushMappedBufferRangeEXT"));
-    l_glMapBufferRangeEXT =
-        reinterpret_cast<PFNGLMAPBUFFERRANGEEXTPROC>(loadProc("glMapBufferRangeEXT"));
-    l_glBufferStorageMemEXT =
-        reinterpret_cast<PFNGLBUFFERSTORAGEMEMEXTPROC>(loadProc("glBufferStorageMemEXT"));
-    l_glCreateMemoryObjectsEXT =
-        reinterpret_cast<PFNGLCREATEMEMORYOBJECTSEXTPROC>(loadProc("glCreateMemoryObjectsEXT"));
-    l_glDeleteMemoryObjectsEXT =
-        reinterpret_cast<PFNGLDELETEMEMORYOBJECTSEXTPROC>(loadProc("glDeleteMemoryObjectsEXT"));
-    l_glGetMemoryObjectParameterivEXT = reinterpret_cast<PFNGLGETMEMORYOBJECTPARAMETERIVEXTPROC>(
-        loadProc("glGetMemoryObjectParameterivEXT"));
-    l_glGetUnsignedBytei_vEXT =
-        reinterpret_cast<PFNGLGETUNSIGNEDBYTEI_VEXTPROC>(loadProc("glGetUnsignedBytei_vEXT"));
-    l_glGetUnsignedBytevEXT =
-        reinterpret_cast<PFNGLGETUNSIGNEDBYTEVEXTPROC>(loadProc("glGetUnsignedBytevEXT"));
-    l_glIsMemoryObjectEXT =
-        reinterpret_cast<PFNGLISMEMORYOBJECTEXTPROC>(loadProc("glIsMemoryObjectEXT"));
-    l_glMemoryObjectParameterivEXT = reinterpret_cast<PFNGLMEMORYOBJECTPARAMETERIVEXTPROC>(
-        loadProc("glMemoryObjectParameterivEXT"));
-    l_glTexStorageMem2DEXT =
-        reinterpret_cast<PFNGLTEXSTORAGEMEM2DEXTPROC>(loadProc("glTexStorageMem2DEXT"));
-    l_glTexStorageMem2DMultisampleEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM2DMULTISAMPLEEXTPROC>(
-        loadProc("glTexStorageMem2DMultisampleEXT"));
-    l_glTexStorageMem3DEXT =
-        reinterpret_cast<PFNGLTEXSTORAGEMEM3DEXTPROC>(loadProc("glTexStorageMem3DEXT"));
-    l_glTexStorageMem3DMultisampleEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC>(
-        loadProc("glTexStorageMem3DMultisampleEXT"));
-    l_glImportMemoryFdEXT =
-        reinterpret_cast<PFNGLIMPORTMEMORYFDEXTPROC>(loadProc("glImportMemoryFdEXT"));
-    l_glMultiDrawArraysIndirectEXT = reinterpret_cast<PFNGLMULTIDRAWARRAYSINDIRECTEXTPROC>(
-        loadProc("glMultiDrawArraysIndirectEXT"));
-    l_glMultiDrawElementsIndirectEXT = reinterpret_cast<PFNGLMULTIDRAWELEMENTSINDIRECTEXTPROC>(
-        loadProc("glMultiDrawElementsIndirectEXT"));
-    l_glFramebufferTexture2DMultisampleEXT =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DMULTISAMPLEEXTPROC>(
-            loadProc("glFramebufferTexture2DMultisampleEXT"));
-    l_glRenderbufferStorageMultisampleEXT =
-        reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC>(
-            loadProc("glRenderbufferStorageMultisampleEXT"));
-    l_glPolygonOffsetClampEXT =
-        reinterpret_cast<PFNGLPOLYGONOFFSETCLAMPEXTPROC>(loadProc("glPolygonOffsetClampEXT"));
-    l_glPrimitiveBoundingBoxEXT =
-        reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXEXTPROC>(loadProc("glPrimitiveBoundingBoxEXT"));
-    l_glGetGraphicsResetStatusEXT = reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSEXTPROC>(
-        loadProc("glGetGraphicsResetStatusEXT"));
-    l_glGetnUniformfvEXT =
-        reinterpret_cast<PFNGLGETNUNIFORMFVEXTPROC>(loadProc("glGetnUniformfvEXT"));
-    l_glGetnUniformivEXT =
-        reinterpret_cast<PFNGLGETNUNIFORMIVEXTPROC>(loadProc("glGetnUniformivEXT"));
+    l_glDrawElementsBaseVertexEXT = reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXEXTPROC>(loadProc("glDrawElementsBaseVertexEXT"));
+    l_glDrawElementsInstancedBaseVertexEXT = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXEXTPROC>(loadProc("glDrawElementsInstancedBaseVertexEXT"));
+    l_glDrawRangeElementsBaseVertexEXT = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXEXTPROC>(loadProc("glDrawRangeElementsBaseVertexEXT"));
+    l_glMultiDrawElementsBaseVertexEXT = reinterpret_cast<PFNGLMULTIDRAWELEMENTSBASEVERTEXEXTPROC>(loadProc("glMultiDrawElementsBaseVertexEXT"));
+    l_glBufferStorageExternalEXT = reinterpret_cast<PFNGLBUFFERSTORAGEEXTERNALEXTPROC>(loadProc("glBufferStorageExternalEXT"));
+    l_glNamedBufferStorageExternalEXT = reinterpret_cast<PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC>(loadProc("glNamedBufferStorageExternalEXT"));
+    l_glFramebufferTextureEXT = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREEXTPROC>(loadProc("glFramebufferTextureEXT"));
+    l_glDrawArraysInstancedEXT = reinterpret_cast<PFNGLDRAWARRAYSINSTANCEDEXTPROC>(loadProc("glDrawArraysInstancedEXT"));
+    l_glDrawElementsInstancedEXT = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDEXTPROC>(loadProc("glDrawElementsInstancedEXT"));
+    l_glVertexAttribDivisorEXT = reinterpret_cast<PFNGLVERTEXATTRIBDIVISOREXTPROC>(loadProc("glVertexAttribDivisorEXT"));
+    l_glFlushMappedBufferRangeEXT = reinterpret_cast<PFNGLFLUSHMAPPEDBUFFERRANGEEXTPROC>(loadProc("glFlushMappedBufferRangeEXT"));
+    l_glMapBufferRangeEXT = reinterpret_cast<PFNGLMAPBUFFERRANGEEXTPROC>(loadProc("glMapBufferRangeEXT"));
+    l_glBufferStorageMemEXT = reinterpret_cast<PFNGLBUFFERSTORAGEMEMEXTPROC>(loadProc("glBufferStorageMemEXT"));
+    l_glCreateMemoryObjectsEXT = reinterpret_cast<PFNGLCREATEMEMORYOBJECTSEXTPROC>(loadProc("glCreateMemoryObjectsEXT"));
+    l_glDeleteMemoryObjectsEXT = reinterpret_cast<PFNGLDELETEMEMORYOBJECTSEXTPROC>(loadProc("glDeleteMemoryObjectsEXT"));
+    l_glGetMemoryObjectParameterivEXT = reinterpret_cast<PFNGLGETMEMORYOBJECTPARAMETERIVEXTPROC>(loadProc("glGetMemoryObjectParameterivEXT"));
+    l_glGetUnsignedBytei_vEXT = reinterpret_cast<PFNGLGETUNSIGNEDBYTEI_VEXTPROC>(loadProc("glGetUnsignedBytei_vEXT"));
+    l_glGetUnsignedBytevEXT = reinterpret_cast<PFNGLGETUNSIGNEDBYTEVEXTPROC>(loadProc("glGetUnsignedBytevEXT"));
+    l_glIsMemoryObjectEXT = reinterpret_cast<PFNGLISMEMORYOBJECTEXTPROC>(loadProc("glIsMemoryObjectEXT"));
+    l_glMemoryObjectParameterivEXT = reinterpret_cast<PFNGLMEMORYOBJECTPARAMETERIVEXTPROC>(loadProc("glMemoryObjectParameterivEXT"));
+    l_glTexStorageMem2DEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM2DEXTPROC>(loadProc("glTexStorageMem2DEXT"));
+    l_glTexStorageMem2DMultisampleEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM2DMULTISAMPLEEXTPROC>(loadProc("glTexStorageMem2DMultisampleEXT"));
+    l_glTexStorageMem3DEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM3DEXTPROC>(loadProc("glTexStorageMem3DEXT"));
+    l_glTexStorageMem3DMultisampleEXT = reinterpret_cast<PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC>(loadProc("glTexStorageMem3DMultisampleEXT"));
+    l_glImportMemoryFdEXT = reinterpret_cast<PFNGLIMPORTMEMORYFDEXTPROC>(loadProc("glImportMemoryFdEXT"));
+    l_glMultiDrawArraysIndirectEXT = reinterpret_cast<PFNGLMULTIDRAWARRAYSINDIRECTEXTPROC>(loadProc("glMultiDrawArraysIndirectEXT"));
+    l_glMultiDrawElementsIndirectEXT = reinterpret_cast<PFNGLMULTIDRAWELEMENTSINDIRECTEXTPROC>(loadProc("glMultiDrawElementsIndirectEXT"));
+    l_glFramebufferTexture2DMultisampleEXT = reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DMULTISAMPLEEXTPROC>(loadProc("glFramebufferTexture2DMultisampleEXT"));
+    l_glRenderbufferStorageMultisampleEXT = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC>(loadProc("glRenderbufferStorageMultisampleEXT"));
+    l_glPolygonOffsetClampEXT = reinterpret_cast<PFNGLPOLYGONOFFSETCLAMPEXTPROC>(loadProc("glPolygonOffsetClampEXT"));
+    l_glPrimitiveBoundingBoxEXT = reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXEXTPROC>(loadProc("glPrimitiveBoundingBoxEXT"));
+    l_glGetGraphicsResetStatusEXT = reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSEXTPROC>(loadProc("glGetGraphicsResetStatusEXT"));
+    l_glGetnUniformfvEXT = reinterpret_cast<PFNGLGETNUNIFORMFVEXTPROC>(loadProc("glGetnUniformfvEXT"));
+    l_glGetnUniformivEXT = reinterpret_cast<PFNGLGETNUNIFORMIVEXTPROC>(loadProc("glGetnUniformivEXT"));
     l_glReadnPixelsEXT = reinterpret_cast<PFNGLREADNPIXELSEXTPROC>(loadProc("glReadnPixelsEXT"));
-    l_glDeleteSemaphoresEXT =
-        reinterpret_cast<PFNGLDELETESEMAPHORESEXTPROC>(loadProc("glDeleteSemaphoresEXT"));
-    l_glGenSemaphoresEXT =
-        reinterpret_cast<PFNGLGENSEMAPHORESEXTPROC>(loadProc("glGenSemaphoresEXT"));
-    l_glGetSemaphoreParameterui64vEXT = reinterpret_cast<PFNGLGETSEMAPHOREPARAMETERUI64VEXTPROC>(
-        loadProc("glGetSemaphoreParameterui64vEXT"));
+    l_glDeleteSemaphoresEXT = reinterpret_cast<PFNGLDELETESEMAPHORESEXTPROC>(loadProc("glDeleteSemaphoresEXT"));
+    l_glGenSemaphoresEXT = reinterpret_cast<PFNGLGENSEMAPHORESEXTPROC>(loadProc("glGenSemaphoresEXT"));
+    l_glGetSemaphoreParameterui64vEXT = reinterpret_cast<PFNGLGETSEMAPHOREPARAMETERUI64VEXTPROC>(loadProc("glGetSemaphoreParameterui64vEXT"));
     l_glIsSemaphoreEXT = reinterpret_cast<PFNGLISSEMAPHOREEXTPROC>(loadProc("glIsSemaphoreEXT"));
-    l_glSemaphoreParameterui64vEXT = reinterpret_cast<PFNGLSEMAPHOREPARAMETERUI64VEXTPROC>(
-        loadProc("glSemaphoreParameterui64vEXT"));
-    l_glSignalSemaphoreEXT =
-        reinterpret_cast<PFNGLSIGNALSEMAPHOREEXTPROC>(loadProc("glSignalSemaphoreEXT"));
-    l_glWaitSemaphoreEXT =
-        reinterpret_cast<PFNGLWAITSEMAPHOREEXTPROC>(loadProc("glWaitSemaphoreEXT"));
-    l_glImportSemaphoreFdEXT =
-        reinterpret_cast<PFNGLIMPORTSEMAPHOREFDEXTPROC>(loadProc("glImportSemaphoreFdEXT"));
-    l_glActiveShaderProgramEXT =
-        reinterpret_cast<PFNGLACTIVESHADERPROGRAMEXTPROC>(loadProc("glActiveShaderProgramEXT"));
-    l_glBindProgramPipelineEXT =
-        reinterpret_cast<PFNGLBINDPROGRAMPIPELINEEXTPROC>(loadProc("glBindProgramPipelineEXT"));
-    l_glCreateShaderProgramvEXT =
-        reinterpret_cast<PFNGLCREATESHADERPROGRAMVEXTPROC>(loadProc("glCreateShaderProgramvEXT"));
-    l_glDeleteProgramPipelinesEXT = reinterpret_cast<PFNGLDELETEPROGRAMPIPELINESEXTPROC>(
-        loadProc("glDeleteProgramPipelinesEXT"));
-    l_glGenProgramPipelinesEXT =
-        reinterpret_cast<PFNGLGENPROGRAMPIPELINESEXTPROC>(loadProc("glGenProgramPipelinesEXT"));
-    l_glGetProgramPipelineInfoLogEXT = reinterpret_cast<PFNGLGETPROGRAMPIPELINEINFOLOGEXTPROC>(
-        loadProc("glGetProgramPipelineInfoLogEXT"));
-    l_glGetProgramPipelineivEXT =
-        reinterpret_cast<PFNGLGETPROGRAMPIPELINEIVEXTPROC>(loadProc("glGetProgramPipelineivEXT"));
-    l_glIsProgramPipelineEXT =
-        reinterpret_cast<PFNGLISPROGRAMPIPELINEEXTPROC>(loadProc("glIsProgramPipelineEXT"));
-    l_glProgramParameteriEXT =
-        reinterpret_cast<PFNGLPROGRAMPARAMETERIEXTPROC>(loadProc("glProgramParameteriEXT"));
-    l_glProgramUniform1fEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1FEXTPROC>(loadProc("glProgramUniform1fEXT"));
-    l_glProgramUniform1fvEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1FVEXTPROC>(loadProc("glProgramUniform1fvEXT"));
-    l_glProgramUniform1iEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1IEXTPROC>(loadProc("glProgramUniform1iEXT"));
-    l_glProgramUniform1ivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1IVEXTPROC>(loadProc("glProgramUniform1ivEXT"));
-    l_glProgramUniform1uiEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1UIEXTPROC>(loadProc("glProgramUniform1uiEXT"));
-    l_glProgramUniform1uivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM1UIVEXTPROC>(loadProc("glProgramUniform1uivEXT"));
-    l_glProgramUniform2fEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2FEXTPROC>(loadProc("glProgramUniform2fEXT"));
-    l_glProgramUniform2fvEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2FVEXTPROC>(loadProc("glProgramUniform2fvEXT"));
-    l_glProgramUniform2iEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2IEXTPROC>(loadProc("glProgramUniform2iEXT"));
-    l_glProgramUniform2ivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2IVEXTPROC>(loadProc("glProgramUniform2ivEXT"));
-    l_glProgramUniform2uiEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2UIEXTPROC>(loadProc("glProgramUniform2uiEXT"));
-    l_glProgramUniform2uivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM2UIVEXTPROC>(loadProc("glProgramUniform2uivEXT"));
-    l_glProgramUniform3fEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3FEXTPROC>(loadProc("glProgramUniform3fEXT"));
-    l_glProgramUniform3fvEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3FVEXTPROC>(loadProc("glProgramUniform3fvEXT"));
-    l_glProgramUniform3iEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3IEXTPROC>(loadProc("glProgramUniform3iEXT"));
-    l_glProgramUniform3ivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3IVEXTPROC>(loadProc("glProgramUniform3ivEXT"));
-    l_glProgramUniform3uiEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3UIEXTPROC>(loadProc("glProgramUniform3uiEXT"));
-    l_glProgramUniform3uivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM3UIVEXTPROC>(loadProc("glProgramUniform3uivEXT"));
-    l_glProgramUniform4fEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4FEXTPROC>(loadProc("glProgramUniform4fEXT"));
-    l_glProgramUniform4fvEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4FVEXTPROC>(loadProc("glProgramUniform4fvEXT"));
-    l_glProgramUniform4iEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4IEXTPROC>(loadProc("glProgramUniform4iEXT"));
-    l_glProgramUniform4ivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4IVEXTPROC>(loadProc("glProgramUniform4ivEXT"));
-    l_glProgramUniform4uiEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4UIEXTPROC>(loadProc("glProgramUniform4uiEXT"));
-    l_glProgramUniform4uivEXT =
-        reinterpret_cast<PFNGLPROGRAMUNIFORM4UIVEXTPROC>(loadProc("glProgramUniform4uivEXT"));
-    l_glProgramUniformMatrix2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2FVEXTPROC>(
-        loadProc("glProgramUniformMatrix2fvEXT"));
-    l_glProgramUniformMatrix2x3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X3FVEXTPROC>(
-        loadProc("glProgramUniformMatrix2x3fvEXT"));
-    l_glProgramUniformMatrix2x4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X4FVEXTPROC>(
-        loadProc("glProgramUniformMatrix2x4fvEXT"));
-    l_glProgramUniformMatrix3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3FVEXTPROC>(
-        loadProc("glProgramUniformMatrix3fvEXT"));
-    l_glProgramUniformMatrix3x2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X2FVEXTPROC>(
-        loadProc("glProgramUniformMatrix3x2fvEXT"));
-    l_glProgramUniformMatrix3x4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X4FVEXTPROC>(
-        loadProc("glProgramUniformMatrix3x4fvEXT"));
-    l_glProgramUniformMatrix4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVEXTPROC>(
-        loadProc("glProgramUniformMatrix4fvEXT"));
-    l_glProgramUniformMatrix4x2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X2FVEXTPROC>(
-        loadProc("glProgramUniformMatrix4x2fvEXT"));
-    l_glProgramUniformMatrix4x3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X3FVEXTPROC>(
-        loadProc("glProgramUniformMatrix4x3fvEXT"));
-    l_glUseProgramStagesEXT =
-        reinterpret_cast<PFNGLUSEPROGRAMSTAGESEXTPROC>(loadProc("glUseProgramStagesEXT"));
-    l_glValidateProgramPipelineEXT = reinterpret_cast<PFNGLVALIDATEPROGRAMPIPELINEEXTPROC>(
-        loadProc("glValidateProgramPipelineEXT"));
-    l_glFramebufferFetchBarrierEXT = reinterpret_cast<PFNGLFRAMEBUFFERFETCHBARRIEREXTPROC>(
-        loadProc("glFramebufferFetchBarrierEXT"));
-    l_glPatchParameteriEXT =
-        reinterpret_cast<PFNGLPATCHPARAMETERIEXTPROC>(loadProc("glPatchParameteriEXT"));
-    l_glGetSamplerParameterIivEXT = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVEXTPROC>(
-        loadProc("glGetSamplerParameterIivEXT"));
-    l_glGetSamplerParameterIuivEXT = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVEXTPROC>(
-        loadProc("glGetSamplerParameterIuivEXT"));
-    l_glGetTexParameterIivEXT =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIIVEXTPROC>(loadProc("glGetTexParameterIivEXT"));
-    l_glGetTexParameterIuivEXT =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIUIVEXTPROC>(loadProc("glGetTexParameterIuivEXT"));
-    l_glSamplerParameterIivEXT =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIIVEXTPROC>(loadProc("glSamplerParameterIivEXT"));
-    l_glSamplerParameterIuivEXT =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVEXTPROC>(loadProc("glSamplerParameterIuivEXT"));
-    l_glTexParameterIivEXT =
-        reinterpret_cast<PFNGLTEXPARAMETERIIVEXTPROC>(loadProc("glTexParameterIivEXT"));
-    l_glTexParameterIuivEXT =
-        reinterpret_cast<PFNGLTEXPARAMETERIUIVEXTPROC>(loadProc("glTexParameterIuivEXT"));
+    l_glSemaphoreParameterui64vEXT = reinterpret_cast<PFNGLSEMAPHOREPARAMETERUI64VEXTPROC>(loadProc("glSemaphoreParameterui64vEXT"));
+    l_glSignalSemaphoreEXT = reinterpret_cast<PFNGLSIGNALSEMAPHOREEXTPROC>(loadProc("glSignalSemaphoreEXT"));
+    l_glWaitSemaphoreEXT = reinterpret_cast<PFNGLWAITSEMAPHOREEXTPROC>(loadProc("glWaitSemaphoreEXT"));
+    l_glImportSemaphoreFdEXT = reinterpret_cast<PFNGLIMPORTSEMAPHOREFDEXTPROC>(loadProc("glImportSemaphoreFdEXT"));
+    l_glActiveShaderProgramEXT = reinterpret_cast<PFNGLACTIVESHADERPROGRAMEXTPROC>(loadProc("glActiveShaderProgramEXT"));
+    l_glBindProgramPipelineEXT = reinterpret_cast<PFNGLBINDPROGRAMPIPELINEEXTPROC>(loadProc("glBindProgramPipelineEXT"));
+    l_glCreateShaderProgramvEXT = reinterpret_cast<PFNGLCREATESHADERPROGRAMVEXTPROC>(loadProc("glCreateShaderProgramvEXT"));
+    l_glDeleteProgramPipelinesEXT = reinterpret_cast<PFNGLDELETEPROGRAMPIPELINESEXTPROC>(loadProc("glDeleteProgramPipelinesEXT"));
+    l_glGenProgramPipelinesEXT = reinterpret_cast<PFNGLGENPROGRAMPIPELINESEXTPROC>(loadProc("glGenProgramPipelinesEXT"));
+    l_glGetProgramPipelineInfoLogEXT = reinterpret_cast<PFNGLGETPROGRAMPIPELINEINFOLOGEXTPROC>(loadProc("glGetProgramPipelineInfoLogEXT"));
+    l_glGetProgramPipelineivEXT = reinterpret_cast<PFNGLGETPROGRAMPIPELINEIVEXTPROC>(loadProc("glGetProgramPipelineivEXT"));
+    l_glIsProgramPipelineEXT = reinterpret_cast<PFNGLISPROGRAMPIPELINEEXTPROC>(loadProc("glIsProgramPipelineEXT"));
+    l_glProgramParameteriEXT = reinterpret_cast<PFNGLPROGRAMPARAMETERIEXTPROC>(loadProc("glProgramParameteriEXT"));
+    l_glProgramUniform1fEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1FEXTPROC>(loadProc("glProgramUniform1fEXT"));
+    l_glProgramUniform1fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1FVEXTPROC>(loadProc("glProgramUniform1fvEXT"));
+    l_glProgramUniform1iEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1IEXTPROC>(loadProc("glProgramUniform1iEXT"));
+    l_glProgramUniform1ivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1IVEXTPROC>(loadProc("glProgramUniform1ivEXT"));
+    l_glProgramUniform1uiEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1UIEXTPROC>(loadProc("glProgramUniform1uiEXT"));
+    l_glProgramUniform1uivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM1UIVEXTPROC>(loadProc("glProgramUniform1uivEXT"));
+    l_glProgramUniform2fEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2FEXTPROC>(loadProc("glProgramUniform2fEXT"));
+    l_glProgramUniform2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2FVEXTPROC>(loadProc("glProgramUniform2fvEXT"));
+    l_glProgramUniform2iEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2IEXTPROC>(loadProc("glProgramUniform2iEXT"));
+    l_glProgramUniform2ivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2IVEXTPROC>(loadProc("glProgramUniform2ivEXT"));
+    l_glProgramUniform2uiEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2UIEXTPROC>(loadProc("glProgramUniform2uiEXT"));
+    l_glProgramUniform2uivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM2UIVEXTPROC>(loadProc("glProgramUniform2uivEXT"));
+    l_glProgramUniform3fEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3FEXTPROC>(loadProc("glProgramUniform3fEXT"));
+    l_glProgramUniform3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3FVEXTPROC>(loadProc("glProgramUniform3fvEXT"));
+    l_glProgramUniform3iEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3IEXTPROC>(loadProc("glProgramUniform3iEXT"));
+    l_glProgramUniform3ivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3IVEXTPROC>(loadProc("glProgramUniform3ivEXT"));
+    l_glProgramUniform3uiEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3UIEXTPROC>(loadProc("glProgramUniform3uiEXT"));
+    l_glProgramUniform3uivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM3UIVEXTPROC>(loadProc("glProgramUniform3uivEXT"));
+    l_glProgramUniform4fEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4FEXTPROC>(loadProc("glProgramUniform4fEXT"));
+    l_glProgramUniform4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4FVEXTPROC>(loadProc("glProgramUniform4fvEXT"));
+    l_glProgramUniform4iEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4IEXTPROC>(loadProc("glProgramUniform4iEXT"));
+    l_glProgramUniform4ivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4IVEXTPROC>(loadProc("glProgramUniform4ivEXT"));
+    l_glProgramUniform4uiEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4UIEXTPROC>(loadProc("glProgramUniform4uiEXT"));
+    l_glProgramUniform4uivEXT = reinterpret_cast<PFNGLPROGRAMUNIFORM4UIVEXTPROC>(loadProc("glProgramUniform4uivEXT"));
+    l_glProgramUniformMatrix2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2FVEXTPROC>(loadProc("glProgramUniformMatrix2fvEXT"));
+    l_glProgramUniformMatrix2x3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X3FVEXTPROC>(loadProc("glProgramUniformMatrix2x3fvEXT"));
+    l_glProgramUniformMatrix2x4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX2X4FVEXTPROC>(loadProc("glProgramUniformMatrix2x4fvEXT"));
+    l_glProgramUniformMatrix3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3FVEXTPROC>(loadProc("glProgramUniformMatrix3fvEXT"));
+    l_glProgramUniformMatrix3x2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X2FVEXTPROC>(loadProc("glProgramUniformMatrix3x2fvEXT"));
+    l_glProgramUniformMatrix3x4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX3X4FVEXTPROC>(loadProc("glProgramUniformMatrix3x4fvEXT"));
+    l_glProgramUniformMatrix4fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVEXTPROC>(loadProc("glProgramUniformMatrix4fvEXT"));
+    l_glProgramUniformMatrix4x2fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X2FVEXTPROC>(loadProc("glProgramUniformMatrix4x2fvEXT"));
+    l_glProgramUniformMatrix4x3fvEXT = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4X3FVEXTPROC>(loadProc("glProgramUniformMatrix4x3fvEXT"));
+    l_glUseProgramStagesEXT = reinterpret_cast<PFNGLUSEPROGRAMSTAGESEXTPROC>(loadProc("glUseProgramStagesEXT"));
+    l_glValidateProgramPipelineEXT = reinterpret_cast<PFNGLVALIDATEPROGRAMPIPELINEEXTPROC>(loadProc("glValidateProgramPipelineEXT"));
+    l_glFramebufferFetchBarrierEXT = reinterpret_cast<PFNGLFRAMEBUFFERFETCHBARRIEREXTPROC>(loadProc("glFramebufferFetchBarrierEXT"));
+    l_glPatchParameteriEXT = reinterpret_cast<PFNGLPATCHPARAMETERIEXTPROC>(loadProc("glPatchParameteriEXT"));
+    l_glGetSamplerParameterIivEXT = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVEXTPROC>(loadProc("glGetSamplerParameterIivEXT"));
+    l_glGetSamplerParameterIuivEXT = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVEXTPROC>(loadProc("glGetSamplerParameterIuivEXT"));
+    l_glGetTexParameterIivEXT = reinterpret_cast<PFNGLGETTEXPARAMETERIIVEXTPROC>(loadProc("glGetTexParameterIivEXT"));
+    l_glGetTexParameterIuivEXT = reinterpret_cast<PFNGLGETTEXPARAMETERIUIVEXTPROC>(loadProc("glGetTexParameterIuivEXT"));
+    l_glSamplerParameterIivEXT = reinterpret_cast<PFNGLSAMPLERPARAMETERIIVEXTPROC>(loadProc("glSamplerParameterIivEXT"));
+    l_glSamplerParameterIuivEXT = reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVEXTPROC>(loadProc("glSamplerParameterIuivEXT"));
+    l_glTexParameterIivEXT = reinterpret_cast<PFNGLTEXPARAMETERIIVEXTPROC>(loadProc("glTexParameterIivEXT"));
+    l_glTexParameterIuivEXT = reinterpret_cast<PFNGLTEXPARAMETERIUIVEXTPROC>(loadProc("glTexParameterIuivEXT"));
     l_glTexBufferEXT = reinterpret_cast<PFNGLTEXBUFFEREXTPROC>(loadProc("glTexBufferEXT"));
-    l_glTexBufferRangeEXT =
-        reinterpret_cast<PFNGLTEXBUFFERRANGEEXTPROC>(loadProc("glTexBufferRangeEXT"));
+    l_glTexBufferRangeEXT = reinterpret_cast<PFNGLTEXBUFFERRANGEEXTPROC>(loadProc("glTexBufferRangeEXT"));
     l_glTexStorage1DEXT = reinterpret_cast<PFNGLTEXSTORAGE1DEXTPROC>(loadProc("glTexStorage1DEXT"));
     l_glTexStorage2DEXT = reinterpret_cast<PFNGLTEXSTORAGE2DEXTPROC>(loadProc("glTexStorage2DEXT"));
     l_glTexStorage3DEXT = reinterpret_cast<PFNGLTEXSTORAGE3DEXTPROC>(loadProc("glTexStorage3DEXT"));
-    l_glTexStorageAttribs2DEXT =
-        reinterpret_cast<PFNGLTEXSTORAGEATTRIBS2DEXTPROC>(loadProc("glTexStorageAttribs2DEXT"));
-    l_glTexStorageAttribs3DEXT =
-        reinterpret_cast<PFNGLTEXSTORAGEATTRIBS3DEXTPROC>(loadProc("glTexStorageAttribs3DEXT"));
+    l_glTexStorageAttribs2DEXT = reinterpret_cast<PFNGLTEXSTORAGEATTRIBS2DEXTPROC>(loadProc("glTexStorageAttribs2DEXT"));
+    l_glTexStorageAttribs3DEXT = reinterpret_cast<PFNGLTEXSTORAGEATTRIBS3DEXTPROC>(loadProc("glTexStorageAttribs3DEXT"));
     l_glBlendBarrierKHR = reinterpret_cast<PFNGLBLENDBARRIERKHRPROC>(loadProc("glBlendBarrierKHR"));
-    l_glDebugMessageCallbackKHR =
-        reinterpret_cast<PFNGLDEBUGMESSAGECALLBACKKHRPROC>(loadProc("glDebugMessageCallbackKHR"));
-    l_glDebugMessageControlKHR =
-        reinterpret_cast<PFNGLDEBUGMESSAGECONTROLKHRPROC>(loadProc("glDebugMessageControlKHR"));
-    l_glDebugMessageInsertKHR =
-        reinterpret_cast<PFNGLDEBUGMESSAGEINSERTKHRPROC>(loadProc("glDebugMessageInsertKHR"));
-    l_glGetDebugMessageLogKHR =
-        reinterpret_cast<PFNGLGETDEBUGMESSAGELOGKHRPROC>(loadProc("glGetDebugMessageLogKHR"));
-    l_glGetObjectLabelKHR =
-        reinterpret_cast<PFNGLGETOBJECTLABELKHRPROC>(loadProc("glGetObjectLabelKHR"));
-    l_glGetObjectPtrLabelKHR =
-        reinterpret_cast<PFNGLGETOBJECTPTRLABELKHRPROC>(loadProc("glGetObjectPtrLabelKHR"));
+    l_glDebugMessageCallbackKHR = reinterpret_cast<PFNGLDEBUGMESSAGECALLBACKKHRPROC>(loadProc("glDebugMessageCallbackKHR"));
+    l_glDebugMessageControlKHR = reinterpret_cast<PFNGLDEBUGMESSAGECONTROLKHRPROC>(loadProc("glDebugMessageControlKHR"));
+    l_glDebugMessageInsertKHR = reinterpret_cast<PFNGLDEBUGMESSAGEINSERTKHRPROC>(loadProc("glDebugMessageInsertKHR"));
+    l_glGetDebugMessageLogKHR = reinterpret_cast<PFNGLGETDEBUGMESSAGELOGKHRPROC>(loadProc("glGetDebugMessageLogKHR"));
+    l_glGetObjectLabelKHR = reinterpret_cast<PFNGLGETOBJECTLABELKHRPROC>(loadProc("glGetObjectLabelKHR"));
+    l_glGetObjectPtrLabelKHR = reinterpret_cast<PFNGLGETOBJECTPTRLABELKHRPROC>(loadProc("glGetObjectPtrLabelKHR"));
     l_glGetPointervKHR = reinterpret_cast<PFNGLGETPOINTERVKHRPROC>(loadProc("glGetPointervKHR"));
     l_glObjectLabelKHR = reinterpret_cast<PFNGLOBJECTLABELKHRPROC>(loadProc("glObjectLabelKHR"));
-    l_glObjectPtrLabelKHR =
-        reinterpret_cast<PFNGLOBJECTPTRLABELKHRPROC>(loadProc("glObjectPtrLabelKHR"));
-    l_glPopDebugGroupKHR =
-        reinterpret_cast<PFNGLPOPDEBUGGROUPKHRPROC>(loadProc("glPopDebugGroupKHR"));
-    l_glPushDebugGroupKHR =
-        reinterpret_cast<PFNGLPUSHDEBUGGROUPKHRPROC>(loadProc("glPushDebugGroupKHR"));
-    l_glMaxShaderCompilerThreadsKHR = reinterpret_cast<PFNGLMAXSHADERCOMPILERTHREADSKHRPROC>(
-        loadProc("glMaxShaderCompilerThreadsKHR"));
-    l_glGetGraphicsResetStatusKHR = reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSKHRPROC>(
-        loadProc("glGetGraphicsResetStatusKHR"));
-    l_glGetnUniformfvKHR =
-        reinterpret_cast<PFNGLGETNUNIFORMFVKHRPROC>(loadProc("glGetnUniformfvKHR"));
-    l_glGetnUniformivKHR =
-        reinterpret_cast<PFNGLGETNUNIFORMIVKHRPROC>(loadProc("glGetnUniformivKHR"));
-    l_glGetnUniformuivKHR =
-        reinterpret_cast<PFNGLGETNUNIFORMUIVKHRPROC>(loadProc("glGetnUniformuivKHR"));
+    l_glObjectPtrLabelKHR = reinterpret_cast<PFNGLOBJECTPTRLABELKHRPROC>(loadProc("glObjectPtrLabelKHR"));
+    l_glPopDebugGroupKHR = reinterpret_cast<PFNGLPOPDEBUGGROUPKHRPROC>(loadProc("glPopDebugGroupKHR"));
+    l_glPushDebugGroupKHR = reinterpret_cast<PFNGLPUSHDEBUGGROUPKHRPROC>(loadProc("glPushDebugGroupKHR"));
+    l_glMaxShaderCompilerThreadsKHR = reinterpret_cast<PFNGLMAXSHADERCOMPILERTHREADSKHRPROC>(loadProc("glMaxShaderCompilerThreadsKHR"));
+    l_glGetGraphicsResetStatusKHR = reinterpret_cast<PFNGLGETGRAPHICSRESETSTATUSKHRPROC>(loadProc("glGetGraphicsResetStatusKHR"));
+    l_glGetnUniformfvKHR = reinterpret_cast<PFNGLGETNUNIFORMFVKHRPROC>(loadProc("glGetnUniformfvKHR"));
+    l_glGetnUniformivKHR = reinterpret_cast<PFNGLGETNUNIFORMIVKHRPROC>(loadProc("glGetnUniformivKHR"));
+    l_glGetnUniformuivKHR = reinterpret_cast<PFNGLGETNUNIFORMUIVKHRPROC>(loadProc("glGetnUniformuivKHR"));
     l_glReadnPixelsKHR = reinterpret_cast<PFNGLREADNPIXELSKHRPROC>(loadProc("glReadnPixelsKHR"));
-    l_glFramebufferParameteriMESA = reinterpret_cast<PFNGLFRAMEBUFFERPARAMETERIMESAPROC>(
-        loadProc("glFramebufferParameteriMESA"));
-    l_glGetFramebufferParameterivMESA = reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVMESAPROC>(
-        loadProc("glGetFramebufferParameterivMESA"));
+    l_glFramebufferParameteriMESA = reinterpret_cast<PFNGLFRAMEBUFFERPARAMETERIMESAPROC>(loadProc("glFramebufferParameteriMESA"));
+    l_glGetFramebufferParameterivMESA = reinterpret_cast<PFNGLGETFRAMEBUFFERPARAMETERIVMESAPROC>(loadProc("glGetFramebufferParameterivMESA"));
     l_glDeleteFencesNV = reinterpret_cast<PFNGLDELETEFENCESNVPROC>(loadProc("glDeleteFencesNV"));
-    l_glFinishFenceNV  = reinterpret_cast<PFNGLFINISHFENCENVPROC>(loadProc("glFinishFenceNV"));
-    l_glGenFencesNV    = reinterpret_cast<PFNGLGENFENCESNVPROC>(loadProc("glGenFencesNV"));
-    l_glGetFenceivNV   = reinterpret_cast<PFNGLGETFENCEIVNVPROC>(loadProc("glGetFenceivNV"));
-    l_glIsFenceNV      = reinterpret_cast<PFNGLISFENCENVPROC>(loadProc("glIsFenceNV"));
-    l_glSetFenceNV     = reinterpret_cast<PFNGLSETFENCENVPROC>(loadProc("glSetFenceNV"));
-    l_glTestFenceNV    = reinterpret_cast<PFNGLTESTFENCENVPROC>(loadProc("glTestFenceNV"));
-    l_glBlitFramebufferNV =
-        reinterpret_cast<PFNGLBLITFRAMEBUFFERNVPROC>(loadProc("glBlitFramebufferNV"));
+    l_glFinishFenceNV = reinterpret_cast<PFNGLFINISHFENCENVPROC>(loadProc("glFinishFenceNV"));
+    l_glGenFencesNV = reinterpret_cast<PFNGLGENFENCESNVPROC>(loadProc("glGenFencesNV"));
+    l_glGetFenceivNV = reinterpret_cast<PFNGLGETFENCEIVNVPROC>(loadProc("glGetFenceivNV"));
+    l_glIsFenceNV = reinterpret_cast<PFNGLISFENCENVPROC>(loadProc("glIsFenceNV"));
+    l_glSetFenceNV = reinterpret_cast<PFNGLSETFENCENVPROC>(loadProc("glSetFenceNV"));
+    l_glTestFenceNV = reinterpret_cast<PFNGLTESTFENCENVPROC>(loadProc("glTestFenceNV"));
+    l_glBlitFramebufferNV = reinterpret_cast<PFNGLBLITFRAMEBUFFERNVPROC>(loadProc("glBlitFramebufferNV"));
     l_glPolygonModeNV = reinterpret_cast<PFNGLPOLYGONMODENVPROC>(loadProc("glPolygonModeNV"));
-    l_glEGLImageTargetRenderbufferStorageOES =
-        reinterpret_cast<PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC>(
-            loadProc("glEGLImageTargetRenderbufferStorageOES"));
-    l_glEGLImageTargetTexture2DOES = reinterpret_cast<PFNGLEGLIMAGETARGETTEXTURE2DOESPROC>(
-        loadProc("glEGLImageTargetTexture2DOES"));
-    l_glCopyImageSubDataOES =
-        reinterpret_cast<PFNGLCOPYIMAGESUBDATAOESPROC>(loadProc("glCopyImageSubDataOES"));
-    l_glBlendEquationSeparateiOES = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIOESPROC>(
-        loadProc("glBlendEquationSeparateiOES"));
-    l_glBlendEquationiOES =
-        reinterpret_cast<PFNGLBLENDEQUATIONIOESPROC>(loadProc("glBlendEquationiOES"));
-    l_glBlendFuncSeparateiOES =
-        reinterpret_cast<PFNGLBLENDFUNCSEPARATEIOESPROC>(loadProc("glBlendFuncSeparateiOES"));
+    l_glEGLImageTargetRenderbufferStorageOES = reinterpret_cast<PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC>(loadProc("glEGLImageTargetRenderbufferStorageOES"));
+    l_glEGLImageTargetTexture2DOES = reinterpret_cast<PFNGLEGLIMAGETARGETTEXTURE2DOESPROC>(loadProc("glEGLImageTargetTexture2DOES"));
+    l_glCopyImageSubDataOES = reinterpret_cast<PFNGLCOPYIMAGESUBDATAOESPROC>(loadProc("glCopyImageSubDataOES"));
+    l_glBlendEquationSeparateiOES = reinterpret_cast<PFNGLBLENDEQUATIONSEPARATEIOESPROC>(loadProc("glBlendEquationSeparateiOES"));
+    l_glBlendEquationiOES = reinterpret_cast<PFNGLBLENDEQUATIONIOESPROC>(loadProc("glBlendEquationiOES"));
+    l_glBlendFuncSeparateiOES = reinterpret_cast<PFNGLBLENDFUNCSEPARATEIOESPROC>(loadProc("glBlendFuncSeparateiOES"));
     l_glBlendFunciOES = reinterpret_cast<PFNGLBLENDFUNCIOESPROC>(loadProc("glBlendFunciOES"));
     l_glColorMaskiOES = reinterpret_cast<PFNGLCOLORMASKIOESPROC>(loadProc("glColorMaskiOES"));
-    l_glDisableiOES   = reinterpret_cast<PFNGLDISABLEIOESPROC>(loadProc("glDisableiOES"));
-    l_glEnableiOES    = reinterpret_cast<PFNGLENABLEIOESPROC>(loadProc("glEnableiOES"));
+    l_glDisableiOES = reinterpret_cast<PFNGLDISABLEIOESPROC>(loadProc("glDisableiOES"));
+    l_glEnableiOES = reinterpret_cast<PFNGLENABLEIOESPROC>(loadProc("glEnableiOES"));
     l_glIsEnablediOES = reinterpret_cast<PFNGLISENABLEDIOESPROC>(loadProc("glIsEnablediOES"));
-    l_glDrawElementsBaseVertexOES = reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXOESPROC>(
-        loadProc("glDrawElementsBaseVertexOES"));
-    l_glDrawElementsInstancedBaseVertexOES =
-        reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXOESPROC>(
-            loadProc("glDrawElementsInstancedBaseVertexOES"));
-    l_glDrawRangeElementsBaseVertexOES = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXOESPROC>(
-        loadProc("glDrawRangeElementsBaseVertexOES"));
-    l_glFramebufferTextureOES =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREOESPROC>(loadProc("glFramebufferTextureOES"));
-    l_glGetProgramBinaryOES =
-        reinterpret_cast<PFNGLGETPROGRAMBINARYOESPROC>(loadProc("glGetProgramBinaryOES"));
-    l_glProgramBinaryOES =
-        reinterpret_cast<PFNGLPROGRAMBINARYOESPROC>(loadProc("glProgramBinaryOES"));
-    l_glGetBufferPointervOES =
-        reinterpret_cast<PFNGLGETBUFFERPOINTERVOESPROC>(loadProc("glGetBufferPointervOES"));
-    l_glMapBufferOES   = reinterpret_cast<PFNGLMAPBUFFEROESPROC>(loadProc("glMapBufferOES"));
+    l_glDrawElementsBaseVertexOES = reinterpret_cast<PFNGLDRAWELEMENTSBASEVERTEXOESPROC>(loadProc("glDrawElementsBaseVertexOES"));
+    l_glDrawElementsInstancedBaseVertexOES = reinterpret_cast<PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXOESPROC>(loadProc("glDrawElementsInstancedBaseVertexOES"));
+    l_glDrawRangeElementsBaseVertexOES = reinterpret_cast<PFNGLDRAWRANGEELEMENTSBASEVERTEXOESPROC>(loadProc("glDrawRangeElementsBaseVertexOES"));
+    l_glFramebufferTextureOES = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREOESPROC>(loadProc("glFramebufferTextureOES"));
+    l_glGetProgramBinaryOES = reinterpret_cast<PFNGLGETPROGRAMBINARYOESPROC>(loadProc("glGetProgramBinaryOES"));
+    l_glProgramBinaryOES = reinterpret_cast<PFNGLPROGRAMBINARYOESPROC>(loadProc("glProgramBinaryOES"));
+    l_glGetBufferPointervOES = reinterpret_cast<PFNGLGETBUFFERPOINTERVOESPROC>(loadProc("glGetBufferPointervOES"));
+    l_glMapBufferOES = reinterpret_cast<PFNGLMAPBUFFEROESPROC>(loadProc("glMapBufferOES"));
     l_glUnmapBufferOES = reinterpret_cast<PFNGLUNMAPBUFFEROESPROC>(loadProc("glUnmapBufferOES"));
-    l_glPrimitiveBoundingBoxOES =
-        reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXOESPROC>(loadProc("glPrimitiveBoundingBoxOES"));
-    l_glMinSampleShadingOES =
-        reinterpret_cast<PFNGLMINSAMPLESHADINGOESPROC>(loadProc("glMinSampleShadingOES"));
-    l_glPatchParameteriOES =
-        reinterpret_cast<PFNGLPATCHPARAMETERIOESPROC>(loadProc("glPatchParameteriOES"));
-    l_glCompressedTexImage3DOES =
-        reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DOESPROC>(loadProc("glCompressedTexImage3DOES"));
-    l_glCompressedTexSubImage3DOES = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DOESPROC>(
-        loadProc("glCompressedTexSubImage3DOES"));
-    l_glCopyTexSubImage3DOES =
-        reinterpret_cast<PFNGLCOPYTEXSUBIMAGE3DOESPROC>(loadProc("glCopyTexSubImage3DOES"));
-    l_glFramebufferTexture3DOES =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE3DOESPROC>(loadProc("glFramebufferTexture3DOES"));
+    l_glPrimitiveBoundingBoxOES = reinterpret_cast<PFNGLPRIMITIVEBOUNDINGBOXOESPROC>(loadProc("glPrimitiveBoundingBoxOES"));
+    l_glMinSampleShadingOES = reinterpret_cast<PFNGLMINSAMPLESHADINGOESPROC>(loadProc("glMinSampleShadingOES"));
+    l_glPatchParameteriOES = reinterpret_cast<PFNGLPATCHPARAMETERIOESPROC>(loadProc("glPatchParameteriOES"));
+    l_glCompressedTexImage3DOES = reinterpret_cast<PFNGLCOMPRESSEDTEXIMAGE3DOESPROC>(loadProc("glCompressedTexImage3DOES"));
+    l_glCompressedTexSubImage3DOES = reinterpret_cast<PFNGLCOMPRESSEDTEXSUBIMAGE3DOESPROC>(loadProc("glCompressedTexSubImage3DOES"));
+    l_glCopyTexSubImage3DOES = reinterpret_cast<PFNGLCOPYTEXSUBIMAGE3DOESPROC>(loadProc("glCopyTexSubImage3DOES"));
+    l_glFramebufferTexture3DOES = reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE3DOESPROC>(loadProc("glFramebufferTexture3DOES"));
     l_glTexImage3DOES = reinterpret_cast<PFNGLTEXIMAGE3DOESPROC>(loadProc("glTexImage3DOES"));
-    l_glTexSubImage3DOES =
-        reinterpret_cast<PFNGLTEXSUBIMAGE3DOESPROC>(loadProc("glTexSubImage3DOES"));
-    l_glGetSamplerParameterIivOES = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVOESPROC>(
-        loadProc("glGetSamplerParameterIivOES"));
-    l_glGetSamplerParameterIuivOES = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVOESPROC>(
-        loadProc("glGetSamplerParameterIuivOES"));
-    l_glGetTexParameterIivOES =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIIVOESPROC>(loadProc("glGetTexParameterIivOES"));
-    l_glGetTexParameterIuivOES =
-        reinterpret_cast<PFNGLGETTEXPARAMETERIUIVOESPROC>(loadProc("glGetTexParameterIuivOES"));
-    l_glSamplerParameterIivOES =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIIVOESPROC>(loadProc("glSamplerParameterIivOES"));
-    l_glSamplerParameterIuivOES =
-        reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVOESPROC>(loadProc("glSamplerParameterIuivOES"));
-    l_glTexParameterIivOES =
-        reinterpret_cast<PFNGLTEXPARAMETERIIVOESPROC>(loadProc("glTexParameterIivOES"));
-    l_glTexParameterIuivOES =
-        reinterpret_cast<PFNGLTEXPARAMETERIUIVOESPROC>(loadProc("glTexParameterIuivOES"));
+    l_glTexSubImage3DOES = reinterpret_cast<PFNGLTEXSUBIMAGE3DOESPROC>(loadProc("glTexSubImage3DOES"));
+    l_glGetSamplerParameterIivOES = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIIVOESPROC>(loadProc("glGetSamplerParameterIivOES"));
+    l_glGetSamplerParameterIuivOES = reinterpret_cast<PFNGLGETSAMPLERPARAMETERIUIVOESPROC>(loadProc("glGetSamplerParameterIuivOES"));
+    l_glGetTexParameterIivOES = reinterpret_cast<PFNGLGETTEXPARAMETERIIVOESPROC>(loadProc("glGetTexParameterIivOES"));
+    l_glGetTexParameterIuivOES = reinterpret_cast<PFNGLGETTEXPARAMETERIUIVOESPROC>(loadProc("glGetTexParameterIuivOES"));
+    l_glSamplerParameterIivOES = reinterpret_cast<PFNGLSAMPLERPARAMETERIIVOESPROC>(loadProc("glSamplerParameterIivOES"));
+    l_glSamplerParameterIuivOES = reinterpret_cast<PFNGLSAMPLERPARAMETERIUIVOESPROC>(loadProc("glSamplerParameterIuivOES"));
+    l_glTexParameterIivOES = reinterpret_cast<PFNGLTEXPARAMETERIIVOESPROC>(loadProc("glTexParameterIivOES"));
+    l_glTexParameterIuivOES = reinterpret_cast<PFNGLTEXPARAMETERIUIVOESPROC>(loadProc("glTexParameterIuivOES"));
     l_glTexBufferOES = reinterpret_cast<PFNGLTEXBUFFEROESPROC>(loadProc("glTexBufferOES"));
-    l_glTexBufferRangeOES =
-        reinterpret_cast<PFNGLTEXBUFFERRANGEOESPROC>(loadProc("glTexBufferRangeOES"));
-    l_glTexStorage3DMultisampleOES = reinterpret_cast<PFNGLTEXSTORAGE3DMULTISAMPLEOESPROC>(
-        loadProc("glTexStorage3DMultisampleOES"));
-    l_glBindVertexArrayOES =
-        reinterpret_cast<PFNGLBINDVERTEXARRAYOESPROC>(loadProc("glBindVertexArrayOES"));
-    l_glDeleteVertexArraysOES =
-        reinterpret_cast<PFNGLDELETEVERTEXARRAYSOESPROC>(loadProc("glDeleteVertexArraysOES"));
-    l_glGenVertexArraysOES =
-        reinterpret_cast<PFNGLGENVERTEXARRAYSOESPROC>(loadProc("glGenVertexArraysOES"));
-    l_glIsVertexArrayOES =
-        reinterpret_cast<PFNGLISVERTEXARRAYOESPROC>(loadProc("glIsVertexArrayOES"));
-    l_glFramebufferTextureMultiviewOVR = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC>(
-        loadProc("glFramebufferTextureMultiviewOVR"));
-    l_glFramebufferFoveationConfigQCOM = reinterpret_cast<PFNGLFRAMEBUFFERFOVEATIONCONFIGQCOMPROC>(
-        loadProc("glFramebufferFoveationConfigQCOM"));
-    l_glFramebufferFoveationParametersQCOM =
-        reinterpret_cast<PFNGLFRAMEBUFFERFOVEATIONPARAMETERSQCOMPROC>(
-            loadProc("glFramebufferFoveationParametersQCOM"));
+    l_glTexBufferRangeOES = reinterpret_cast<PFNGLTEXBUFFERRANGEOESPROC>(loadProc("glTexBufferRangeOES"));
+    l_glTexStorage3DMultisampleOES = reinterpret_cast<PFNGLTEXSTORAGE3DMULTISAMPLEOESPROC>(loadProc("glTexStorage3DMultisampleOES"));
+    l_glBindVertexArrayOES = reinterpret_cast<PFNGLBINDVERTEXARRAYOESPROC>(loadProc("glBindVertexArrayOES"));
+    l_glDeleteVertexArraysOES = reinterpret_cast<PFNGLDELETEVERTEXARRAYSOESPROC>(loadProc("glDeleteVertexArraysOES"));
+    l_glGenVertexArraysOES = reinterpret_cast<PFNGLGENVERTEXARRAYSOESPROC>(loadProc("glGenVertexArraysOES"));
+    l_glIsVertexArrayOES = reinterpret_cast<PFNGLISVERTEXARRAYOESPROC>(loadProc("glIsVertexArrayOES"));
+    l_glFramebufferTextureMultiviewOVR = reinterpret_cast<PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC>(loadProc("glFramebufferTextureMultiviewOVR"));
+    l_glFramebufferFoveationConfigQCOM = reinterpret_cast<PFNGLFRAMEBUFFERFOVEATIONCONFIGQCOMPROC>(loadProc("glFramebufferFoveationConfigQCOM"));
+    l_glFramebufferFoveationParametersQCOM = reinterpret_cast<PFNGLFRAMEBUFFERFOVEATIONPARAMETERSQCOMPROC>(loadProc("glFramebufferFoveationParametersQCOM"));
     l_glShadingRateQCOM = reinterpret_cast<PFNGLSHADINGRATEQCOMPROC>(loadProc("glShadingRateQCOM"));
-    l_glTextureFoveationParametersQCOM = reinterpret_cast<PFNGLTEXTUREFOVEATIONPARAMETERSQCOMPROC>(
-        loadProc("glTextureFoveationParametersQCOM"));
-    l_glEndTilingQCOM   = reinterpret_cast<PFNGLENDTILINGQCOMPROC>(loadProc("glEndTilingQCOM"));
+    l_glTextureFoveationParametersQCOM = reinterpret_cast<PFNGLTEXTUREFOVEATIONPARAMETERSQCOMPROC>(loadProc("glTextureFoveationParametersQCOM"));
+    l_glEndTilingQCOM = reinterpret_cast<PFNGLENDTILINGQCOMPROC>(loadProc("glEndTilingQCOM"));
     l_glStartTilingQCOM = reinterpret_cast<PFNGLSTARTTILINGQCOMPROC>(loadProc("glStartTilingQCOM"));
-    l_glBlendEquationOES =
-        reinterpret_cast<PFNGLBLENDEQUATIONOESPROC>(loadProc("glBlendEquationOES"));
-    l_glDrawTexfOES  = reinterpret_cast<PFNGLDRAWTEXFOESPROC>(loadProc("glDrawTexfOES"));
+    l_glBlendEquationOES = reinterpret_cast<PFNGLBLENDEQUATIONOESPROC>(loadProc("glBlendEquationOES"));
+    l_glDrawTexfOES = reinterpret_cast<PFNGLDRAWTEXFOESPROC>(loadProc("glDrawTexfOES"));
     l_glDrawTexfvOES = reinterpret_cast<PFNGLDRAWTEXFVOESPROC>(loadProc("glDrawTexfvOES"));
-    l_glDrawTexiOES  = reinterpret_cast<PFNGLDRAWTEXIOESPROC>(loadProc("glDrawTexiOES"));
+    l_glDrawTexiOES = reinterpret_cast<PFNGLDRAWTEXIOESPROC>(loadProc("glDrawTexiOES"));
     l_glDrawTexivOES = reinterpret_cast<PFNGLDRAWTEXIVOESPROC>(loadProc("glDrawTexivOES"));
-    l_glDrawTexsOES  = reinterpret_cast<PFNGLDRAWTEXSOESPROC>(loadProc("glDrawTexsOES"));
+    l_glDrawTexsOES = reinterpret_cast<PFNGLDRAWTEXSOESPROC>(loadProc("glDrawTexsOES"));
     l_glDrawTexsvOES = reinterpret_cast<PFNGLDRAWTEXSVOESPROC>(loadProc("glDrawTexsvOES"));
-    l_glDrawTexxOES  = reinterpret_cast<PFNGLDRAWTEXXOESPROC>(loadProc("glDrawTexxOES"));
+    l_glDrawTexxOES = reinterpret_cast<PFNGLDRAWTEXXOESPROC>(loadProc("glDrawTexxOES"));
     l_glDrawTexxvOES = reinterpret_cast<PFNGLDRAWTEXXVOESPROC>(loadProc("glDrawTexxvOES"));
-    l_glBindFramebufferOES =
-        reinterpret_cast<PFNGLBINDFRAMEBUFFEROESPROC>(loadProc("glBindFramebufferOES"));
-    l_glBindRenderbufferOES =
-        reinterpret_cast<PFNGLBINDRENDERBUFFEROESPROC>(loadProc("glBindRenderbufferOES"));
-    l_glCheckFramebufferStatusOES = reinterpret_cast<PFNGLCHECKFRAMEBUFFERSTATUSOESPROC>(
-        loadProc("glCheckFramebufferStatusOES"));
-    l_glDeleteFramebuffersOES =
-        reinterpret_cast<PFNGLDELETEFRAMEBUFFERSOESPROC>(loadProc("glDeleteFramebuffersOES"));
-    l_glDeleteRenderbuffersOES =
-        reinterpret_cast<PFNGLDELETERENDERBUFFERSOESPROC>(loadProc("glDeleteRenderbuffersOES"));
-    l_glFramebufferRenderbufferOES = reinterpret_cast<PFNGLFRAMEBUFFERRENDERBUFFEROESPROC>(
-        loadProc("glFramebufferRenderbufferOES"));
-    l_glFramebufferTexture2DOES =
-        reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DOESPROC>(loadProc("glFramebufferTexture2DOES"));
-    l_glGenFramebuffersOES =
-        reinterpret_cast<PFNGLGENFRAMEBUFFERSOESPROC>(loadProc("glGenFramebuffersOES"));
-    l_glGenRenderbuffersOES =
-        reinterpret_cast<PFNGLGENRENDERBUFFERSOESPROC>(loadProc("glGenRenderbuffersOES"));
-    l_glGenerateMipmapOES =
-        reinterpret_cast<PFNGLGENERATEMIPMAPOESPROC>(loadProc("glGenerateMipmapOES"));
-    l_glGetFramebufferAttachmentParameterivOES =
-        reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOESPROC>(
-            loadProc("glGetFramebufferAttachmentParameterivOES"));
-    l_glGetRenderbufferParameterivOES = reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVOESPROC>(
-        loadProc("glGetRenderbufferParameterivOES"));
-    l_glIsFramebufferOES =
-        reinterpret_cast<PFNGLISFRAMEBUFFEROESPROC>(loadProc("glIsFramebufferOES"));
-    l_glIsRenderbufferOES =
-        reinterpret_cast<PFNGLISRENDERBUFFEROESPROC>(loadProc("glIsRenderbufferOES"));
-    l_glRenderbufferStorageOES =
-        reinterpret_cast<PFNGLRENDERBUFFERSTORAGEOESPROC>(loadProc("glRenderbufferStorageOES"));
-    l_glCurrentPaletteMatrixOES =
-        reinterpret_cast<PFNGLCURRENTPALETTEMATRIXOESPROC>(loadProc("glCurrentPaletteMatrixOES"));
-    l_glLoadPaletteFromModelViewMatrixOES =
-        reinterpret_cast<PFNGLLOADPALETTEFROMMODELVIEWMATRIXOESPROC>(
-            loadProc("glLoadPaletteFromModelViewMatrixOES"));
-    l_glMatrixIndexPointerOES =
-        reinterpret_cast<PFNGLMATRIXINDEXPOINTEROESPROC>(loadProc("glMatrixIndexPointerOES"));
-    l_glWeightPointerOES =
-        reinterpret_cast<PFNGLWEIGHTPOINTEROESPROC>(loadProc("glWeightPointerOES"));
-    l_glPointSizePointerOES =
-        reinterpret_cast<PFNGLPOINTSIZEPOINTEROESPROC>(loadProc("glPointSizePointerOES"));
+    l_glBindFramebufferOES = reinterpret_cast<PFNGLBINDFRAMEBUFFEROESPROC>(loadProc("glBindFramebufferOES"));
+    l_glBindRenderbufferOES = reinterpret_cast<PFNGLBINDRENDERBUFFEROESPROC>(loadProc("glBindRenderbufferOES"));
+    l_glCheckFramebufferStatusOES = reinterpret_cast<PFNGLCHECKFRAMEBUFFERSTATUSOESPROC>(loadProc("glCheckFramebufferStatusOES"));
+    l_glDeleteFramebuffersOES = reinterpret_cast<PFNGLDELETEFRAMEBUFFERSOESPROC>(loadProc("glDeleteFramebuffersOES"));
+    l_glDeleteRenderbuffersOES = reinterpret_cast<PFNGLDELETERENDERBUFFERSOESPROC>(loadProc("glDeleteRenderbuffersOES"));
+    l_glFramebufferRenderbufferOES = reinterpret_cast<PFNGLFRAMEBUFFERRENDERBUFFEROESPROC>(loadProc("glFramebufferRenderbufferOES"));
+    l_glFramebufferTexture2DOES = reinterpret_cast<PFNGLFRAMEBUFFERTEXTURE2DOESPROC>(loadProc("glFramebufferTexture2DOES"));
+    l_glGenFramebuffersOES = reinterpret_cast<PFNGLGENFRAMEBUFFERSOESPROC>(loadProc("glGenFramebuffersOES"));
+    l_glGenRenderbuffersOES = reinterpret_cast<PFNGLGENRENDERBUFFERSOESPROC>(loadProc("glGenRenderbuffersOES"));
+    l_glGenerateMipmapOES = reinterpret_cast<PFNGLGENERATEMIPMAPOESPROC>(loadProc("glGenerateMipmapOES"));
+    l_glGetFramebufferAttachmentParameterivOES = reinterpret_cast<PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVOESPROC>(loadProc("glGetFramebufferAttachmentParameterivOES"));
+    l_glGetRenderbufferParameterivOES = reinterpret_cast<PFNGLGETRENDERBUFFERPARAMETERIVOESPROC>(loadProc("glGetRenderbufferParameterivOES"));
+    l_glIsFramebufferOES = reinterpret_cast<PFNGLISFRAMEBUFFEROESPROC>(loadProc("glIsFramebufferOES"));
+    l_glIsRenderbufferOES = reinterpret_cast<PFNGLISRENDERBUFFEROESPROC>(loadProc("glIsRenderbufferOES"));
+    l_glRenderbufferStorageOES = reinterpret_cast<PFNGLRENDERBUFFERSTORAGEOESPROC>(loadProc("glRenderbufferStorageOES"));
+    l_glCurrentPaletteMatrixOES = reinterpret_cast<PFNGLCURRENTPALETTEMATRIXOESPROC>(loadProc("glCurrentPaletteMatrixOES"));
+    l_glLoadPaletteFromModelViewMatrixOES = reinterpret_cast<PFNGLLOADPALETTEFROMMODELVIEWMATRIXOESPROC>(loadProc("glLoadPaletteFromModelViewMatrixOES"));
+    l_glMatrixIndexPointerOES = reinterpret_cast<PFNGLMATRIXINDEXPOINTEROESPROC>(loadProc("glMatrixIndexPointerOES"));
+    l_glWeightPointerOES = reinterpret_cast<PFNGLWEIGHTPOINTEROESPROC>(loadProc("glWeightPointerOES"));
+    l_glPointSizePointerOES = reinterpret_cast<PFNGLPOINTSIZEPOINTEROESPROC>(loadProc("glPointSizePointerOES"));
     l_glQueryMatrixxOES = reinterpret_cast<PFNGLQUERYMATRIXXOESPROC>(loadProc("glQueryMatrixxOES"));
-    l_glGetTexGenfvOES  = reinterpret_cast<PFNGLGETTEXGENFVOESPROC>(loadProc("glGetTexGenfvOES"));
-    l_glGetTexGenivOES  = reinterpret_cast<PFNGLGETTEXGENIVOESPROC>(loadProc("glGetTexGenivOES"));
-    l_glGetTexGenxvOES  = reinterpret_cast<PFNGLGETTEXGENXVOESPROC>(loadProc("glGetTexGenxvOES"));
-    l_glTexGenfOES      = reinterpret_cast<PFNGLTEXGENFOESPROC>(loadProc("glTexGenfOES"));
-    l_glTexGenfvOES     = reinterpret_cast<PFNGLTEXGENFVOESPROC>(loadProc("glTexGenfvOES"));
-    l_glTexGeniOES      = reinterpret_cast<PFNGLTEXGENIOESPROC>(loadProc("glTexGeniOES"));
-    l_glTexGenivOES     = reinterpret_cast<PFNGLTEXGENIVOESPROC>(loadProc("glTexGenivOES"));
-    l_glTexGenxOES      = reinterpret_cast<PFNGLTEXGENXOESPROC>(loadProc("glTexGenxOES"));
-    l_glTexGenxvOES     = reinterpret_cast<PFNGLTEXGENXVOESPROC>(loadProc("glTexGenxvOES"));
+    l_glGetTexGenfvOES = reinterpret_cast<PFNGLGETTEXGENFVOESPROC>(loadProc("glGetTexGenfvOES"));
+    l_glGetTexGenivOES = reinterpret_cast<PFNGLGETTEXGENIVOESPROC>(loadProc("glGetTexGenivOES"));
+    l_glGetTexGenxvOES = reinterpret_cast<PFNGLGETTEXGENXVOESPROC>(loadProc("glGetTexGenxvOES"));
+    l_glTexGenfOES = reinterpret_cast<PFNGLTEXGENFOESPROC>(loadProc("glTexGenfOES"));
+    l_glTexGenfvOES = reinterpret_cast<PFNGLTEXGENFVOESPROC>(loadProc("glTexGenfvOES"));
+    l_glTexGeniOES = reinterpret_cast<PFNGLTEXGENIOESPROC>(loadProc("glTexGeniOES"));
+    l_glTexGenivOES = reinterpret_cast<PFNGLTEXGENIVOESPROC>(loadProc("glTexGenivOES"));
+    l_glTexGenxOES = reinterpret_cast<PFNGLTEXGENXOESPROC>(loadProc("glTexGenxOES"));
+    l_glTexGenxvOES = reinterpret_cast<PFNGLTEXGENXVOESPROC>(loadProc("glTexGenxvOES"));
 }
 }  // extern "C"

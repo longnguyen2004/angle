@@ -186,12 +186,12 @@ constexpr uint32_t kParamTypeCount = 163;
 
 union ParamValue
 {
-    const AHardwareBuffer *AHardwareBufferConstPointerVal;
+    const AHardwareBuffer * AHardwareBufferConstPointerVal;
     gl::AlphaTestFunc AlphaTestFuncVal;
     gl::BufferBinding BufferBindingVal;
     gl::BufferID BufferIDVal;
-    const gl::BufferID *BufferIDConstPointerVal;
-    gl::BufferID *BufferIDPointerVal;
+    const gl::BufferID * BufferIDConstPointerVal;
+    gl::BufferID * BufferIDPointerVal;
     gl::BufferUsage BufferUsageVal;
     gl::ClientVertexArrayType ClientVertexArrayTypeVal;
     gl::ClipDepthMode ClipDepthModeVal;
@@ -200,13 +200,13 @@ union ParamValue
     gl::ContextID ContextIDVal;
     gl::CullFaceMode CullFaceModeVal;
     gl::DrawElementsType DrawElementsTypeVal;
-    const EGLAttrib *EGLAttribConstPointerVal;
-    EGLAttribKHR *EGLAttribKHRPointerVal;
-    EGLAttrib *EGLAttribPointerVal;
+    const EGLAttrib * EGLAttribConstPointerVal;
+    EGLAttribKHR * EGLAttribKHRPointerVal;
+    EGLAttrib * EGLAttribPointerVal;
     EGLBoolean EGLBooleanVal;
-    EGLBoolean *EGLBooleanPointerVal;
+    EGLBoolean * EGLBooleanPointerVal;
     EGLClientBuffer EGLClientBufferVal;
-    EGLConfig *EGLConfigPointerVal;
+    EGLConfig * EGLConfigPointerVal;
     EGLContext EGLContextVal;
     EGLDEBUGPROCKHR EGLDEBUGPROCKHRVal;
     EGLDeviceEXT EGLDeviceEXTVal;
@@ -229,61 +229,61 @@ union ParamValue
     EGLTimeKHR EGLTimeKHRVal;
     EGLenum EGLenumVal;
     EGLint EGLintVal;
-    const EGLint *EGLintConstPointerVal;
-    EGLint *EGLintPointerVal;
+    const EGLint * EGLintConstPointerVal;
+    EGLint * EGLintPointerVal;
     EGLnsecsANDROID EGLnsecsANDROIDVal;
-    EGLnsecsANDROID *EGLnsecsANDROIDPointerVal;
+    EGLnsecsANDROID * EGLnsecsANDROIDPointerVal;
     EGLuint64KHR EGLuint64KHRVal;
-    EGLuint64KHR *EGLuint64KHRPointerVal;
+    EGLuint64KHR * EGLuint64KHRPointerVal;
     gl::FenceNVID FenceNVIDVal;
-    const gl::FenceNVID *FenceNVIDConstPointerVal;
-    gl::FenceNVID *FenceNVIDPointerVal;
+    const gl::FenceNVID * FenceNVIDConstPointerVal;
+    gl::FenceNVID * FenceNVIDPointerVal;
     gl::FramebufferID FramebufferIDVal;
-    const gl::FramebufferID *FramebufferIDConstPointerVal;
-    gl::FramebufferID *FramebufferIDPointerVal;
+    const gl::FramebufferID * FramebufferIDConstPointerVal;
+    gl::FramebufferID * FramebufferIDPointerVal;
     GLDEBUGPROC GLDEBUGPROCVal;
     GLDEBUGPROCKHR GLDEBUGPROCKHRVal;
     GLGETBLOBPROCANGLE GLGETBLOBPROCANGLEVal;
     GLSETBLOBPROCANGLE GLSETBLOBPROCANGLEVal;
     GLbitfield GLbitfieldVal;
     GLboolean GLbooleanVal;
-    GLboolean *GLbooleanPointerVal;
-    const GLchar *GLcharConstPointerVal;
-    const GLchar *const *GLcharConstPointerPointerVal;
-    GLchar *GLcharPointerVal;
+    GLboolean * GLbooleanPointerVal;
+    const GLchar * GLcharConstPointerVal;
+    const GLchar * const * GLcharConstPointerPointerVal;
+    GLchar * GLcharPointerVal;
     GLclampx GLclampxVal;
     GLeglClientBufferEXT GLeglClientBufferEXTVal;
     GLenum GLenumVal;
-    const GLenum *GLenumConstPointerVal;
-    GLenum *GLenumPointerVal;
+    const GLenum * GLenumConstPointerVal;
+    GLenum * GLenumPointerVal;
     GLfixed GLfixedVal;
-    const GLfixed *GLfixedConstPointerVal;
-    GLfixed *GLfixedPointerVal;
+    const GLfixed * GLfixedConstPointerVal;
+    GLfixed * GLfixedPointerVal;
     GLfloat GLfloatVal;
-    const GLfloat *GLfloatConstPointerVal;
-    GLfloat *GLfloatPointerVal;
+    const GLfloat * GLfloatConstPointerVal;
+    GLfloat * GLfloatPointerVal;
     GLint GLintVal;
     GLint64 GLint64Val;
-    GLint64 *GLint64PointerVal;
-    const GLint *GLintConstPointerVal;
-    GLint *GLintPointerVal;
+    GLint64 * GLint64PointerVal;
+    const GLint * GLintConstPointerVal;
+    GLint * GLintPointerVal;
     GLintptr GLintptrVal;
     GLshort GLshortVal;
-    const GLshort *GLshortConstPointerVal;
+    const GLshort * GLshortConstPointerVal;
     GLsizei GLsizeiVal;
-    const GLsizei *GLsizeiConstPointerVal;
-    GLsizei *GLsizeiPointerVal;
+    const GLsizei * GLsizeiConstPointerVal;
+    GLsizei * GLsizeiPointerVal;
     GLsizeiptr GLsizeiptrVal;
     GLsync GLsyncVal;
     GLubyte GLubyteVal;
-    const GLubyte *GLubyteConstPointerVal;
-    GLubyte *GLubytePointerVal;
+    const GLubyte * GLubyteConstPointerVal;
+    GLubyte * GLubytePointerVal;
     GLuint GLuintVal;
     GLuint64 GLuint64Val;
-    const GLuint64 *GLuint64ConstPointerVal;
-    GLuint64 *GLuint64PointerVal;
-    const GLuint *GLuintConstPointerVal;
-    GLuint *GLuintPointerVal;
+    const GLuint64 * GLuint64ConstPointerVal;
+    GLuint64 * GLuint64PointerVal;
+    const GLuint * GLuintConstPointerVal;
+    GLuint * GLuintPointerVal;
     gl::GraphicsResetStatus GraphicsResetStatusVal;
     gl::HandleType HandleTypeVal;
     egl::ImageID ImageIDVal;
@@ -292,32 +292,32 @@ union ParamValue
     gl::MaterialParameter MaterialParameterVal;
     gl::MatrixType MatrixTypeVal;
     gl::MemoryObjectID MemoryObjectIDVal;
-    const gl::MemoryObjectID *MemoryObjectIDConstPointerVal;
-    gl::MemoryObjectID *MemoryObjectIDPointerVal;
+    const gl::MemoryObjectID * MemoryObjectIDConstPointerVal;
+    gl::MemoryObjectID * MemoryObjectIDPointerVal;
     egl::ObjectType ObjectTypeVal;
     gl::PointParameter PointParameterVal;
     gl::PolygonMode PolygonModeVal;
     gl::PrimitiveMode PrimitiveModeVal;
     gl::ProgramPipelineID ProgramPipelineIDVal;
-    const gl::ProgramPipelineID *ProgramPipelineIDConstPointerVal;
-    gl::ProgramPipelineID *ProgramPipelineIDPointerVal;
+    const gl::ProgramPipelineID * ProgramPipelineIDConstPointerVal;
+    gl::ProgramPipelineID * ProgramPipelineIDPointerVal;
     gl::ProvokingVertexConvention ProvokingVertexConventionVal;
     gl::QueryID QueryIDVal;
-    const gl::QueryID *QueryIDConstPointerVal;
-    gl::QueryID *QueryIDPointerVal;
+    const gl::QueryID * QueryIDConstPointerVal;
+    gl::QueryID * QueryIDPointerVal;
     gl::QueryType QueryTypeVal;
     gl::RenderbufferID RenderbufferIDVal;
-    const gl::RenderbufferID *RenderbufferIDConstPointerVal;
-    gl::RenderbufferID *RenderbufferIDPointerVal;
+    const gl::RenderbufferID * RenderbufferIDConstPointerVal;
+    gl::RenderbufferID * RenderbufferIDPointerVal;
     gl::SamplerID SamplerIDVal;
-    const gl::SamplerID *SamplerIDConstPointerVal;
-    gl::SamplerID *SamplerIDPointerVal;
+    const gl::SamplerID * SamplerIDConstPointerVal;
+    gl::SamplerID * SamplerIDPointerVal;
     gl::SemaphoreID SemaphoreIDVal;
-    const gl::SemaphoreID *SemaphoreIDConstPointerVal;
-    gl::SemaphoreID *SemaphoreIDPointerVal;
+    const gl::SemaphoreID * SemaphoreIDConstPointerVal;
+    gl::SemaphoreID * SemaphoreIDPointerVal;
     gl::ShaderProgramID ShaderProgramIDVal;
-    const gl::ShaderProgramID *ShaderProgramIDConstPointerVal;
-    gl::ShaderProgramID *ShaderProgramIDPointerVal;
+    const gl::ShaderProgramID * ShaderProgramIDConstPointerVal;
+    gl::ShaderProgramID * ShaderProgramIDPointerVal;
     gl::ShaderType ShaderTypeVal;
     gl::ShadingModel ShadingModelVal;
     egl::SurfaceID SurfaceIDVal;
@@ -325,52 +325,49 @@ union ParamValue
     gl::TextureEnvParameter TextureEnvParameterVal;
     gl::TextureEnvTarget TextureEnvTargetVal;
     gl::TextureID TextureIDVal;
-    const gl::TextureID *TextureIDConstPointerVal;
-    gl::TextureID *TextureIDPointerVal;
+    const gl::TextureID * TextureIDConstPointerVal;
+    gl::TextureID * TextureIDPointerVal;
     gl::TextureTarget TextureTargetVal;
     gl::TextureType TextureTypeVal;
     egl::Timestamp TimestampVal;
     gl::TransformFeedbackID TransformFeedbackIDVal;
-    const gl::TransformFeedbackID *TransformFeedbackIDConstPointerVal;
-    gl::TransformFeedbackID *TransformFeedbackIDPointerVal;
+    const gl::TransformFeedbackID * TransformFeedbackIDConstPointerVal;
+    gl::TransformFeedbackID * TransformFeedbackIDPointerVal;
     gl::UniformBlockIndex UniformBlockIndexVal;
     gl::UniformLocation UniformLocationVal;
     gl::VertexArrayID VertexArrayIDVal;
-    const gl::VertexArrayID *VertexArrayIDConstPointerVal;
-    gl::VertexArrayID *VertexArrayIDPointerVal;
+    const gl::VertexArrayID * VertexArrayIDConstPointerVal;
+    gl::VertexArrayID * VertexArrayIDPointerVal;
     gl::VertexAttribType VertexAttribTypeVal;
-    const char *charConstPointerVal;
-    egl::Config *egl_ConfigPointerVal;
-    egl::Device *egl_DevicePointerVal;
-    egl::Display *egl_DisplayPointerVal;
-    egl::Stream *egl_StreamPointerVal;
+    const char * charConstPointerVal;
+    egl::Config * egl_ConfigPointerVal;
+    egl::Device * egl_DevicePointerVal;
+    egl::Display * egl_DisplayPointerVal;
+    egl::Stream * egl_StreamPointerVal;
     egl::SyncID egl_SyncIDVal;
-    const void *voidConstPointerVal;
-    const void *const *voidConstPointerPointerVal;
-    void *voidPointerVal;
-    void **voidPointerPointerVal;
+    const void * voidConstPointerVal;
+    const void * const * voidConstPointerPointerVal;
+    void * voidPointerVal;
+    void ** voidPointerPointerVal;
 };
 
 template <ParamType PType, typename T>
 T GetParamVal(const ParamValue &value);
 
 template <>
-inline const AHardwareBuffer *GetParamVal<ParamType::TAHardwareBufferConstPointer,
-                                          const AHardwareBuffer *>(const ParamValue &value)
+inline const AHardwareBuffer * GetParamVal<ParamType::TAHardwareBufferConstPointer, const AHardwareBuffer *>(const ParamValue &value)
 {
     return value.AHardwareBufferConstPointerVal;
 }
 
 template <>
-inline gl::AlphaTestFunc GetParamVal<ParamType::TAlphaTestFunc, gl::AlphaTestFunc>(
-    const ParamValue &value)
+inline gl::AlphaTestFunc GetParamVal<ParamType::TAlphaTestFunc, gl::AlphaTestFunc>(const ParamValue &value)
 {
     return value.AlphaTestFuncVal;
 }
 
 template <>
-inline gl::BufferBinding GetParamVal<ParamType::TBufferBinding, gl::BufferBinding>(
-    const ParamValue &value)
+inline gl::BufferBinding GetParamVal<ParamType::TBufferBinding, gl::BufferBinding>(const ParamValue &value)
 {
     return value.BufferBindingVal;
 }
@@ -382,36 +379,31 @@ inline gl::BufferID GetParamVal<ParamType::TBufferID, gl::BufferID>(const ParamV
 }
 
 template <>
-inline const gl::BufferID *GetParamVal<ParamType::TBufferIDConstPointer, const gl::BufferID *>(
-    const ParamValue &value)
+inline const gl::BufferID * GetParamVal<ParamType::TBufferIDConstPointer, const gl::BufferID *>(const ParamValue &value)
 {
     return value.BufferIDConstPointerVal;
 }
 
 template <>
-inline gl::BufferID *GetParamVal<ParamType::TBufferIDPointer, gl::BufferID *>(
-    const ParamValue &value)
+inline gl::BufferID * GetParamVal<ParamType::TBufferIDPointer, gl::BufferID *>(const ParamValue &value)
 {
     return value.BufferIDPointerVal;
 }
 
 template <>
-inline gl::BufferUsage GetParamVal<ParamType::TBufferUsage, gl::BufferUsage>(
-    const ParamValue &value)
+inline gl::BufferUsage GetParamVal<ParamType::TBufferUsage, gl::BufferUsage>(const ParamValue &value)
 {
     return value.BufferUsageVal;
 }
 
 template <>
-inline gl::ClientVertexArrayType
-GetParamVal<ParamType::TClientVertexArrayType, gl::ClientVertexArrayType>(const ParamValue &value)
+inline gl::ClientVertexArrayType GetParamVal<ParamType::TClientVertexArrayType, gl::ClientVertexArrayType>(const ParamValue &value)
 {
     return value.ClientVertexArrayTypeVal;
 }
 
 template <>
-inline gl::ClipDepthMode GetParamVal<ParamType::TClipDepthMode, gl::ClipDepthMode>(
-    const ParamValue &value)
+inline gl::ClipDepthMode GetParamVal<ParamType::TClipDepthMode, gl::ClipDepthMode>(const ParamValue &value)
 {
     return value.ClipDepthModeVal;
 }
@@ -423,8 +415,7 @@ inline gl::ClipOrigin GetParamVal<ParamType::TClipOrigin, gl::ClipOrigin>(const 
 }
 
 template <>
-inline egl::CompositorTiming GetParamVal<ParamType::TCompositorTiming, egl::CompositorTiming>(
-    const ParamValue &value)
+inline egl::CompositorTiming GetParamVal<ParamType::TCompositorTiming, egl::CompositorTiming>(const ParamValue &value)
 {
     return value.CompositorTimingVal;
 }
@@ -436,35 +427,31 @@ inline gl::ContextID GetParamVal<ParamType::TContextID, gl::ContextID>(const Par
 }
 
 template <>
-inline gl::CullFaceMode GetParamVal<ParamType::TCullFaceMode, gl::CullFaceMode>(
-    const ParamValue &value)
+inline gl::CullFaceMode GetParamVal<ParamType::TCullFaceMode, gl::CullFaceMode>(const ParamValue &value)
 {
     return value.CullFaceModeVal;
 }
 
 template <>
-inline gl::DrawElementsType GetParamVal<ParamType::TDrawElementsType, gl::DrawElementsType>(
-    const ParamValue &value)
+inline gl::DrawElementsType GetParamVal<ParamType::TDrawElementsType, gl::DrawElementsType>(const ParamValue &value)
 {
     return value.DrawElementsTypeVal;
 }
 
 template <>
-inline const EGLAttrib *GetParamVal<ParamType::TEGLAttribConstPointer, const EGLAttrib *>(
-    const ParamValue &value)
+inline const EGLAttrib * GetParamVal<ParamType::TEGLAttribConstPointer, const EGLAttrib *>(const ParamValue &value)
 {
     return value.EGLAttribConstPointerVal;
 }
 
 template <>
-inline EGLAttribKHR *GetParamVal<ParamType::TEGLAttribKHRPointer, EGLAttribKHR *>(
-    const ParamValue &value)
+inline EGLAttribKHR * GetParamVal<ParamType::TEGLAttribKHRPointer, EGLAttribKHR *>(const ParamValue &value)
 {
     return value.EGLAttribKHRPointerVal;
 }
 
 template <>
-inline EGLAttrib *GetParamVal<ParamType::TEGLAttribPointer, EGLAttrib *>(const ParamValue &value)
+inline EGLAttrib * GetParamVal<ParamType::TEGLAttribPointer, EGLAttrib *>(const ParamValue &value)
 {
     return value.EGLAttribPointerVal;
 }
@@ -476,20 +463,19 @@ inline EGLBoolean GetParamVal<ParamType::TEGLBoolean, EGLBoolean>(const ParamVal
 }
 
 template <>
-inline EGLBoolean *GetParamVal<ParamType::TEGLBooleanPointer, EGLBoolean *>(const ParamValue &value)
+inline EGLBoolean * GetParamVal<ParamType::TEGLBooleanPointer, EGLBoolean *>(const ParamValue &value)
 {
     return value.EGLBooleanPointerVal;
 }
 
 template <>
-inline EGLClientBuffer GetParamVal<ParamType::TEGLClientBuffer, EGLClientBuffer>(
-    const ParamValue &value)
+inline EGLClientBuffer GetParamVal<ParamType::TEGLClientBuffer, EGLClientBuffer>(const ParamValue &value)
 {
     return value.EGLClientBufferVal;
 }
 
 template <>
-inline EGLConfig *GetParamVal<ParamType::TEGLConfigPointer, EGLConfig *>(const ParamValue &value)
+inline EGLConfig * GetParamVal<ParamType::TEGLConfigPointer, EGLConfig *>(const ParamValue &value)
 {
     return value.EGLConfigPointerVal;
 }
@@ -501,8 +487,7 @@ inline EGLContext GetParamVal<ParamType::TEGLContext, EGLContext>(const ParamVal
 }
 
 template <>
-inline EGLDEBUGPROCKHR GetParamVal<ParamType::TEGLDEBUGPROCKHR, EGLDEBUGPROCKHR>(
-    const ParamValue &value)
+inline EGLDEBUGPROCKHR GetParamVal<ParamType::TEGLDEBUGPROCKHR, EGLDEBUGPROCKHR>(const ParamValue &value)
 {
     return value.EGLDEBUGPROCKHRVal;
 }
@@ -520,15 +505,13 @@ inline EGLDisplay GetParamVal<ParamType::TEGLDisplay, EGLDisplay>(const ParamVal
 }
 
 template <>
-inline EGLFrameTokenANGLE GetParamVal<ParamType::TEGLFrameTokenANGLE, EGLFrameTokenANGLE>(
-    const ParamValue &value)
+inline EGLFrameTokenANGLE GetParamVal<ParamType::TEGLFrameTokenANGLE, EGLFrameTokenANGLE>(const ParamValue &value)
 {
     return value.EGLFrameTokenANGLEVal;
 }
 
 template <>
-inline EGLGetBlobFuncANDROID GetParamVal<ParamType::TEGLGetBlobFuncANDROID, EGLGetBlobFuncANDROID>(
-    const ParamValue &value)
+inline EGLGetBlobFuncANDROID GetParamVal<ParamType::TEGLGetBlobFuncANDROID, EGLGetBlobFuncANDROID>(const ParamValue &value)
 {
     return value.EGLGetBlobFuncANDROIDVal;
 }
@@ -552,22 +535,19 @@ inline EGLLabelKHR GetParamVal<ParamType::TEGLLabelKHR, EGLLabelKHR>(const Param
 }
 
 template <>
-inline EGLNativeDisplayType GetParamVal<ParamType::TEGLNativeDisplayType, EGLNativeDisplayType>(
-    const ParamValue &value)
+inline EGLNativeDisplayType GetParamVal<ParamType::TEGLNativeDisplayType, EGLNativeDisplayType>(const ParamValue &value)
 {
     return value.EGLNativeDisplayTypeVal;
 }
 
 template <>
-inline EGLNativePixmapType GetParamVal<ParamType::TEGLNativePixmapType, EGLNativePixmapType>(
-    const ParamValue &value)
+inline EGLNativePixmapType GetParamVal<ParamType::TEGLNativePixmapType, EGLNativePixmapType>(const ParamValue &value)
 {
     return value.EGLNativePixmapTypeVal;
 }
 
 template <>
-inline EGLNativeWindowType GetParamVal<ParamType::TEGLNativeWindowType, EGLNativeWindowType>(
-    const ParamValue &value)
+inline EGLNativeWindowType GetParamVal<ParamType::TEGLNativeWindowType, EGLNativeWindowType>(const ParamValue &value)
 {
     return value.EGLNativeWindowTypeVal;
 }
@@ -579,8 +559,7 @@ inline EGLObjectKHR GetParamVal<ParamType::TEGLObjectKHR, EGLObjectKHR>(const Pa
 }
 
 template <>
-inline EGLSetBlobFuncANDROID GetParamVal<ParamType::TEGLSetBlobFuncANDROID, EGLSetBlobFuncANDROID>(
-    const ParamValue &value)
+inline EGLSetBlobFuncANDROID GetParamVal<ParamType::TEGLSetBlobFuncANDROID, EGLSetBlobFuncANDROID>(const ParamValue &value)
 {
     return value.EGLSetBlobFuncANDROIDVal;
 }
@@ -634,28 +613,25 @@ inline EGLint GetParamVal<ParamType::TEGLint, EGLint>(const ParamValue &value)
 }
 
 template <>
-inline const EGLint *GetParamVal<ParamType::TEGLintConstPointer, const EGLint *>(
-    const ParamValue &value)
+inline const EGLint * GetParamVal<ParamType::TEGLintConstPointer, const EGLint *>(const ParamValue &value)
 {
     return value.EGLintConstPointerVal;
 }
 
 template <>
-inline EGLint *GetParamVal<ParamType::TEGLintPointer, EGLint *>(const ParamValue &value)
+inline EGLint * GetParamVal<ParamType::TEGLintPointer, EGLint *>(const ParamValue &value)
 {
     return value.EGLintPointerVal;
 }
 
 template <>
-inline EGLnsecsANDROID GetParamVal<ParamType::TEGLnsecsANDROID, EGLnsecsANDROID>(
-    const ParamValue &value)
+inline EGLnsecsANDROID GetParamVal<ParamType::TEGLnsecsANDROID, EGLnsecsANDROID>(const ParamValue &value)
 {
     return value.EGLnsecsANDROIDVal;
 }
 
 template <>
-inline EGLnsecsANDROID *GetParamVal<ParamType::TEGLnsecsANDROIDPointer, EGLnsecsANDROID *>(
-    const ParamValue &value)
+inline EGLnsecsANDROID * GetParamVal<ParamType::TEGLnsecsANDROIDPointer, EGLnsecsANDROID *>(const ParamValue &value)
 {
     return value.EGLnsecsANDROIDPointerVal;
 }
@@ -667,8 +643,7 @@ inline EGLuint64KHR GetParamVal<ParamType::TEGLuint64KHR, EGLuint64KHR>(const Pa
 }
 
 template <>
-inline EGLuint64KHR *GetParamVal<ParamType::TEGLuint64KHRPointer, EGLuint64KHR *>(
-    const ParamValue &value)
+inline EGLuint64KHR * GetParamVal<ParamType::TEGLuint64KHRPointer, EGLuint64KHR *>(const ParamValue &value)
 {
     return value.EGLuint64KHRPointerVal;
 }
@@ -680,36 +655,31 @@ inline gl::FenceNVID GetParamVal<ParamType::TFenceNVID, gl::FenceNVID>(const Par
 }
 
 template <>
-inline const gl::FenceNVID *GetParamVal<ParamType::TFenceNVIDConstPointer, const gl::FenceNVID *>(
-    const ParamValue &value)
+inline const gl::FenceNVID * GetParamVal<ParamType::TFenceNVIDConstPointer, const gl::FenceNVID *>(const ParamValue &value)
 {
     return value.FenceNVIDConstPointerVal;
 }
 
 template <>
-inline gl::FenceNVID *GetParamVal<ParamType::TFenceNVIDPointer, gl::FenceNVID *>(
-    const ParamValue &value)
+inline gl::FenceNVID * GetParamVal<ParamType::TFenceNVIDPointer, gl::FenceNVID *>(const ParamValue &value)
 {
     return value.FenceNVIDPointerVal;
 }
 
 template <>
-inline gl::FramebufferID GetParamVal<ParamType::TFramebufferID, gl::FramebufferID>(
-    const ParamValue &value)
+inline gl::FramebufferID GetParamVal<ParamType::TFramebufferID, gl::FramebufferID>(const ParamValue &value)
 {
     return value.FramebufferIDVal;
 }
 
 template <>
-inline const gl::FramebufferID *GetParamVal<ParamType::TFramebufferIDConstPointer,
-                                            const gl::FramebufferID *>(const ParamValue &value)
+inline const gl::FramebufferID * GetParamVal<ParamType::TFramebufferIDConstPointer, const gl::FramebufferID *>(const ParamValue &value)
 {
     return value.FramebufferIDConstPointerVal;
 }
 
 template <>
-inline gl::FramebufferID *GetParamVal<ParamType::TFramebufferIDPointer, gl::FramebufferID *>(
-    const ParamValue &value)
+inline gl::FramebufferID * GetParamVal<ParamType::TFramebufferIDPointer, gl::FramebufferID *>(const ParamValue &value)
 {
     return value.FramebufferIDPointerVal;
 }
@@ -721,22 +691,19 @@ inline GLDEBUGPROC GetParamVal<ParamType::TGLDEBUGPROC, GLDEBUGPROC>(const Param
 }
 
 template <>
-inline GLDEBUGPROCKHR GetParamVal<ParamType::TGLDEBUGPROCKHR, GLDEBUGPROCKHR>(
-    const ParamValue &value)
+inline GLDEBUGPROCKHR GetParamVal<ParamType::TGLDEBUGPROCKHR, GLDEBUGPROCKHR>(const ParamValue &value)
 {
     return value.GLDEBUGPROCKHRVal;
 }
 
 template <>
-inline GLGETBLOBPROCANGLE GetParamVal<ParamType::TGLGETBLOBPROCANGLE, GLGETBLOBPROCANGLE>(
-    const ParamValue &value)
+inline GLGETBLOBPROCANGLE GetParamVal<ParamType::TGLGETBLOBPROCANGLE, GLGETBLOBPROCANGLE>(const ParamValue &value)
 {
     return value.GLGETBLOBPROCANGLEVal;
 }
 
 template <>
-inline GLSETBLOBPROCANGLE GetParamVal<ParamType::TGLSETBLOBPROCANGLE, GLSETBLOBPROCANGLE>(
-    const ParamValue &value)
+inline GLSETBLOBPROCANGLE GetParamVal<ParamType::TGLSETBLOBPROCANGLE, GLSETBLOBPROCANGLE>(const ParamValue &value)
 {
     return value.GLSETBLOBPROCANGLEVal;
 }
@@ -754,27 +721,25 @@ inline GLboolean GetParamVal<ParamType::TGLboolean, GLboolean>(const ParamValue 
 }
 
 template <>
-inline GLboolean *GetParamVal<ParamType::TGLbooleanPointer, GLboolean *>(const ParamValue &value)
+inline GLboolean * GetParamVal<ParamType::TGLbooleanPointer, GLboolean *>(const ParamValue &value)
 {
     return value.GLbooleanPointerVal;
 }
 
 template <>
-inline const GLchar *GetParamVal<ParamType::TGLcharConstPointer, const GLchar *>(
-    const ParamValue &value)
+inline const GLchar * GetParamVal<ParamType::TGLcharConstPointer, const GLchar *>(const ParamValue &value)
 {
     return value.GLcharConstPointerVal;
 }
 
 template <>
-inline const GLchar *const *
-GetParamVal<ParamType::TGLcharConstPointerPointer, const GLchar *const *>(const ParamValue &value)
+inline const GLchar * const * GetParamVal<ParamType::TGLcharConstPointerPointer, const GLchar * const *>(const ParamValue &value)
 {
     return value.GLcharConstPointerPointerVal;
 }
 
 template <>
-inline GLchar *GetParamVal<ParamType::TGLcharPointer, GLchar *>(const ParamValue &value)
+inline GLchar * GetParamVal<ParamType::TGLcharPointer, GLchar *>(const ParamValue &value)
 {
     return value.GLcharPointerVal;
 }
@@ -786,8 +751,7 @@ inline GLclampx GetParamVal<ParamType::TGLclampx, GLclampx>(const ParamValue &va
 }
 
 template <>
-inline GLeglClientBufferEXT GetParamVal<ParamType::TGLeglClientBufferEXT, GLeglClientBufferEXT>(
-    const ParamValue &value)
+inline GLeglClientBufferEXT GetParamVal<ParamType::TGLeglClientBufferEXT, GLeglClientBufferEXT>(const ParamValue &value)
 {
     return value.GLeglClientBufferEXTVal;
 }
@@ -799,14 +763,13 @@ inline GLenum GetParamVal<ParamType::TGLenum, GLenum>(const ParamValue &value)
 }
 
 template <>
-inline const GLenum *GetParamVal<ParamType::TGLenumConstPointer, const GLenum *>(
-    const ParamValue &value)
+inline const GLenum * GetParamVal<ParamType::TGLenumConstPointer, const GLenum *>(const ParamValue &value)
 {
     return value.GLenumConstPointerVal;
 }
 
 template <>
-inline GLenum *GetParamVal<ParamType::TGLenumPointer, GLenum *>(const ParamValue &value)
+inline GLenum * GetParamVal<ParamType::TGLenumPointer, GLenum *>(const ParamValue &value)
 {
     return value.GLenumPointerVal;
 }
@@ -818,14 +781,13 @@ inline GLfixed GetParamVal<ParamType::TGLfixed, GLfixed>(const ParamValue &value
 }
 
 template <>
-inline const GLfixed *GetParamVal<ParamType::TGLfixedConstPointer, const GLfixed *>(
-    const ParamValue &value)
+inline const GLfixed * GetParamVal<ParamType::TGLfixedConstPointer, const GLfixed *>(const ParamValue &value)
 {
     return value.GLfixedConstPointerVal;
 }
 
 template <>
-inline GLfixed *GetParamVal<ParamType::TGLfixedPointer, GLfixed *>(const ParamValue &value)
+inline GLfixed * GetParamVal<ParamType::TGLfixedPointer, GLfixed *>(const ParamValue &value)
 {
     return value.GLfixedPointerVal;
 }
@@ -837,14 +799,13 @@ inline GLfloat GetParamVal<ParamType::TGLfloat, GLfloat>(const ParamValue &value
 }
 
 template <>
-inline const GLfloat *GetParamVal<ParamType::TGLfloatConstPointer, const GLfloat *>(
-    const ParamValue &value)
+inline const GLfloat * GetParamVal<ParamType::TGLfloatConstPointer, const GLfloat *>(const ParamValue &value)
 {
     return value.GLfloatConstPointerVal;
 }
 
 template <>
-inline GLfloat *GetParamVal<ParamType::TGLfloatPointer, GLfloat *>(const ParamValue &value)
+inline GLfloat * GetParamVal<ParamType::TGLfloatPointer, GLfloat *>(const ParamValue &value)
 {
     return value.GLfloatPointerVal;
 }
@@ -862,20 +823,19 @@ inline GLint64 GetParamVal<ParamType::TGLint64, GLint64>(const ParamValue &value
 }
 
 template <>
-inline GLint64 *GetParamVal<ParamType::TGLint64Pointer, GLint64 *>(const ParamValue &value)
+inline GLint64 * GetParamVal<ParamType::TGLint64Pointer, GLint64 *>(const ParamValue &value)
 {
     return value.GLint64PointerVal;
 }
 
 template <>
-inline const GLint *GetParamVal<ParamType::TGLintConstPointer, const GLint *>(
-    const ParamValue &value)
+inline const GLint * GetParamVal<ParamType::TGLintConstPointer, const GLint *>(const ParamValue &value)
 {
     return value.GLintConstPointerVal;
 }
 
 template <>
-inline GLint *GetParamVal<ParamType::TGLintPointer, GLint *>(const ParamValue &value)
+inline GLint * GetParamVal<ParamType::TGLintPointer, GLint *>(const ParamValue &value)
 {
     return value.GLintPointerVal;
 }
@@ -893,8 +853,7 @@ inline GLshort GetParamVal<ParamType::TGLshort, GLshort>(const ParamValue &value
 }
 
 template <>
-inline const GLshort *GetParamVal<ParamType::TGLshortConstPointer, const GLshort *>(
-    const ParamValue &value)
+inline const GLshort * GetParamVal<ParamType::TGLshortConstPointer, const GLshort *>(const ParamValue &value)
 {
     return value.GLshortConstPointerVal;
 }
@@ -906,14 +865,13 @@ inline GLsizei GetParamVal<ParamType::TGLsizei, GLsizei>(const ParamValue &value
 }
 
 template <>
-inline const GLsizei *GetParamVal<ParamType::TGLsizeiConstPointer, const GLsizei *>(
-    const ParamValue &value)
+inline const GLsizei * GetParamVal<ParamType::TGLsizeiConstPointer, const GLsizei *>(const ParamValue &value)
 {
     return value.GLsizeiConstPointerVal;
 }
 
 template <>
-inline GLsizei *GetParamVal<ParamType::TGLsizeiPointer, GLsizei *>(const ParamValue &value)
+inline GLsizei * GetParamVal<ParamType::TGLsizeiPointer, GLsizei *>(const ParamValue &value)
 {
     return value.GLsizeiPointerVal;
 }
@@ -937,14 +895,13 @@ inline GLubyte GetParamVal<ParamType::TGLubyte, GLubyte>(const ParamValue &value
 }
 
 template <>
-inline const GLubyte *GetParamVal<ParamType::TGLubyteConstPointer, const GLubyte *>(
-    const ParamValue &value)
+inline const GLubyte * GetParamVal<ParamType::TGLubyteConstPointer, const GLubyte *>(const ParamValue &value)
 {
     return value.GLubyteConstPointerVal;
 }
 
 template <>
-inline GLubyte *GetParamVal<ParamType::TGLubytePointer, GLubyte *>(const ParamValue &value)
+inline GLubyte * GetParamVal<ParamType::TGLubytePointer, GLubyte *>(const ParamValue &value)
 {
     return value.GLubytePointerVal;
 }
@@ -962,34 +919,31 @@ inline GLuint64 GetParamVal<ParamType::TGLuint64, GLuint64>(const ParamValue &va
 }
 
 template <>
-inline const GLuint64 *GetParamVal<ParamType::TGLuint64ConstPointer, const GLuint64 *>(
-    const ParamValue &value)
+inline const GLuint64 * GetParamVal<ParamType::TGLuint64ConstPointer, const GLuint64 *>(const ParamValue &value)
 {
     return value.GLuint64ConstPointerVal;
 }
 
 template <>
-inline GLuint64 *GetParamVal<ParamType::TGLuint64Pointer, GLuint64 *>(const ParamValue &value)
+inline GLuint64 * GetParamVal<ParamType::TGLuint64Pointer, GLuint64 *>(const ParamValue &value)
 {
     return value.GLuint64PointerVal;
 }
 
 template <>
-inline const GLuint *GetParamVal<ParamType::TGLuintConstPointer, const GLuint *>(
-    const ParamValue &value)
+inline const GLuint * GetParamVal<ParamType::TGLuintConstPointer, const GLuint *>(const ParamValue &value)
 {
     return value.GLuintConstPointerVal;
 }
 
 template <>
-inline GLuint *GetParamVal<ParamType::TGLuintPointer, GLuint *>(const ParamValue &value)
+inline GLuint * GetParamVal<ParamType::TGLuintPointer, GLuint *>(const ParamValue &value)
 {
     return value.GLuintPointerVal;
 }
 
 template <>
-inline gl::GraphicsResetStatus
-GetParamVal<ParamType::TGraphicsResetStatus, gl::GraphicsResetStatus>(const ParamValue &value)
+inline gl::GraphicsResetStatus GetParamVal<ParamType::TGraphicsResetStatus, gl::GraphicsResetStatus>(const ParamValue &value)
 {
     return value.GraphicsResetStatusVal;
 }
@@ -1007,22 +961,19 @@ inline egl::ImageID GetParamVal<ParamType::TImageID, egl::ImageID>(const ParamVa
 }
 
 template <>
-inline gl::LightParameter GetParamVal<ParamType::TLightParameter, gl::LightParameter>(
-    const ParamValue &value)
+inline gl::LightParameter GetParamVal<ParamType::TLightParameter, gl::LightParameter>(const ParamValue &value)
 {
     return value.LightParameterVal;
 }
 
 template <>
-inline gl::LogicalOperation GetParamVal<ParamType::TLogicalOperation, gl::LogicalOperation>(
-    const ParamValue &value)
+inline gl::LogicalOperation GetParamVal<ParamType::TLogicalOperation, gl::LogicalOperation>(const ParamValue &value)
 {
     return value.LogicalOperationVal;
 }
 
 template <>
-inline gl::MaterialParameter GetParamVal<ParamType::TMaterialParameter, gl::MaterialParameter>(
-    const ParamValue &value)
+inline gl::MaterialParameter GetParamVal<ParamType::TMaterialParameter, gl::MaterialParameter>(const ParamValue &value)
 {
     return value.MaterialParameterVal;
 }
@@ -1034,22 +985,19 @@ inline gl::MatrixType GetParamVal<ParamType::TMatrixType, gl::MatrixType>(const 
 }
 
 template <>
-inline gl::MemoryObjectID GetParamVal<ParamType::TMemoryObjectID, gl::MemoryObjectID>(
-    const ParamValue &value)
+inline gl::MemoryObjectID GetParamVal<ParamType::TMemoryObjectID, gl::MemoryObjectID>(const ParamValue &value)
 {
     return value.MemoryObjectIDVal;
 }
 
 template <>
-inline const gl::MemoryObjectID *GetParamVal<ParamType::TMemoryObjectIDConstPointer,
-                                             const gl::MemoryObjectID *>(const ParamValue &value)
+inline const gl::MemoryObjectID * GetParamVal<ParamType::TMemoryObjectIDConstPointer, const gl::MemoryObjectID *>(const ParamValue &value)
 {
     return value.MemoryObjectIDConstPointerVal;
 }
 
 template <>
-inline gl::MemoryObjectID *GetParamVal<ParamType::TMemoryObjectIDPointer, gl::MemoryObjectID *>(
-    const ParamValue &value)
+inline gl::MemoryObjectID * GetParamVal<ParamType::TMemoryObjectIDPointer, gl::MemoryObjectID *>(const ParamValue &value)
 {
     return value.MemoryObjectIDPointerVal;
 }
@@ -1061,52 +1009,43 @@ inline egl::ObjectType GetParamVal<ParamType::TObjectType, egl::ObjectType>(cons
 }
 
 template <>
-inline gl::PointParameter GetParamVal<ParamType::TPointParameter, gl::PointParameter>(
-    const ParamValue &value)
+inline gl::PointParameter GetParamVal<ParamType::TPointParameter, gl::PointParameter>(const ParamValue &value)
 {
     return value.PointParameterVal;
 }
 
 template <>
-inline gl::PolygonMode GetParamVal<ParamType::TPolygonMode, gl::PolygonMode>(
-    const ParamValue &value)
+inline gl::PolygonMode GetParamVal<ParamType::TPolygonMode, gl::PolygonMode>(const ParamValue &value)
 {
     return value.PolygonModeVal;
 }
 
 template <>
-inline gl::PrimitiveMode GetParamVal<ParamType::TPrimitiveMode, gl::PrimitiveMode>(
-    const ParamValue &value)
+inline gl::PrimitiveMode GetParamVal<ParamType::TPrimitiveMode, gl::PrimitiveMode>(const ParamValue &value)
 {
     return value.PrimitiveModeVal;
 }
 
 template <>
-inline gl::ProgramPipelineID GetParamVal<ParamType::TProgramPipelineID, gl::ProgramPipelineID>(
-    const ParamValue &value)
+inline gl::ProgramPipelineID GetParamVal<ParamType::TProgramPipelineID, gl::ProgramPipelineID>(const ParamValue &value)
 {
     return value.ProgramPipelineIDVal;
 }
 
 template <>
-inline const gl::ProgramPipelineID *
-GetParamVal<ParamType::TProgramPipelineIDConstPointer, const gl::ProgramPipelineID *>(
-    const ParamValue &value)
+inline const gl::ProgramPipelineID * GetParamVal<ParamType::TProgramPipelineIDConstPointer, const gl::ProgramPipelineID *>(const ParamValue &value)
 {
     return value.ProgramPipelineIDConstPointerVal;
 }
 
 template <>
-inline gl::ProgramPipelineID *
-GetParamVal<ParamType::TProgramPipelineIDPointer, gl::ProgramPipelineID *>(const ParamValue &value)
+inline gl::ProgramPipelineID * GetParamVal<ParamType::TProgramPipelineIDPointer, gl::ProgramPipelineID *>(const ParamValue &value)
 {
     return value.ProgramPipelineIDPointerVal;
 }
 
 template <>
-inline gl::ProvokingVertexConvention
-GetParamVal<ParamType::TProvokingVertexConvention, gl::ProvokingVertexConvention>(
-    const ParamValue &value)
+inline gl::ProvokingVertexConvention GetParamVal<ParamType::TProvokingVertexConvention, gl::ProvokingVertexConvention>(const ParamValue &value)
 {
     return value.ProvokingVertexConventionVal;
 }
@@ -1118,14 +1057,13 @@ inline gl::QueryID GetParamVal<ParamType::TQueryID, gl::QueryID>(const ParamValu
 }
 
 template <>
-inline const gl::QueryID *GetParamVal<ParamType::TQueryIDConstPointer, const gl::QueryID *>(
-    const ParamValue &value)
+inline const gl::QueryID * GetParamVal<ParamType::TQueryIDConstPointer, const gl::QueryID *>(const ParamValue &value)
 {
     return value.QueryIDConstPointerVal;
 }
 
 template <>
-inline gl::QueryID *GetParamVal<ParamType::TQueryIDPointer, gl::QueryID *>(const ParamValue &value)
+inline gl::QueryID * GetParamVal<ParamType::TQueryIDPointer, gl::QueryID *>(const ParamValue &value)
 {
     return value.QueryIDPointerVal;
 }
@@ -1137,22 +1075,19 @@ inline gl::QueryType GetParamVal<ParamType::TQueryType, gl::QueryType>(const Par
 }
 
 template <>
-inline gl::RenderbufferID GetParamVal<ParamType::TRenderbufferID, gl::RenderbufferID>(
-    const ParamValue &value)
+inline gl::RenderbufferID GetParamVal<ParamType::TRenderbufferID, gl::RenderbufferID>(const ParamValue &value)
 {
     return value.RenderbufferIDVal;
 }
 
 template <>
-inline const gl::RenderbufferID *GetParamVal<ParamType::TRenderbufferIDConstPointer,
-                                             const gl::RenderbufferID *>(const ParamValue &value)
+inline const gl::RenderbufferID * GetParamVal<ParamType::TRenderbufferIDConstPointer, const gl::RenderbufferID *>(const ParamValue &value)
 {
     return value.RenderbufferIDConstPointerVal;
 }
 
 template <>
-inline gl::RenderbufferID *GetParamVal<ParamType::TRenderbufferIDPointer, gl::RenderbufferID *>(
-    const ParamValue &value)
+inline gl::RenderbufferID * GetParamVal<ParamType::TRenderbufferIDPointer, gl::RenderbufferID *>(const ParamValue &value)
 {
     return value.RenderbufferIDPointerVal;
 }
@@ -1164,57 +1099,49 @@ inline gl::SamplerID GetParamVal<ParamType::TSamplerID, gl::SamplerID>(const Par
 }
 
 template <>
-inline const gl::SamplerID *GetParamVal<ParamType::TSamplerIDConstPointer, const gl::SamplerID *>(
-    const ParamValue &value)
+inline const gl::SamplerID * GetParamVal<ParamType::TSamplerIDConstPointer, const gl::SamplerID *>(const ParamValue &value)
 {
     return value.SamplerIDConstPointerVal;
 }
 
 template <>
-inline gl::SamplerID *GetParamVal<ParamType::TSamplerIDPointer, gl::SamplerID *>(
-    const ParamValue &value)
+inline gl::SamplerID * GetParamVal<ParamType::TSamplerIDPointer, gl::SamplerID *>(const ParamValue &value)
 {
     return value.SamplerIDPointerVal;
 }
 
 template <>
-inline gl::SemaphoreID GetParamVal<ParamType::TSemaphoreID, gl::SemaphoreID>(
-    const ParamValue &value)
+inline gl::SemaphoreID GetParamVal<ParamType::TSemaphoreID, gl::SemaphoreID>(const ParamValue &value)
 {
     return value.SemaphoreIDVal;
 }
 
 template <>
-inline const gl::SemaphoreID *
-GetParamVal<ParamType::TSemaphoreIDConstPointer, const gl::SemaphoreID *>(const ParamValue &value)
+inline const gl::SemaphoreID * GetParamVal<ParamType::TSemaphoreIDConstPointer, const gl::SemaphoreID *>(const ParamValue &value)
 {
     return value.SemaphoreIDConstPointerVal;
 }
 
 template <>
-inline gl::SemaphoreID *GetParamVal<ParamType::TSemaphoreIDPointer, gl::SemaphoreID *>(
-    const ParamValue &value)
+inline gl::SemaphoreID * GetParamVal<ParamType::TSemaphoreIDPointer, gl::SemaphoreID *>(const ParamValue &value)
 {
     return value.SemaphoreIDPointerVal;
 }
 
 template <>
-inline gl::ShaderProgramID GetParamVal<ParamType::TShaderProgramID, gl::ShaderProgramID>(
-    const ParamValue &value)
+inline gl::ShaderProgramID GetParamVal<ParamType::TShaderProgramID, gl::ShaderProgramID>(const ParamValue &value)
 {
     return value.ShaderProgramIDVal;
 }
 
 template <>
-inline const gl::ShaderProgramID *GetParamVal<ParamType::TShaderProgramIDConstPointer,
-                                              const gl::ShaderProgramID *>(const ParamValue &value)
+inline const gl::ShaderProgramID * GetParamVal<ParamType::TShaderProgramIDConstPointer, const gl::ShaderProgramID *>(const ParamValue &value)
 {
     return value.ShaderProgramIDConstPointerVal;
 }
 
 template <>
-inline gl::ShaderProgramID *GetParamVal<ParamType::TShaderProgramIDPointer, gl::ShaderProgramID *>(
-    const ParamValue &value)
+inline gl::ShaderProgramID * GetParamVal<ParamType::TShaderProgramIDPointer, gl::ShaderProgramID *>(const ParamValue &value)
 {
     return value.ShaderProgramIDPointerVal;
 }
@@ -1226,8 +1153,7 @@ inline gl::ShaderType GetParamVal<ParamType::TShaderType, gl::ShaderType>(const 
 }
 
 template <>
-inline gl::ShadingModel GetParamVal<ParamType::TShadingModel, gl::ShadingModel>(
-    const ParamValue &value)
+inline gl::ShadingModel GetParamVal<ParamType::TShadingModel, gl::ShadingModel>(const ParamValue &value)
 {
     return value.ShadingModelVal;
 }
@@ -1245,15 +1171,13 @@ inline gl::SyncID GetParamVal<ParamType::TSyncID, gl::SyncID>(const ParamValue &
 }
 
 template <>
-inline gl::TextureEnvParameter
-GetParamVal<ParamType::TTextureEnvParameter, gl::TextureEnvParameter>(const ParamValue &value)
+inline gl::TextureEnvParameter GetParamVal<ParamType::TTextureEnvParameter, gl::TextureEnvParameter>(const ParamValue &value)
 {
     return value.TextureEnvParameterVal;
 }
 
 template <>
-inline gl::TextureEnvTarget GetParamVal<ParamType::TTextureEnvTarget, gl::TextureEnvTarget>(
-    const ParamValue &value)
+inline gl::TextureEnvTarget GetParamVal<ParamType::TTextureEnvTarget, gl::TextureEnvTarget>(const ParamValue &value)
 {
     return value.TextureEnvTargetVal;
 }
@@ -1265,29 +1189,25 @@ inline gl::TextureID GetParamVal<ParamType::TTextureID, gl::TextureID>(const Par
 }
 
 template <>
-inline const gl::TextureID *GetParamVal<ParamType::TTextureIDConstPointer, const gl::TextureID *>(
-    const ParamValue &value)
+inline const gl::TextureID * GetParamVal<ParamType::TTextureIDConstPointer, const gl::TextureID *>(const ParamValue &value)
 {
     return value.TextureIDConstPointerVal;
 }
 
 template <>
-inline gl::TextureID *GetParamVal<ParamType::TTextureIDPointer, gl::TextureID *>(
-    const ParamValue &value)
+inline gl::TextureID * GetParamVal<ParamType::TTextureIDPointer, gl::TextureID *>(const ParamValue &value)
 {
     return value.TextureIDPointerVal;
 }
 
 template <>
-inline gl::TextureTarget GetParamVal<ParamType::TTextureTarget, gl::TextureTarget>(
-    const ParamValue &value)
+inline gl::TextureTarget GetParamVal<ParamType::TTextureTarget, gl::TextureTarget>(const ParamValue &value)
 {
     return value.TextureTargetVal;
 }
 
 template <>
-inline gl::TextureType GetParamVal<ParamType::TTextureType, gl::TextureType>(
-    const ParamValue &value)
+inline gl::TextureType GetParamVal<ParamType::TTextureType, gl::TextureType>(const ParamValue &value)
 {
     return value.TextureTypeVal;
 }
@@ -1299,99 +1219,85 @@ inline egl::Timestamp GetParamVal<ParamType::TTimestamp, egl::Timestamp>(const P
 }
 
 template <>
-inline gl::TransformFeedbackID
-GetParamVal<ParamType::TTransformFeedbackID, gl::TransformFeedbackID>(const ParamValue &value)
+inline gl::TransformFeedbackID GetParamVal<ParamType::TTransformFeedbackID, gl::TransformFeedbackID>(const ParamValue &value)
 {
     return value.TransformFeedbackIDVal;
 }
 
 template <>
-inline const gl::TransformFeedbackID *
-GetParamVal<ParamType::TTransformFeedbackIDConstPointer, const gl::TransformFeedbackID *>(
-    const ParamValue &value)
+inline const gl::TransformFeedbackID * GetParamVal<ParamType::TTransformFeedbackIDConstPointer, const gl::TransformFeedbackID *>(const ParamValue &value)
 {
     return value.TransformFeedbackIDConstPointerVal;
 }
 
 template <>
-inline gl::TransformFeedbackID *GetParamVal<ParamType::TTransformFeedbackIDPointer,
-                                            gl::TransformFeedbackID *>(const ParamValue &value)
+inline gl::TransformFeedbackID * GetParamVal<ParamType::TTransformFeedbackIDPointer, gl::TransformFeedbackID *>(const ParamValue &value)
 {
     return value.TransformFeedbackIDPointerVal;
 }
 
 template <>
-inline gl::UniformBlockIndex GetParamVal<ParamType::TUniformBlockIndex, gl::UniformBlockIndex>(
-    const ParamValue &value)
+inline gl::UniformBlockIndex GetParamVal<ParamType::TUniformBlockIndex, gl::UniformBlockIndex>(const ParamValue &value)
 {
     return value.UniformBlockIndexVal;
 }
 
 template <>
-inline gl::UniformLocation GetParamVal<ParamType::TUniformLocation, gl::UniformLocation>(
-    const ParamValue &value)
+inline gl::UniformLocation GetParamVal<ParamType::TUniformLocation, gl::UniformLocation>(const ParamValue &value)
 {
     return value.UniformLocationVal;
 }
 
 template <>
-inline gl::VertexArrayID GetParamVal<ParamType::TVertexArrayID, gl::VertexArrayID>(
-    const ParamValue &value)
+inline gl::VertexArrayID GetParamVal<ParamType::TVertexArrayID, gl::VertexArrayID>(const ParamValue &value)
 {
     return value.VertexArrayIDVal;
 }
 
 template <>
-inline const gl::VertexArrayID *GetParamVal<ParamType::TVertexArrayIDConstPointer,
-                                            const gl::VertexArrayID *>(const ParamValue &value)
+inline const gl::VertexArrayID * GetParamVal<ParamType::TVertexArrayIDConstPointer, const gl::VertexArrayID *>(const ParamValue &value)
 {
     return value.VertexArrayIDConstPointerVal;
 }
 
 template <>
-inline gl::VertexArrayID *GetParamVal<ParamType::TVertexArrayIDPointer, gl::VertexArrayID *>(
-    const ParamValue &value)
+inline gl::VertexArrayID * GetParamVal<ParamType::TVertexArrayIDPointer, gl::VertexArrayID *>(const ParamValue &value)
 {
     return value.VertexArrayIDPointerVal;
 }
 
 template <>
-inline gl::VertexAttribType GetParamVal<ParamType::TVertexAttribType, gl::VertexAttribType>(
-    const ParamValue &value)
+inline gl::VertexAttribType GetParamVal<ParamType::TVertexAttribType, gl::VertexAttribType>(const ParamValue &value)
 {
     return value.VertexAttribTypeVal;
 }
 
 template <>
-inline const char *GetParamVal<ParamType::TcharConstPointer, const char *>(const ParamValue &value)
+inline const char * GetParamVal<ParamType::TcharConstPointer, const char *>(const ParamValue &value)
 {
     return value.charConstPointerVal;
 }
 
 template <>
-inline egl::Config *GetParamVal<ParamType::Tegl_ConfigPointer, egl::Config *>(
-    const ParamValue &value)
+inline egl::Config * GetParamVal<ParamType::Tegl_ConfigPointer, egl::Config *>(const ParamValue &value)
 {
     return value.egl_ConfigPointerVal;
 }
 
 template <>
-inline egl::Device *GetParamVal<ParamType::Tegl_DevicePointer, egl::Device *>(
-    const ParamValue &value)
+inline egl::Device * GetParamVal<ParamType::Tegl_DevicePointer, egl::Device *>(const ParamValue &value)
 {
     return value.egl_DevicePointerVal;
 }
 
 template <>
-inline egl::Display *GetParamVal<ParamType::Tegl_DisplayPointer, egl::Display *>(
-    const ParamValue &value)
+inline egl::Display * GetParamVal<ParamType::Tegl_DisplayPointer, egl::Display *>(const ParamValue &value)
 {
     return value.egl_DisplayPointerVal;
 }
 
 template <>
-inline egl::Stream *GetParamVal<ParamType::Tegl_StreamPointer, egl::Stream *>(
-    const ParamValue &value)
+inline egl::Stream * GetParamVal<ParamType::Tegl_StreamPointer, egl::Stream *>(const ParamValue &value)
 {
     return value.egl_StreamPointerVal;
 }
@@ -1403,26 +1309,25 @@ inline egl::SyncID GetParamVal<ParamType::Tegl_SyncID, egl::SyncID>(const ParamV
 }
 
 template <>
-inline const void *GetParamVal<ParamType::TvoidConstPointer, const void *>(const ParamValue &value)
+inline const void * GetParamVal<ParamType::TvoidConstPointer, const void *>(const ParamValue &value)
 {
     return value.voidConstPointerVal;
 }
 
 template <>
-inline const void *const *GetParamVal<ParamType::TvoidConstPointerPointer, const void *const *>(
-    const ParamValue &value)
+inline const void * const * GetParamVal<ParamType::TvoidConstPointerPointer, const void * const *>(const ParamValue &value)
 {
     return value.voidConstPointerPointerVal;
 }
 
 template <>
-inline void *GetParamVal<ParamType::TvoidPointer, void *>(const ParamValue &value)
+inline void * GetParamVal<ParamType::TvoidPointer, void *>(const ParamValue &value)
 {
     return value.voidPointerVal;
 }
 
 template <>
-inline void **GetParamVal<ParamType::TvoidPointerPointer, void **>(const ParamValue &value)
+inline void ** GetParamVal<ParamType::TvoidPointerPointer, void **>(const ParamValue &value)
 {
     return value.voidPointerPointerVal;
 }
@@ -1774,8 +1679,7 @@ template <ParamType PType, typename T>
 void SetParamVal(T valueIn, ParamValue *valueOut);
 
 template <>
-inline void SetParamVal<ParamType::TAHardwareBufferConstPointer>(const AHardwareBuffer *valueIn,
-                                                                 ParamValue *valueOut)
+inline void SetParamVal<ParamType::TAHardwareBufferConstPointer>(const AHardwareBuffer * valueIn, ParamValue *valueOut)
 {
     valueOut->AHardwareBufferConstPointerVal = valueIn;
 }
@@ -1799,14 +1703,13 @@ inline void SetParamVal<ParamType::TBufferID>(gl::BufferID valueIn, ParamValue *
 }
 
 template <>
-inline void SetParamVal<ParamType::TBufferIDConstPointer>(const gl::BufferID *valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TBufferIDConstPointer>(const gl::BufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->BufferIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TBufferIDPointer>(gl::BufferID *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TBufferIDPointer>(gl::BufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->BufferIDPointerVal = valueIn;
 }
@@ -1818,8 +1721,7 @@ inline void SetParamVal<ParamType::TBufferUsage>(gl::BufferUsage valueIn, ParamV
 }
 
 template <>
-inline void SetParamVal<ParamType::TClientVertexArrayType>(gl::ClientVertexArrayType valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TClientVertexArrayType>(gl::ClientVertexArrayType valueIn, ParamValue *valueOut)
 {
     valueOut->ClientVertexArrayTypeVal = valueIn;
 }
@@ -1837,8 +1739,7 @@ inline void SetParamVal<ParamType::TClipOrigin>(gl::ClipOrigin valueIn, ParamVal
 }
 
 template <>
-inline void SetParamVal<ParamType::TCompositorTiming>(egl::CompositorTiming valueIn,
-                                                      ParamValue *valueOut)
+inline void SetParamVal<ParamType::TCompositorTiming>(egl::CompositorTiming valueIn, ParamValue *valueOut)
 {
     valueOut->CompositorTimingVal = valueIn;
 }
@@ -1856,28 +1757,25 @@ inline void SetParamVal<ParamType::TCullFaceMode>(gl::CullFaceMode valueIn, Para
 }
 
 template <>
-inline void SetParamVal<ParamType::TDrawElementsType>(gl::DrawElementsType valueIn,
-                                                      ParamValue *valueOut)
+inline void SetParamVal<ParamType::TDrawElementsType>(gl::DrawElementsType valueIn, ParamValue *valueOut)
 {
     valueOut->DrawElementsTypeVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLAttribConstPointer>(const EGLAttrib *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLAttribConstPointer>(const EGLAttrib * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLAttribConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLAttribKHRPointer>(EGLAttribKHR *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLAttribKHRPointer>(EGLAttribKHR * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLAttribKHRPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLAttribPointer>(EGLAttrib *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLAttribPointer>(EGLAttrib * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLAttribPointerVal = valueIn;
 }
@@ -1889,7 +1787,7 @@ inline void SetParamVal<ParamType::TEGLBoolean>(EGLBoolean valueIn, ParamValue *
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLBooleanPointer>(EGLBoolean *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLBooleanPointer>(EGLBoolean * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLBooleanPointerVal = valueIn;
 }
@@ -1901,7 +1799,7 @@ inline void SetParamVal<ParamType::TEGLClientBuffer>(EGLClientBuffer valueIn, Pa
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLConfigPointer>(EGLConfig *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLConfigPointer>(EGLConfig * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLConfigPointerVal = valueIn;
 }
@@ -1931,15 +1829,13 @@ inline void SetParamVal<ParamType::TEGLDisplay>(EGLDisplay valueIn, ParamValue *
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLFrameTokenANGLE>(EGLFrameTokenANGLE valueIn,
-                                                        ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLFrameTokenANGLE>(EGLFrameTokenANGLE valueIn, ParamValue *valueOut)
 {
     valueOut->EGLFrameTokenANGLEVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLGetBlobFuncANDROID>(EGLGetBlobFuncANDROID valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLGetBlobFuncANDROID>(EGLGetBlobFuncANDROID valueIn, ParamValue *valueOut)
 {
     valueOut->EGLGetBlobFuncANDROIDVal = valueIn;
 }
@@ -1963,22 +1859,19 @@ inline void SetParamVal<ParamType::TEGLLabelKHR>(EGLLabelKHR valueIn, ParamValue
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLNativeDisplayType>(EGLNativeDisplayType valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLNativeDisplayType>(EGLNativeDisplayType valueIn, ParamValue *valueOut)
 {
     valueOut->EGLNativeDisplayTypeVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLNativePixmapType>(EGLNativePixmapType valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLNativePixmapType>(EGLNativePixmapType valueIn, ParamValue *valueOut)
 {
     valueOut->EGLNativePixmapTypeVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLNativeWindowType>(EGLNativeWindowType valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLNativeWindowType>(EGLNativeWindowType valueIn, ParamValue *valueOut)
 {
     valueOut->EGLNativeWindowTypeVal = valueIn;
 }
@@ -1990,8 +1883,7 @@ inline void SetParamVal<ParamType::TEGLObjectKHR>(EGLObjectKHR valueIn, ParamVal
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLSetBlobFuncANDROID>(EGLSetBlobFuncANDROID valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLSetBlobFuncANDROID>(EGLSetBlobFuncANDROID valueIn, ParamValue *valueOut)
 {
     valueOut->EGLSetBlobFuncANDROIDVal = valueIn;
 }
@@ -2045,13 +1937,13 @@ inline void SetParamVal<ParamType::TEGLint>(EGLint valueIn, ParamValue *valueOut
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLintConstPointer>(const EGLint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLintConstPointer>(const EGLint * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLintConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLintPointer>(EGLint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLintPointer>(EGLint * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLintPointerVal = valueIn;
 }
@@ -2063,8 +1955,7 @@ inline void SetParamVal<ParamType::TEGLnsecsANDROID>(EGLnsecsANDROID valueIn, Pa
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLnsecsANDROIDPointer>(EGLnsecsANDROID *valueIn,
-                                                            ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLnsecsANDROIDPointer>(EGLnsecsANDROID * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLnsecsANDROIDPointerVal = valueIn;
 }
@@ -2076,8 +1967,7 @@ inline void SetParamVal<ParamType::TEGLuint64KHR>(EGLuint64KHR valueIn, ParamVal
 }
 
 template <>
-inline void SetParamVal<ParamType::TEGLuint64KHRPointer>(EGLuint64KHR *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TEGLuint64KHRPointer>(EGLuint64KHR * valueIn, ParamValue *valueOut)
 {
     valueOut->EGLuint64KHRPointerVal = valueIn;
 }
@@ -2089,14 +1979,13 @@ inline void SetParamVal<ParamType::TFenceNVID>(gl::FenceNVID valueIn, ParamValue
 }
 
 template <>
-inline void SetParamVal<ParamType::TFenceNVIDConstPointer>(const gl::FenceNVID *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TFenceNVIDConstPointer>(const gl::FenceNVID * valueIn, ParamValue *valueOut)
 {
     valueOut->FenceNVIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TFenceNVIDPointer>(gl::FenceNVID *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TFenceNVIDPointer>(gl::FenceNVID * valueIn, ParamValue *valueOut)
 {
     valueOut->FenceNVIDPointerVal = valueIn;
 }
@@ -2108,15 +1997,13 @@ inline void SetParamVal<ParamType::TFramebufferID>(gl::FramebufferID valueIn, Pa
 }
 
 template <>
-inline void SetParamVal<ParamType::TFramebufferIDConstPointer>(const gl::FramebufferID *valueIn,
-                                                               ParamValue *valueOut)
+inline void SetParamVal<ParamType::TFramebufferIDConstPointer>(const gl::FramebufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->FramebufferIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TFramebufferIDPointer>(gl::FramebufferID *valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TFramebufferIDPointer>(gl::FramebufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->FramebufferIDPointerVal = valueIn;
 }
@@ -2134,15 +2021,13 @@ inline void SetParamVal<ParamType::TGLDEBUGPROCKHR>(GLDEBUGPROCKHR valueIn, Para
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLGETBLOBPROCANGLE>(GLGETBLOBPROCANGLE valueIn,
-                                                        ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLGETBLOBPROCANGLE>(GLGETBLOBPROCANGLE valueIn, ParamValue *valueOut)
 {
     valueOut->GLGETBLOBPROCANGLEVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLSETBLOBPROCANGLE>(GLSETBLOBPROCANGLE valueIn,
-                                                        ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLSETBLOBPROCANGLE>(GLSETBLOBPROCANGLE valueIn, ParamValue *valueOut)
 {
     valueOut->GLSETBLOBPROCANGLEVal = valueIn;
 }
@@ -2160,26 +2045,25 @@ inline void SetParamVal<ParamType::TGLboolean>(GLboolean valueIn, ParamValue *va
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLbooleanPointer>(GLboolean *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLbooleanPointer>(GLboolean * valueIn, ParamValue *valueOut)
 {
     valueOut->GLbooleanPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLcharConstPointer>(const GLchar *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLcharConstPointer>(const GLchar * valueIn, ParamValue *valueOut)
 {
     valueOut->GLcharConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLcharConstPointerPointer>(const GLchar *const *valueIn,
-                                                               ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLcharConstPointerPointer>(const GLchar * const * valueIn, ParamValue *valueOut)
 {
     valueOut->GLcharConstPointerPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLcharPointer>(GLchar *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLcharPointer>(GLchar * valueIn, ParamValue *valueOut)
 {
     valueOut->GLcharPointerVal = valueIn;
 }
@@ -2191,8 +2075,7 @@ inline void SetParamVal<ParamType::TGLclampx>(GLclampx valueIn, ParamValue *valu
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLeglClientBufferEXT>(GLeglClientBufferEXT valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLeglClientBufferEXT>(GLeglClientBufferEXT valueIn, ParamValue *valueOut)
 {
     valueOut->GLeglClientBufferEXTVal = valueIn;
 }
@@ -2204,13 +2087,13 @@ inline void SetParamVal<ParamType::TGLenum>(GLenum valueIn, ParamValue *valueOut
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLenumConstPointer>(const GLenum *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLenumConstPointer>(const GLenum * valueIn, ParamValue *valueOut)
 {
     valueOut->GLenumConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLenumPointer>(GLenum *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLenumPointer>(GLenum * valueIn, ParamValue *valueOut)
 {
     valueOut->GLenumPointerVal = valueIn;
 }
@@ -2222,14 +2105,13 @@ inline void SetParamVal<ParamType::TGLfixed>(GLfixed valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLfixedConstPointer>(const GLfixed *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLfixedConstPointer>(const GLfixed * valueIn, ParamValue *valueOut)
 {
     valueOut->GLfixedConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLfixedPointer>(GLfixed *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLfixedPointer>(GLfixed * valueIn, ParamValue *valueOut)
 {
     valueOut->GLfixedPointerVal = valueIn;
 }
@@ -2241,14 +2123,13 @@ inline void SetParamVal<ParamType::TGLfloat>(GLfloat valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLfloatConstPointer>(const GLfloat *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLfloatConstPointer>(const GLfloat * valueIn, ParamValue *valueOut)
 {
     valueOut->GLfloatConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLfloatPointer>(GLfloat *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLfloatPointer>(GLfloat * valueIn, ParamValue *valueOut)
 {
     valueOut->GLfloatPointerVal = valueIn;
 }
@@ -2266,19 +2147,19 @@ inline void SetParamVal<ParamType::TGLint64>(GLint64 valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLint64Pointer>(GLint64 *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLint64Pointer>(GLint64 * valueIn, ParamValue *valueOut)
 {
     valueOut->GLint64PointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLintConstPointer>(const GLint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLintConstPointer>(const GLint * valueIn, ParamValue *valueOut)
 {
     valueOut->GLintConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLintPointer>(GLint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLintPointer>(GLint * valueIn, ParamValue *valueOut)
 {
     valueOut->GLintPointerVal = valueIn;
 }
@@ -2296,8 +2177,7 @@ inline void SetParamVal<ParamType::TGLshort>(GLshort valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLshortConstPointer>(const GLshort *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLshortConstPointer>(const GLshort * valueIn, ParamValue *valueOut)
 {
     valueOut->GLshortConstPointerVal = valueIn;
 }
@@ -2309,14 +2189,13 @@ inline void SetParamVal<ParamType::TGLsizei>(GLsizei valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLsizeiConstPointer>(const GLsizei *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLsizeiConstPointer>(const GLsizei * valueIn, ParamValue *valueOut)
 {
     valueOut->GLsizeiConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLsizeiPointer>(GLsizei *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLsizeiPointer>(GLsizei * valueIn, ParamValue *valueOut)
 {
     valueOut->GLsizeiPointerVal = valueIn;
 }
@@ -2340,14 +2219,13 @@ inline void SetParamVal<ParamType::TGLubyte>(GLubyte valueIn, ParamValue *valueO
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLubyteConstPointer>(const GLubyte *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLubyteConstPointer>(const GLubyte * valueIn, ParamValue *valueOut)
 {
     valueOut->GLubyteConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLubytePointer>(GLubyte *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLubytePointer>(GLubyte * valueIn, ParamValue *valueOut)
 {
     valueOut->GLubytePointerVal = valueIn;
 }
@@ -2365,33 +2243,31 @@ inline void SetParamVal<ParamType::TGLuint64>(GLuint64 valueIn, ParamValue *valu
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLuint64ConstPointer>(const GLuint64 *valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLuint64ConstPointer>(const GLuint64 * valueIn, ParamValue *valueOut)
 {
     valueOut->GLuint64ConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLuint64Pointer>(GLuint64 *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLuint64Pointer>(GLuint64 * valueIn, ParamValue *valueOut)
 {
     valueOut->GLuint64PointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLuintConstPointer>(const GLuint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLuintConstPointer>(const GLuint * valueIn, ParamValue *valueOut)
 {
     valueOut->GLuintConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGLuintPointer>(GLuint *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGLuintPointer>(GLuint * valueIn, ParamValue *valueOut)
 {
     valueOut->GLuintPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TGraphicsResetStatus>(gl::GraphicsResetStatus valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TGraphicsResetStatus>(gl::GraphicsResetStatus valueIn, ParamValue *valueOut)
 {
     valueOut->GraphicsResetStatusVal = valueIn;
 }
@@ -2409,22 +2285,19 @@ inline void SetParamVal<ParamType::TImageID>(egl::ImageID valueIn, ParamValue *v
 }
 
 template <>
-inline void SetParamVal<ParamType::TLightParameter>(gl::LightParameter valueIn,
-                                                    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TLightParameter>(gl::LightParameter valueIn, ParamValue *valueOut)
 {
     valueOut->LightParameterVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TLogicalOperation>(gl::LogicalOperation valueIn,
-                                                      ParamValue *valueOut)
+inline void SetParamVal<ParamType::TLogicalOperation>(gl::LogicalOperation valueIn, ParamValue *valueOut)
 {
     valueOut->LogicalOperationVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TMaterialParameter>(gl::MaterialParameter valueIn,
-                                                       ParamValue *valueOut)
+inline void SetParamVal<ParamType::TMaterialParameter>(gl::MaterialParameter valueIn, ParamValue *valueOut)
 {
     valueOut->MaterialParameterVal = valueIn;
 }
@@ -2436,22 +2309,19 @@ inline void SetParamVal<ParamType::TMatrixType>(gl::MatrixType valueIn, ParamVal
 }
 
 template <>
-inline void SetParamVal<ParamType::TMemoryObjectID>(gl::MemoryObjectID valueIn,
-                                                    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TMemoryObjectID>(gl::MemoryObjectID valueIn, ParamValue *valueOut)
 {
     valueOut->MemoryObjectIDVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TMemoryObjectIDConstPointer>(const gl::MemoryObjectID *valueIn,
-                                                                ParamValue *valueOut)
+inline void SetParamVal<ParamType::TMemoryObjectIDConstPointer>(const gl::MemoryObjectID * valueIn, ParamValue *valueOut)
 {
     valueOut->MemoryObjectIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TMemoryObjectIDPointer>(gl::MemoryObjectID *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TMemoryObjectIDPointer>(gl::MemoryObjectID * valueIn, ParamValue *valueOut)
 {
     valueOut->MemoryObjectIDPointerVal = valueIn;
 }
@@ -2463,8 +2333,7 @@ inline void SetParamVal<ParamType::TObjectType>(egl::ObjectType valueIn, ParamVa
 }
 
 template <>
-inline void SetParamVal<ParamType::TPointParameter>(gl::PointParameter valueIn,
-                                                    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TPointParameter>(gl::PointParameter valueIn, ParamValue *valueOut)
 {
     valueOut->PointParameterVal = valueIn;
 }
@@ -2482,31 +2351,25 @@ inline void SetParamVal<ParamType::TPrimitiveMode>(gl::PrimitiveMode valueIn, Pa
 }
 
 template <>
-inline void SetParamVal<ParamType::TProgramPipelineID>(gl::ProgramPipelineID valueIn,
-                                                       ParamValue *valueOut)
+inline void SetParamVal<ParamType::TProgramPipelineID>(gl::ProgramPipelineID valueIn, ParamValue *valueOut)
 {
     valueOut->ProgramPipelineIDVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TProgramPipelineIDConstPointer>(
-    const gl::ProgramPipelineID *valueIn,
-    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TProgramPipelineIDConstPointer>(const gl::ProgramPipelineID * valueIn, ParamValue *valueOut)
 {
     valueOut->ProgramPipelineIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TProgramPipelineIDPointer>(gl::ProgramPipelineID *valueIn,
-                                                              ParamValue *valueOut)
+inline void SetParamVal<ParamType::TProgramPipelineIDPointer>(gl::ProgramPipelineID * valueIn, ParamValue *valueOut)
 {
     valueOut->ProgramPipelineIDPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TProvokingVertexConvention>(
-    gl::ProvokingVertexConvention valueIn,
-    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TProvokingVertexConvention>(gl::ProvokingVertexConvention valueIn, ParamValue *valueOut)
 {
     valueOut->ProvokingVertexConventionVal = valueIn;
 }
@@ -2518,14 +2381,13 @@ inline void SetParamVal<ParamType::TQueryID>(gl::QueryID valueIn, ParamValue *va
 }
 
 template <>
-inline void SetParamVal<ParamType::TQueryIDConstPointer>(const gl::QueryID *valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TQueryIDConstPointer>(const gl::QueryID * valueIn, ParamValue *valueOut)
 {
     valueOut->QueryIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TQueryIDPointer>(gl::QueryID *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TQueryIDPointer>(gl::QueryID * valueIn, ParamValue *valueOut)
 {
     valueOut->QueryIDPointerVal = valueIn;
 }
@@ -2537,22 +2399,19 @@ inline void SetParamVal<ParamType::TQueryType>(gl::QueryType valueIn, ParamValue
 }
 
 template <>
-inline void SetParamVal<ParamType::TRenderbufferID>(gl::RenderbufferID valueIn,
-                                                    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TRenderbufferID>(gl::RenderbufferID valueIn, ParamValue *valueOut)
 {
     valueOut->RenderbufferIDVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TRenderbufferIDConstPointer>(const gl::RenderbufferID *valueIn,
-                                                                ParamValue *valueOut)
+inline void SetParamVal<ParamType::TRenderbufferIDConstPointer>(const gl::RenderbufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->RenderbufferIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TRenderbufferIDPointer>(gl::RenderbufferID *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TRenderbufferIDPointer>(gl::RenderbufferID * valueIn, ParamValue *valueOut)
 {
     valueOut->RenderbufferIDPointerVal = valueIn;
 }
@@ -2564,14 +2423,13 @@ inline void SetParamVal<ParamType::TSamplerID>(gl::SamplerID valueIn, ParamValue
 }
 
 template <>
-inline void SetParamVal<ParamType::TSamplerIDConstPointer>(const gl::SamplerID *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TSamplerIDConstPointer>(const gl::SamplerID * valueIn, ParamValue *valueOut)
 {
     valueOut->SamplerIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TSamplerIDPointer>(gl::SamplerID *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TSamplerIDPointer>(gl::SamplerID * valueIn, ParamValue *valueOut)
 {
     valueOut->SamplerIDPointerVal = valueIn;
 }
@@ -2583,36 +2441,31 @@ inline void SetParamVal<ParamType::TSemaphoreID>(gl::SemaphoreID valueIn, ParamV
 }
 
 template <>
-inline void SetParamVal<ParamType::TSemaphoreIDConstPointer>(const gl::SemaphoreID *valueIn,
-                                                             ParamValue *valueOut)
+inline void SetParamVal<ParamType::TSemaphoreIDConstPointer>(const gl::SemaphoreID * valueIn, ParamValue *valueOut)
 {
     valueOut->SemaphoreIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TSemaphoreIDPointer>(gl::SemaphoreID *valueIn,
-                                                        ParamValue *valueOut)
+inline void SetParamVal<ParamType::TSemaphoreIDPointer>(gl::SemaphoreID * valueIn, ParamValue *valueOut)
 {
     valueOut->SemaphoreIDPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TShaderProgramID>(gl::ShaderProgramID valueIn,
-                                                     ParamValue *valueOut)
+inline void SetParamVal<ParamType::TShaderProgramID>(gl::ShaderProgramID valueIn, ParamValue *valueOut)
 {
     valueOut->ShaderProgramIDVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TShaderProgramIDConstPointer>(const gl::ShaderProgramID *valueIn,
-                                                                 ParamValue *valueOut)
+inline void SetParamVal<ParamType::TShaderProgramIDConstPointer>(const gl::ShaderProgramID * valueIn, ParamValue *valueOut)
 {
     valueOut->ShaderProgramIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TShaderProgramIDPointer>(gl::ShaderProgramID *valueIn,
-                                                            ParamValue *valueOut)
+inline void SetParamVal<ParamType::TShaderProgramIDPointer>(gl::ShaderProgramID * valueIn, ParamValue *valueOut)
 {
     valueOut->ShaderProgramIDPointerVal = valueIn;
 }
@@ -2642,15 +2495,13 @@ inline void SetParamVal<ParamType::TSyncID>(gl::SyncID valueIn, ParamValue *valu
 }
 
 template <>
-inline void SetParamVal<ParamType::TTextureEnvParameter>(gl::TextureEnvParameter valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTextureEnvParameter>(gl::TextureEnvParameter valueIn, ParamValue *valueOut)
 {
     valueOut->TextureEnvParameterVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TTextureEnvTarget>(gl::TextureEnvTarget valueIn,
-                                                      ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTextureEnvTarget>(gl::TextureEnvTarget valueIn, ParamValue *valueOut)
 {
     valueOut->TextureEnvTargetVal = valueIn;
 }
@@ -2662,14 +2513,13 @@ inline void SetParamVal<ParamType::TTextureID>(gl::TextureID valueIn, ParamValue
 }
 
 template <>
-inline void SetParamVal<ParamType::TTextureIDConstPointer>(const gl::TextureID *valueIn,
-                                                           ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTextureIDConstPointer>(const gl::TextureID * valueIn, ParamValue *valueOut)
 {
     valueOut->TextureIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TTextureIDPointer>(gl::TextureID *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTextureIDPointer>(gl::TextureID * valueIn, ParamValue *valueOut)
 {
     valueOut->TextureIDPointerVal = valueIn;
 }
@@ -2693,37 +2543,31 @@ inline void SetParamVal<ParamType::TTimestamp>(egl::Timestamp valueIn, ParamValu
 }
 
 template <>
-inline void SetParamVal<ParamType::TTransformFeedbackID>(gl::TransformFeedbackID valueIn,
-                                                         ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTransformFeedbackID>(gl::TransformFeedbackID valueIn, ParamValue *valueOut)
 {
     valueOut->TransformFeedbackIDVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TTransformFeedbackIDConstPointer>(
-    const gl::TransformFeedbackID *valueIn,
-    ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTransformFeedbackIDConstPointer>(const gl::TransformFeedbackID * valueIn, ParamValue *valueOut)
 {
     valueOut->TransformFeedbackIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TTransformFeedbackIDPointer>(gl::TransformFeedbackID *valueIn,
-                                                                ParamValue *valueOut)
+inline void SetParamVal<ParamType::TTransformFeedbackIDPointer>(gl::TransformFeedbackID * valueIn, ParamValue *valueOut)
 {
     valueOut->TransformFeedbackIDPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TUniformBlockIndex>(gl::UniformBlockIndex valueIn,
-                                                       ParamValue *valueOut)
+inline void SetParamVal<ParamType::TUniformBlockIndex>(gl::UniformBlockIndex valueIn, ParamValue *valueOut)
 {
     valueOut->UniformBlockIndexVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TUniformLocation>(gl::UniformLocation valueIn,
-                                                     ParamValue *valueOut)
+inline void SetParamVal<ParamType::TUniformLocation>(gl::UniformLocation valueIn, ParamValue *valueOut)
 {
     valueOut->UniformLocationVal = valueIn;
 }
@@ -2735,52 +2579,49 @@ inline void SetParamVal<ParamType::TVertexArrayID>(gl::VertexArrayID valueIn, Pa
 }
 
 template <>
-inline void SetParamVal<ParamType::TVertexArrayIDConstPointer>(const gl::VertexArrayID *valueIn,
-                                                               ParamValue *valueOut)
+inline void SetParamVal<ParamType::TVertexArrayIDConstPointer>(const gl::VertexArrayID * valueIn, ParamValue *valueOut)
 {
     valueOut->VertexArrayIDConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TVertexArrayIDPointer>(gl::VertexArrayID *valueIn,
-                                                          ParamValue *valueOut)
+inline void SetParamVal<ParamType::TVertexArrayIDPointer>(gl::VertexArrayID * valueIn, ParamValue *valueOut)
 {
     valueOut->VertexArrayIDPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TVertexAttribType>(gl::VertexAttribType valueIn,
-                                                      ParamValue *valueOut)
+inline void SetParamVal<ParamType::TVertexAttribType>(gl::VertexAttribType valueIn, ParamValue *valueOut)
 {
     valueOut->VertexAttribTypeVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TcharConstPointer>(const char *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TcharConstPointer>(const char * valueIn, ParamValue *valueOut)
 {
     valueOut->charConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::Tegl_ConfigPointer>(egl::Config *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::Tegl_ConfigPointer>(egl::Config * valueIn, ParamValue *valueOut)
 {
     valueOut->egl_ConfigPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::Tegl_DevicePointer>(egl::Device *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::Tegl_DevicePointer>(egl::Device * valueIn, ParamValue *valueOut)
 {
     valueOut->egl_DevicePointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::Tegl_DisplayPointer>(egl::Display *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::Tegl_DisplayPointer>(egl::Display * valueIn, ParamValue *valueOut)
 {
     valueOut->egl_DisplayPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::Tegl_StreamPointer>(egl::Stream *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::Tegl_StreamPointer>(egl::Stream * valueIn, ParamValue *valueOut)
 {
     valueOut->egl_StreamPointerVal = valueIn;
 }
@@ -2792,26 +2633,25 @@ inline void SetParamVal<ParamType::Tegl_SyncID>(egl::SyncID valueIn, ParamValue 
 }
 
 template <>
-inline void SetParamVal<ParamType::TvoidConstPointer>(const void *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TvoidConstPointer>(const void * valueIn, ParamValue *valueOut)
 {
     valueOut->voidConstPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TvoidConstPointerPointer>(const void *const *valueIn,
-                                                             ParamValue *valueOut)
+inline void SetParamVal<ParamType::TvoidConstPointerPointer>(const void * const * valueIn, ParamValue *valueOut)
 {
     valueOut->voidConstPointerPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TvoidPointer>(void *valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TvoidPointer>(void * valueIn, ParamValue *valueOut)
 {
     valueOut->voidPointerVal = valueIn;
 }
 
 template <>
-inline void SetParamVal<ParamType::TvoidPointerPointer>(void **valueIn, ParamValue *valueOut)
+inline void SetParamVal<ParamType::TvoidPointerPointer>(void ** valueIn, ParamValue *valueOut)
 {
     valueOut->voidPointerPointerVal = valueIn;
 }
