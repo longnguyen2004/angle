@@ -78,6 +78,7 @@ struct Config
                            // determine if y-inverted texture coordinates need to be used when
                            // texturing from this drawable when it is bound to a texture target.
     EGLint matchFormat;    // LockSurface match format.
+    EGLBoolean fullscreen;
 };
 
 class ConfigSet

@@ -4599,6 +4599,9 @@ void QueryConfigAttrib(const Config *config, EGLint attribute, EGLint *value)
             break;
         case EGL_MATCH_FORMAT_KHR:
             *value = config->matchFormat;
+			break;
+        case EGL_FULLSCREEN_ANGLE:
+            *value = config->fullscreen;
             break;
         default:
             UNREACHABLE();
