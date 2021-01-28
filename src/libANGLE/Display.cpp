@@ -2070,6 +2070,11 @@ Error Display::waitNative(const gl::Context *context, EGLint engine)
     return mImplementation->waitNative(context, engine);
 }
 
+Error Display::toggleWindowed(const gl::Context *context)
+{
+    return mImplementation->toggleWindowed(context);
+}
+
 const Caps &Display::getCaps() const
 {
     return mCaps;

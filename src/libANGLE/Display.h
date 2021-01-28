@@ -239,6 +239,7 @@ class Display final : public LabeledObject,
 
     Error waitClient(const gl::Context *context);
     Error waitNative(const gl::Context *context, EGLint engine);
+    Error toggleWindowed(const gl::Context *context);
 
     const Caps &getCaps() const;
 

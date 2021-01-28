@@ -1108,4 +1108,15 @@ EGLBoolean QuerySupportedCompressionRatesEXT(Thread *thread,
     return EGL_TRUE;
 }
 
+EGLBoolean ToggleWindowed(Thread *thread)
+{
+    Display *display = thread->getDisplay();
+    ANGLE_EGL_TRY_RETURN(thread, display->prepareForCall(), "eglToggleWindowed",
+                         GetDisplayIfValid(display), EGL_FALSE);
+    ANGLE_EGL_TRY_RETURN(thread, display->toggleWindowed(thread->getContext()), "eglToggleWindowed",
+                         GetThreadIfValid(thread), EGL_FALSE);
+    thread->setSuccess();
+    return EGL_TRUE;
+}
+
 }  // namespace egl

@@ -397,6 +397,7 @@ supported_egl_extensions = [
     "EGL_KHR_wait_sync",
     "EGL_NV_post_sub_buffer",
     "EGL_NV_stream_consumer_gltexture_yuv",
+    "EGL_SMOOGI_toggle_windowed",
 ]
 
 check_sorted('supported_egl_extensions', supported_egl_extensions)
