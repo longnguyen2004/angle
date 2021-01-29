@@ -235,8 +235,8 @@ egl::Error SurfaceD3D::resizeSwapChain(DisplayD3D *displayD3D,
         return egl::Error(status);
     }
 
-    mWidth  = backbufferWidth;
-    mHeight = backbufferHeight;
+    mWidth  = mSwapChain->getWidth();
+    mHeight = mSwapChain->getHeight();
 
     return egl::NoError();
 }
@@ -261,8 +261,8 @@ egl::Error SurfaceD3D::resetSwapChain(DisplayD3D *displayD3D,
         return egl::Error(status);
     }
 
-    mWidth             = backbufferWidth;
-    mHeight            = backbufferHeight;
+    mWidth             = mSwapChain->getWidth();
+    mHeight            = mSwapChain->getHeight();
     mSwapIntervalDirty = false;
 
     return egl::NoError();
@@ -353,7 +353,7 @@ egl::Error SurfaceD3D::checkForOutOfDateSwapChain(DisplayD3D *displayD3D)
 egl::Error SurfaceD3D::toggleWindowed(DisplayD3D *displayD3D)
 {
     ANGLE_TRY(mSwapChain->toggleWindowed());
-    ANGLE_TRY(resetSwapChain(displayD3D, mWidth, mHeight));
+    ANGLE_TRY(resetSwapChain(displayD3D, mSwapChain->getWidth(), mSwapChain->getHeight()));
 
     return egl::NoError();
 }
