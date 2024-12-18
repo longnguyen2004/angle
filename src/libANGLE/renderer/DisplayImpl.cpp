@@ -157,4 +157,6 @@ egl::Error DisplayImpl::querySupportedCompressionRates(const egl::Config *config
     UNREACHABLE();
     return egl::NoError();
 }
+
+egl::Error DisplayImpl::toggleWindowed(const gl::Context *context) { return egl::NoError(); }
 }  // namespace rx

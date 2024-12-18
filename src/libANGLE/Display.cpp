@@ -821,6 +821,7 @@ Display *Display::GetDisplayFromNativeDisplay(EGLenum platform,
     // Apply new attributes if the display is not initialized yet.
     if (!display->isInitialized())
     {
+        updatedAttribMap.insert(EGL_PLATFORM_ANGLE_TYPE_ANGLE, EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE);
         display->setAttributes(updatedAttribMap);
 
         EGLAttrib displayType  = display->mAttributeMap.get(EGL_PLATFORM_ANGLE_TYPE_ANGLE);

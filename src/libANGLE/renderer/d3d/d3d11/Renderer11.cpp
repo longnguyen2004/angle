@@ -520,7 +520,7 @@ Renderer11::Renderer11(egl::Display *display)
     }
 
     const EGLenum presentPath = static_cast<EGLenum>(attributes.get(
-        EGL_EXPERIMENTAL_PRESENT_PATH_ANGLE, EGL_EXPERIMENTAL_PRESENT_PATH_COPY_ANGLE));
+        EGL_EXPERIMENTAL_PRESENT_PATH_ANGLE, EGL_EXPERIMENTAL_PRESENT_PATH_FAST_ANGLE));
     mPresentPathFastEnabled   = (presentPath == EGL_EXPERIMENTAL_PRESENT_PATH_FAST_ANGLE);
 }
 
@@ -1352,6 +1352,7 @@ egl::ConfigSet Renderer11::generateConfigs()
                 config.optimalOrientation    = optimalSurfaceOrientation;
                 config.colorComponentType    = gl_egl::GLComponentTypeToEGLColorComponentType(
                     colorBufferFormatInfo.componentType);
+                config.fullscreen = EGL_FALSE;
 
                 configs.add(config);
             }

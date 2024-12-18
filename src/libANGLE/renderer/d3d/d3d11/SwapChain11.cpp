@@ -9,6 +9,8 @@
 #include "libANGLE/renderer/d3d/d3d11/SwapChain11.h"
 
 #include <EGL/eglext.h>
+#include <chrono>
+#include <iostream>
 
 #include "libANGLE/features.h"
 #include "libANGLE/renderer/d3d/DisplayD3D.h"
@@ -30,6 +32,8 @@
 #else
 #    define ANGLE_RESOURCE_SHARE_TYPE D3D11_RESOURCE_MISC_SHARED
 #endif
+
+using namespace std::chrono;
 
 namespace rx
 {
@@ -72,6 +76,7 @@ SwapChain11::SwapChain11(Renderer11 *renderer,
       mSwapChain(nullptr),
       mSwapChain1(nullptr),
       mKeyedMutex(nullptr),
+      mFrameWaitableLatencyObject(nullptr),
       mBackBufferTexture(),
       mBackBufferRTView(),
       mBackBufferSRView(),
@@ -508,8 +513,10 @@ EGLint SwapChain11::resize(DisplayD3D *displayD3D, EGLint backbufferWidth, EGLin
         return EGL_BAD_ALLOC;
     }
 
-    hr = mSwapChain->ResizeBuffers(desc.BufferCount, backbufferWidth, backbufferHeight,
-                                   getSwapChainNativeFormat(), 0);
+    DXGI_SWAP_CHAIN_DESC description;
+    mSwapChain->GetDesc(&description); // Let's just pretend it succeed
+    hr = mSwapChain->ResizeBuffers(desc.BufferCount, backbufferWidth, backbufferHeight, getSwapChainNativeFormat(),
+        description.Flags);
 
     if (FAILED(hr))
     {
@@ -528,6 +535,9 @@ EGLint SwapChain11::resize(DisplayD3D *displayD3D, EGLint backbufferWidth, EGLin
             return EGL_BAD_ALLOC;
         }
     }
+
+    mFrameWaitableLatencyObject =
+        static_cast<IDXGISwapChain2 *>(mSwapChain1)->GetFrameLatencyWaitableObject();
 
     ID3D11Texture2D *backbufferTexture = nullptr;
     hr                                 = mSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D),
@@ -653,6 +663,8 @@ EGLint SwapChain11::reset(DisplayD3D *displayD3D,
         if (mRenderer->getRenderer11DeviceCaps().supportsDXGI1_2)
         {
             mSwapChain1 = d3d11::DynamicCastComObject<IDXGISwapChain1>(mSwapChain);
+            mFrameWaitableLatencyObject =
+                static_cast<IDXGISwapChain2 *>(mSwapChain1)->GetFrameLatencyWaitableObject();
         }
 
         ID3D11Texture2D *backbufferTex = nullptr;
@@ -912,28 +924,36 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
 #endif
 
     HRESULT result = S_OK;
+    UINT presentFlags = DXGI_PRESENT_RESTART | DXGI_PRESENT_DO_NOT_WAIT;
+    if (swapInterval == 0)
+        presentFlags |= DXGI_PRESENT_ALLOW_TEARING;
+
+    HANDLE waitableObject[] = {mFrameWaitableLatencyObject};
+    if (waitableObject[0])
+        if (MsgWaitForMultipleObjects(1, waitableObject, FALSE, 50, QS_ALLINPUT & ~(QS_MOUSE | QS_RAWINPUT)) != WAIT_OBJECT_0)
+            return EGL_SUCCESS;
 
     // Use IDXGISwapChain1::Present1 with a dirty rect if DXGI 1.2 is available.
     // Dirty rect present is not supported with a multisampled swapchain.
     if (mSwapChain1 != nullptr && mEGLSamples <= 1)
     {
-        if (mFirstSwap)
+        if (mFirstSwap || true)
         {
             // Can't swap with a dirty rect if this swap chain has never swapped before
             DXGI_PRESENT_PARAMETERS params = {0, nullptr, nullptr, nullptr};
-            result                         = mSwapChain1->Present1(swapInterval, 0, &params);
+            result = mSwapChain1->Present1(swapInterval, presentFlags, &params);
         }
         else
         {
             RECT rect = {static_cast<LONG>(x), static_cast<LONG>(mHeight - y - height),
                          static_cast<LONG>(x + width), static_cast<LONG>(mHeight - y)};
             DXGI_PRESENT_PARAMETERS params = {1, &rect, nullptr, nullptr};
-            result                         = mSwapChain1->Present1(swapInterval, 0, &params);
+            result = mSwapChain1->Present1(swapInterval, presentFlags, &params);
         }
     }
     else
     {
-        result = mSwapChain->Present(swapInterval, 0);
+        result = mSwapChain->Present(swapInterval, presentFlags);
     }
 
     mFirstSwap = false;
@@ -952,6 +972,10 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
     {
         ERR() << "Present failed: the D3D11 device was reset from a bad command.";
         return EGL_CONTEXT_LOST;
+    }
+    else if (result == DXGI_ERROR_WAS_STILL_DRAWING)
+    {
+        // Do nothing
     }
     else if (FAILED(result))
     {
