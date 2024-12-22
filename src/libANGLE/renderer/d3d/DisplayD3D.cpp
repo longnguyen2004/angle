@@ -420,7 +420,7 @@ egl::Error DisplayD3D::waitNative(const gl::Context *context, EGLint engine)
 
 egl::Error DisplayD3D::toggleWindowed(const gl::Context *context)
 {
-    for (egl::Surface *surface : mState.surfaceSet)
+    for (auto &[_, surface] : mState.surfaceMap)
     {
         SurfaceD3D *surfaceD3D = GetImplAs<SurfaceD3D>(surface);
         ANGLE_TRY(surfaceD3D->toggleWindowed(this));

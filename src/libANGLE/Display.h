@@ -33,6 +33,8 @@
 #include "platform/Feature.h"
 #include "platform/autogen/FrontendFeatures_autogen.h"
 
+#define ANGLE_USE_DISPLAY_PREPARE_FOR_CALL 1
+
 // Only DisplayCGL needs to be notified about an EGL call about to be made to prepare
 // per-thread data. Disable Display::prepareForCall on other platforms for performance.
 #if !defined(ANGLE_USE_DISPLAY_PREPARE_FOR_CALL)

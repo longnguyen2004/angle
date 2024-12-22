@@ -780,6 +780,11 @@ ANGLE_INLINE ScopedContextMutexLock GetContextLock_SetValidationEnabledANGLE(Thr
     return {};
 }
 
+ANGLE_INLINE ScopedContextMutexLock GetContextLock_ToggleWindowed(Thread *thread)
+{
+    return {};
+}
+
 }  // namespace egl
 
 #endif  // LIBGLESV2_EGL_CONTEXT_LOCK_IMPL_H_
