@@ -778,6 +778,11 @@ Display *Display::GetDisplayFromNativeDisplay(EGLenum platform,
     AttributeMap updatedAttribMap(attribMap);
     UpdateAttribsFromEnvironment(updatedAttribMap);
 
+    updatedAttribMap.insert(EGL_POWER_PREFERENCE_ANGLE, EGL_HIGH_POWER_ANGLE);
+    updatedAttribMap.insert(EGL_PLATFORM_ANGLE_TYPE_ANGLE, EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE);
+    updatedAttribMap.insert(EGL_EXPERIMENTAL_PRESENT_PATH_ANGLE,
+                            EGL_EXPERIMENTAL_PRESENT_PATH_FAST_ANGLE);
+
     EGLAttrib powerPreference =
         updatedAttribMap.get(EGL_POWER_PREFERENCE_ANGLE, EGL_LOW_POWER_ANGLE);
     EGLAttrib platformANGLEType =
@@ -821,7 +826,6 @@ Display *Display::GetDisplayFromNativeDisplay(EGLenum platform,
     // Apply new attributes if the display is not initialized yet.
     if (!display->isInitialized())
     {
-        updatedAttribMap.insert(EGL_PLATFORM_ANGLE_TYPE_ANGLE, EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE);
         display->setAttributes(updatedAttribMap);
 
         EGLAttrib displayType  = display->mAttributeMap.get(EGL_PLATFORM_ANGLE_TYPE_ANGLE);
