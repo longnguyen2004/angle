@@ -930,7 +930,7 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
 
     HANDLE waitableObject[] = {mFrameWaitableLatencyObject};
     if (waitableObject[0])
-        if (MsgWaitForMultipleObjects(1, waitableObject, FALSE, 50, QS_ALLINPUT & ~(QS_MOUSE | QS_RAWINPUT)) != WAIT_OBJECT_0)
+        if (MsgWaitForMultipleObjectsEx(1, waitableObject, INFINITE, QS_ALLINPUT & ~(QS_MOUSE | QS_RAWINPUT), MWMO_INPUTAVAILABLE) != WAIT_OBJECT_0)
             return EGL_SUCCESS;
 
     // Use IDXGISwapChain1::Present1 with a dirty rect if DXGI 1.2 is available.
@@ -956,6 +956,9 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
         result = mSwapChain->Present(swapInterval, presentFlags);
     }
 
+    if (result == DXGI_ERROR_WAS_STILL_DRAWING)
+        return EGL_SUCCESS;
+
     mFirstSwap = false;
 
     // Some swapping mechanisms such as DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL unbind the current render
@@ -972,10 +975,6 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
     {
         ERR() << "Present failed: the D3D11 device was reset from a bad command.";
         return EGL_CONTEXT_LOST;
-    }
-    else if (result == DXGI_ERROR_WAS_STILL_DRAWING)
-    {
-        // Do nothing
     }
     else if (FAILED(result))
     {
