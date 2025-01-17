@@ -913,6 +913,9 @@ EGLint SwapChain11::copyOffscreenToBackbuffer(DisplayD3D *displayD3D,
 
 EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint width, EGLint height)
 {
+    MSG message;
+    PeekMessageW(&message, NULL, 0, 0, PM_NOREMOVE);
+
     if (!mSwapChain)
     {
         return EGL_SUCCESS;
@@ -930,8 +933,15 @@ EGLint SwapChain11::present(DisplayD3D *displayD3D, EGLint x, EGLint y, EGLint w
 
     HANDLE waitableObject[] = {mFrameWaitableLatencyObject};
     if (waitableObject[0])
-        if (MsgWaitForMultipleObjectsEx(1, waitableObject, INFINITE, QS_ALLINPUT & ~(QS_MOUSE | QS_RAWINPUT), MWMO_INPUTAVAILABLE) != WAIT_OBJECT_0)
+    {
+        auto waitResult = MsgWaitForMultipleObjectsEx(1, waitableObject, INFINITE,
+                                                      QS_ALLINPUT & ~(QS_MOUSE | QS_RAWINPUT),
+                                                      MWMO_INPUTAVAILABLE);
+        if (waitResult != WAIT_OBJECT_0)
+        {
             return EGL_SUCCESS;
+        }
+    }
 
     // Use IDXGISwapChain1::Present1 with a dirty rect if DXGI 1.2 is available.
     // Dirty rect present is not supported with a multisampled swapchain.
